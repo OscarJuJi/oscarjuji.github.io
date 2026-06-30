@@ -1,108 +1,136 @@
-import React from "react";
-
+import React, { useEffect, useRef } from "react";
 import PropTypes from "prop-types";
-import image from "../images/background.png";
 
-import resume from "../../public/resume.pdf";
-import cv from "../../public/cv.pdf";
-import {Document, Page, pdfjs} from 'react-pdf';
+const resume = "/resume.pdf";
+const cv = "/cv.pdf";
 
-const Home = ({ name, title }) => {
+const typingPhrases = [
+  "Artificial Intelligence Engineer",
+  "Full Stack Developer",
+  "Machine Learning Enthusiast",
+  "Problem Solver",
+];
+
+const Home = ({ name }) => {
+  const typedRef = useRef(null);
+
+  useEffect(() => {
+    let phraseIdx = 0;
+    let charIdx = 0;
+    let deleting = false;
+
+    const TYPING_SPEED = 75;
+    const DELETING_SPEED = 40;
+    const PAUSE_AFTER_TYPED = 2200;
+    const PAUSE_AFTER_DELETED = 300;
+
+    let timeoutId;
+
+    const tick = () => {
+      const phrase = typingPhrases[phraseIdx];
+      if (!typedRef.current) return;
+
+      if (!deleting) {
+        charIdx++;
+        typedRef.current.textContent = phrase.slice(0, charIdx);
+        if (charIdx === phrase.length) {
+          deleting = true;
+          timeoutId = setTimeout(tick, PAUSE_AFTER_TYPED);
+          return;
+        }
+        timeoutId = setTimeout(tick, TYPING_SPEED);
+      } else {
+        charIdx--;
+        typedRef.current.textContent = phrase.slice(0, charIdx);
+        if (charIdx === 0) {
+          deleting = false;
+          phraseIdx = (phraseIdx + 1) % typingPhrases.length;
+          timeoutId = setTimeout(tick, PAUSE_AFTER_DELETED);
+          return;
+        }
+        timeoutId = setTimeout(tick, DELETING_SPEED);
+      }
+    };
+
+    timeoutId = setTimeout(tick, 800);
+    return () => clearTimeout(timeoutId);
+  }, []);
+
+  const stats = [
+    { number: "6+", label: "Projects Built" },
+    { number: "6mo", label: "Industry Experience" },
+    { number: "28+", label: "Technologies" },
+    { number: "4+", label: "Certifications" },
+  ];
+
   return (
-    <section id="home" className="min-height">
-      <img className="background" src={image} alt="A simple web code" />
-      <div style={{ position: "absolute", top: "5rem", left: "5rem", width: "90vw", textAlign: "right", color: "rgb(145,205,145)" }}>
-        <div style={{height: "auto", position: "relative"}} >
-        <h1 style={{ marginBottom: "3rem", }} className="word">{name}</h1>
-        
+    <section id="home" className="hero">
+      <div className="hero-bg" aria-hidden="true" />
+
+      <div className="hero-content">
+        <div className="hero-tag fade-in">Available for opportunities</div>
+
+        <h1 className="fade-in delay-1">
+          <span className="hero-name">{name}</span>
+        </h1>
+
+        <p className="hero-title fade-in delay-2" aria-live="polite">
+          <span ref={typedRef} />
+          <span className="typed-cursor" aria-hidden="true">|</span>
+        </p>
+
+        <p className="hero-description fade-in delay-3">
+          AI Engineering student at ESCOM–IPN passionate about building
+          intelligent systems. From machine learning pipelines to full-stack
+          applications — I turn ideas into working software.
+        </p>
+
+        <div className="hero-actions fade-in delay-4">
+          <a
+            href={resume}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-primary"
+          >
+            ↓ Curriculum
+          </a>
+          <a
+            href={cv}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-outline"
+          >
+            ↓ Resume
+          </a>
+          <a href="#contact" className="btn btn-ghost">
+            Get in touch →
+          </a>
         </div>
-        <h2>{title}</h2>
-        
-        <div style={{textAlign: "center",
-            alignItems: "center",}}>
 
-        <a
-          href={resume}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="button"
-          style={{
-            display: "inline-block",
-            padding: "1rem 2rem",
-            marginTop: "15rem",
-            marginRight: "14rem",  
-            textAlign: "center",
-            alignItems: "center",
-            justifyContent: "center",
-            backgroundColor: "rgb(145,205,145)",
-            color: "white",
-            textDecoration: "none",
-            borderRadius: "8px",
-            fontSize: "1.2rem",
-            fontWeight: "bold",
-            boxShadow: "0 4px 10px rgba(0,0,0,0.3)",
-            transition: "all 0.3s ease-in-out",
-          }}
-          onMouseOver={(e) =>
-            (e.target.style.backgroundColor = "rgb(120,180,120)")
-          }
-          onMouseOut={(e) =>
-            (e.target.style.backgroundColor = "rgb(145,205,145)")
-          }
-        >
-          Curriculum
-        </a>
-        <a
-          href={cv}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="button"
-          style={{
-            display: "inline-block",
-            padding: "1rem 2rem",
-            marginTop: "15rem",
-            marginLeft: "auto",  
-            textAlign: "center",
-            alignItems: "center",
-            justifyContent: "center",
-            backgroundColor: "rgb(145,205,145)",
-            color: "white",
-            textDecoration: "none",
-            borderRadius: "8px",
-            fontSize: "1.2rem",
-            fontWeight: "bold",
-            boxShadow: "0 4px 10px rgba(0,0,0,0.3)",
-            transition: "all 0.3s ease-in-out",
-          }}
-          onMouseOver={(e) =>
-            (e.target.style.backgroundColor = "rgb(120,180,120)")
-          }
-          onMouseOut={(e) =>
-            (e.target.style.backgroundColor = "rgb(145,205,145)")
-          }
-        >
-          Resume
-        </a>
+        <div className="hero-stats fade-in delay-4">
+          {stats.map((s) => (
+            <div key={s.label}>
+              <span className="hero-stat-number">{s.number}</span>
+              <span className="hero-stat-label">{s.label}</span>
+            </div>
+          ))}
+        </div>
       </div>
 
-
-      </div>
-
-      <div id="Scroll_Down_B_S" className="S_D_B_S_C" style={{ position: 'absolute', bottom: '-3rem', left: '50%', transform: 'translateX(-50%)', zIndex: 1 }}>
-        <a href="#about"><span></span><span></span><span></span></a>
-      </div>
+      <a href="#about" className="scroll-cue" aria-label="Scroll to About">
+        <div className="scroll-line" />
+        <span>Scroll</span>
+      </a>
     </section>
   );
 };
 
 Home.defaultProps = {
   name: "Oscar Juarez",
-  title: "Artificla Intelligence Engineer",
 };
 
 Home.propTypes = {
   name: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
 };
 
 export default Home;

@@ -1,176 +1,91 @@
 import React from "react";
-import image from "../images/background1.jpg"; // Imagen de fondo
-import arrowSvg from "../images/down-arrow.svg"; // Flecha de scroll
-
-const imageAltText = "Scroll-down button";
 
 const description =
-  "I'm an Artificial Intelligence Engineering student. I enjoy creating automated learning systems with versatile practical applications. Additionally, I strive to learn more about artificial intelligence, particularly within the world of technology, to expand my expertise.";
+  "I'm an Artificial Intelligence Engineering student at ESCOM–IPN. I enjoy building intelligent systems with versatile real-world applications — from NLP pipelines and computer vision models to full-stack platforms. I strive to bridge the gap between research and practical AI solutions.";
 
-// Listado de habilidades
+const quote =
+  "Passionate about solving problems in creative and efficient ways. I always seek challenges that allow me to enhance my skills in artificial intelligence and software engineering.";
+
 const skillsList = [
-  "Artificial Intelligence",
-  "Machine Learning & Deep Learning",
-  "Natural Language Processing",
-  "Google Cloud Platform  & AI",
-  "Data Science",
-  "Computer Vision & Image Processing",
-  "Azure ML & Cognitive Services",
-  "Oracle SQL",
-  "Virtual Environments",
-  "API-REST Consumption",
-  "Version Control (GitHub)",
-  "Repository Management",
-  "React",
-  "Node.js & AJAX",
-  "PowerBI",
-  "Python",
-  "Java",
-  "C++",
-  "C#",
-  "Matlab",
-  "HTML, CSS & JS",
-  "typescript",
-  "Docker",
-  "Django",
-  "FastAPI",
-  "OpenAI API",
-  "Pytorch",
-  "Visual Studio",
-
+  { name: "Artificial Intelligence", icon: "https://img.icons8.com/color/100/artificial-intelligence.png" },
+  { name: "Machine Learning", icon: "https://img.icons8.com/?size=100&id=oOOSYZyuA844&format=png&color=000000" },
+  { name: "NLP", icon: "https://img.icons8.com/?size=100&id=sop9ROXku5bb&format=png&color=000000" },
+  { name: "Computer Vision", icon: "https://img.icons8.com/?size=100&id=bpip0gGiBLT1&format=png&color=000000" },
+  { name: "PyTorch", icon: "https://img.icons8.com/?size=100&id=jH4BpkMnRrU5&format=png&color=000000" },
+  { name: "OpenAI API", icon: "https://img.icons8.com/?size=100&id=ka3InxFU3QZa&format=png&color=000000" },
+  { name: "Python", icon: "https://img.icons8.com/color/100/python.png" },
+  { name: "Google Cloud", icon: "https://img.icons8.com/color/100/google-cloud.png" },
+  { name: "Azure ML", icon: "https://img.icons8.com/color/100/azure-1.png" },
+  { name: "Docker", icon: "https://img.icons8.com/color/100/docker.png" },
+  { name: "FastAPI", icon: "https://img.icons8.com/?size=100&id=21888&format=png&color=000000" },
+  { name: "Django", icon: "https://img.icons8.com/color/100/django.png" },
+  { name: "React", icon: "https://img.icons8.com/color/100/react-native.png" },
+  { name: "Node.js", icon: "https://img.icons8.com/color/100/nodejs.png" },
+  { name: "TypeScript", icon: "https://img.icons8.com/color/100/typescript.png" },
+  { name: "HTML/CSS/JS", icon: "https://img.icons8.com/color/100/html-5--v1.png" },
+  { name: "Java", icon: "https://img.icons8.com/color/100/java-coffee-cup-logo--v1.png" },
+  { name: "C++", icon: "https://img.icons8.com/color/100/c-plus-plus-logo.png" },
+  { name: "C#", icon: "https://img.icons8.com/color/100/c-sharp-logo.png" },
+  { name: "MATLAB", icon: "https://img.icons8.com/?size=100&id=r5Y16PcDkoWI&format=png&color=000000" },
+  { name: "Oracle SQL", icon: "https://img.icons8.com/color/100/oracle-logo.png" },
+  { name: "Data Science", icon: "https://img.icons8.com/?size=100&id=xSkewUSqtErH&format=png&color=000000" },
+  { name: "PowerBI", icon: "https://img.icons8.com/color/100/power-bi.png" },
+  { name: "Git", icon: "https://img.icons8.com/color/100/git.png" },
+  { name: "GitHub", icon: "https://img.icons8.com/fluency/100/github.png" },
+  { name: "REST APIs", icon: "https://img.icons8.com/color/100/api.png" },
+  { name: "Visual Studio", icon: "https://img.icons8.com/?size=100&id=ezj3zaVtImPg&format=png&color=000000" },
 ];
 
-// Mapeo de habilidades a sus logos
-const skillsIcons = {
-  "Artificial Intelligence": "https://img.icons8.com/color/100/artificial-intelligence.png",
-  "Machine Learning & Deep Learning": "https://img.icons8.com/?size=100&id=oOOSYZyuA844&format=png&color=000000",
-  "Natural Language Processing": "https://img.icons8.com/?size=100&id=sop9ROXku5bb&format=png&color=000000",
-  "Google Cloud Platform  & AI": "https://img.icons8.com/color/100/google-cloud.png",
-  "Data Science": "https://img.icons8.com/?size=100&id=xSkewUSqtErH&format=png&color=000000",
-  "Computer Vision & Image Processing": "https://img.icons8.com/?size=100&id=bpip0gGiBLT1&format=png&color=000000",
-  "Azure ML & Cognitive Services": "https://img.icons8.com/color/100/azure-1.png",
-  "Oracle SQL": "https://img.icons8.com/color/100/oracle-logo.png",
-  "Virtual Environments": "https://img.icons8.com/?size=100&id=F4uMFPZgS0gt&format=png&color=000000",
-  "API-REST Consumption": "https://img.icons8.com/color/100/api.png",
-  "Version Control (GitHub)": "https://img.icons8.com/fluency/100/github.png",
-  "Repository Management": "https://img.icons8.com/color/100/git.png",
-  "React": "https://img.icons8.com/color/100/react-native.png",
-  "Node.js & AJAX": "https://img.icons8.com/color/100/nodejs.png",
-  "PowerBI": "https://img.icons8.com/color/100/power-bi.png",
-  "Python": "https://img.icons8.com/color/100/python.png",
-  "Java": "https://img.icons8.com/color/100/java-coffee-cup-logo--v1.png",
-  "C++": "https://img.icons8.com/color/100/c-plus-plus-logo.png",
-  "C#": "https://img.icons8.com/color/100/c-sharp-logo.png",
-  "Matlab": "https://img.icons8.com/?size=100&id=r5Y16PcDkoWI&format=png&color=000000",
-  "HTML, CSS & JS": "https://img.icons8.com/color/100/html-5--v1.png",
-  "typescript": "https://img.icons8.com/color/100/typescript.png",
-  "Docker" : "https://img.icons8.com/color/100/docker.png",
-  "Django": "https://img.icons8.com/color/100/django.png",
-  "FastAPI": "https://img.icons8.com/?size=100&id=21888&format=png&color=000000",
-  "OpenAI API": "https://img.icons8.com/?size=100&id=ka3InxFU3QZa&format=png&color=000000",
-  "Pytorch": "https://img.icons8.com/?size=100&id=jH4BpkMnRrU5&format=png&color=000000",
-  "Visual Studio": "https://img.icons8.com/?size=100&id=ezj3zaVtImPg&format=png&color=000000",
-};
+const stats = [
+  { number: "6+", label: "Projects Completed", emoji: "🚀" },
+  { number: "28+", label: "Technologies", emoji: "⚡" },
+  { number: "6mo", label: "Industry Experience", emoji: "💼" },
+  { number: "4+", label: "Certifications", emoji: "🏆" },
+];
 
-const detailOrQuote =
-  "I am passionate about solving problems in new creative and efficient ways. I always seek challenges and opportunities that allow me to enhance my skills and knowledge in the field of artificial intelligence, in order to further enrich my professional experience.";
+const About = () => (
+  <>
+    <section id="about" className="about-section">
+      <div className="container">
+        <div className="about-grid">
+          <div className="about-text">
+            <span className="section-label fade-in">About Me</span>
+            <h2 className="section-title fade-in delay-1">Who I Am</h2>
+            <p className="fade-in delay-2">{description}</p>
+            <blockquote className="about-quote fade-in delay-3">{quote}</blockquote>
+          </div>
 
-const About = () => {
-  return (
-    <section
-      className="padding"
-      id="about"
-      style={{
-        backgroundImage: `url(${image})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundAttachment: "fixed", // Efecto Parallax (opcional)
-        width: "100%",
-        minHeight: "100vh",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        position: "relative",
-      }}
-    >
-      <div
-        style={{
-          width: "50%",
-          borderRadius: "1rem",
-          padding: "4rem",
-          margin: "3rem auto",
-          textAlign: "center",
-          background: "rgba(0, 0, 0, 0.75)", // Fondo semitransparente para legibilidad
-          color: "white",
-          zIndex: 1,
-        }}
-      >
-        <h2>About Myself</h2>
-        <p className="large">{description}</p>
-        <hr />
-        {/* Grid de habilidades */}
-        
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-            gap: "1rem",
-            textAlign: "left",
-            margin: "2rem 0",
-          }}
-        >
-          {skillsList.map((skill) => {
-            
-            const icon = skillsIcons[skill];
-            return (
-              
-              <div
-                key={skill}
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  padding: "0.5rem",
-                  border: "1px solid #444",
-                  borderRadius: "0.5rem",
-                  background: "rgba(255, 255, 255, 0.1)",
-                }}
-              >
-                {icon && (
-                  <img
-                    src={icon}
-                    alt={`${skill} logo`}
-                    style={{ width: "40px", height: "40px", objectFit: "contain", marginRight: "0.5rem" }}
-                  />
-                )}
-                <span style={{ fontSize: "1.1rem", fontWeight: "bold" }}>{skill}</span>
+          <div className="stat-cards">
+            {stats.map((s, i) => (
+              <div key={s.label} className={`stat-card fade-in delay-${i + 1}`}>
+                <span className="stat-card-emoji">{s.emoji}</span>
+                <span className="stat-card-number">{s.number}</span>
+                <span className="stat-card-label">{s.label}</span>
               </div>
-            );
-          })}
+            ))}
+          </div>
         </div>
-        <hr />
-        <p style={{ padding: "1rem 3rem 0" }}>{detailOrQuote}</p>
-      </div>
-      
-      <div
-        id="Scroll_Down_B_S"
-        className="S_D_B_S_C"
-        style={{
-          position: "absolute",
-          bottom: "-3rem",
-          left: "50%",
-          transform: "translateX(-50%)",
-          zIndex: 1,
-        }}
-      >
-        <a alt={imageAltText} href="#education">
-          <span></span>
-          <span></span>
-          <span></span>
-        </a>
       </div>
     </section>
-  );
-};
+
+    <section className="skills-section">
+      <div className="container">
+        <span className="section-label fade-in">Technical Skills</span>
+        <h2 className="section-title fade-in delay-1">Tools &amp; Technologies</h2>
+        <p className="section-subtitle fade-in delay-2">
+          A broad toolkit spanning AI/ML research, cloud infrastructure, and full-stack development.
+        </p>
+        <div className="skills-grid">
+          {skillsList.map((skill, i) => (
+            <div key={skill.name} className="skill-card fade-in" style={{ transitionDelay: `${(i % 8) * 0.05}s` }}>
+              <img src={skill.icon} alt={`${skill.name} logo`} loading="lazy" />
+              <span>{skill.name}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  </>
+);
 
 export default About;
