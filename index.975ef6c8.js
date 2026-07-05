@@ -27208,9 +27208,10 @@ parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
-const description = "I'm an Artificial Intelligence Engineering student at ESCOM–IPN. I enjoy building intelligent systems with versatile real-world applications — from NLP pipelines and computer vision models to full-stack platforms. I strive to bridge the gap between research and practical AI solutions.";
-const quote = "Passionate about solving problems in creative and efficient ways. I always seek challenges that allow me to enhance my skills in artificial intelligence and software engineering.";
+const description = "I'm an Artificial Intelligence Engineer and Data Engineer with hands-on industry experience designing large-scale ETL pipelines, building AI-powered products, and deploying ML-based solutions. I bridge the gap between AI research and production systems — from NeRF-based 3D reconstruction and RAG chatbots to distributed data processing on cloud infrastructure.";
+const quote = "Driven to build robust, data-driven solutions that optimize processes and extract actionable value from information. I thrive at the intersection of logic, analytics, and creativity.";
 const skillsList = [
+    // AI / ML
     {
         name: "Artificial Intelligence",
         icon: "https://img.icons8.com/color/100/artificial-intelligence.png"
@@ -27218,6 +27219,10 @@ const skillsList = [
     {
         name: "Machine Learning",
         icon: "https://img.icons8.com/?size=100&id=oOOSYZyuA844&format=png&color=000000"
+    },
+    {
+        name: "Deep Learning",
+        icon: "https://img.icons8.com/?size=100&id=jH4BpkMnRrU5&format=png&color=000000"
     },
     {
         name: "NLP",
@@ -27228,6 +27233,10 @@ const skillsList = [
         icon: "https://img.icons8.com/?size=100&id=bpip0gGiBLT1&format=png&color=000000"
     },
     {
+        name: "Data Science",
+        icon: "https://img.icons8.com/?size=100&id=xSkewUSqtErH&format=png&color=000000"
+    },
+    {
         name: "PyTorch",
         icon: "https://img.icons8.com/?size=100&id=jH4BpkMnRrU5&format=png&color=000000"
     },
@@ -27235,10 +27244,7 @@ const skillsList = [
         name: "OpenAI API",
         icon: "https://img.icons8.com/?size=100&id=ka3InxFU3QZa&format=png&color=000000"
     },
-    {
-        name: "Python",
-        icon: "https://img.icons8.com/color/100/python.png"
-    },
+    // Cloud & Infra
     {
         name: "Google Cloud",
         icon: "https://img.icons8.com/color/100/google-cloud.png"
@@ -27248,8 +27254,25 @@ const skillsList = [
         icon: "https://img.icons8.com/color/100/azure-1.png"
     },
     {
+        name: "AWS",
+        icon: "https://img.icons8.com/color/100/amazon-web-services.png"
+    },
+    {
         name: "Docker",
         icon: "https://img.icons8.com/color/100/docker.png"
+    },
+    {
+        name: "Kubernetes",
+        icon: "https://img.icons8.com/color/100/kubernetes.png"
+    },
+    {
+        name: "MLflow",
+        icon: "https://img.icons8.com/?size=100&id=33039&format=png&color=000000"
+    },
+    // Backend / Frameworks
+    {
+        name: "Python",
+        icon: "https://img.icons8.com/color/100/python.png"
     },
     {
         name: "FastAPI",
@@ -27259,6 +27282,19 @@ const skillsList = [
         name: "Django",
         icon: "https://img.icons8.com/color/100/django.png"
     },
+    {
+        name: "Java",
+        icon: "https://img.icons8.com/color/100/java-coffee-cup-logo--v1.png"
+    },
+    {
+        name: "C++",
+        icon: "https://img.icons8.com/color/100/c-plus-plus-logo.png"
+    },
+    {
+        name: "C#",
+        icon: "https://img.icons8.com/color/100/c-sharp-logo.png"
+    },
+    // Frontend
     {
         name: "React",
         icon: "https://img.icons8.com/color/100/react-native.png"
@@ -27275,34 +27311,20 @@ const skillsList = [
         name: "HTML/CSS/JS",
         icon: "https://img.icons8.com/color/100/html-5--v1.png"
     },
-    {
-        name: "Java",
-        icon: "https://img.icons8.com/color/100/java-coffee-cup-logo--v1.png"
-    },
-    {
-        name: "C++",
-        icon: "https://img.icons8.com/color/100/c-plus-plus-logo.png"
-    },
-    {
-        name: "C#",
-        icon: "https://img.icons8.com/color/100/c-sharp-logo.png"
-    },
-    {
-        name: "MATLAB",
-        icon: "https://img.icons8.com/?size=100&id=r5Y16PcDkoWI&format=png&color=000000"
-    },
+    // Data & Analytics
     {
         name: "Oracle SQL",
         icon: "https://img.icons8.com/color/100/oracle-logo.png"
     },
     {
-        name: "Data Science",
-        icon: "https://img.icons8.com/?size=100&id=xSkewUSqtErH&format=png&color=000000"
-    },
-    {
-        name: "PowerBI",
+        name: "Power BI",
         icon: "https://img.icons8.com/color/100/power-bi.png"
     },
+    {
+        name: "Tableau",
+        icon: "https://img.icons8.com/color/100/tableau-software.png"
+    },
+    // Tools
     {
         name: "Git",
         icon: "https://img.icons8.com/color/100/git.png"
@@ -27316,30 +27338,34 @@ const skillsList = [
         icon: "https://img.icons8.com/color/100/api.png"
     },
     {
+        name: "MATLAB",
+        icon: "https://img.icons8.com/?size=100&id=r5Y16PcDkoWI&format=png&color=000000"
+    },
+    {
         name: "Visual Studio",
         icon: "https://img.icons8.com/?size=100&id=ezj3zaVtImPg&format=png&color=000000"
     }, 
 ];
 const stats = [
     {
-        number: "6+",
-        label: "Projects Completed",
-        emoji: "\uD83D\uDE80"
+        number: "9.5",
+        label: "Degree GPA / 10",
+        emoji: "\uD83C\uDF93"
     },
     {
-        number: "28+",
-        label: "Technologies",
-        emoji: "⚡"
-    },
-    {
-        number: "6mo",
-        label: "Industry Experience",
+        number: "3",
+        label: "Industry Roles",
         emoji: "\uD83D\uDCBC"
     },
     {
-        number: "4+",
+        number: "10+",
         label: "Certifications",
         emoji: "\uD83C\uDFC6"
+    },
+    {
+        number: "6+",
+        label: "Projects Built",
+        emoji: "\uD83D\uDE80"
     }, 
 ];
 const About = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
@@ -27360,7 +27386,7 @@ const About = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fr
                                         children: "About Me"
                                     }, void 0, false, {
                                         fileName: "src/Components/About.jsx",
-                                        lineNumber: 52,
+                                        lineNumber: 63,
                                         columnNumber: 13
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
@@ -27368,7 +27394,7 @@ const About = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fr
                                         children: "Who I Am"
                                     }, void 0, false, {
                                         fileName: "src/Components/About.jsx",
-                                        lineNumber: 53,
+                                        lineNumber: 64,
                                         columnNumber: 13
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -27376,7 +27402,7 @@ const About = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fr
                                         children: description
                                     }, void 0, false, {
                                         fileName: "src/Components/About.jsx",
-                                        lineNumber: 54,
+                                        lineNumber: 65,
                                         columnNumber: 13
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("blockquote", {
@@ -27384,13 +27410,13 @@ const About = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fr
                                         children: quote
                                     }, void 0, false, {
                                         fileName: "src/Components/About.jsx",
-                                        lineNumber: 55,
+                                        lineNumber: 66,
                                         columnNumber: 13
                                     }, undefined)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/Components/About.jsx",
-                                lineNumber: 51,
+                                lineNumber: 62,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27403,7 +27429,7 @@ const About = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fr
                                                 children: s.emoji
                                             }, void 0, false, {
                                                 fileName: "src/Components/About.jsx",
-                                                lineNumber: 61,
+                                                lineNumber: 72,
                                                 columnNumber: 17
                                             }, undefined),
                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
@@ -27411,7 +27437,7 @@ const About = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fr
                                                 children: s.number
                                             }, void 0, false, {
                                                 fileName: "src/Components/About.jsx",
-                                                lineNumber: 62,
+                                                lineNumber: 73,
                                                 columnNumber: 17
                                             }, undefined),
                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
@@ -27419,34 +27445,34 @@ const About = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fr
                                                 children: s.label
                                             }, void 0, false, {
                                                 fileName: "src/Components/About.jsx",
-                                                lineNumber: 63,
+                                                lineNumber: 74,
                                                 columnNumber: 17
                                             }, undefined)
                                         ]
                                     }, s.label, true, {
                                         fileName: "src/Components/About.jsx",
-                                        lineNumber: 60,
+                                        lineNumber: 71,
                                         columnNumber: 15
                                     }, undefined))
                             }, void 0, false, {
                                 fileName: "src/Components/About.jsx",
-                                lineNumber: 58,
+                                lineNumber: 69,
                                 columnNumber: 11
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/Components/About.jsx",
-                        lineNumber: 50,
+                        lineNumber: 61,
                         columnNumber: 9
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/Components/About.jsx",
-                    lineNumber: 49,
+                    lineNumber: 60,
                     columnNumber: 7
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/Components/About.jsx",
-                lineNumber: 48,
+                lineNumber: 59,
                 columnNumber: 5
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("section", {
@@ -27459,7 +27485,7 @@ const About = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fr
                             children: "Technical Skills"
                         }, void 0, false, {
                             fileName: "src/Components/About.jsx",
-                            lineNumber: 73,
+                            lineNumber: 84,
                             columnNumber: 9
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
@@ -27467,15 +27493,15 @@ const About = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fr
                             children: "Tools & Technologies"
                         }, void 0, false, {
                             fileName: "src/Components/About.jsx",
-                            lineNumber: 74,
+                            lineNumber: 85,
                             columnNumber: 9
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                             className: "section-subtitle fade-in delay-2",
-                            children: "A broad toolkit spanning AI/ML research, cloud infrastructure, and full-stack development."
+                            children: "A broad toolkit spanning AI/ML research, cloud data engineering, and full-stack development."
                         }, void 0, false, {
                             fileName: "src/Components/About.jsx",
-                            lineNumber: 75,
+                            lineNumber: 86,
                             columnNumber: 9
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27483,7 +27509,7 @@ const About = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fr
                             children: skillsList.map((skill, i)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                                     className: "skill-card fade-in",
                                     style: {
-                                        transitionDelay: `${i % 8 * 0.05}s`
+                                        transitionDelay: `${i % 9 * 0.045}s`
                                     },
                                     children: [
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
@@ -27492,36 +27518,36 @@ const About = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fr
                                             loading: "lazy"
                                         }, void 0, false, {
                                             fileName: "src/Components/About.jsx",
-                                            lineNumber: 81,
+                                            lineNumber: 96,
                                             columnNumber: 15
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                                             children: skill.name
                                         }, void 0, false, {
                                             fileName: "src/Components/About.jsx",
-                                            lineNumber: 82,
+                                            lineNumber: 97,
                                             columnNumber: 15
                                         }, undefined)
                                     ]
                                 }, skill.name, true, {
                                     fileName: "src/Components/About.jsx",
-                                    lineNumber: 80,
+                                    lineNumber: 91,
                                     columnNumber: 13
                                 }, undefined))
                         }, void 0, false, {
                             fileName: "src/Components/About.jsx",
-                            lineNumber: 78,
+                            lineNumber: 89,
                             columnNumber: 9
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/Components/About.jsx",
-                    lineNumber: 72,
+                    lineNumber: 83,
                     columnNumber: 7
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/Components/About.jsx",
-                lineNumber: 71,
+                lineNumber: 82,
                 columnNumber: 5
             }, undefined)
         ]
@@ -27727,12 +27753,6 @@ const Footer = ({ name , email , gitHub , instagram , linkedIn  })=>{
             href: `https://www.linkedin.com/in/${linkedIn}`,
             icon: (0, _linkedinSvgDefault.default),
             alt: "LinkedIn"
-        },
-        {
-            show: instagram,
-            href: `https://www.instagram.com/${instagram}`,
-            icon: (0, _instagramSvgDefault.default),
-            alt: "Instagram"
         }, 
     ].filter((s)=>s.show);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("footer", {
@@ -28851,8 +28871,9 @@ const resume = "/resume.pdf";
 const cv = "/cv.pdf";
 const typingPhrases = [
     "Artificial Intelligence Engineer",
+    "Data Engineer",
     "Full Stack Developer",
-    "Machine Learning Enthusiast",
+    "Machine Learning Practitioner",
     "Problem Solver", 
 ];
 const Home = ({ name  })=>{
@@ -28921,7 +28942,7 @@ const Home = ({ name  })=>{
                 "aria-hidden": "true"
             }, void 0, false, {
                 fileName: "src/Components/Home.jsx",
-                lineNumber: 68,
+                lineNumber: 69,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -28932,7 +28953,7 @@ const Home = ({ name  })=>{
                         children: "Available for opportunities"
                     }, void 0, false, {
                         fileName: "src/Components/Home.jsx",
-                        lineNumber: 71,
+                        lineNumber: 72,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
@@ -28942,12 +28963,12 @@ const Home = ({ name  })=>{
                             children: name
                         }, void 0, false, {
                             fileName: "src/Components/Home.jsx",
-                            lineNumber: 74,
+                            lineNumber: 75,
                             columnNumber: 11
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/Components/Home.jsx",
-                        lineNumber: 73,
+                        lineNumber: 74,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -28958,7 +28979,7 @@ const Home = ({ name  })=>{
                                 ref: typedRef
                             }, void 0, false, {
                                 fileName: "src/Components/Home.jsx",
-                                lineNumber: 78,
+                                lineNumber: 79,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
@@ -28967,13 +28988,13 @@ const Home = ({ name  })=>{
                                 children: "|"
                             }, void 0, false, {
                                 fileName: "src/Components/Home.jsx",
-                                lineNumber: 79,
+                                lineNumber: 80,
                                 columnNumber: 11
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/Components/Home.jsx",
-                        lineNumber: 77,
+                        lineNumber: 78,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -28981,7 +29002,7 @@ const Home = ({ name  })=>{
                         children: "AI Engineering student at ESCOM–IPN passionate about building intelligent systems. From machine learning pipelines to full-stack applications — I turn ideas into working software."
                     }, void 0, false, {
                         fileName: "src/Components/Home.jsx",
-                        lineNumber: 82,
+                        lineNumber: 85,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -28995,7 +29016,7 @@ const Home = ({ name  })=>{
                                 children: "↓ Curriculum"
                             }, void 0, false, {
                                 fileName: "src/Components/Home.jsx",
-                                lineNumber: 89,
+                                lineNumber: 92,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -29006,7 +29027,7 @@ const Home = ({ name  })=>{
                                 children: "↓ Resume"
                             }, void 0, false, {
                                 fileName: "src/Components/Home.jsx",
-                                lineNumber: 97,
+                                lineNumber: 100,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -29015,13 +29036,13 @@ const Home = ({ name  })=>{
                                 children: "Get in touch →"
                             }, void 0, false, {
                                 fileName: "src/Components/Home.jsx",
-                                lineNumber: 105,
+                                lineNumber: 108,
                                 columnNumber: 11
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/Components/Home.jsx",
-                        lineNumber: 88,
+                        lineNumber: 91,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -29033,7 +29054,7 @@ const Home = ({ name  })=>{
                                         children: s.number
                                     }, void 0, false, {
                                         fileName: "src/Components/Home.jsx",
-                                        lineNumber: 113,
+                                        lineNumber: 116,
                                         columnNumber: 15
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
@@ -29041,24 +29062,24 @@ const Home = ({ name  })=>{
                                         children: s.label
                                     }, void 0, false, {
                                         fileName: "src/Components/Home.jsx",
-                                        lineNumber: 114,
+                                        lineNumber: 117,
                                         columnNumber: 15
                                     }, undefined)
                                 ]
                             }, s.label, true, {
                                 fileName: "src/Components/Home.jsx",
-                                lineNumber: 112,
+                                lineNumber: 115,
                                 columnNumber: 13
                             }, undefined))
                     }, void 0, false, {
                         fileName: "src/Components/Home.jsx",
-                        lineNumber: 110,
+                        lineNumber: 113,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/Components/Home.jsx",
-                lineNumber: 70,
+                lineNumber: 71,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -29070,26 +29091,26 @@ const Home = ({ name  })=>{
                         className: "scroll-line"
                     }, void 0, false, {
                         fileName: "src/Components/Home.jsx",
-                        lineNumber: 121,
+                        lineNumber: 124,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                         children: "Scroll"
                     }, void 0, false, {
                         fileName: "src/Components/Home.jsx",
-                        lineNumber: 122,
+                        lineNumber: 125,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/Components/Home.jsx",
-                lineNumber: 120,
+                lineNumber: 123,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/Components/Home.jsx",
-        lineNumber: 67,
+        lineNumber: 68,
         columnNumber: 5
     }, undefined);
 };
@@ -29124,26 +29145,28 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 const projectList = [
     {
-        title: "HomeCraft — AI-Driven 3D Interior Design",
-        description: "Capture a room video, extract key frames, segment objects, apply inpainting, and generate a fully editable 3D model. Enables seamless virtual home redesigns without physically modifying the space.",
+        title: "Object Segmentation for Indoor 3D Model Editing Using NeRF",
+        description: "AI-based object segmentation system for editing 3D models in interior environments. Boosted classification accuracy by 30% by integrating ML algorithms into a U-Net base. Achieved photorealistic editing by combining NeRF spatial reconstruction with Stable Diffusion texture synthesis.",
         url: "https://github.com/PhilipSanM/Homecraft",
         tags: [
             "Python",
+            "NeRF",
+            "U-Net",
+            "Stable Diffusion",
             "PyTorch",
-            "OpenCV",
-            "3D Modeling",
-            "Inpainting"
+            "Computer Vision"
         ]
     },
     {
-        title: "RAG ChatBot for Mexico's Official Gazette",
-        description: "Natural-language query interface over the Mexican DOF. Built a Retrieval-Augmented Generation pipeline over an LLM to generate summaries and answer precise document queries.",
+        title: "RAG ChatBot for Mexico's Official Gazette (DOF)",
+        description: "Retrieval-Augmented Generation system over an LLM to generate summaries and answer natural-language queries about Mexico's Diario Oficial de la Federaci\xf3n. Built with LangChain + LangServe for retrieval orchestration and Pinecone for vector storage.",
         url: "https://github.com/JoseLuisMonroy/ISSI-Backend",
         tags: [
             "Python",
-            "LLM",
+            "LangChain",
             "RAG",
-            "NLP",
+            "Pinecone",
+            "LLM",
             "FastAPI"
         ]
     },
@@ -29154,7 +29177,8 @@ const projectList = [
         tags: [
             "Python",
             "Genetic Algorithms",
-            "Optimization"
+            "Optimization",
+            "Bio-Inspired AI"
         ]
     },
     {
@@ -29170,7 +29194,7 @@ const projectList = [
     },
     {
         title: "Object Contour Identifier & Classifier",
-        description: "MATLAB GUI that identifies object edges in natural images using digital image processing techniques, then classifies the scene environment using computed features.",
+        description: "MATLAB GUI that identifies object edges in natural images using digital image processing techniques, then classifies the scene environment using computed edge features.",
         url: "https://github.com/OscarJuJi/object_contours_identifiying_and_classifying",
         tags: [
             "MATLAB",
@@ -29180,7 +29204,7 @@ const projectList = [
     },
     {
         title: "ESCOM AI Engineering Repository",
-        description: "A curated collection of projects from data structures and software engineering to computer vision, neural networks, deep learning, and more — spanning my full degree program.",
+        description: "A curated collection of coursework spanning data structures, software engineering, computer vision, neural networks, and deep learning — covering the full Artificial Intelligence Engineering program.",
         url: "https://github.com/OscarJuJi",
         tags: [
             "Python",
@@ -29213,7 +29237,7 @@ const Portfolio = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("section", {
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                     className: "section-subtitle fade-in delay-2",
-                    children: "A selection of AI, ML, and full-stack projects built during my studies and internship."
+                    children: "AI, ML, and full-stack projects spanning NeRF-based 3D reconstruction, RAG systems, bio-inspired algorithms, and more."
                 }, void 0, false, {
                     fileName: "src/Components/Portfolio.jsx",
                     lineNumber: 53,
@@ -29235,21 +29259,21 @@ const Portfolio = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("section", {
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/Components/Portfolio.jsx",
-                                    lineNumber: 60,
+                                    lineNumber: 65,
                                     columnNumber: 13
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
                                     children: project.title
                                 }, void 0, false, {
                                     fileName: "src/Components/Portfolio.jsx",
-                                    lineNumber: 61,
+                                    lineNumber: 66,
                                     columnNumber: 13
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                                     children: project.description
                                 }, void 0, false, {
                                     fileName: "src/Components/Portfolio.jsx",
-                                    lineNumber: 62,
+                                    lineNumber: 67,
                                     columnNumber: 13
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -29259,12 +29283,12 @@ const Portfolio = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("section", {
                                             children: tag
                                         }, tag, false, {
                                             fileName: "src/Components/Portfolio.jsx",
-                                            lineNumber: 65,
+                                            lineNumber: 70,
                                             columnNumber: 17
                                         }, undefined))
                                 }, void 0, false, {
                                     fileName: "src/Components/Portfolio.jsx",
-                                    lineNumber: 63,
+                                    lineNumber: 68,
                                     columnNumber: 13
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -29276,18 +29300,18 @@ const Portfolio = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("section", {
                                     children: "View on GitHub →"
                                 }, void 0, false, {
                                     fileName: "src/Components/Portfolio.jsx",
-                                    lineNumber: 68,
+                                    lineNumber: 73,
                                     columnNumber: 13
                                 }, undefined)
                             ]
                         }, project.title, true, {
                             fileName: "src/Components/Portfolio.jsx",
-                            lineNumber: 59,
+                            lineNumber: 60,
                             columnNumber: 11
                         }, undefined))
                 }, void 0, false, {
                     fileName: "src/Components/Portfolio.jsx",
-                    lineNumber: 57,
+                    lineNumber: 58,
                     columnNumber: 7
                 }, undefined)
             ]
@@ -29325,28 +29349,46 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 const educationList = [
     {
-        date: "2021 – Jun 2025",
-        title: "Artificial Intelligence Engineering",
-        institution: "Escuela Superior de C\xf3mputo (ESCOM) \xb7 IPN",
-        description: "Degree focused on machine learning models, deep learning algorithms, computer vision, NLP, and software engineering. Developed strong soft skills including teamwork, assertive communication, and personal leadership."
+        date: "Aug 2021 – Jul 2025",
+        title: "B.Sc. Artificial Intelligence Engineering \xb7 GPA 9.5 / 10",
+        institution: "Escuela Superior de C\xf3mputo (ESCOM) \xb7 IPN — Mexico City",
+        description: "Focused on machine learning, deep learning, computer vision, NLP, bio-inspired algorithms, and software engineering for intelligent systems. Relevant coursework: Machine Learning, Digital Image Processing, Natural Language Technologies, Neural Networks & Deep Learning, Advanced Neural Networks, Software Engineering for Intelligent Systems, Parallel Computing, Bio-Inspired Algorithms."
+    },
+    {
+        date: "2024 – Present",
+        title: "AWS Certified Data Engineer – Associate (In Progress)",
+        institution: "Amazon Web Services",
+        description: "Preparing for the AWS Data Engineer – Associate certification, covering data pipelines, storage, processing, and security on AWS infrastructure."
+    },
+    {
+        date: "2025",
+        title: "SAFe Scrum Master \xb7 AWS Technical Essentials \xb7 Jira Scrum Team",
+        institution: "Scaled Agile \xb7 Amazon Web Services \xb7 Atlassian",
+        description: "Completed agile project management training (SAFe Scrum Master), foundational AWS cloud services (AWS Technical Essentials), and Jira workflow configuration for Scrum teams."
+    },
+    {
+        date: "2024",
+        title: "Secure Development 3.0 \xb7 FreeCodeCamp Certifications",
+        institution: "Net4skills \xb7 FreeCodeCamp",
+        description: "Secure software development practices (Net4skills). FreeCodeCamp certifications in Legacy Responsive Web Design, Legacy Python for Everybody, and JavaScript Algorithms & Data Structures."
     },
     {
         date: "2023",
-        title: "Google Cloud Career Launchpad",
+        title: "Google Cloud Computing Foundations \xb7 GenAI Skill Badge Pathways",
         institution: "Google Cloud",
-        description: "Completed the Google Cloud Computing Foundations Certificate and the Beginner: Introduction to Generative AI Learning Path. Gained knowledge in cloud architecture, infrastructure, GCP services, neural networks, NLP, and image generation."
+        description: "Earned the Google Cloud Computing Foundations Certificate and the Beginner: Introduction to Generative AI Learning Path, covering cloud architecture, GCP services, neural networks, NLP, and image generation."
     },
     {
         date: "2023",
-        title: "Microsoft Learn AI Skills Challenge",
+        title: "Microsoft Learn AI Skills Challenge (Azure)",
         institution: "Microsoft",
-        description: "Obtained insights into Microsoft Azure cloud services with a focus on Machine Learning and Cognitive Services. Expanded understanding of the lifecycle and documentation processes for AI models."
+        description: "Obtained insights into Azure cloud services with a focus on Machine Learning, Cognitive Services, and the lifecycle of AI models."
     },
     {
         date: "2022",
         title: "Oracle Next Education",
-        institution: "Oracle",
-        description: "Acquired essential skills spanning programming logic, front-end and back-end development, and entrepreneurship through Oracle's sponsored program."
+        institution: "Oracle \xb7 Alura LATAM",
+        description: "Acquired skills in programming logic, front-end and back-end development, and entrepreneurship through Oracle's sponsored training program."
     }, 
 ];
 const Education = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("section", {
@@ -29360,23 +29402,23 @@ const Education = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("section", {
                     children: "Academic Background"
                 }, void 0, false, {
                     fileName: "src/Components/Education.jsx",
-                    lineNumber: 37,
+                    lineNumber: 58,
                     columnNumber: 7
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
                     className: "section-title fade-in delay-1",
-                    children: "Education"
+                    children: "Education & Certifications"
                 }, void 0, false, {
                     fileName: "src/Components/Education.jsx",
-                    lineNumber: 38,
+                    lineNumber: 59,
                     columnNumber: 7
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                     className: "section-subtitle fade-in delay-2",
-                    children: "Formal studies and certifications that shaped my technical foundation."
+                    children: "A strong academic foundation at IPN paired with 10+ industry certifications spanning cloud, AI, agile, and secure development."
                 }, void 0, false, {
                     fileName: "src/Components/Education.jsx",
-                    lineNumber: 39,
+                    lineNumber: 60,
                     columnNumber: 7
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -29388,7 +29430,7 @@ const Education = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("section", {
                                     className: "timeline-dot"
                                 }, void 0, false, {
                                     fileName: "src/Components/Education.jsx",
-                                    lineNumber: 46,
+                                    lineNumber: 68,
                                     columnNumber: 13
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -29396,7 +29438,7 @@ const Education = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("section", {
                                     children: item.date
                                 }, void 0, false, {
                                     fileName: "src/Components/Education.jsx",
-                                    lineNumber: 47,
+                                    lineNumber: 69,
                                     columnNumber: 13
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -29406,7 +29448,7 @@ const Education = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("section", {
                                             children: item.title
                                         }, void 0, false, {
                                             fileName: "src/Components/Education.jsx",
-                                            lineNumber: 49,
+                                            lineNumber: 71,
                                             columnNumber: 15
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -29414,42 +29456,42 @@ const Education = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("section", {
                                             children: item.institution
                                         }, void 0, false, {
                                             fileName: "src/Components/Education.jsx",
-                                            lineNumber: 50,
+                                            lineNumber: 72,
                                             columnNumber: 15
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                                             children: item.description
                                         }, void 0, false, {
                                             fileName: "src/Components/Education.jsx",
-                                            lineNumber: 51,
+                                            lineNumber: 73,
                                             columnNumber: 15
                                         }, undefined)
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/Components/Education.jsx",
-                                    lineNumber: 48,
+                                    lineNumber: 70,
                                     columnNumber: 13
                                 }, undefined)
                             ]
                         }, item.title, true, {
                             fileName: "src/Components/Education.jsx",
-                            lineNumber: 45,
+                            lineNumber: 67,
                             columnNumber: 11
                         }, undefined))
                 }, void 0, false, {
                     fileName: "src/Components/Education.jsx",
-                    lineNumber: 43,
+                    lineNumber: 65,
                     columnNumber: 7
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/Components/Education.jsx",
-            lineNumber: 36,
+            lineNumber: 57,
             columnNumber: 5
         }, undefined)
     }, void 0, false, {
         fileName: "src/Components/Education.jsx",
-        lineNumber: 35,
+        lineNumber: 56,
         columnNumber: 3
     }, undefined);
 _c = Education;
@@ -29476,12 +29518,32 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 const experienceList = [
     {
+        date: "Jul 2025 – Present",
+        title: "Data Engineer",
+        company: "Bluetab (an IBM Company) \xb7 BBVA",
+        bullets: [
+            "Implement ETL pipelines — ingestion, transformation, and storage — integrating multiple data sources into the bank's core data infrastructure.",
+            "Manage datasets and tables in AWS S3, ensuring structured storage and efficient access for Spark-based processing and advanced analytics.",
+            "Maintain and optimize data pipelines in distributed cluster environments, guaranteeing reliability, quality, and high availability.",
+            "Collaborate on data integration strategies for analytical use cases and ML models within the structural risk division.", 
+        ]
+    },
+    {
+        date: "Feb – Jul 2025",
+        title: "Innovation & Development Intern",
+        company: "Grupo Salinas",
+        bullets: [
+            "Researched, developed, and deployed AI tools to optimize business workflows and validate models in innovation-driven environments.",
+            "Engineered AI agents, conversational chatbots, visual prototypes, and dynamic landing pages for internal business units.", 
+        ]
+    },
+    {
         date: "Jun – Dec 2024",
         title: "Full-Stack Intern",
         company: "Banco de M\xe9xico",
         bullets: [
             "Boosted system performance by 30% by optimizing SQL queries and reducing algorithmic complexity in Java and JavaScript.",
-            "Streamlined the user interface for an internal tool, improving UX through a more intuitive and responsive design.",
+            "Streamlined an internal tool's UX through a more intuitive and responsive interface redesign.",
             "Enforced database integrity and security via normalization, stored procedures, views, indexing, and role-based access control in Oracle SQL.", 
         ]
     }, 
@@ -29497,7 +29559,7 @@ const ProfessionalExperience = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("sec
                     children: "Work History"
                 }, void 0, false, {
                     fileName: "src/Components/ProfessionalExperience.jsx",
-                    lineNumber: 19,
+                    lineNumber: 39,
                     columnNumber: 7
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
@@ -29505,27 +29567,27 @@ const ProfessionalExperience = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("sec
                     children: "Professional Experience"
                 }, void 0, false, {
                     fileName: "src/Components/ProfessionalExperience.jsx",
-                    lineNumber: 20,
+                    lineNumber: 40,
                     columnNumber: 7
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                     className: "section-subtitle fade-in delay-2",
-                    children: "Industry roles where I delivered measurable impact across backend performance and UX."
+                    children: "Three industry roles delivering measurable impact across data engineering, AI product development, and full-stack systems."
                 }, void 0, false, {
                     fileName: "src/Components/ProfessionalExperience.jsx",
-                    lineNumber: 21,
+                    lineNumber: 41,
                     columnNumber: 7
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                     className: "timeline",
                     children: experienceList.map((job, i)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            className: `timeline-item fade-in delay-${i + 1}`,
+                            className: `timeline-item fade-in delay-${Math.min(i + 1, 5)}`,
                             children: [
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                                     className: "timeline-dot"
                                 }, void 0, false, {
                                     fileName: "src/Components/ProfessionalExperience.jsx",
-                                    lineNumber: 28,
+                                    lineNumber: 49,
                                     columnNumber: 13
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -29533,7 +29595,7 @@ const ProfessionalExperience = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("sec
                                     children: job.date
                                 }, void 0, false, {
                                     fileName: "src/Components/ProfessionalExperience.jsx",
-                                    lineNumber: 29,
+                                    lineNumber: 50,
                                     columnNumber: 13
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -29543,7 +29605,7 @@ const ProfessionalExperience = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("sec
                                             children: job.title
                                         }, void 0, false, {
                                             fileName: "src/Components/ProfessionalExperience.jsx",
-                                            lineNumber: 31,
+                                            lineNumber: 52,
                                             columnNumber: 15
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -29551,7 +29613,7 @@ const ProfessionalExperience = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("sec
                                             children: job.company
                                         }, void 0, false, {
                                             fileName: "src/Components/ProfessionalExperience.jsx",
-                                            lineNumber: 32,
+                                            lineNumber: 53,
                                             columnNumber: 15
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
@@ -29559,40 +29621,40 @@ const ProfessionalExperience = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("sec
                                                     children: point
                                                 }, point, false, {
                                                     fileName: "src/Components/ProfessionalExperience.jsx",
-                                                    lineNumber: 35,
+                                                    lineNumber: 56,
                                                     columnNumber: 19
                                                 }, undefined))
                                         }, void 0, false, {
                                             fileName: "src/Components/ProfessionalExperience.jsx",
-                                            lineNumber: 33,
+                                            lineNumber: 54,
                                             columnNumber: 15
                                         }, undefined)
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/Components/ProfessionalExperience.jsx",
-                                    lineNumber: 30,
+                                    lineNumber: 51,
                                     columnNumber: 13
                                 }, undefined)
                             ]
                         }, `${job.company}-${i}`, true, {
                             fileName: "src/Components/ProfessionalExperience.jsx",
-                            lineNumber: 27,
+                            lineNumber: 48,
                             columnNumber: 11
                         }, undefined))
                 }, void 0, false, {
                     fileName: "src/Components/ProfessionalExperience.jsx",
-                    lineNumber: 25,
+                    lineNumber: 46,
                     columnNumber: 7
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/Components/ProfessionalExperience.jsx",
-            lineNumber: 18,
+            lineNumber: 38,
             columnNumber: 5
         }, undefined)
     }, void 0, false, {
         fileName: "src/Components/ProfessionalExperience.jsx",
-        lineNumber: 17,
+        lineNumber: 37,
         columnNumber: 3
     }, undefined);
 _c = ProfessionalExperience;
@@ -29619,6 +29681,12 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _propTypes = require("prop-types");
 var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
+var _envelopeSvg = require("../images/socials/envelope.svg");
+var _envelopeSvgDefault = parcelHelpers.interopDefault(_envelopeSvg);
+var _linkedinSvg = require("../images/socials/linkedin.svg");
+var _linkedinSvgDefault = parcelHelpers.interopDefault(_linkedinSvg);
+var _githubSvg = require("../images/socials/github.svg");
+var _githubSvgDefault = parcelHelpers.interopDefault(_githubSvg);
 var _s = $RefreshSig$();
 const Contact = ({ email  })=>{
     _s();
@@ -29643,24 +29711,22 @@ const Contact = ({ email  })=>{
     };
     const contactLinks = [
         {
-            icon: "\uD83D\uDCE7",
+            icon: (0, _envelopeSvgDefault.default),
+            alt: "Email",
             label: email,
             href: `mailto:${email}`
         },
         {
-            icon: "\uD83D\uDCBC",
-            label: "linkedin.com/in/oscar-antonio-juarez-jimenez-7979a6287",
-            href: "https://www.linkedin.com/in/oscar-antonio-juarez-jimenez-7979a6287"
+            icon: (0, _linkedinSvgDefault.default),
+            alt: "LinkedIn",
+            label: "https://www.linkedin.com/in/oscar-juji/",
+            href: "https://www.linkedin.com/in/oscar-juji/"
         },
         {
-            icon: "\uD83D\uDC19",
+            icon: (0, _githubSvgDefault.default),
+            alt: "GitHub",
             label: "github.com/OscarJuJi",
             href: "https://github.com/OscarJuJi"
-        },
-        {
-            icon: "\uD83D\uDCF8",
-            label: "instagram.com/Oscar_JuJi",
-            href: "https://www.instagram.com/Oscar_JuJi"
         }, 
     ];
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("section", {
@@ -29678,7 +29744,7 @@ const Contact = ({ email  })=>{
                                 children: "Get In Touch"
                             }, void 0, false, {
                                 fileName: "src/Components/Contact.jsx",
-                                lineNumber: 49,
+                                lineNumber: 51,
                                 columnNumber: 13
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
@@ -29686,7 +29752,7 @@ const Contact = ({ email  })=>{
                                 children: "Let's Work Together"
                             }, void 0, false, {
                                 fileName: "src/Components/Contact.jsx",
-                                lineNumber: 50,
+                                lineNumber: 52,
                                 columnNumber: 13
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -29694,7 +29760,7 @@ const Contact = ({ email  })=>{
                                 children: "Whether you have an exciting AI project, an internship opportunity, or just want to say hello — my inbox is always open."
                             }, void 0, false, {
                                 fileName: "src/Components/Contact.jsx",
-                                lineNumber: 51,
+                                lineNumber: 53,
                                 columnNumber: 13
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -29707,10 +29773,17 @@ const Contact = ({ email  })=>{
                                         children: [
                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                                                 className: "contact-link-icon",
-                                                children: item.icon
+                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                                    src: item.icon,
+                                                    alt: item.alt
+                                                }, void 0, false, {
+                                                    fileName: "src/Components/Contact.jsx",
+                                                    lineNumber: 68,
+                                                    columnNumber: 21
+                                                }, undefined)
                                             }, void 0, false, {
                                                 fileName: "src/Components/Contact.jsx",
-                                                lineNumber: 65,
+                                                lineNumber: 67,
                                                 columnNumber: 19
                                             }, undefined),
                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
@@ -29721,24 +29794,24 @@ const Contact = ({ email  })=>{
                                                 children: item.label
                                             }, void 0, false, {
                                                 fileName: "src/Components/Contact.jsx",
-                                                lineNumber: 66,
+                                                lineNumber: 70,
                                                 columnNumber: 19
                                             }, undefined)
                                         ]
                                     }, item.href, true, {
                                         fileName: "src/Components/Contact.jsx",
-                                        lineNumber: 58,
+                                        lineNumber: 60,
                                         columnNumber: 17
                                     }, undefined))
                             }, void 0, false, {
                                 fileName: "src/Components/Contact.jsx",
-                                lineNumber: 56,
+                                lineNumber: 58,
                                 columnNumber: 13
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/Components/Contact.jsx",
-                        lineNumber: 48,
+                        lineNumber: 50,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -29759,7 +29832,7 @@ const Contact = ({ email  })=>{
                                                     children: "Name"
                                                 }, void 0, false, {
                                                     fileName: "src/Components/Contact.jsx",
-                                                    lineNumber: 76,
+                                                    lineNumber: 80,
                                                     columnNumber: 19
                                                 }, undefined),
                                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -29772,13 +29845,13 @@ const Contact = ({ email  })=>{
                                                     required: true
                                                 }, void 0, false, {
                                                     fileName: "src/Components/Contact.jsx",
-                                                    lineNumber: 77,
+                                                    lineNumber: 81,
                                                     columnNumber: 19
                                                 }, undefined)
                                             ]
                                         }, void 0, true, {
                                             fileName: "src/Components/Contact.jsx",
-                                            lineNumber: 75,
+                                            lineNumber: 79,
                                             columnNumber: 17
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -29789,7 +29862,7 @@ const Contact = ({ email  })=>{
                                                     children: "Email"
                                                 }, void 0, false, {
                                                     fileName: "src/Components/Contact.jsx",
-                                                    lineNumber: 88,
+                                                    lineNumber: 92,
                                                     columnNumber: 19
                                                 }, undefined),
                                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -29802,19 +29875,19 @@ const Contact = ({ email  })=>{
                                                     required: true
                                                 }, void 0, false, {
                                                     fileName: "src/Components/Contact.jsx",
-                                                    lineNumber: 89,
+                                                    lineNumber: 93,
                                                     columnNumber: 19
                                                 }, undefined)
                                             ]
                                         }, void 0, true, {
                                             fileName: "src/Components/Contact.jsx",
-                                            lineNumber: 87,
+                                            lineNumber: 91,
                                             columnNumber: 17
                                         }, undefined)
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/Components/Contact.jsx",
-                                    lineNumber: 74,
+                                    lineNumber: 78,
                                     columnNumber: 15
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -29825,7 +29898,7 @@ const Contact = ({ email  })=>{
                                             children: "Subject"
                                         }, void 0, false, {
                                             fileName: "src/Components/Contact.jsx",
-                                            lineNumber: 102,
+                                            lineNumber: 106,
                                             columnNumber: 17
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -29837,13 +29910,13 @@ const Contact = ({ email  })=>{
                                             onChange: handleChange
                                         }, void 0, false, {
                                             fileName: "src/Components/Contact.jsx",
-                                            lineNumber: 103,
+                                            lineNumber: 107,
                                             columnNumber: 17
                                         }, undefined)
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/Components/Contact.jsx",
-                                    lineNumber: 101,
+                                    lineNumber: 105,
                                     columnNumber: 15
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -29854,7 +29927,7 @@ const Contact = ({ email  })=>{
                                             children: "Message"
                                         }, void 0, false, {
                                             fileName: "src/Components/Contact.jsx",
-                                            lineNumber: 114,
+                                            lineNumber: 118,
                                             columnNumber: 17
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("textarea", {
@@ -29866,13 +29939,13 @@ const Contact = ({ email  })=>{
                                             required: true
                                         }, void 0, false, {
                                             fileName: "src/Components/Contact.jsx",
-                                            lineNumber: 115,
+                                            lineNumber: 119,
                                             columnNumber: 17
                                         }, undefined)
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/Components/Contact.jsx",
-                                    lineNumber: 113,
+                                    lineNumber: 117,
                                     columnNumber: 15
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -29881,34 +29954,34 @@ const Contact = ({ email  })=>{
                                     children: "Send Message →"
                                 }, void 0, false, {
                                     fileName: "src/Components/Contact.jsx",
-                                    lineNumber: 125,
+                                    lineNumber: 129,
                                     columnNumber: 15
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/Components/Contact.jsx",
-                            lineNumber: 73,
+                            lineNumber: 77,
                             columnNumber: 13
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/Components/Contact.jsx",
-                        lineNumber: 72,
+                        lineNumber: 76,
                         columnNumber: 11
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/Components/Contact.jsx",
-                lineNumber: 47,
+                lineNumber: 49,
                 columnNumber: 9
             }, undefined)
         }, void 0, false, {
             fileName: "src/Components/Contact.jsx",
-            lineNumber: 46,
+            lineNumber: 48,
             columnNumber: 7
         }, undefined)
     }, void 0, false, {
         fileName: "src/Components/Contact.jsx",
-        lineNumber: 45,
+        lineNumber: 47,
         columnNumber: 5
     }, undefined);
 };
@@ -29926,6 +29999,6 @@ $RefreshReg$(_c, "Contact");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","prop-types":"7wKI2","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["1xC6H","ShInH","8lqZg"], "8lqZg", "parcelRequire6158")
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","prop-types":"7wKI2","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../images/socials/envelope.svg":"92UhI","../images/socials/linkedin.svg":"5XSmz","../images/socials/github.svg":"vP2m6"}]},["1xC6H","ShInH","8lqZg"], "8lqZg", "parcelRequire6158")
 
 //# sourceMappingURL=index.975ef6c8.js.map
