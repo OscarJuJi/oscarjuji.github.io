@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 
-const resume = "/resume.pdf";
-const cv = "/cv.pdf";
+const resume = "../public/resume.pdf";
+const cv = "../public/cv.pdf";
 
 const typingPhrases = [
   "Artificial Intelligence Engineer",
@@ -89,20 +89,10 @@ const Home = ({ name }) => {
         </p>
 
         <div className="hero-actions fade-in delay-4">
-          <a
-            href={resume}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn btn-primary"
-          >
+          <a href={resume} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
             ↓ Curriculum
           </a>
-          <a
-            href={cv}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn btn-outline"
-          >
+          <a href={cv} target="_blank" rel="noopener noreferrer" className="btn btn-outline">
             ↓ Resume
           </a>
           <a href="#contact" className="btn btn-ghost">
