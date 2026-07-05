@@ -4,10 +4,17 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Oscar's digitals portfolio </title>
+    <meta name="description" content="Oscar Antonio Juarez — Artificial Intelligence Engineer & Full Stack Developer. Portfolio showcasing AI/ML projects, cloud work, and software engineering." />
+    <title>Oscar Juarez — AI Engineer & Full Stack Developer</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="icon" href="images/icon.webp" type="image/webp">
-
+    <script>
+      (function () {
+        var saved = localStorage.getItem('theme');
+        var preferred = (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : saved;
+        document.documentElement.setAttribute('data-theme', preferred || 'light');
+      })();
+    </script>
   </head>
   <body>
     <noscript>You need to enable Javascript to run this application.</noscript>
@@ -16,15 +23,5 @@
     </div>
     
     <script type="module" src="index.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="Text_typing_animation.js"></script>
-    <script>
-      $(function() {
-      $('.scroll-down').click (function() {
-      $('html, body').animate({scrollTop: $('section.about').offset().top }, 'slow');
-      return false;
-      });
-      });
-      </script>
   </body>
 </html>

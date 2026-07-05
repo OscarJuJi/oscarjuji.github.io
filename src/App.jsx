@@ -1,29 +1,15 @@
-/**
- * Application component
- *
- * To contain application wide settings, routes, state, etc.
- */
-
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import About from "./Components/About";
+import Contact from "./Components/Contact";
 import Footer from "./Components/Footer";
 import Header from "./Components/Header";
 import Home from "./Components/Home";
 import Portfolio from "./Components/Portfolio";
 import Education from "./Components/Education";
-import "./styles.css";
 import ProfessionalExperience from "./Components/ProfessionalExperience";
+import "./styles.css";
 
-/**
- * This object represents your information. The project is set so that you
- * only need to update these here, and values are passed a properties to the
- * components that need that information.
- *
- * Update the values below with your information.
- *
- * If you don't have one of the social sites listed, leave it as an empty string.
- */
 const siteProps = {
   name: "Oscar Antonio Juarez",
   title: "Full Stack Developer & Artificial Intelligence Engineer",
@@ -36,19 +22,55 @@ const siteProps = {
   youTube: "",
 };
 
-const primaryColor = "#4E567E";
-const secondaryColor = "#D2F1E4";
-
 const App = () => {
+  const [darkMode, setDarkMode] = useState(() => {
+    const saved = localStorage.getItem("theme");
+    if (saved) return saved === "dark";
+    return window.matchMedia("(prefers-color-scheme: dark)").matches;
+  });
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", darkMode ? "dark" : "light");
+    localStorage.setItem("theme", darkMode ? "dark" : "light");
+  }, [darkMode]);
+
+  // Global scroll-reveal: observe all .fade-in* elements once mounted
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.08, rootMargin: "0px 0px -40px 0px" }
+    );
+
+    const scan = () => {
+      document
+        .querySelectorAll(".fade-in:not(.visible), .fade-in-left:not(.visible), .fade-in-right:not(.visible)")
+        .forEach((el) => observer.observe(el));
+    };
+
+    // Initial scan after mount
+    const t = setTimeout(scan, 80);
+    return () => {
+      clearTimeout(t);
+      observer.disconnect();
+    };
+  }, []);
+
   return (
     <div id="main">
-      <Header />
+      <Header darkMode={darkMode} onToggleDark={() => setDarkMode((d) => !d)} />
       <Home name={siteProps.name} title={siteProps.title} />
       <About />
       <Education />
       <ProfessionalExperience />
       <Portfolio />
-      <Footer {...siteProps} primaryColor={primaryColor} secondaryColor={secondaryColor} />
+      <Contact email={siteProps.email} />
+      <Footer {...siteProps} />
     </div>
   );
 };

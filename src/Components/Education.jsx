@@ -1,99 +1,79 @@
 import React from "react";
-import image from "../images/background1.jpg"; // Imagen de fondo
-
-const imageAltText = "purple and blue abstract background";
 
 const educationList = [
   {
-    title: "Artificial Intelligence Engineering",
+    date: "Aug 2021 – Jul 2025",
+    title: "B.Sc. Artificial Intelligence Engineering · GPA 9.5 / 10",
+    institution: "Escuela Superior de Cómputo (ESCOM) · IPN — Mexico City",
     description:
-      "I am currently pursuing a degree in Artificial Intelligence Engineering at the Escuela Superior de Cómputo (ESCOM), IPN (2021-2025). My studies focus on machine learning models and deep learning algorithms. Additionally, I have developed strong soft skills, including teamwork, assertive communication, and personal leadership. (Jun-2025)",
+      "Focused on machine learning, deep learning, computer vision, NLP, bio-inspired algorithms, and software engineering for intelligent systems. Relevant coursework: Machine Learning, Digital Image Processing, Natural Language Technologies, Neural Networks & Deep Learning, Advanced Neural Networks, Software Engineering for Intelligent Systems, Parallel Computing, Bio-Inspired Algorithms.",
   },
   {
-    title: "Oracle next education",
+    date: "2024 – Present",
+    title: "AWS Certified Data Engineer – Associate (In Progress)",
+    institution: "Amazon Web Services",
     description:
-      "I actively participated in the Oracle Next Education course sponsored by Oracle. Through this program, I acquired essential skills that span various relevant areas: programming logic, front-end and back-end development, as well as entrepreneurship.",
+      "Preparing for the AWS Data Engineer – Associate certification, covering data pipelines, storage, processing, and security on AWS infrastructure.",
   },
   {
-    title: "Microsoft Learn AI Skills Challenge",
+    date: "2025",
+    title: "SAFe Scrum Master · AWS Technical Essentials · Jira Scrum Team",
+    institution: "Scaled Agile · Amazon Web Services · Atlassian",
     description:
-      "Through this course, I obtained insights into Microsoft Azure cloud services, with a specific focus on practical applications of Machine Learning and Cognitive Services. Furthermore, I expanded my understanding of the lifecycle and documentation processes for artificial intelligence models.",
+      "Completed agile project management training (SAFe Scrum Master), foundational AWS cloud services (AWS Technical Essentials), and Jira workflow configuration for Scrum teams.",
   },
   {
-    title: "Google Cloud Career Launchpad",
+    date: "2024",
+    title: "Secure Development 3.0 · FreeCodeCamp Certifications",
+    institution: "Net4skills · FreeCodeCamp",
     description:
-      "Through the Google Cloud Computing Foundations Certificate and the Beginner: Introduction to Generative AI Learning Path, I gained knowledge in cloud architecture, infrastructure, and services using Google Cloud Platform (GCP). I also learned the fundamentals of generative AI, including neural networks, NLP, and image generation, exploring their practical applications.",
+      "Secure software development practices (Net4skills). FreeCodeCamp certifications in Legacy Responsive Web Design, Legacy Python for Everybody, and JavaScript Algorithms & Data Structures.",
+  },
+  {
+    date: "2023",
+    title: "Google Cloud Computing Foundations · GenAI Skill Badge Pathways",
+    institution: "Google Cloud",
+    description:
+      "Earned the Google Cloud Computing Foundations Certificate and the Beginner: Introduction to Generative AI Learning Path, covering cloud architecture, GCP services, neural networks, NLP, and image generation.",
+  },
+  {
+    date: "2023",
+    title: "Microsoft Learn AI Skills Challenge (Azure)",
+    institution: "Microsoft",
+    description:
+      "Obtained insights into Azure cloud services with a focus on Machine Learning, Cognitive Services, and the lifecycle of AI models.",
+  },
+  {
+    date: "2022",
+    title: "Oracle Next Education",
+    institution: "Oracle · Alura LATAM",
+    description:
+      "Acquired skills in programming logic, front-end and back-end development, and entrepreneurship through Oracle's sponsored training program.",
   },
 ];
 
 const Education = () => (
-  <section
-    className="padding"
-    id="education"
-    style={{
-      backgroundImage: `url(${image})`,
-      backgroundSize: "cover",
-      backgroundPosition: "center",
-      backgroundAttachment: "fixed", // Efecto Parallax (opcional)
-      width: "100%",
-      minHeight: "100vh",
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      justifyContent: "center",
-      position: "relative",
-    }}
-  >
-    <div
-      style={{
-        width: "50%",
-        borderRadius: "1rem",
-        padding: "4rem",
-        margin: "3rem auto",
-        textAlign: "center",
-        
-        color: "white",
-        zIndex: 1,
-      }}
-    >
-      <h2 style={{ textAlign: "center" }}>Education</h2>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          paddingTop: "3rem",
-          paddingBottom: "3rem",
-          justifyContent: "center",
-        }}
-      >
-        <div className="container">
-          {educationList.map((education) => (
-            <div
-              className="box"
-              key={education.title}
-              style={{ background: "rgba(238, 238, 220, 0.85)", padding: "1rem", borderRadius: "0.5rem" }}
-            >
-              <h3>{education.title}</h3>
-              <p className="small" style={{ color: "#3d3d3d" }}>{education.description}</p>
-            </div>
-          ))}
-        </div>
-      </div>
+  <section id="education" className="timeline-section alt-bg">
+    <div className="container">
+      <span className="section-label fade-in">Academic Background</span>
+      <h2 className="section-title fade-in delay-1">Education &amp; Certifications</h2>
+      <p className="section-subtitle fade-in delay-2">
+        A strong academic foundation at IPN paired with 10+ industry certifications spanning cloud,
+        AI, agile, and secure development.
+      </p>
 
-      <div
-        id="Scroll_Down_B_S"
-        className="S_D_B_S_C"
-        style={{
-          position: "absolute",
-          bottom: "-3rem",
-          left: "50%",
-          transform: "translateX(-50%)",
-          zIndex: 1,
-        }}
-      >
-        <a href="#experience">
-          <span></span><span></span><span></span>
-        </a>
+      <div className="timeline">
+        {educationList.map((item, i) => (
+          <div key={item.title} className={`timeline-item fade-in delay-${Math.min(i + 1, 5)}`}>
+            <div className="timeline-dot" />
+            <div className="timeline-date">{item.date}</div>
+            <div className="timeline-card">
+              <h3>{item.title}</h3>
+              <div className="timeline-company">{item.institution}</div>
+              <p>{item.description}</p>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   </section>
