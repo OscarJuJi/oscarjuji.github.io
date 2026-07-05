@@ -1,8 +1,11 @@
 import React, { useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 
-const resume = "../public/resume.pdf";
-const cv = "../public/cv.pdf";
+import resumePdf from "url:../../public/resume.pdf";
+import cvPdf from "url:../../public/cv.pdf";
+
+const resume = resumePdf;
+const cv = cvPdf;
 
 const typingPhrases = [
   "Artificial Intelligence Engineer",
