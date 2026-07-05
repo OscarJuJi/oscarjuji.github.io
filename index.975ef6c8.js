@@ -28867,8 +28867,8 @@ var _reactDefault = parcelHelpers.interopDefault(_react);
 var _propTypes = require("prop-types");
 var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
 var _s = $RefreshSig$();
-const resume = "/resume.pdf";
-const cv = "/cv.pdf";
+const resume = "../public/resume.pdf";
+const cv = "../public/cv.pdf";
 const typingPhrases = [
     "Artificial Intelligence Engineer",
     "Data Engineer",
@@ -29027,7 +29027,7 @@ const Home = ({ name  })=>{
                                 children: "↓ Resume"
                             }, void 0, false, {
                                 fileName: "src/Components/Home.jsx",
-                                lineNumber: 100,
+                                lineNumber: 95,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -29036,7 +29036,7 @@ const Home = ({ name  })=>{
                                 children: "Get in touch →"
                             }, void 0, false, {
                                 fileName: "src/Components/Home.jsx",
-                                lineNumber: 108,
+                                lineNumber: 98,
                                 columnNumber: 11
                             }, undefined)
                         ]
@@ -29054,7 +29054,7 @@ const Home = ({ name  })=>{
                                         children: s.number
                                     }, void 0, false, {
                                         fileName: "src/Components/Home.jsx",
-                                        lineNumber: 116,
+                                        lineNumber: 106,
                                         columnNumber: 15
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
@@ -29062,18 +29062,18 @@ const Home = ({ name  })=>{
                                         children: s.label
                                     }, void 0, false, {
                                         fileName: "src/Components/Home.jsx",
-                                        lineNumber: 117,
+                                        lineNumber: 107,
                                         columnNumber: 15
                                     }, undefined)
                                 ]
                             }, s.label, true, {
                                 fileName: "src/Components/Home.jsx",
-                                lineNumber: 115,
+                                lineNumber: 105,
                                 columnNumber: 13
                             }, undefined))
                     }, void 0, false, {
                         fileName: "src/Components/Home.jsx",
-                        lineNumber: 113,
+                        lineNumber: 103,
                         columnNumber: 9
                     }, undefined)
                 ]
@@ -29091,20 +29091,20 @@ const Home = ({ name  })=>{
                         className: "scroll-line"
                     }, void 0, false, {
                         fileName: "src/Components/Home.jsx",
-                        lineNumber: 124,
+                        lineNumber: 114,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                         children: "Scroll"
                     }, void 0, false, {
                         fileName: "src/Components/Home.jsx",
-                        lineNumber: 125,
+                        lineNumber: 115,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/Components/Home.jsx",
-                lineNumber: 123,
+                lineNumber: 113,
                 columnNumber: 7
             }, undefined)
         ]
