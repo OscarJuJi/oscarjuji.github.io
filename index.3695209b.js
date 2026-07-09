@@ -1,2 +1,0 @@
-var part,words=["Hello there"],i=0,offset=0,len=words.length,forwards=!0,skip_count=0,skip_delay=55,speed=80,wordflick=function(){setInterval((function(){forwards?offset>=words[i].length&&++skip_count==skip_delay&&(forwards=!1,skip_count=0):0==offset&&(forwards=!0,i++,offset=0,i>=len&&(i=0)),part=words[i].substr(0,offset),0==skip_count&&(forwards?offset++:offset--),$(".word").text(part)}),speed)};$(document).ready((function(){wordflick()}));
-//# sourceMappingURL=index.3695209b.js.map

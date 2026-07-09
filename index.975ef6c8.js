@@ -27065,6 +27065,8 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _about = require("./Components/About");
 var _aboutDefault = parcelHelpers.interopDefault(_about);
+var _aichat = require("./Components/AIChat");
+var _aichatDefault = parcelHelpers.interopDefault(_aichat);
 var _contact = require("./Components/Contact");
 var _contactDefault = parcelHelpers.interopDefault(_contact);
 var _footer = require("./Components/Footer");
@@ -27079,15 +27081,16 @@ var _education = require("./Components/Education");
 var _educationDefault = parcelHelpers.interopDefault(_education);
 var _professionalExperience = require("./Components/ProfessionalExperience");
 var _professionalExperienceDefault = parcelHelpers.interopDefault(_professionalExperience);
+var _siteDataMjs = require("./site-data.mjs");
 var _stylesCss = require("./styles.css");
 var _s = $RefreshSig$();
 const siteProps = {
-    name: "Oscar Antonio Juarez",
-    title: "Full Stack Developer & Artificial Intelligence Engineer",
-    email: "oscar.a.juarez.j@gmail.com",
-    gitHub: "OscarJuJi",
+    name: (0, _siteDataMjs.profile).name,
+    title: (0, _siteDataMjs.profile).title,
+    email: (0, _siteDataMjs.profile).email,
+    gitHub: (0, _siteDataMjs.profile).gitHub,
     instagram: "Oscar_JuJi",
-    linkedIn: "oscar-antonio-juarez-jimenez-7979a6287",
+    linkedIn: (0, _siteDataMjs.profile).linkedIn,
     medium: "",
     twitter: "",
     youTube: ""
@@ -27133,7 +27136,7 @@ const App = ()=>{
                 onToggleDark: ()=>setDarkMode((d)=>!d)
             }, void 0, false, {
                 fileName: "src/App.jsx",
-                lineNumber: 66,
+                lineNumber: 68,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _homeDefault.default), {
@@ -27141,47 +27144,52 @@ const App = ()=>{
                 title: siteProps.title
             }, void 0, false, {
                 fileName: "src/App.jsx",
-                lineNumber: 67,
+                lineNumber: 69,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _aboutDefault.default), {}, void 0, false, {
                 fileName: "src/App.jsx",
-                lineNumber: 68,
+                lineNumber: 70,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _educationDefault.default), {}, void 0, false, {
                 fileName: "src/App.jsx",
-                lineNumber: 69,
+                lineNumber: 71,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _professionalExperienceDefault.default), {}, void 0, false, {
                 fileName: "src/App.jsx",
-                lineNumber: 70,
+                lineNumber: 72,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _portfolioDefault.default), {}, void 0, false, {
                 fileName: "src/App.jsx",
-                lineNumber: 71,
+                lineNumber: 73,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _contactDefault.default), {
                 email: siteProps.email
             }, void 0, false, {
                 fileName: "src/App.jsx",
-                lineNumber: 72,
+                lineNumber: 74,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _footerDefault.default), {
                 ...siteProps
             }, void 0, false, {
                 fileName: "src/App.jsx",
-                lineNumber: 73,
+                lineNumber: 75,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _aichatDefault.default), {}, void 0, false, {
+                fileName: "src/App.jsx",
+                lineNumber: 76,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/App.jsx",
-        lineNumber: 65,
+        lineNumber: 67,
         columnNumber: 5
     }, undefined);
 };
@@ -27196,7 +27204,7 @@ $RefreshReg$(_c, "App");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./Components/About":"kouZu","./Components/Footer":"7GWgX","./Components/Header":"9Dt2F","./Components/Home":"jIEVO","./Components/Portfolio":"lCaEt","./Components/Education":"6QZcy","./styles.css":"lW6qc","./Components/ProfessionalExperience":"3JLzT","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./Components/Contact":"3ECXD"}],"kouZu":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./Components/About":"kouZu","./Components/AIChat":"30unt","./Components/Contact":"3ECXD","./Components/Footer":"7GWgX","./Components/Header":"9Dt2F","./Components/Home":"jIEVO","./Components/Portfolio":"lCaEt","./Components/Education":"6QZcy","./Components/ProfessionalExperience":"3JLzT","./site-data.mjs":"iovxP","./styles.css":"lW6qc","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"kouZu":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$17a8 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -27208,8 +27216,261 @@ parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
-const description = "I'm an Artificial Intelligence Engineer and Data Engineer with hands-on industry experience designing large-scale ETL pipelines, building AI-powered products, and deploying ML-based solutions. I bridge the gap between AI research and production systems — from NeRF-based 3D reconstruction and RAG chatbots to distributed data processing on cloud infrastructure.";
-const quote = "Driven to build robust, data-driven solutions that optimize processes and extract actionable value from information. I thrive at the intersection of logic, analytics, and creativity.";
+var _siteDataMjs = require("../site-data.mjs");
+var _icons = require("./Icons");
+const STAT_ICONS = {
+    graduation: (0, _icons.GraduationIcon),
+    briefcase: (0, _icons.BriefcaseIcon),
+    trophy: (0, _icons.TrophyIcon),
+    rocket: (0, _icons.RocketIcon)
+};
+const About = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("section", {
+                id: "about",
+                className: "about-section",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "container",
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "about-grid",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "about-text",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                        className: "section-label fade-in",
+                                        children: "About Me"
+                                    }, void 0, false, {
+                                        fileName: "src/Components/About.jsx",
+                                        lineNumber: 23,
+                                        columnNumber: 13
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                                        className: "section-title fade-in delay-1",
+                                        children: "Who I Am"
+                                    }, void 0, false, {
+                                        fileName: "src/Components/About.jsx",
+                                        lineNumber: 24,
+                                        columnNumber: 13
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                        className: "fade-in delay-2",
+                                        children: (0, _siteDataMjs.aboutDescription)
+                                    }, void 0, false, {
+                                        fileName: "src/Components/About.jsx",
+                                        lineNumber: 25,
+                                        columnNumber: 13
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("blockquote", {
+                                        className: "about-quote fade-in delay-3",
+                                        children: (0, _siteDataMjs.aboutQuote)
+                                    }, void 0, false, {
+                                        fileName: "src/Components/About.jsx",
+                                        lineNumber: 26,
+                                        columnNumber: 13
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/Components/About.jsx",
+                                lineNumber: 22,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "stat-cards",
+                                children: (0, _siteDataMjs.aboutStats).map((s, i)=>{
+                                    const StatIcon = STAT_ICONS[s.icon];
+                                    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                        className: `stat-card fade-in delay-${i + 1}`,
+                                        children: [
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                                className: "stat-card-emoji",
+                                                children: StatIcon && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StatIcon, {
+                                                    size: 24
+                                                }, void 0, false, {
+                                                    fileName: "src/Components/About.jsx",
+                                                    lineNumber: 34,
+                                                    columnNumber: 66
+                                                }, undefined)
+                                            }, void 0, false, {
+                                                fileName: "src/Components/About.jsx",
+                                                lineNumber: 34,
+                                                columnNumber: 19
+                                            }, undefined),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                                className: "stat-card-number",
+                                                children: s.number
+                                            }, void 0, false, {
+                                                fileName: "src/Components/About.jsx",
+                                                lineNumber: 35,
+                                                columnNumber: 19
+                                            }, undefined),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                                className: "stat-card-label",
+                                                children: s.label
+                                            }, void 0, false, {
+                                                fileName: "src/Components/About.jsx",
+                                                lineNumber: 36,
+                                                columnNumber: 19
+                                            }, undefined)
+                                        ]
+                                    }, s.label, true, {
+                                        fileName: "src/Components/About.jsx",
+                                        lineNumber: 33,
+                                        columnNumber: 17
+                                    }, undefined);
+                                })
+                            }, void 0, false, {
+                                fileName: "src/Components/About.jsx",
+                                lineNumber: 29,
+                                columnNumber: 11
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/Components/About.jsx",
+                        lineNumber: 21,
+                        columnNumber: 9
+                    }, undefined)
+                }, void 0, false, {
+                    fileName: "src/Components/About.jsx",
+                    lineNumber: 20,
+                    columnNumber: 7
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/Components/About.jsx",
+                lineNumber: 19,
+                columnNumber: 5
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("section", {
+                className: "skills-section",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "container",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                            className: "section-label fade-in",
+                            children: "Technical Skills"
+                        }, void 0, false, {
+                            fileName: "src/Components/About.jsx",
+                            lineNumber: 47,
+                            columnNumber: 9
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                            className: "section-title fade-in delay-1",
+                            children: "Tools & Technologies"
+                        }, void 0, false, {
+                            fileName: "src/Components/About.jsx",
+                            lineNumber: 48,
+                            columnNumber: 9
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                            className: "section-subtitle fade-in delay-2",
+                            children: "A broad toolkit spanning AI/ML research, cloud data engineering, and full-stack development."
+                        }, void 0, false, {
+                            fileName: "src/Components/About.jsx",
+                            lineNumber: 49,
+                            columnNumber: 9
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            className: "skills-grid",
+                            children: (0, _siteDataMjs.skillsList).map((skill, i)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                    className: "skill-card fade-in",
+                                    style: {
+                                        transitionDelay: `${i % 9 * 0.045}s`
+                                    },
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                            src: skill.icon,
+                                            alt: `${skill.name} logo`,
+                                            loading: "lazy"
+                                        }, void 0, false, {
+                                            fileName: "src/Components/About.jsx",
+                                            lineNumber: 59,
+                                            columnNumber: 15
+                                        }, undefined),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                            children: skill.name
+                                        }, void 0, false, {
+                                            fileName: "src/Components/About.jsx",
+                                            lineNumber: 60,
+                                            columnNumber: 15
+                                        }, undefined)
+                                    ]
+                                }, skill.name, true, {
+                                    fileName: "src/Components/About.jsx",
+                                    lineNumber: 54,
+                                    columnNumber: 13
+                                }, undefined))
+                        }, void 0, false, {
+                            fileName: "src/Components/About.jsx",
+                            lineNumber: 52,
+                            columnNumber: 9
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/Components/About.jsx",
+                    lineNumber: 46,
+                    columnNumber: 7
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/Components/About.jsx",
+                lineNumber: 45,
+                columnNumber: 5
+            }, undefined)
+        ]
+    }, void 0, true);
+_c = About;
+exports.default = About;
+var _c;
+$RefreshReg$(_c, "About");
+
+  $parcel$ReactRefreshHelpers$17a8.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../site-data.mjs":"iovxP","./Icons":"kp6YJ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"iovxP":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "profile", ()=>profile);
+parcelHelpers.export(exports, "aboutDescription", ()=>aboutDescription);
+parcelHelpers.export(exports, "aboutQuote", ()=>aboutQuote);
+parcelHelpers.export(exports, "aboutStats", ()=>aboutStats);
+parcelHelpers.export(exports, "skillsList", ()=>skillsList);
+parcelHelpers.export(exports, "educationList", ()=>educationList);
+parcelHelpers.export(exports, "experienceList", ()=>experienceList);
+const profile = {
+    name: "Oscar Antonio Juarez",
+    fullName: "Oscar Antonio Juarez Jimenez",
+    title: "Full Stack Developer & Artificial Intelligence Engineer",
+    location: "Mexico City, Mexico",
+    email: "oscar.a.juarez.j@gmail.com",
+    gitHub: "OscarJuJi",
+    linkedIn: "oscar-juji",
+    website: "oscarjuji.github.io"
+};
+const aboutDescription = "I am an Artificial Intelligence Engineer who approaches problems from both ends of the pipeline: building the data engineering foundations that make intelligent systems possible, and designing the machine learning models that run on top of them. I have hands-on experience across data engineering, machine learning, and applied AI, with a particular interest in computer vision, natural language processing, and generative AI. What drives me is turning ambitious, research-grade ideas into dependable systems that create real value.";
+const aboutQuote = "I believe great AI engineering is equal parts discipline and creativity. So if it can be imagined, it can be built — and I want to be the one to build it.";
+const aboutStats = [
+    {
+        number: "+20",
+        label: "Tools & Technologies",
+        icon: "graduation"
+    },
+    {
+        number: "+2",
+        label: "Years of Experience",
+        icon: "briefcase"
+    },
+    {
+        number: "10+",
+        label: "Certifications",
+        icon: "trophy"
+    },
+    {
+        number: "20+",
+        label: "Projects Built",
+        icon: "rocket"
+    }, 
+];
 const skillsList = [
     // AI / ML
     {
@@ -27346,223 +27607,84 @@ const skillsList = [
         icon: "https://img.icons8.com/?size=100&id=ezj3zaVtImPg&format=png&color=000000"
     }, 
 ];
-const stats = [
+const educationList = [
     {
-        number: "9.5",
-        label: "Degree GPA / 10",
-        emoji: "\uD83C\uDF93"
+        date: "Aug 2021 – Jul 2025",
+        title: "B.Sc. Artificial Intelligence Engineering \xb7 GPA 9.5 / 10",
+        institution: "Escuela Superior de C\xf3mputo (ESCOM) \xb7 IPN — Mexico City",
+        description: "Focused on machine learning, deep learning, computer vision, NLP, bio-inspired algorithms, and software engineering for intelligent systems. Relevant coursework: Machine Learning, Digital Image Processing, Natural Language Technologies, Neural Networks & Deep Learning, Advanced Neural Networks, Software Engineering for Intelligent Systems, Parallel Computing, Bio-Inspired Algorithms."
     },
     {
-        number: "3",
-        label: "Industry Roles",
-        emoji: "\uD83D\uDCBC"
+        date: "2024 – Present",
+        title: "AWS Certified Data Engineer – Associate (In Progress)",
+        institution: "Amazon Web Services",
+        description: "Preparing for the AWS Data Engineer – Associate certification, covering data pipelines, storage, processing, and security on AWS infrastructure."
     },
     {
-        number: "10+",
-        label: "Certifications",
-        emoji: "\uD83C\uDFC6"
+        date: "2025",
+        title: "SAFe Scrum Master \xb7 AWS Technical Essentials \xb7 Jira Scrum Team",
+        institution: "Scaled Agile \xb7 Amazon Web Services \xb7 Atlassian",
+        description: "Completed agile project management training (SAFe Scrum Master), foundational AWS cloud services (AWS Technical Essentials), and Jira workflow configuration for Scrum teams."
     },
     {
-        number: "6+",
-        label: "Projects Built",
-        emoji: "\uD83D\uDE80"
+        date: "2024",
+        title: "Secure Development 3.0 \xb7 FreeCodeCamp Certifications",
+        institution: "Net4skills \xb7 FreeCodeCamp",
+        description: "Secure software development practices (Net4skills). FreeCodeCamp certifications in Legacy Responsive Web Design, Legacy Python for Everybody, and JavaScript Algorithms & Data Structures."
+    },
+    {
+        date: "2023",
+        title: "Google Cloud Computing Foundations \xb7 GenAI Skill Badge Pathways",
+        institution: "Google Cloud",
+        description: "Earned the Google Cloud Computing Foundations Certificate and the Beginner: Introduction to Generative AI Learning Path, covering cloud architecture, GCP services, neural networks, NLP, and image generation."
+    },
+    {
+        date: "2023",
+        title: "Microsoft Learn AI Skills Challenge (Azure)",
+        institution: "Microsoft",
+        description: "Obtained insights into Azure cloud services with a focus on Machine Learning, Cognitive Services, and the lifecycle of AI models."
+    },
+    {
+        date: "2022",
+        title: "Oracle Next Education",
+        institution: "Oracle \xb7 Alura LATAM",
+        description: "Acquired skills in programming logic, front-end and back-end development, and entrepreneurship through Oracle's sponsored training program."
     }, 
 ];
-const About = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("section", {
-                id: "about",
-                className: "about-section",
-                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "container",
-                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "about-grid",
-                        children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                className: "about-text",
-                                children: [
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                        className: "section-label fade-in",
-                                        children: "About Me"
-                                    }, void 0, false, {
-                                        fileName: "src/Components/About.jsx",
-                                        lineNumber: 63,
-                                        columnNumber: 13
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                                        className: "section-title fade-in delay-1",
-                                        children: "Who I Am"
-                                    }, void 0, false, {
-                                        fileName: "src/Components/About.jsx",
-                                        lineNumber: 64,
-                                        columnNumber: 13
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                        className: "fade-in delay-2",
-                                        children: description
-                                    }, void 0, false, {
-                                        fileName: "src/Components/About.jsx",
-                                        lineNumber: 65,
-                                        columnNumber: 13
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("blockquote", {
-                                        className: "about-quote fade-in delay-3",
-                                        children: quote
-                                    }, void 0, false, {
-                                        fileName: "src/Components/About.jsx",
-                                        lineNumber: 66,
-                                        columnNumber: 13
-                                    }, undefined)
-                                ]
-                            }, void 0, true, {
-                                fileName: "src/Components/About.jsx",
-                                lineNumber: 62,
-                                columnNumber: 11
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                className: "stat-cards",
-                                children: stats.map((s, i)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: `stat-card fade-in delay-${i + 1}`,
-                                        children: [
-                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                                className: "stat-card-emoji",
-                                                children: s.emoji
-                                            }, void 0, false, {
-                                                fileName: "src/Components/About.jsx",
-                                                lineNumber: 72,
-                                                columnNumber: 17
-                                            }, undefined),
-                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                                className: "stat-card-number",
-                                                children: s.number
-                                            }, void 0, false, {
-                                                fileName: "src/Components/About.jsx",
-                                                lineNumber: 73,
-                                                columnNumber: 17
-                                            }, undefined),
-                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                                className: "stat-card-label",
-                                                children: s.label
-                                            }, void 0, false, {
-                                                fileName: "src/Components/About.jsx",
-                                                lineNumber: 74,
-                                                columnNumber: 17
-                                            }, undefined)
-                                        ]
-                                    }, s.label, true, {
-                                        fileName: "src/Components/About.jsx",
-                                        lineNumber: 71,
-                                        columnNumber: 15
-                                    }, undefined))
-                            }, void 0, false, {
-                                fileName: "src/Components/About.jsx",
-                                lineNumber: 69,
-                                columnNumber: 11
-                            }, undefined)
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/Components/About.jsx",
-                        lineNumber: 61,
-                        columnNumber: 9
-                    }, undefined)
-                }, void 0, false, {
-                    fileName: "src/Components/About.jsx",
-                    lineNumber: 60,
-                    columnNumber: 7
-                }, undefined)
-            }, void 0, false, {
-                fileName: "src/Components/About.jsx",
-                lineNumber: 59,
-                columnNumber: 5
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("section", {
-                className: "skills-section",
-                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "container",
-                    children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                            className: "section-label fade-in",
-                            children: "Technical Skills"
-                        }, void 0, false, {
-                            fileName: "src/Components/About.jsx",
-                            lineNumber: 84,
-                            columnNumber: 9
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                            className: "section-title fade-in delay-1",
-                            children: "Tools & Technologies"
-                        }, void 0, false, {
-                            fileName: "src/Components/About.jsx",
-                            lineNumber: 85,
-                            columnNumber: 9
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                            className: "section-subtitle fade-in delay-2",
-                            children: "A broad toolkit spanning AI/ML research, cloud data engineering, and full-stack development."
-                        }, void 0, false, {
-                            fileName: "src/Components/About.jsx",
-                            lineNumber: 86,
-                            columnNumber: 9
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            className: "skills-grid",
-                            children: skillsList.map((skill, i)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                    className: "skill-card fade-in",
-                                    style: {
-                                        transitionDelay: `${i % 9 * 0.045}s`
-                                    },
-                                    children: [
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                                            src: skill.icon,
-                                            alt: `${skill.name} logo`,
-                                            loading: "lazy"
-                                        }, void 0, false, {
-                                            fileName: "src/Components/About.jsx",
-                                            lineNumber: 96,
-                                            columnNumber: 15
-                                        }, undefined),
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                            children: skill.name
-                                        }, void 0, false, {
-                                            fileName: "src/Components/About.jsx",
-                                            lineNumber: 97,
-                                            columnNumber: 15
-                                        }, undefined)
-                                    ]
-                                }, skill.name, true, {
-                                    fileName: "src/Components/About.jsx",
-                                    lineNumber: 91,
-                                    columnNumber: 13
-                                }, undefined))
-                        }, void 0, false, {
-                            fileName: "src/Components/About.jsx",
-                            lineNumber: 89,
-                            columnNumber: 9
-                        }, undefined)
-                    ]
-                }, void 0, true, {
-                    fileName: "src/Components/About.jsx",
-                    lineNumber: 83,
-                    columnNumber: 7
-                }, undefined)
-            }, void 0, false, {
-                fileName: "src/Components/About.jsx",
-                lineNumber: 82,
-                columnNumber: 5
-            }, undefined)
+const experienceList = [
+    {
+        date: "Jul 2025 – Present",
+        title: "Data Engineer",
+        company: "Bluetab (an IBM Company) \xb7 BBVA",
+        bullets: [
+            "Implement ETL pipelines — ingestion, transformation, and storage — integrating multiple data sources into the bank's core data infrastructure.",
+            "Manage datasets and tables in AWS S3, ensuring structured storage and efficient access for Spark-based processing and advanced analytics.",
+            "Maintain and optimize data pipelines in distributed cluster environments, guaranteeing reliability, quality, and high availability.",
+            "Collaborate on data integration strategies for analytical use cases and ML models within the structural risk division.", 
         ]
-    }, void 0, true);
-_c = About;
-exports.default = About;
-var _c;
-$RefreshReg$(_c, "About");
+    },
+    {
+        date: "Feb – Jul 2025",
+        title: "Innovation & Development Intern",
+        company: "Grupo Salinas",
+        bullets: [
+            "Researched, developed, and deployed AI tools to optimize business workflows and validate models in innovation-driven environments.",
+            "Engineered AI agents, conversational chatbots, visual prototypes, and dynamic landing pages for internal business units.", 
+        ]
+    },
+    {
+        date: "Jun – Dec 2024",
+        title: "Full-Stack Intern",
+        company: "Banco de M\xe9xico",
+        bullets: [
+            "Boosted system performance by 30% by optimizing SQL queries and reducing algorithmic complexity in Java and JavaScript.",
+            "Streamlined an internal tool's UX through a more intuitive and responsive interface redesign.",
+            "Enforced database integrity and security via normalization, stored procedures, views, indexing, and role-based access control in Oracle SQL.", 
+        ]
+    }, 
+];
 
-  $parcel$ReactRefreshHelpers$17a8.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"gkKU3":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -27592,286 +27714,292 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}],"km3Ru":[function(require,module,exports) {
-"use strict";
-var Refresh = require("react-refresh/runtime");
-function debounce(func, delay) {
-    var args;
-    var timeout = undefined;
-    return function(args) {
-        clearTimeout(timeout);
-        timeout = setTimeout(function() {
-            timeout = undefined;
-            func.call(null, args);
-        }, delay);
-    };
-}
-var enqueueUpdate = debounce(function() {
-    Refresh.performReactRefresh();
-}, 30); // Everthing below is either adapted or copied from
-// https://github.com/facebook/metro/blob/61de16bd1edd7e738dd0311c89555a644023ab2d/packages/metro/src/lib/polyfills/require.js
-// MIT License - Copyright (c) Facebook, Inc. and its affiliates.
-module.exports.prelude = function(module1) {
-    window.$RefreshReg$ = function(type, id) {
-        Refresh.register(type, module1.id + " " + id);
-    };
-    window.$RefreshSig$ = Refresh.createSignatureFunctionForTransform;
-};
-module.exports.postlude = function(module1) {
-    if (isReactRefreshBoundary(module1.exports)) {
-        registerExportsForReactRefresh(module1);
-        if (module1.hot) {
-            module1.hot.dispose(function(data) {
-                if (Refresh.hasUnrecoverableErrors()) window.location.reload();
-                data.prevExports = module1.exports;
-            });
-            module1.hot.accept(function(getParents) {
-                var prevExports = module1.hot.data.prevExports;
-                var nextExports = module1.exports; // Since we just executed the code for it, it's possible
-                // that the new exports make it ineligible for being a boundary.
-                var isNoLongerABoundary = !isReactRefreshBoundary(nextExports); // It can also become ineligible if its exports are incompatible
-                // with the previous exports.
-                // For example, if you add/remove/change exports, we'll want
-                // to re-execute the importing modules, and force those components
-                // to re-render. Similarly, if you convert a class component
-                // to a function, we want to invalidate the boundary.
-                var didInvalidate = shouldInvalidateReactRefreshBoundary(prevExports, nextExports);
-                if (isNoLongerABoundary || didInvalidate) {
-                    // We'll be conservative. The only case in which we won't do a full
-                    // reload is if all parent modules are also refresh boundaries.
-                    // In that case we'll add them to the current queue.
-                    var parents = getParents();
-                    if (parents.length === 0) {
-                        // Looks like we bubbled to the root. Can't recover from that.
-                        window.location.reload();
-                        return;
-                    }
-                    return parents;
-                }
-                enqueueUpdate();
-            });
-        }
-    }
-};
-function isReactRefreshBoundary(exports) {
-    if (Refresh.isLikelyComponentType(exports)) return true;
-    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
-    return false;
-    var hasExports = false;
-    var areAllExportsComponents = true;
-    let isESM = "__esModule" in exports;
-    for(var key in exports){
-        hasExports = true;
-        if (key === "__esModule") continue;
-        var desc = Object.getOwnPropertyDescriptor(exports, key);
-        if (desc && desc.get && !isESM) // Don't invoke getters for CJS as they may have side effects.
-        return false;
-        var exportValue = exports[key];
-        if (!Refresh.isLikelyComponentType(exportValue)) areAllExportsComponents = false;
-    }
-    return hasExports && areAllExportsComponents;
-}
-function shouldInvalidateReactRefreshBoundary(prevExports, nextExports) {
-    var prevSignature = getRefreshBoundarySignature(prevExports);
-    var nextSignature = getRefreshBoundarySignature(nextExports);
-    if (prevSignature.length !== nextSignature.length) return true;
-    for(var i = 0; i < nextSignature.length; i++){
-        if (prevSignature[i] !== nextSignature[i]) return true;
-    }
-    return false;
-} // When this signature changes, it's unsafe to stop at this refresh boundary.
-function getRefreshBoundarySignature(exports) {
-    var signature = [];
-    signature.push(Refresh.getFamilyByType(exports));
-    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
-    // (This is important for legacy environments.)
-    return signature;
-    let isESM = "__esModule" in exports;
-    for(var key in exports){
-        if (key === "__esModule") continue;
-        var desc = Object.getOwnPropertyDescriptor(exports, key);
-        if (desc && desc.get && !isESM) continue;
-        var exportValue = exports[key];
-        signature.push(key);
-        signature.push(Refresh.getFamilyByType(exportValue));
-    }
-    return signature;
-}
-function registerExportsForReactRefresh(module1) {
-    var exports = module1.exports, id = module1.id;
-    Refresh.register(exports, id + " %exports%");
-    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
-    // (This is important for legacy environments.)
-    return;
-    let isESM = "__esModule" in exports;
-    for(var key in exports){
-        var desc = Object.getOwnPropertyDescriptor(exports, key);
-        if (desc && desc.get && !isESM) continue;
-        var exportValue = exports[key];
-        Refresh.register(exportValue, id + " %exports% " + key);
-    }
-}
-
-},{"react-refresh/runtime":"786KC"}],"7GWgX":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$8b43 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+},{}],"kp6YJ":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$c92e = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$8b43.prelude(module);
+$parcel$ReactRefreshHelpers$c92e.prelude(module);
 
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "GraduationIcon", ()=>GraduationIcon);
+parcelHelpers.export(exports, "BriefcaseIcon", ()=>BriefcaseIcon);
+parcelHelpers.export(exports, "TrophyIcon", ()=>TrophyIcon);
+parcelHelpers.export(exports, "RocketIcon", ()=>RocketIcon);
+parcelHelpers.export(exports, "SunIcon", ()=>SunIcon);
+parcelHelpers.export(exports, "MoonIcon", ()=>MoonIcon);
+parcelHelpers.export(exports, "SearchIcon", ()=>SearchIcon);
+parcelHelpers.export(exports, "BrainIcon", ()=>BrainIcon);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _propTypes = require("prop-types");
 var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
-var _envelopeSvg = require("../images/socials/envelope.svg");
-var _envelopeSvgDefault = parcelHelpers.interopDefault(_envelopeSvg);
-var _githubSvg = require("../images/socials/github.svg");
-var _githubSvgDefault = parcelHelpers.interopDefault(_githubSvg);
-var _instagramSvg = require("../images/socials/instagram.svg");
-var _instagramSvgDefault = parcelHelpers.interopDefault(_instagramSvg);
-var _linkedinSvg = require("../images/socials/linkedin.svg");
-var _linkedinSvgDefault = parcelHelpers.interopDefault(_linkedinSvg);
-const Footer = ({ name , email , gitHub , instagram , linkedIn  })=>{
-    const socials = [
-        {
-            show: email,
-            href: `mailto:${email}`,
-            icon: (0, _envelopeSvgDefault.default),
-            alt: "Email"
-        },
-        {
-            show: gitHub,
-            href: `https://github.com/${gitHub}`,
-            icon: (0, _githubSvgDefault.default),
-            alt: "GitHub"
-        },
-        {
-            show: linkedIn,
-            href: `https://www.linkedin.com/in/${linkedIn}`,
-            icon: (0, _linkedinSvgDefault.default),
-            alt: "LinkedIn"
-        }, 
-    ].filter((s)=>s.show);
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("footer", {
-        id: "footer",
-        className: "footer",
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-            className: "footer-inner",
-            children: [
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "footer-brand",
-                    children: [
-                        name.split(" ")[0],
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                            style: {
-                                color: "var(--color-accent)"
-                            },
-                            children: "."
-                        }, void 0, false, {
-                            fileName: "src/Components/Footer.jsx",
-                            lineNumber: 20,
-                            columnNumber: 59
-                        }, undefined)
-                    ]
-                }, void 0, true, {
-                    fileName: "src/Components/Footer.jsx",
-                    lineNumber: 20,
-                    columnNumber: 9
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                    className: "footer-tagline",
-                    children: "AI Engineer & Full Stack Developer"
-                }, void 0, false, {
-                    fileName: "src/Components/Footer.jsx",
-                    lineNumber: 21,
-                    columnNumber: 9
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "footer-socials",
-                    children: socials.map((s)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                            href: s.href,
-                            target: s.href.startsWith("mailto") ? undefined : "_blank",
-                            rel: s.href.startsWith("mailto") ? undefined : "noopener noreferrer",
-                            className: "footer-social-link",
-                            "aria-label": s.alt,
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                                src: s.icon,
-                                alt: s.alt
-                            }, void 0, false, {
-                                fileName: "src/Components/Footer.jsx",
-                                lineNumber: 33,
-                                columnNumber: 15
-                            }, undefined)
-                        }, s.alt, false, {
-                            fileName: "src/Components/Footer.jsx",
-                            lineNumber: 25,
-                            columnNumber: 13
-                        }, undefined))
-                }, void 0, false, {
-                    fileName: "src/Components/Footer.jsx",
-                    lineNumber: 23,
-                    columnNumber: 9
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "footer-divider"
-                }, void 0, false, {
-                    fileName: "src/Components/Footer.jsx",
-                    lineNumber: 38,
-                    columnNumber: 9
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                    className: "footer-copyright",
-                    children: [
-                        "\xa9 ",
-                        new Date().getFullYear(),
-                        " ",
-                        name,
-                        " — Built with React"
-                    ]
-                }, void 0, true, {
-                    fileName: "src/Components/Footer.jsx",
-                    lineNumber: 39,
-                    columnNumber: 9
-                }, undefined)
-            ]
-        }, void 0, true, {
-            fileName: "src/Components/Footer.jsx",
-            lineNumber: 19,
-            columnNumber: 7
+const GraduationIcon = ({ size =16  })=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("svg", {
+        xmlns: "http://www.w3.org/2000/svg",
+        width: size,
+        height: size,
+        fill: "currentColor",
+        viewBox: "0 0 16 16",
+        "aria-hidden": "true",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("path", {
+                d: "M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917z"
+            }, void 0, false, {
+                fileName: "src/Components/Icons.jsx",
+                lineNumber: 12,
+                columnNumber: 5
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("path", {
+                d: "M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466z"
+            }, void 0, false, {
+                fileName: "src/Components/Icons.jsx",
+                lineNumber: 13,
+                columnNumber: 5
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/Components/Icons.jsx",
+        lineNumber: 11,
+        columnNumber: 3
+    }, undefined);
+_c = GraduationIcon;
+const BriefcaseIcon = ({ size =16  })=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("svg", {
+        xmlns: "http://www.w3.org/2000/svg",
+        width: size,
+        height: size,
+        fill: "currentColor",
+        viewBox: "0 0 16 16",
+        "aria-hidden": "true",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("path", {
+                d: "M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v1.384l7.614 2.03a1.5 1.5 0 0 0 .772 0L16 5.884V4.5A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5"
+            }, void 0, false, {
+                fileName: "src/Components/Icons.jsx",
+                lineNumber: 19,
+                columnNumber: 5
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("path", {
+                d: "M0 12.5A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5V6.85L8.129 8.947a.5.5 0 0 1-.258 0L0 6.85z"
+            }, void 0, false, {
+                fileName: "src/Components/Icons.jsx",
+                lineNumber: 20,
+                columnNumber: 5
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/Components/Icons.jsx",
+        lineNumber: 18,
+        columnNumber: 3
+    }, undefined);
+_c1 = BriefcaseIcon;
+const TrophyIcon = ({ size =16  })=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("svg", {
+        xmlns: "http://www.w3.org/2000/svg",
+        width: size,
+        height: size,
+        fill: "currentColor",
+        viewBox: "0 0 16 16",
+        "aria-hidden": "true",
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("path", {
+            d: "M2.5.5A.5.5 0 0 1 3 0h10a.5.5 0 0 1 .5.5q0 .807-.034 1.536a3 3 0 1 1-1.133 5.89c-.79 1.865-1.878 2.777-2.833 3.011v2.173l1.425.356c.194.048.377.135.537.255L13.3 15.1a.5.5 0 0 1-.3.9H3a.5.5 0 0 1-.3-.9l1.838-1.379c.16-.12.343-.207.537-.255L6.5 13.11v-2.173c-.955-.234-2.043-1.146-2.833-3.012a3 3 0 1 1-1.132-5.89A33 33 0 0 1 2.5.5m.099 2.54a2 2 0 0 0 .72 3.935c-.333-1.05-.588-2.346-.72-3.935m10.083 3.935a2 2 0 0 0 .72-3.935c-.133 1.59-.388 2.885-.72 3.935"
+        }, void 0, false, {
+            fileName: "src/Components/Icons.jsx",
+            lineNumber: 26,
+            columnNumber: 5
         }, undefined)
     }, void 0, false, {
-        fileName: "src/Components/Footer.jsx",
-        lineNumber: 18,
-        columnNumber: 5
+        fileName: "src/Components/Icons.jsx",
+        lineNumber: 25,
+        columnNumber: 3
     }, undefined);
+_c2 = TrophyIcon;
+const RocketIcon = ({ size =16  })=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("svg", {
+        xmlns: "http://www.w3.org/2000/svg",
+        width: size,
+        height: size,
+        fill: "currentColor",
+        viewBox: "0 0 16 16",
+        "aria-hidden": "true",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("path", {
+                d: "M12.17 9.53c2.307-2.592 3.278-4.684 3.641-6.218.21-.887.214-1.58.16-2.065a3.6 3.6 0 0 0-.108-.563 2 2 0 0 0-.078-.23V.453c-.073-.164-.168-.234-.352-.295a2 2 0 0 0-.16-.045 4 4 0 0 0-.57-.093c-.49-.044-1.19-.03-2.08.188-1.536.374-3.618 1.343-6.161 3.604l-2.4.238h-.006a2.55 2.55 0 0 0-1.524.734L.15 7.17a.512.512 0 0 0 .433.868l1.896-.271c.28-.04.592.013.955.132.232.076.437.16.655.248l.203.083c.196.816.66 1.58 1.275 2.195.613.614 1.376 1.08 2.191 1.277l.082.202c.089.218.173.424.249.657.118.363.172.676.132.956l-.271 1.9a.512.512 0 0 0 .867.433l2.382-2.386c.41-.41.668-.949.732-1.526zm.11-3.699c-.797.8-1.93.961-2.528.362-.598-.6-.436-1.733.361-2.532.798-.799 1.93-.96 2.528-.361s.437 1.732-.36 2.531Z"
+            }, void 0, false, {
+                fileName: "src/Components/Icons.jsx",
+                lineNumber: 32,
+                columnNumber: 5
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("path", {
+                d: "M5.205 10.787a7.6 7.6 0 0 0 1.804 1.352c-1.118 1.007-4.929 2.028-5.054 1.903-.126-.127.737-4.189 1.839-5.18.346.69.837 1.35 1.411 1.925"
+            }, void 0, false, {
+                fileName: "src/Components/Icons.jsx",
+                lineNumber: 33,
+                columnNumber: 5
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/Components/Icons.jsx",
+        lineNumber: 31,
+        columnNumber: 3
+    }, undefined);
+_c3 = RocketIcon;
+const SunIcon = ({ size =16  })=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("svg", {
+        xmlns: "http://www.w3.org/2000/svg",
+        width: size,
+        height: size,
+        fill: "currentColor",
+        viewBox: "0 0 16 16",
+        "aria-hidden": "true",
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("path", {
+            d: "M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708"
+        }, void 0, false, {
+            fileName: "src/Components/Icons.jsx",
+            lineNumber: 39,
+            columnNumber: 5
+        }, undefined)
+    }, void 0, false, {
+        fileName: "src/Components/Icons.jsx",
+        lineNumber: 38,
+        columnNumber: 3
+    }, undefined);
+_c4 = SunIcon;
+const MoonIcon = ({ size =16  })=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("svg", {
+        xmlns: "http://www.w3.org/2000/svg",
+        width: size,
+        height: size,
+        fill: "currentColor",
+        viewBox: "0 0 16 16",
+        "aria-hidden": "true",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("path", {
+                d: "M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278"
+            }, void 0, false, {
+                fileName: "src/Components/Icons.jsx",
+                lineNumber: 45,
+                columnNumber: 5
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("path", {
+                d: "M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.73 1.73 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.73 1.73 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.73 1.73 0 0 0 1.097-1.097zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.16 1.16 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.16 1.16 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732z"
+            }, void 0, false, {
+                fileName: "src/Components/Icons.jsx",
+                lineNumber: 46,
+                columnNumber: 5
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/Components/Icons.jsx",
+        lineNumber: 44,
+        columnNumber: 3
+    }, undefined);
+_c5 = MoonIcon;
+const SearchIcon = ({ size =16  })=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("svg", {
+        xmlns: "http://www.w3.org/2000/svg",
+        width: size,
+        height: size,
+        fill: "currentColor",
+        viewBox: "0 0 16 16",
+        "aria-hidden": "true",
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("path", {
+            d: "M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"
+        }, void 0, false, {
+            fileName: "src/Components/Icons.jsx",
+            lineNumber: 52,
+            columnNumber: 5
+        }, undefined)
+    }, void 0, false, {
+        fileName: "src/Components/Icons.jsx",
+        lineNumber: 51,
+        columnNumber: 3
+    }, undefined);
+_c6 = SearchIcon;
+const BrainIcon = ({ size =24  })=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("svg", {
+        xmlns: "http://www.w3.org/2000/svg",
+        width: size,
+        height: size,
+        viewBox: "0 0 24 24",
+        fill: "none",
+        stroke: "currentColor",
+        strokeWidth: "2",
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        "aria-hidden": "true",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("path", {
+                d: "M15.5 13a3.5 3.5 0 0 0 -3.5 3.5v1a3.5 3.5 0 0 0 7 0v-1.8"
+            }, void 0, false, {
+                fileName: "src/Components/Icons.jsx",
+                lineNumber: 69,
+                columnNumber: 5
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("path", {
+                d: "M8.5 13a3.5 3.5 0 0 1 3.5 3.5v1a3.5 3.5 0 0 1 -7 0v-1.8"
+            }, void 0, false, {
+                fileName: "src/Components/Icons.jsx",
+                lineNumber: 70,
+                columnNumber: 5
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("path", {
+                d: "M17.5 16a3.5 3.5 0 0 0 0 -7h-.5"
+            }, void 0, false, {
+                fileName: "src/Components/Icons.jsx",
+                lineNumber: 71,
+                columnNumber: 5
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("path", {
+                d: "M19 9.3v-2.8a3.5 3.5 0 0 0 -7 0"
+            }, void 0, false, {
+                fileName: "src/Components/Icons.jsx",
+                lineNumber: 72,
+                columnNumber: 5
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("path", {
+                d: "M6.5 16a3.5 3.5 0 0 1 0 -7h.5"
+            }, void 0, false, {
+                fileName: "src/Components/Icons.jsx",
+                lineNumber: 73,
+                columnNumber: 5
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("path", {
+                d: "M5 9.3v-2.8a3.5 3.5 0 0 1 7 0v10"
+            }, void 0, false, {
+                fileName: "src/Components/Icons.jsx",
+                lineNumber: 74,
+                columnNumber: 5
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/Components/Icons.jsx",
+        lineNumber: 57,
+        columnNumber: 3
+    }, undefined);
+_c7 = BrainIcon;
+const sizeProp = {
+    size: (0, _propTypesDefault.default).number
 };
-_c = Footer;
-Footer.defaultProps = {
-    devDotTo: "",
-    medium: "",
-    twitter: "",
-    youTube: ""
-};
-Footer.propTypes = {
-    name: (0, _propTypesDefault.default).string.isRequired,
-    email: (0, _propTypesDefault.default).string,
-    gitHub: (0, _propTypesDefault.default).string,
-    instagram: (0, _propTypesDefault.default).string,
-    linkedIn: (0, _propTypesDefault.default).string
-};
-exports.default = Footer;
-var _c;
-$RefreshReg$(_c, "Footer");
+GraduationIcon.propTypes = sizeProp;
+BriefcaseIcon.propTypes = sizeProp;
+TrophyIcon.propTypes = sizeProp;
+RocketIcon.propTypes = sizeProp;
+SunIcon.propTypes = sizeProp;
+MoonIcon.propTypes = sizeProp;
+SearchIcon.propTypes = sizeProp;
+BrainIcon.propTypes = sizeProp;
+var _c, _c1, _c2, _c3, _c4, _c5, _c6, _c7;
+$RefreshReg$(_c, "GraduationIcon");
+$RefreshReg$(_c1, "BriefcaseIcon");
+$RefreshReg$(_c2, "TrophyIcon");
+$RefreshReg$(_c3, "RocketIcon");
+$RefreshReg$(_c4, "SunIcon");
+$RefreshReg$(_c5, "MoonIcon");
+$RefreshReg$(_c6, "SearchIcon");
+$RefreshReg$(_c7, "BrainIcon");
 
-  $parcel$ReactRefreshHelpers$8b43.postlude(module);
+  $parcel$ReactRefreshHelpers$c92e.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","prop-types":"7wKI2","../images/socials/envelope.svg":"92UhI","../images/socials/github.svg":"vP2m6","../images/socials/instagram.svg":"jH0VA","../images/socials/linkedin.svg":"5XSmz","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"7wKI2":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","prop-types":"7wKI2","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"7wKI2":[function(require,module,exports) {
 var ReactIs = require("react-is");
 // By explicitly using `prop-types` you are opting into new development behavior.
 // http://fb.me/prop-types-in-prod
@@ -28612,10 +28740,1264 @@ printWarning = function(text) {
 };
 module.exports = checkPropTypes;
 
-},{"./lib/ReactPropTypesSecret":"jZTZJ","./lib/has":"fqKuf"}],"92UhI":[function(require,module,exports) {
-module.exports = require("./helpers/bundle-url").getBundleURL("bLxZJ") + "envelope.5e5e1d9e.svg" + "?" + Date.now();
+},{"./lib/ReactPropTypesSecret":"jZTZJ","./lib/has":"fqKuf"}],"km3Ru":[function(require,module,exports) {
+"use strict";
+var Refresh = require("react-refresh/runtime");
+function debounce(func, delay) {
+    var args;
+    var timeout = undefined;
+    return function(args) {
+        clearTimeout(timeout);
+        timeout = setTimeout(function() {
+            timeout = undefined;
+            func.call(null, args);
+        }, delay);
+    };
+}
+var enqueueUpdate = debounce(function() {
+    Refresh.performReactRefresh();
+}, 30); // Everthing below is either adapted or copied from
+// https://github.com/facebook/metro/blob/61de16bd1edd7e738dd0311c89555a644023ab2d/packages/metro/src/lib/polyfills/require.js
+// MIT License - Copyright (c) Facebook, Inc. and its affiliates.
+module.exports.prelude = function(module1) {
+    window.$RefreshReg$ = function(type, id) {
+        Refresh.register(type, module1.id + " " + id);
+    };
+    window.$RefreshSig$ = Refresh.createSignatureFunctionForTransform;
+};
+module.exports.postlude = function(module1) {
+    if (isReactRefreshBoundary(module1.exports)) {
+        registerExportsForReactRefresh(module1);
+        if (module1.hot) {
+            module1.hot.dispose(function(data) {
+                if (Refresh.hasUnrecoverableErrors()) window.location.reload();
+                data.prevExports = module1.exports;
+            });
+            module1.hot.accept(function(getParents) {
+                var prevExports = module1.hot.data.prevExports;
+                var nextExports = module1.exports; // Since we just executed the code for it, it's possible
+                // that the new exports make it ineligible for being a boundary.
+                var isNoLongerABoundary = !isReactRefreshBoundary(nextExports); // It can also become ineligible if its exports are incompatible
+                // with the previous exports.
+                // For example, if you add/remove/change exports, we'll want
+                // to re-execute the importing modules, and force those components
+                // to re-render. Similarly, if you convert a class component
+                // to a function, we want to invalidate the boundary.
+                var didInvalidate = shouldInvalidateReactRefreshBoundary(prevExports, nextExports);
+                if (isNoLongerABoundary || didInvalidate) {
+                    // We'll be conservative. The only case in which we won't do a full
+                    // reload is if all parent modules are also refresh boundaries.
+                    // In that case we'll add them to the current queue.
+                    var parents = getParents();
+                    if (parents.length === 0) {
+                        // Looks like we bubbled to the root. Can't recover from that.
+                        window.location.reload();
+                        return;
+                    }
+                    return parents;
+                }
+                enqueueUpdate();
+            });
+        }
+    }
+};
+function isReactRefreshBoundary(exports) {
+    if (Refresh.isLikelyComponentType(exports)) return true;
+    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
+    return false;
+    var hasExports = false;
+    var areAllExportsComponents = true;
+    let isESM = "__esModule" in exports;
+    for(var key in exports){
+        hasExports = true;
+        if (key === "__esModule") continue;
+        var desc = Object.getOwnPropertyDescriptor(exports, key);
+        if (desc && desc.get && !isESM) // Don't invoke getters for CJS as they may have side effects.
+        return false;
+        var exportValue = exports[key];
+        if (!Refresh.isLikelyComponentType(exportValue)) areAllExportsComponents = false;
+    }
+    return hasExports && areAllExportsComponents;
+}
+function shouldInvalidateReactRefreshBoundary(prevExports, nextExports) {
+    var prevSignature = getRefreshBoundarySignature(prevExports);
+    var nextSignature = getRefreshBoundarySignature(nextExports);
+    if (prevSignature.length !== nextSignature.length) return true;
+    for(var i = 0; i < nextSignature.length; i++){
+        if (prevSignature[i] !== nextSignature[i]) return true;
+    }
+    return false;
+} // When this signature changes, it's unsafe to stop at this refresh boundary.
+function getRefreshBoundarySignature(exports) {
+    var signature = [];
+    signature.push(Refresh.getFamilyByType(exports));
+    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
+    // (This is important for legacy environments.)
+    return signature;
+    let isESM = "__esModule" in exports;
+    for(var key in exports){
+        if (key === "__esModule") continue;
+        var desc = Object.getOwnPropertyDescriptor(exports, key);
+        if (desc && desc.get && !isESM) continue;
+        var exportValue = exports[key];
+        signature.push(key);
+        signature.push(Refresh.getFamilyByType(exportValue));
+    }
+    return signature;
+}
+function registerExportsForReactRefresh(module1) {
+    var exports = module1.exports, id = module1.id;
+    Refresh.register(exports, id + " %exports%");
+    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
+    // (This is important for legacy environments.)
+    return;
+    let isESM = "__esModule" in exports;
+    for(var key in exports){
+        var desc = Object.getOwnPropertyDescriptor(exports, key);
+        if (desc && desc.get && !isESM) continue;
+        var exportValue = exports[key];
+        Refresh.register(exportValue, id + " %exports% " + key);
+    }
+}
 
-},{"./helpers/bundle-url":"lgJ39"}],"lgJ39":[function(require,module,exports) {
+},{"react-refresh/runtime":"786KC"}],"30unt":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$1edc = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$1edc.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _aiBrainMjs = require("../ai-brain.mjs");
+var _icons = require("./Icons");
+var _s = $RefreshSig$();
+const STARTERS = [
+    "What is Oscar's current job?",
+    "What projects has he built?",
+    "What cloud platforms does he know?", 
+];
+const AIChat = ()=>{
+    _s();
+    const [open, setOpen] = (0, _react.useState)(false);
+    const [status, setStatus] = (0, _react.useState)("idle"); // 'idle' | 'loading' | 'ready'
+    const [progress, setProgress] = (0, _react.useState)(0);
+    const [messages, setMessages] = (0, _react.useState)([
+        {
+            role: "bot",
+            text: "Hi! I'm Oscar's AI assistant. Ask me anything about his experience, skills, or projects."
+        }, 
+    ]);
+    const [input, setInput] = (0, _react.useState)("");
+    const [thinking, setThinking] = (0, _react.useState)(false);
+    const pipelineRef = (0, _react.useRef)(null);
+    const bottomRef = (0, _react.useRef)(null);
+    const inputRef = (0, _react.useRef)(null);
+    const triggerRef = (0, _react.useRef)(null);
+    const panelRef = (0, _react.useRef)(null);
+    const wasOpenRef = (0, _react.useRef)(false);
+    // Load model when panel first opens
+    (0, _react.useEffect)(()=>{
+        if (!open || status !== "idle") return undefined;
+        setStatus("loading");
+        let cancelled = false;
+        const load = async ()=>{
+            try {
+                const { pipeline , env  } = await require("c187f155cbcd46f1");
+                env.allowLocalModels = false;
+                const model = await pipeline("question-answering", "Xenova/distilbert-base-cased-distilled-squad", {
+                    progress_callback: (info)=>{
+                        if (cancelled) return;
+                        if (info.status === "progress" && info.total) setProgress(Math.round(info.loaded / info.total * 100));
+                    }
+                });
+                if (!cancelled) {
+                    pipelineRef.current = model;
+                    setStatus("ready");
+                    setProgress(100);
+                }
+            } catch  {
+                if (!cancelled) {
+                    setStatus("idle");
+                    setMessages((prev)=>[
+                            ...prev,
+                            {
+                                role: "bot",
+                                text: "Could not load the AI model. Check your connection and try again."
+                            }, 
+                        ]);
+                }
+            }
+        };
+        load();
+        return ()=>{
+            cancelled = true;
+        };
+    }, [
+        open
+    ]);
+    // Scroll to bottom when messages update
+    (0, _react.useEffect)(()=>{
+        bottomRef.current?.scrollIntoView({
+            behavior: "smooth"
+        });
+    }, [
+        messages,
+        thinking
+    ]);
+    // Focus input when ready
+    (0, _react.useEffect)(()=>{
+        if (status === "ready") inputRef.current?.focus();
+    }, [
+        status
+    ]);
+    // Close on Escape, and trap Tab/Shift+Tab focus inside the panel while open
+    (0, _react.useEffect)(()=>{
+        if (!open) return undefined;
+        const onKeyDown = (e)=>{
+            if (e.key === "Escape") {
+                setOpen(false);
+                return;
+            }
+            if (e.key !== "Tab" || !panelRef.current) return;
+            const focusable = panelRef.current.querySelectorAll("button:not(:disabled), input:not(:disabled), [href]");
+            if (focusable.length === 0) return;
+            const first = focusable[0];
+            const last = focusable[focusable.length - 1];
+            if (e.shiftKey && document.activeElement === first) {
+                e.preventDefault();
+                last.focus();
+            } else if (!e.shiftKey && document.activeElement === last) {
+                e.preventDefault();
+                first.focus();
+            }
+        };
+        document.addEventListener("keydown", onKeyDown);
+        return ()=>document.removeEventListener("keydown", onKeyDown);
+    }, [
+        open
+    ]);
+    // Return focus to the trigger button when the panel closes
+    (0, _react.useEffect)(()=>{
+        if (open) wasOpenRef.current = true;
+        else if (wasOpenRef.current) {
+            wasOpenRef.current = false;
+            triggerRef.current?.focus();
+        }
+    }, [
+        open
+    ]);
+    const ask = async (question)=>{
+        if (!question.trim() || status !== "ready" || thinking) return;
+        setInput("");
+        setMessages((prev)=>[
+                ...prev,
+                {
+                    role: "user",
+                    text: question
+                }
+            ]);
+        setThinking(true);
+        try {
+            const { answer  } = await (0, _aiBrainMjs.answerQuestion)(question, (q, context)=>pipelineRef.current(q, context));
+            setMessages((prev)=>[
+                    ...prev,
+                    {
+                        role: "bot",
+                        text: answer
+                    }
+                ]);
+        } catch  {
+            setMessages((prev)=>[
+                    ...prev,
+                    {
+                        role: "bot",
+                        text: "Something went wrong. Please try again."
+                    }, 
+                ]);
+        } finally{
+            setThinking(false);
+        }
+    };
+    const handleSubmit = (e)=>{
+        e.preventDefault();
+        ask(input);
+    };
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                ref: triggerRef,
+                className: `ai-chat-trigger${open ? " active" : ""}`,
+                onClick: ()=>setOpen((o)=>!o),
+                "aria-label": open ? "Close AI assistant" : "Open AI assistant",
+                title: "Ask Oscar's AI",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                    className: "ai-chat-trigger-icon",
+                    "aria-hidden": "true",
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _icons.BrainIcon), {
+                        size: 28
+                    }, void 0, false, {
+                        fileName: "src/Components/AIChat.jsx",
+                        lineNumber: 163,
+                        columnNumber: 67
+                    }, undefined)
+                }, void 0, false, {
+                    fileName: "src/Components/AIChat.jsx",
+                    lineNumber: 163,
+                    columnNumber: 9
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/Components/AIChat.jsx",
+                lineNumber: 156,
+                columnNumber: 7
+            }, undefined),
+            open && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                ref: panelRef,
+                className: "ai-chat-panel",
+                role: "dialog",
+                "aria-modal": "true",
+                "aria-label": "AI Portfolio Assistant",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "ai-chat-header",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "ai-chat-header-info",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                        className: "ai-chat-avatar",
+                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _icons.BrainIcon), {
+                                            size: 22
+                                        }, void 0, false, {
+                                            fileName: "src/Components/AIChat.jsx",
+                                            lineNumber: 178,
+                                            columnNumber: 48
+                                        }, undefined)
+                                    }, void 0, false, {
+                                        fileName: "src/Components/AIChat.jsx",
+                                        lineNumber: 178,
+                                        columnNumber: 15
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                        children: [
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("strong", {
+                                                children: "Ask Oscar"
+                                            }, void 0, false, {
+                                                fileName: "src/Components/AIChat.jsx",
+                                                lineNumber: 180,
+                                                columnNumber: 17
+                                            }, undefined),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                                className: "ai-chat-status-dot",
+                                                children: status === "ready" ? "● Online" : status === "loading" ? "● Loading…" : "● Offline"
+                                            }, void 0, false, {
+                                                fileName: "src/Components/AIChat.jsx",
+                                                lineNumber: 181,
+                                                columnNumber: 17
+                                            }, undefined)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "src/Components/AIChat.jsx",
+                                        lineNumber: 179,
+                                        columnNumber: 15
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/Components/AIChat.jsx",
+                                lineNumber: 177,
+                                columnNumber: 13
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                className: "ai-chat-close",
+                                onClick: ()=>setOpen(false),
+                                "aria-label": "Close",
+                                children: "✕"
+                            }, void 0, false, {
+                                fileName: "src/Components/AIChat.jsx",
+                                lineNumber: 186,
+                                columnNumber: 13
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/Components/AIChat.jsx",
+                        lineNumber: 176,
+                        columnNumber: 11
+                    }, undefined),
+                    status === "loading" && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "ai-chat-loading",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                className: "ai-chat-loading-label",
+                                children: [
+                                    "Loading AI model (",
+                                    progress,
+                                    "%)"
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/Components/AIChat.jsx",
+                                lineNumber: 192,
+                                columnNumber: 15
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "ai-chat-progress-track",
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                    className: "ai-chat-progress-bar",
+                                    style: {
+                                        width: `${progress}%`
+                                    }
+                                }, void 0, false, {
+                                    fileName: "src/Components/AIChat.jsx",
+                                    lineNumber: 194,
+                                    columnNumber: 17
+                                }, undefined)
+                            }, void 0, false, {
+                                fileName: "src/Components/AIChat.jsx",
+                                lineNumber: 193,
+                                columnNumber: 15
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                className: "ai-chat-loading-hint",
+                                children: "First visit only — cached after this."
+                            }, void 0, false, {
+                                fileName: "src/Components/AIChat.jsx",
+                                lineNumber: 196,
+                                columnNumber: 15
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/Components/AIChat.jsx",
+                        lineNumber: 191,
+                        columnNumber: 13
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "ai-chat-messages",
+                        children: [
+                            messages.map((msg, i)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                    className: `ai-chat-msg ai-chat-msg--${msg.role}`,
+                                    children: msg.text
+                                }, i, false, {
+                                    fileName: "src/Components/AIChat.jsx",
+                                    lineNumber: 203,
+                                    columnNumber: 15
+                                }, undefined)),
+                            thinking && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "ai-chat-msg ai-chat-msg--bot ai-chat-thinking",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {}, void 0, false, {
+                                        fileName: "src/Components/AIChat.jsx",
+                                        lineNumber: 209,
+                                        columnNumber: 17
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {}, void 0, false, {
+                                        fileName: "src/Components/AIChat.jsx",
+                                        lineNumber: 210,
+                                        columnNumber: 17
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {}, void 0, false, {
+                                        fileName: "src/Components/AIChat.jsx",
+                                        lineNumber: 211,
+                                        columnNumber: 17
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/Components/AIChat.jsx",
+                                lineNumber: 208,
+                                columnNumber: 15
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                ref: bottomRef
+                            }, void 0, false, {
+                                fileName: "src/Components/AIChat.jsx",
+                                lineNumber: 214,
+                                columnNumber: 13
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/Components/AIChat.jsx",
+                        lineNumber: 201,
+                        columnNumber: 11
+                    }, undefined),
+                    status === "ready" && messages.filter((m)=>m.role === "user").length === 0 && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "ai-chat-starters",
+                        children: STARTERS.map((s)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                className: "ai-chat-starter-btn",
+                                onClick: ()=>ask(s),
+                                children: s
+                            }, s, false, {
+                                fileName: "src/Components/AIChat.jsx",
+                                lineNumber: 221,
+                                columnNumber: 17
+                            }, undefined))
+                    }, void 0, false, {
+                        fileName: "src/Components/AIChat.jsx",
+                        lineNumber: 219,
+                        columnNumber: 13
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
+                        className: "ai-chat-form",
+                        onSubmit: handleSubmit,
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                ref: inputRef,
+                                className: "ai-chat-input",
+                                type: "text",
+                                placeholder: status === "ready" ? "Ask a question…" : "Loading AI model…",
+                                value: input,
+                                onChange: (e)=>setInput(e.target.value),
+                                disabled: status !== "ready" || thinking,
+                                autoComplete: "off"
+                            }, void 0, false, {
+                                fileName: "src/Components/AIChat.jsx",
+                                lineNumber: 230,
+                                columnNumber: 13
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                type: "submit",
+                                className: "ai-chat-send",
+                                disabled: status !== "ready" || thinking || !input.trim(),
+                                "aria-label": "Send",
+                                children: "↑"
+                            }, void 0, false, {
+                                fileName: "src/Components/AIChat.jsx",
+                                lineNumber: 240,
+                                columnNumber: 13
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/Components/AIChat.jsx",
+                        lineNumber: 229,
+                        columnNumber: 11
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/Components/AIChat.jsx",
+                lineNumber: 168,
+                columnNumber: 9
+            }, undefined)
+        ]
+    }, void 0, true);
+};
+_s(AIChat, "07jrRcv/epuU2vxu8BeSOsAMl/o=");
+_c = AIChat;
+exports.default = AIChat;
+var _c;
+$RefreshReg$(_c, "AIChat");
+
+  $parcel$ReactRefreshHelpers$1edc.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../ai-brain.mjs":"inuro","./Icons":"kp6YJ","c187f155cbcd46f1":"jGOjk","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"inuro":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "NOT_FOUND", ()=>NOT_FOUND);
+parcelHelpers.export(exports, "MIN_CONFIDENCE", ()=>MIN_CONFIDENCE);
+parcelHelpers.export(exports, "CHUNKS", ()=>CHUNKS);
+parcelHelpers.export(exports, "rankChunks", ()=>rankChunks);
+parcelHelpers.export(exports, "expandToSentence", ()=>expandToSentence);
+/**
+ * Answer a visitor question.
+ * @param {string} question
+ * @param {(question: string, context: string) => Promise<{answer: string, score: number}>} qa
+ *        The transformers.js question-answering pipeline (or a compatible function).
+ */ parcelHelpers.export(exports, "answerQuestion", ()=>answerQuestion);
+/**
+ * Q&A "brain" for the portfolio chatbot.
+ *
+ * The answer context is built from the SAME data modules the page renders
+ * (site-data.mjs + portfolio-search.mjs), so the bot and the page can never
+ * disagree. Because the DistilBERT QA model can only read ~512 tokens at a
+ * time, the content is split into topic chunks; the best chunks are retrieved
+ * by keyword score, the model runs on those, and the extracted span is
+ * expanded to its full sentence so answers read naturally.
+ *
+ * Framework-free so `scripts/test-chat.mjs` can run it in plain Node.
+ */ var _siteDataMjs = require("./site-data.mjs");
+var _portfolioSearchMjs = require("./portfolio-search.mjs");
+const NOT_FOUND = "I couldn't find that in Oscar's portfolio. Try asking about his current job, past experience, projects, skills, education, certifications, or how to contact him.";
+const MIN_CONFIDENCE = 0.05;
+// Turn " · " separators from the timeline data into readable prose commas.
+const prose = (text)=>text.replace(/\s·\s/g, ", ");
+const buildChunks = ()=>{
+    const [currentJob, ...previousJobs] = (0, _siteDataMjs.experienceList);
+    const [degree, ...certifications] = (0, _siteDataMjs.educationList);
+    const gradDate = degree.date.split("–").pop().trim();
+    const gpa = (degree.title.match(/GPA\s+([\d.]+\s*\/\s*\d+)/) || [])[1] || "";
+    // Years of experience, derived from the earliest role (last in the list).
+    const MONTH_INDEX = {
+        jan: 0,
+        feb: 1,
+        mar: 2,
+        apr: 3,
+        may: 4,
+        jun: 5,
+        jul: 6,
+        aug: 7,
+        sep: 8,
+        oct: 9,
+        nov: 10,
+        dec: 11
+    };
+    const firstRole = (0, _siteDataMjs.experienceList)[(0, _siteDataMjs.experienceList).length - 1];
+    const startYear = Math.min(...(firstRole.date.match(/\d{4}/g) || [
+        "2024"
+    ]).map(Number));
+    const startMonth = MONTH_INDEX[(firstRole.date.match(/[A-Za-z]{3}/) || [
+        "jan"
+    ])[0].toLowerCase()] ?? 0;
+    const startLabel = `${firstRole.date.split("–")[0].trim()} ${startYear}`;
+    const now = new Date();
+    const expMonths = (now.getFullYear() - startYear) * 12 + (now.getMonth() - startMonth);
+    const expYears = Math.max(1, Math.floor(expMonths / 12));
+    // Most recent projects, by year.
+    const byRecency = [
+        ...(0, _portfolioSearchMjs.projectList)
+    ].sort((a, b)=>(b.year || 0) - (a.year || 0));
+    return [
+        {
+            id: "profile",
+            hints: [
+                "who",
+                "name",
+                "about",
+                "contact",
+                "email",
+                "mail",
+                "reach",
+                "linkedin",
+                "github",
+                "website",
+                "location",
+                "located",
+                "based",
+                "live",
+                "lives",
+                "city",
+                "country",
+                "available",
+                "availability",
+                "open",
+                "opportunities",
+                "opportunity",
+                "hire",
+                "hiring",
+                "engineer",
+                "developer", 
+            ],
+            text: `${(0, _siteDataMjs.profile).fullName} is an Artificial Intelligence Engineer and Data Engineer based in ${(0, _siteDataMjs.profile).location}. ` + `${0, _siteDataMjs.aboutDescription} ` + `Oscar can be contacted by email at ${(0, _siteDataMjs.profile).email}. ` + `His GitHub profile is github.com/${(0, _siteDataMjs.profile).gitHub} and his LinkedIn profile is linkedin.com/in/${(0, _siteDataMjs.profile).linkedIn}. ` + `His portfolio website is ${(0, _siteDataMjs.profile).website}. ` + `Oscar is open to new opportunities in AI engineering and data engineering.`
+        },
+        {
+            id: "experience",
+            hints: [
+                "work",
+                "works",
+                "working",
+                "worked",
+                "job",
+                "jobs",
+                "role",
+                "roles",
+                "position",
+                "company",
+                "companies",
+                "career",
+                "employer",
+                "experience",
+                "current",
+                "currently",
+                "now",
+                "today",
+                "bbva",
+                "bluetab",
+                "ibm",
+                "salinas",
+                "grupo",
+                "banco",
+                "bank",
+                "intern",
+                "internship",
+                "etl",
+                "spark",
+                "professional",
+                "years",
+                "year",
+                "long", 
+            ],
+            text: `Oscar has three industry roles of professional experience. ` + `In total, Oscar has more than ${expYears} years of professional experience in the industry, working since ${startLabel}. ` + `Oscar's current job is ${currentJob.title} at ${prose(currentJob.company)}, from ${currentJob.date}. ` + `Right now, Oscar works as a ${currentJob.title} at ${prose(currentJob.company)}, and today this is where he works. ` + `In this role: ${currentJob.bullets.join(" ")} ` + previousJobs.map((job)=>`Before that, Oscar worked as ${job.title} at ${prose(job.company)} (${job.date}). ${job.bullets.join(" ")}`).join(" ")
+        },
+        {
+            id: "education",
+            hints: [
+                "study",
+                "studied",
+                "school",
+                "university",
+                "college",
+                "degree",
+                "education",
+                "educated",
+                "gpa",
+                "grade",
+                "grades",
+                "graduate",
+                "graduated",
+                "graduation",
+                "coursework",
+                "course",
+                "courses",
+                "bachelor",
+                "escom",
+                "ipn",
+                "politecnico",
+                "major",
+                "academic", 
+            ],
+            text: `Oscar earned a ${prose(degree.title)}, at the Escuela Superior de Cómputo (ESCOM) of the Instituto Politécnico Nacional (IPN) in Mexico City (${degree.date}). ` + `Oscar graduated in ${gradDate}. Oscar's GPA is ${gpa}. ` + degree.description
+        },
+        {
+            id: "certifications",
+            hints: [
+                "certification",
+                "certifications",
+                "certificate",
+                "certificates",
+                "certified",
+                "cert",
+                "certs",
+                "aws",
+                "amazon",
+                "azure",
+                "microsoft",
+                "google",
+                "oracle",
+                "freecodecamp",
+                "scrum",
+                "safe",
+                "jira",
+                "badge",
+                "badges",
+                "training",
+                "alura", 
+            ],
+            text: `Oscar holds more than 10 certifications across cloud, AI, agile, and secure development. ` + certifications.map((c)=>`${prose(c.title)} — ${prose(c.institution)} (${c.date}). ${c.description}`).join(" ")
+        },
+        {
+            id: "skills",
+            hints: [
+                "skill",
+                "skills",
+                "technology",
+                "technologies",
+                "tech",
+                "tool",
+                "tools",
+                "stack",
+                "language",
+                "languages",
+                "framework",
+                "frameworks",
+                "library",
+                "libraries",
+                "cloud",
+                "platform",
+                "platforms",
+                "know",
+                "knows",
+                "use",
+                "uses",
+                "programming",
+                "code", 
+            ],
+            text: `Oscar's technical skills, tools, and technologies include: ${(0, _siteDataMjs.skillsList).map((s)=>s.name).join(", ")}. ` + `His programming languages are Python, Java, C++, C#, JavaScript, TypeScript, SQL, and MATLAB. ` + `The cloud platforms Oscar knows are Amazon Web Services (AWS), Google Cloud Platform (GCP), and Microsoft Azure.`
+        },
+        {
+            id: "ai-projects",
+            hints: [
+                "project",
+                "projects",
+                "built",
+                "build",
+                "builds",
+                "building",
+                "portfolio",
+                "made",
+                "created",
+                "nerf",
+                "rag",
+                "chatbot",
+                "sudoku",
+                "genetic",
+                "segmentation",
+                "diffusion",
+                "langchain",
+                "pinecone",
+                "solver",
+                "gazette",
+                "dof",
+                "3d",
+                "recent",
+                "latest",
+                "newest",
+                "last",
+                "new", 
+            ],
+            text: `Oscar's most recent and latest project is the ${byRecency[0].title} (${byRecency[0].year}). ` + `Other recent projects include ${byRecency[1].title} and ${byRecency[2].title}. ` + `In total, Oscar has built ${(0, _portfolioSearchMjs.projectList).length} featured projects: ${(0, _portfolioSearchMjs.projectList).map((p)=>p.title).join("; ")}. ` + (0, _portfolioSearchMjs.projectList).slice(0, 3).map((p)=>`${p.title}: ${p.description}`).join(" ")
+        },
+        {
+            id: "software-projects",
+            hints: [
+                "project",
+                "projects",
+                "built",
+                "build",
+                "portfolio",
+                "student",
+                "management",
+                "matlab",
+                "contour",
+                "classifier",
+                "escom",
+                "repository",
+                "node",
+                "ajax",
+                "bootstrap",
+                "web",
+                "event",
+                "salinas",
+                "website",
+                "site",
+                "matrix",
+                "react",
+                "labs", 
+            ],
+            text: `More of Oscar's projects. ` + (0, _portfolioSearchMjs.projectList).slice(3).map((p)=>`${p.title}: ${p.description}`).join(" ")
+        }, 
+    ];
+};
+/* ---------- retrieval ---------- */ const STOPWORDS = new Set([
+    "what",
+    "whats",
+    "is",
+    "are",
+    "the",
+    "a",
+    "an",
+    "does",
+    "do",
+    "did",
+    "has",
+    "have",
+    "had",
+    "he",
+    "his",
+    "him",
+    "she",
+    "her",
+    "it",
+    "its",
+    "of",
+    "in",
+    "on",
+    "at",
+    "to",
+    "for",
+    "and",
+    "or",
+    "with",
+    "tell",
+    "me",
+    "please",
+    "oscar",
+    "oscars",
+    "oscar's",
+    "you",
+    "your",
+    "i",
+    "can",
+    "could",
+    "would",
+    "should",
+    "how",
+    "was",
+    "were",
+    "be",
+    "been",
+    "being",
+    "that",
+    "this",
+    "there",
+    "their",
+    "they",
+    "them",
+    "from",
+    "by",
+    "as",
+    "any",
+    "some",
+    "many",
+    "much", 
+]);
+const cleanWord = (word)=>word.replace(/^[^a-z0-9+#]+/, "").replace(/[^a-z0-9+#]+$/, "");
+// Lowercase, strip accents ("méxico" -> "mexico"), split, clean edges.
+const words = (text)=>text.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").split(/\s+/).map(cleanWord).filter(Boolean);
+const tokensOf = (text)=>{
+    const out = new Set();
+    for (const w of words(text)){
+        out.add(w);
+        for (const part of w.split(/[^a-z0-9+#]+/))if (part) out.add(part);
+    }
+    return [
+        ...out
+    ];
+};
+const CHUNKS = buildChunks().map(_c = (chunk)=>({
+        ...chunk,
+        tokens: tokensOf(chunk.text)
+    }));
+_c1 = CHUNKS;
+const rankChunks = (question)=>{
+    const qWords = words(question).filter((w)=>!STOPWORDS.has(w));
+    return CHUNKS.map((chunk)=>{
+        let score = 0;
+        for (const w of qWords){
+            if (chunk.hints.some((h)=>h.startsWith(w) || w.startsWith(h))) score += 3;
+            if (chunk.tokens.some((t)=>t.startsWith(w))) score += 1;
+        }
+        return {
+            ...chunk,
+            score
+        };
+    }).sort((a, b)=>b.score - a.score);
+};
+/* ---------- answer extraction ---------- */ // Sentence boundaries: . ! ? followed by whitespace + capital/digit — so
+// "B.Sc.", "Node.js" and "9.5" don't split sentences mid-way.
+const sentenceBounds = (text)=>{
+    const bounds = [
+        0
+    ];
+    const re = /[.!?](?=\s+[A-ZÁÉÍÓÚÑ0-9("“])|[.!?]$/g;
+    let match;
+    while((match = re.exec(text)) !== null)bounds.push(match.index + 1);
+    if (bounds[bounds.length - 1] !== text.length) bounds.push(text.length);
+    return bounds;
+};
+// The QA pipeline detokenizes spans with extra spaces ("9. 5 / 10", "20 %").
+// Locate the span in the original text by matching characters while ignoring
+// whitespace, so we can return the clean original wording.
+const locateSpan = (span, text)=>{
+    const direct = text.indexOf(span);
+    if (direct !== -1) return {
+        start: direct,
+        end: direct + span.length
+    };
+    const map = [];
+    let norm = "";
+    for(let i = 0; i < text.length; i++)if (!/\s/.test(text[i])) {
+        norm += text[i];
+        map.push(i);
+    }
+    const normSpan = span.replace(/\s+/g, "");
+    if (!normSpan) return null;
+    const idx = norm.indexOf(normSpan);
+    if (idx === -1) return null;
+    return {
+        start: map[idx],
+        end: map[idx + normSpan.length - 1] + 1
+    };
+};
+const expandToSentence = (span, text)=>{
+    const loc = locateSpan(span, text);
+    if (!loc) return span;
+    const bounds = sentenceBounds(text);
+    let start = 0;
+    let end = text.length;
+    for (const b of bounds){
+        if (b <= loc.start) start = b;
+        if (b >= loc.end) {
+            end = b;
+            break;
+        }
+    }
+    return text.slice(start, end).trim();
+};
+async function answerQuestion(question, qa) {
+    const ranked = rankChunks(question).filter((c)=>c.score > 0);
+    // Only consult the runner-up chunk when it scored close to the winner —
+    // a weak match (e.g. one incidental word) must not steal the answer.
+    const candidates = ranked.filter((c, i)=>i === 0 || c.score >= Math.max(2, ranked[0].score * 0.5)).slice(0, 2);
+    if (candidates.length === 0) return {
+        answer: NOT_FOUND,
+        source: null,
+        confidence: 0
+    };
+    let best = null;
+    for (const chunk of candidates){
+        const result = await qa(question, chunk.text);
+        const confidence = result?.score ?? 0;
+        if (!best || confidence > best.confidence) best = {
+            span: (result?.answer ?? "").trim(),
+            confidence,
+            chunk
+        };
+    }
+    if (!best.span || best.confidence < MIN_CONFIDENCE) return {
+        answer: NOT_FOUND,
+        source: best.chunk.id,
+        confidence: best.confidence
+    };
+    return {
+        answer: expandToSentence(best.span, best.chunk.text),
+        source: best.chunk.id,
+        confidence: best.confidence
+    };
+}
+var _c, _c1;
+$RefreshReg$(_c, "CHUNKS$buildChunks().map");
+$RefreshReg$(_c1, "CHUNKS");
+
+},{"./site-data.mjs":"iovxP","./portfolio-search.mjs":"hjSiB","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"hjSiB":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "projectList", ()=>projectList);
+parcelHelpers.export(exports, "queryTokens", ()=>queryTokens);
+parcelHelpers.export(exports, "projectTokens", ()=>projectTokens);
+parcelHelpers.export(exports, "projectMatches", ()=>projectMatches);
+const projectList = [
+    {
+        title: "Object Segmentation for Indoor 3D Model Editing Using NeRF",
+        description: "AI-based object segmentation system for editing 3D models in interior environments. Boosted classification accuracy by 30% by integrating ML algorithms into a U-Net base. Achieved photorealistic editing by combining NeRF spatial reconstruction with Stable Diffusion texture synthesis.",
+        url: "https://github.com/OscarJuJi/Homecraft",
+        tags: [
+            "Python",
+            "NeRF",
+            "U-Net",
+            "Stable Diffusion",
+            "PyTorch",
+            "Computer Vision"
+        ],
+        year: 2025
+    },
+    {
+        title: "RAG ChatBot for Mexico's Official Gazette (DOF)",
+        description: "Retrieval-Augmented Generation system over an LLM to generate summaries and answer natural-language queries about Mexico's Diario Oficial de la Federaci\xf3n. Built with LangChain + LangServe for retrieval orchestration and Pinecone for vector storage.",
+        url: "https://github.com/JoseLuisMonroy/ISSI-Backend",
+        tags: [
+            "Python",
+            "LangChain",
+            "RAG",
+            "Pinecone",
+            "LLM",
+            "FastAPI"
+        ],
+        year: 2024
+    },
+    {
+        title: "Genetic Algorithm Sudoku Solver",
+        description: "Solves hard-level Sudoku puzzles 20% faster than baseline approaches using evolutionary strategies — selection, crossover, and mutation — to efficiently explore the solution space.",
+        url: "https://github.com/OscarJuJi/Genetic-Algorithm-Sudoku-Solver",
+        tags: [
+            "Python",
+            "Genetic Algorithms",
+            "Optimization",
+            "Bio-Inspired AI"
+        ],
+        year: 2025
+    },
+    {
+        title: "Grupo Salinas Event App (SG_event)",
+        description: "React application built for a corporate event at Grupo Salinas during Oscar's Innovation & Development internship, delivering a responsive and dynamic event experience.",
+        url: "https://github.com/OscarJuJi/SG_event",
+        tags: [
+            "React",
+            "JavaScript",
+            "Frontend"
+        ],
+        year: 2025
+    },
+    {
+        title: "AI-Powered Portfolio Website",
+        description: "This site — a React portfolio with an in-browser AI chatbot that answers questions about Oscar using DistilBERT running fully client-side with Transformers.js (no backend), plus a smart project search filter, all verified by automated test suites.",
+        url: "https://github.com/OscarJuJi/oscarjuji.github.io",
+        tags: [
+            "React",
+            "Transformers.js",
+            "AI",
+            "JavaScript"
+        ],
+        year: 2026
+    },
+    {
+        title: "Student Management System",
+        description: "Streamlines academic enrollment and course assignments. Improved system performance, security, and scalability using AJAX, Node.js, and Bootstrap with a relational SQL backend.",
+        url: "https://github.com/Ricardo8421/crujirepo",
+        tags: [
+            "Node.js",
+            "AJAX",
+            "Bootstrap",
+            "SQL"
+        ],
+        year: 2023
+    },
+    {
+        title: "Object Contour Identifier & Classifier",
+        description: "MATLAB GUI that identifies object edges in natural images using digital image processing techniques, then classifies the scene environment using computed edge features.",
+        url: "https://github.com/OscarJuJi/object_contours_identifiying_and_classifying",
+        tags: [
+            "MATLAB",
+            "Computer Vision",
+            "Image Processing"
+        ],
+        year: 2025
+    },
+    {
+        title: "C++ Matrix Solver",
+        description: "Command-line C++ program for solving MxN matrix problems and performing various matrix operations.",
+        url: "https://github.com/OscarJuJi/Matrix_solver",
+        tags: [
+            "C++",
+            "Algorithms",
+            "Math"
+        ],
+        year: 2025
+    },
+    {
+        title: "Bio-Inspired Algorithms Collection",
+        description: "Implementations of nature-inspired optimization and problem-solving techniques — code, examples, and resources from the Bio-Inspired Algorithms course at ESCOM.",
+        url: "https://github.com/OscarJuJi/Bioinspired-Algorithms",
+        tags: [
+            "Bio-Inspired AI",
+            "Optimization",
+            "Algorithms"
+        ],
+        year: 2025
+    },
+    {
+        title: "Computer Vision & Image Processing Labs",
+        description: "MATLAB lab work for the Digital Image Processing and Computer Vision courses — hands-on practice with image transformations and vision techniques.",
+        url: "https://github.com/OscarJuJi/Computer-Vision",
+        tags: [
+            "MATLAB",
+            "Computer Vision",
+            "Image Processing"
+        ],
+        year: 2025
+    },
+    {
+        title: "ESCOM AI Engineering Repository",
+        description: "A curated collection of coursework spanning data structures, software engineering, computer vision, neural networks, and deep learning — covering the full Artificial Intelligence Engineering program.",
+        url: "https://github.com/OscarJuJi",
+        tags: [
+            "Python",
+            "Deep Learning",
+            "Various"
+        ],
+        year: 2025
+    }, 
+];
+// Strip punctuation from word edges but keep + and # so "c++" / "c#" survive.
+const cleanWord = (word)=>word.replace(/^[^a-z0-9+#]+/, "").replace(/[^a-z0-9+#]+$/, "");
+const queryTokens = (query)=>query.toLowerCase().split(/\s+/).map(cleanWord).filter(Boolean);
+const projectTokens = (project)=>{
+    const text = [
+        project.title,
+        project.description,
+        ...project.tags
+    ].join(" ").toLowerCase();
+    const tokens = new Set();
+    for (const raw of text.split(/\s+/)){
+        const word = cleanWord(raw);
+        if (!word) continue;
+        tokens.add(word);
+        // "u-net" -> "u", "net"   |   "node.js" -> "node", "js"
+        for (const part of word.split(/[^a-z0-9+#]+/))if (part) tokens.add(part);
+        // "u-net" -> "unet"   |   "node.js" -> "nodejs"
+        const squashed = word.replace(/[^a-z0-9]/g, "");
+        if (squashed) tokens.add(squashed);
+    }
+    return tokens;
+};
+const projectMatches = (project, query)=>{
+    const words = queryTokens(query);
+    if (words.length === 0) return true;
+    const tokens = [
+        ...projectTokens(project)
+    ];
+    return words.every((word)=>tokens.some((token)=>token.startsWith(word)));
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"jGOjk":[function(require,module,exports) {
+module.exports = require("./helpers/browser/js-loader")(require("./helpers/bundle-url").getBundleURL("bLxZJ") + "transformers.781ece05.js" + "?" + Date.now()).catch((err)=>{
+    delete module.bundle.cache[module.id];
+    throw err;
+}).then(()=>module.bundle.root("8EOkg"));
+
+},{"./helpers/browser/js-loader":"61B45","./helpers/bundle-url":"lgJ39"}],"61B45":[function(require,module,exports) {
+"use strict";
+var cacheLoader = require("../cacheLoader");
+module.exports = cacheLoader(function(bundle) {
+    return new Promise(function(resolve, reject) {
+        // Don't insert the same script twice (e.g. if it was already in the HTML)
+        var existingScripts = document.getElementsByTagName("script");
+        if ([].concat(existingScripts).some(function isCurrentBundle(script) {
+            return script.src === bundle;
+        })) {
+            resolve();
+            return;
+        }
+        var preloadLink = document.createElement("link");
+        preloadLink.href = bundle;
+        preloadLink.rel = "preload";
+        preloadLink.as = "script";
+        document.head.appendChild(preloadLink);
+        var script = document.createElement("script");
+        script.async = true;
+        script.type = "text/javascript";
+        script.src = bundle;
+        script.onerror = function(e) {
+            var error = new TypeError("Failed to fetch dynamically imported module: ".concat(bundle, ". Error: ").concat(e.message));
+            script.onerror = script.onload = null;
+            script.remove();
+            reject(error);
+        };
+        script.onload = function() {
+            script.onerror = script.onload = null;
+            resolve();
+        };
+        document.getElementsByTagName("head")[0].appendChild(script);
+    });
+});
+
+},{"../cacheLoader":"j49pS"}],"j49pS":[function(require,module,exports) {
+"use strict";
+var cachedBundles = {};
+var cachedPreloads = {};
+var cachedPrefetches = {};
+function getCache(type) {
+    switch(type){
+        case "preload":
+            return cachedPreloads;
+        case "prefetch":
+            return cachedPrefetches;
+        default:
+            return cachedBundles;
+    }
+}
+module.exports = function(loader, type) {
+    return function(bundle) {
+        var cache = getCache(type);
+        if (cache[bundle]) return cache[bundle];
+        return cache[bundle] = loader.apply(null, arguments).catch(function(e) {
+            delete cache[bundle];
+            throw e;
+        });
+    };
+};
+
+},{}],"lgJ39":[function(require,module,exports) {
 "use strict";
 var bundleURL = {};
 function getBundleURLCached(id) {
@@ -28649,1035 +30031,7 @@ exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
 exports.getOrigin = getOrigin;
 
-},{}],"vP2m6":[function(require,module,exports) {
-module.exports = require("./helpers/bundle-url").getBundleURL("bLxZJ") + "github.51e0fbb2.svg" + "?" + Date.now();
-
-},{"./helpers/bundle-url":"lgJ39"}],"jH0VA":[function(require,module,exports) {
-module.exports = require("./helpers/bundle-url").getBundleURL("bLxZJ") + "instagram.84def2ad.svg" + "?" + Date.now();
-
-},{"./helpers/bundle-url":"lgJ39"}],"5XSmz":[function(require,module,exports) {
-module.exports = require("./helpers/bundle-url").getBundleURL("bLxZJ") + "linkedin.49c2dcdf.svg" + "?" + Date.now();
-
-},{"./helpers/bundle-url":"lgJ39"}],"9Dt2F":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$2a62 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$2a62.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _propTypes = require("prop-types");
-var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
-var _s = $RefreshSig$();
-const navLinks = [
-    {
-        href: "#home",
-        label: "Home"
-    },
-    {
-        href: "#about",
-        label: "About"
-    },
-    {
-        href: "#education",
-        label: "Education"
-    },
-    {
-        href: "#experience",
-        label: "Experience"
-    },
-    {
-        href: "#portfolio",
-        label: "Projects"
-    },
-    {
-        href: "#contact",
-        label: "Contact"
-    }, 
-];
-const Header = ({ darkMode , onToggleDark  })=>{
-    _s();
-    const [scrolled, setScrolled] = (0, _react.useState)(false);
-    const [mobileOpen, setMobileOpen] = (0, _react.useState)(false);
-    (0, _react.useEffect)(()=>{
-        const onScroll = ()=>setScrolled(window.scrollY > 24);
-        window.addEventListener("scroll", onScroll, {
-            passive: true
-        });
-        return ()=>window.removeEventListener("scroll", onScroll);
-    }, []);
-    // Close mobile menu on resize to desktop
-    (0, _react.useEffect)(()=>{
-        const onResize = ()=>{
-            if (window.innerWidth > 768) setMobileOpen(false);
-        };
-        window.addEventListener("resize", onResize);
-        return ()=>window.removeEventListener("resize", onResize);
-    }, []);
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("header", {
-                className: `header${scrolled ? " scrolled" : ""}`,
-                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "header-inner",
-                    children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                            href: "#home",
-                            className: "header-logo",
-                            children: [
-                                "Oscar",
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                    children: "."
-                                }, void 0, false, {
-                                    fileName: "src/Components/Header.jsx",
-                                    lineNumber: 35,
-                                    columnNumber: 18
-                                }, undefined)
-                            ]
-                        }, void 0, true, {
-                            fileName: "src/Components/Header.jsx",
-                            lineNumber: 34,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("nav", {
-                            className: "nav-links",
-                            "aria-label": "Primary navigation",
-                            children: navLinks.map((link)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                                    href: link.href,
-                                    children: link.label
-                                }, link.href, false, {
-                                    fileName: "src/Components/Header.jsx",
-                                    lineNumber: 40,
-                                    columnNumber: 15
-                                }, undefined))
-                        }, void 0, false, {
-                            fileName: "src/Components/Header.jsx",
-                            lineNumber: 38,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            className: "header-actions",
-                            children: [
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                                    className: "theme-toggle",
-                                    onClick: onToggleDark,
-                                    "aria-label": darkMode ? "Switch to light mode" : "Switch to dark mode",
-                                    title: darkMode ? "Light mode" : "Dark mode",
-                                    children: darkMode ? "☀️" : "\uD83C\uDF19"
-                                }, void 0, false, {
-                                    fileName: "src/Components/Header.jsx",
-                                    lineNumber: 47,
-                                    columnNumber: 13
-                                }, undefined),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                                    className: "hamburger",
-                                    onClick: ()=>setMobileOpen((o)=>!o),
-                                    "aria-label": "Toggle mobile menu",
-                                    "aria-expanded": mobileOpen,
-                                    children: [
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {}, void 0, false, {
-                                            fileName: "src/Components/Header.jsx",
-                                            lineNumber: 62,
-                                            columnNumber: 15
-                                        }, undefined),
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {}, void 0, false, {
-                                            fileName: "src/Components/Header.jsx",
-                                            lineNumber: 63,
-                                            columnNumber: 15
-                                        }, undefined),
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {}, void 0, false, {
-                                            fileName: "src/Components/Header.jsx",
-                                            lineNumber: 64,
-                                            columnNumber: 15
-                                        }, undefined)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "src/Components/Header.jsx",
-                                    lineNumber: 56,
-                                    columnNumber: 13
-                                }, undefined)
-                            ]
-                        }, void 0, true, {
-                            fileName: "src/Components/Header.jsx",
-                            lineNumber: 46,
-                            columnNumber: 11
-                        }, undefined)
-                    ]
-                }, void 0, true, {
-                    fileName: "src/Components/Header.jsx",
-                    lineNumber: 33,
-                    columnNumber: 9
-                }, undefined)
-            }, void 0, false, {
-                fileName: "src/Components/Header.jsx",
-                lineNumber: 32,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("nav", {
-                className: `mobile-nav${mobileOpen ? " open" : ""}`,
-                "aria-label": "Mobile navigation",
-                children: navLinks.map((link)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                        href: link.href,
-                        onClick: ()=>setMobileOpen(false),
-                        children: link.label
-                    }, link.href, false, {
-                        fileName: "src/Components/Header.jsx",
-                        lineNumber: 75,
-                        columnNumber: 11
-                    }, undefined))
-            }, void 0, false, {
-                fileName: "src/Components/Header.jsx",
-                lineNumber: 70,
-                columnNumber: 7
-            }, undefined)
-        ]
-    }, void 0, true);
-};
-_s(Header, "839OcP8REwPV78hIif0NcwyILZs=");
-_c = Header;
-Header.propTypes = {
-    darkMode: (0, _propTypesDefault.default).bool.isRequired,
-    onToggleDark: (0, _propTypesDefault.default).func.isRequired
-};
-exports.default = Header;
-var _c;
-$RefreshReg$(_c, "Header");
-
-  $parcel$ReactRefreshHelpers$2a62.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","prop-types":"7wKI2"}],"jIEVO":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$0d4d = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$0d4d.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _propTypes = require("prop-types");
-var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
-var _resumePdf = require("url:../../public/resume.pdf");
-var _resumePdfDefault = parcelHelpers.interopDefault(_resumePdf);
-var _cvPdf = require("url:../../public/cv.pdf");
-var _cvPdfDefault = parcelHelpers.interopDefault(_cvPdf);
-var _s = $RefreshSig$();
-const resume = (0, _resumePdfDefault.default);
-const cv = (0, _cvPdfDefault.default);
-const typingPhrases = [
-    "Artificial Intelligence Engineer",
-    "Data Engineer",
-    "Full Stack Developer",
-    "Machine Learning Practitioner",
-    "Problem Solver", 
-];
-const Home = ({ name  })=>{
-    _s();
-    const typedRef = (0, _react.useRef)(null);
-    (0, _react.useEffect)(()=>{
-        let phraseIdx = 0;
-        let charIdx = 0;
-        let deleting = false;
-        const TYPING_SPEED = 75;
-        const DELETING_SPEED = 40;
-        const PAUSE_AFTER_TYPED = 2200;
-        const PAUSE_AFTER_DELETED = 300;
-        let timeoutId;
-        const tick = ()=>{
-            const phrase = typingPhrases[phraseIdx];
-            if (!typedRef.current) return;
-            if (!deleting) {
-                charIdx++;
-                typedRef.current.textContent = phrase.slice(0, charIdx);
-                if (charIdx === phrase.length) {
-                    deleting = true;
-                    timeoutId = setTimeout(tick, PAUSE_AFTER_TYPED);
-                    return;
-                }
-                timeoutId = setTimeout(tick, TYPING_SPEED);
-            } else {
-                charIdx--;
-                typedRef.current.textContent = phrase.slice(0, charIdx);
-                if (charIdx === 0) {
-                    deleting = false;
-                    phraseIdx = (phraseIdx + 1) % typingPhrases.length;
-                    timeoutId = setTimeout(tick, PAUSE_AFTER_DELETED);
-                    return;
-                }
-                timeoutId = setTimeout(tick, DELETING_SPEED);
-            }
-        };
-        timeoutId = setTimeout(tick, 800);
-        return ()=>clearTimeout(timeoutId);
-    }, []);
-    const stats = [
-        {
-            number: "6+",
-            label: "Projects Built"
-        },
-        {
-            number: "6mo",
-            label: "Industry Experience"
-        },
-        {
-            number: "28+",
-            label: "Technologies"
-        },
-        {
-            number: "4+",
-            label: "Certifications"
-        }, 
-    ];
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("section", {
-        id: "home",
-        className: "hero",
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "hero-bg",
-                "aria-hidden": "true"
-            }, void 0, false, {
-                fileName: "src/Components/Home.jsx",
-                lineNumber: 72,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "hero-content",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "hero-tag fade-in",
-                        children: "Available for opportunities"
-                    }, void 0, false, {
-                        fileName: "src/Components/Home.jsx",
-                        lineNumber: 75,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                        className: "fade-in delay-1",
-                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                            className: "hero-name",
-                            children: name
-                        }, void 0, false, {
-                            fileName: "src/Components/Home.jsx",
-                            lineNumber: 78,
-                            columnNumber: 11
-                        }, undefined)
-                    }, void 0, false, {
-                        fileName: "src/Components/Home.jsx",
-                        lineNumber: 77,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                        className: "hero-title fade-in delay-2",
-                        "aria-live": "polite",
-                        children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                ref: typedRef
-                            }, void 0, false, {
-                                fileName: "src/Components/Home.jsx",
-                                lineNumber: 82,
-                                columnNumber: 11
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                className: "typed-cursor",
-                                "aria-hidden": "true",
-                                children: "|"
-                            }, void 0, false, {
-                                fileName: "src/Components/Home.jsx",
-                                lineNumber: 83,
-                                columnNumber: 11
-                            }, undefined)
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/Components/Home.jsx",
-                        lineNumber: 81,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                        className: "hero-description fade-in delay-3",
-                        children: "AI Engineering student at ESCOM–IPN passionate about building intelligent systems. From machine learning pipelines to full-stack applications — I turn ideas into working software."
-                    }, void 0, false, {
-                        fileName: "src/Components/Home.jsx",
-                        lineNumber: 88,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "hero-actions fade-in delay-4",
-                        children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                                href: resume,
-                                target: "_blank",
-                                rel: "noopener noreferrer",
-                                className: "btn btn-primary",
-                                children: "↓ Curriculum"
-                            }, void 0, false, {
-                                fileName: "src/Components/Home.jsx",
-                                lineNumber: 95,
-                                columnNumber: 11
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                                href: cv,
-                                target: "_blank",
-                                rel: "noopener noreferrer",
-                                className: "btn btn-outline",
-                                children: "↓ Resume"
-                            }, void 0, false, {
-                                fileName: "src/Components/Home.jsx",
-                                lineNumber: 98,
-                                columnNumber: 11
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                                href: "#contact",
-                                className: "btn btn-ghost",
-                                children: "Get in touch →"
-                            }, void 0, false, {
-                                fileName: "src/Components/Home.jsx",
-                                lineNumber: 101,
-                                columnNumber: 11
-                            }, undefined)
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/Components/Home.jsx",
-                        lineNumber: 94,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "hero-stats fade-in delay-4",
-                        children: stats.map((s)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                children: [
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                        className: "hero-stat-number",
-                                        children: s.number
-                                    }, void 0, false, {
-                                        fileName: "src/Components/Home.jsx",
-                                        lineNumber: 109,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                        className: "hero-stat-label",
-                                        children: s.label
-                                    }, void 0, false, {
-                                        fileName: "src/Components/Home.jsx",
-                                        lineNumber: 110,
-                                        columnNumber: 15
-                                    }, undefined)
-                                ]
-                            }, s.label, true, {
-                                fileName: "src/Components/Home.jsx",
-                                lineNumber: 108,
-                                columnNumber: 13
-                            }, undefined))
-                    }, void 0, false, {
-                        fileName: "src/Components/Home.jsx",
-                        lineNumber: 106,
-                        columnNumber: 9
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "src/Components/Home.jsx",
-                lineNumber: 74,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                href: "#about",
-                className: "scroll-cue",
-                "aria-label": "Scroll to About",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "scroll-line"
-                    }, void 0, false, {
-                        fileName: "src/Components/Home.jsx",
-                        lineNumber: 117,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                        children: "Scroll"
-                    }, void 0, false, {
-                        fileName: "src/Components/Home.jsx",
-                        lineNumber: 118,
-                        columnNumber: 9
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "src/Components/Home.jsx",
-                lineNumber: 116,
-                columnNumber: 7
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "src/Components/Home.jsx",
-        lineNumber: 71,
-        columnNumber: 5
-    }, undefined);
-};
-_s(Home, "8FLAP0FbNVHgUQlmIlxg23gZZJ8=");
-_c = Home;
-Home.defaultProps = {
-    name: "Oscar Juarez"
-};
-Home.propTypes = {
-    name: (0, _propTypesDefault.default).string.isRequired
-};
-exports.default = Home;
-var _c;
-$RefreshReg$(_c, "Home");
-
-  $parcel$ReactRefreshHelpers$0d4d.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","prop-types":"7wKI2","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","url:../../public/resume.pdf":"9mxsn","url:../../public/cv.pdf":"bHVCR"}],"9mxsn":[function(require,module,exports) {
-module.exports = require("./helpers/bundle-url").getBundleURL("bLxZJ") + "resume.71b1a44c.pdf" + "?" + Date.now();
-
-},{"./helpers/bundle-url":"lgJ39"}],"bHVCR":[function(require,module,exports) {
-module.exports = require("./helpers/bundle-url").getBundleURL("bLxZJ") + "cv.293751be.pdf" + "?" + Date.now();
-
-},{"./helpers/bundle-url":"lgJ39"}],"lCaEt":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$ed0d = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$ed0d.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-const projectList = [
-    {
-        title: "Object Segmentation for Indoor 3D Model Editing Using NeRF",
-        description: "AI-based object segmentation system for editing 3D models in interior environments. Boosted classification accuracy by 30% by integrating ML algorithms into a U-Net base. Achieved photorealistic editing by combining NeRF spatial reconstruction with Stable Diffusion texture synthesis.",
-        url: "https://github.com/PhilipSanM/Homecraft",
-        tags: [
-            "Python",
-            "NeRF",
-            "U-Net",
-            "Stable Diffusion",
-            "PyTorch",
-            "Computer Vision"
-        ]
-    },
-    {
-        title: "RAG ChatBot for Mexico's Official Gazette (DOF)",
-        description: "Retrieval-Augmented Generation system over an LLM to generate summaries and answer natural-language queries about Mexico's Diario Oficial de la Federaci\xf3n. Built with LangChain + LangServe for retrieval orchestration and Pinecone for vector storage.",
-        url: "https://github.com/JoseLuisMonroy/ISSI-Backend",
-        tags: [
-            "Python",
-            "LangChain",
-            "RAG",
-            "Pinecone",
-            "LLM",
-            "FastAPI"
-        ]
-    },
-    {
-        title: "Genetic Algorithm Sudoku Solver",
-        description: "Solves hard-level Sudoku puzzles 20% faster than baseline approaches using evolutionary strategies — selection, crossover, and mutation — to efficiently explore the solution space.",
-        url: "https://oscarjuji.github.io/Portfolio/",
-        tags: [
-            "Python",
-            "Genetic Algorithms",
-            "Optimization",
-            "Bio-Inspired AI"
-        ]
-    },
-    {
-        title: "Student Management System",
-        description: "Streamlines academic enrollment and course assignments. Improved system performance, security, and scalability using AJAX, Node.js, and Bootstrap with a relational SQL backend.",
-        url: "https://github.com/Ricardo8421/crujirepo",
-        tags: [
-            "Node.js",
-            "AJAX",
-            "Bootstrap",
-            "SQL"
-        ]
-    },
-    {
-        title: "Object Contour Identifier & Classifier",
-        description: "MATLAB GUI that identifies object edges in natural images using digital image processing techniques, then classifies the scene environment using computed edge features.",
-        url: "https://github.com/OscarJuJi/object_contours_identifiying_and_classifying",
-        tags: [
-            "MATLAB",
-            "Computer Vision",
-            "Image Processing"
-        ]
-    },
-    {
-        title: "ESCOM AI Engineering Repository",
-        description: "A curated collection of coursework spanning data structures, software engineering, computer vision, neural networks, and deep learning — covering the full Artificial Intelligence Engineering program.",
-        url: "https://github.com/OscarJuJi",
-        tags: [
-            "Python",
-            "Deep Learning",
-            "Various"
-        ]
-    }, 
-];
-const Portfolio = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("section", {
-        id: "portfolio",
-        className: "portfolio-section",
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-            className: "container",
-            children: [
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                    className: "section-label fade-in",
-                    children: "My Work"
-                }, void 0, false, {
-                    fileName: "src/Components/Portfolio.jsx",
-                    lineNumber: 51,
-                    columnNumber: 7
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                    className: "section-title fade-in delay-1",
-                    children: "Featured Projects"
-                }, void 0, false, {
-                    fileName: "src/Components/Portfolio.jsx",
-                    lineNumber: 52,
-                    columnNumber: 7
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                    className: "section-subtitle fade-in delay-2",
-                    children: "AI, ML, and full-stack projects spanning NeRF-based 3D reconstruction, RAG systems, bio-inspired algorithms, and more."
-                }, void 0, false, {
-                    fileName: "src/Components/Portfolio.jsx",
-                    lineNumber: 53,
-                    columnNumber: 7
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "projects-grid",
-                    children: projectList.map((project, i)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("article", {
-                            className: "project-card fade-in",
-                            style: {
-                                transitionDelay: `${i % 3 * 0.1}s`
-                            },
-                            children: [
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                    className: "project-num",
-                                    children: [
-                                        "Project ",
-                                        String(i + 1).padStart(2, "0")
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "src/Components/Portfolio.jsx",
-                                    lineNumber: 65,
-                                    columnNumber: 13
-                                }, undefined),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                                    children: project.title
-                                }, void 0, false, {
-                                    fileName: "src/Components/Portfolio.jsx",
-                                    lineNumber: 66,
-                                    columnNumber: 13
-                                }, undefined),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                    children: project.description
-                                }, void 0, false, {
-                                    fileName: "src/Components/Portfolio.jsx",
-                                    lineNumber: 67,
-                                    columnNumber: 13
-                                }, undefined),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                    className: "project-tags",
-                                    children: project.tags.map((tag)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                            className: "project-tag",
-                                            children: tag
-                                        }, tag, false, {
-                                            fileName: "src/Components/Portfolio.jsx",
-                                            lineNumber: 70,
-                                            columnNumber: 17
-                                        }, undefined))
-                                }, void 0, false, {
-                                    fileName: "src/Components/Portfolio.jsx",
-                                    lineNumber: 68,
-                                    columnNumber: 13
-                                }, undefined),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                                    href: project.url,
-                                    target: "_blank",
-                                    rel: "noopener noreferrer",
-                                    className: "project-link",
-                                    "aria-label": `View ${project.title} on GitHub`,
-                                    children: "View on GitHub →"
-                                }, void 0, false, {
-                                    fileName: "src/Components/Portfolio.jsx",
-                                    lineNumber: 73,
-                                    columnNumber: 13
-                                }, undefined)
-                            ]
-                        }, project.title, true, {
-                            fileName: "src/Components/Portfolio.jsx",
-                            lineNumber: 60,
-                            columnNumber: 11
-                        }, undefined))
-                }, void 0, false, {
-                    fileName: "src/Components/Portfolio.jsx",
-                    lineNumber: 58,
-                    columnNumber: 7
-                }, undefined)
-            ]
-        }, void 0, true, {
-            fileName: "src/Components/Portfolio.jsx",
-            lineNumber: 50,
-            columnNumber: 5
-        }, undefined)
-    }, void 0, false, {
-        fileName: "src/Components/Portfolio.jsx",
-        lineNumber: 49,
-        columnNumber: 3
-    }, undefined);
-_c = Portfolio;
-exports.default = Portfolio;
-var _c;
-$RefreshReg$(_c, "Portfolio");
-
-  $parcel$ReactRefreshHelpers$ed0d.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"6QZcy":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$8bef = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$8bef.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-const educationList = [
-    {
-        date: "Aug 2021 – Jul 2025",
-        title: "B.Sc. Artificial Intelligence Engineering \xb7 GPA 9.5 / 10",
-        institution: "Escuela Superior de C\xf3mputo (ESCOM) \xb7 IPN — Mexico City",
-        description: "Focused on machine learning, deep learning, computer vision, NLP, bio-inspired algorithms, and software engineering for intelligent systems. Relevant coursework: Machine Learning, Digital Image Processing, Natural Language Technologies, Neural Networks & Deep Learning, Advanced Neural Networks, Software Engineering for Intelligent Systems, Parallel Computing, Bio-Inspired Algorithms."
-    },
-    {
-        date: "2024 – Present",
-        title: "AWS Certified Data Engineer – Associate (In Progress)",
-        institution: "Amazon Web Services",
-        description: "Preparing for the AWS Data Engineer – Associate certification, covering data pipelines, storage, processing, and security on AWS infrastructure."
-    },
-    {
-        date: "2025",
-        title: "SAFe Scrum Master \xb7 AWS Technical Essentials \xb7 Jira Scrum Team",
-        institution: "Scaled Agile \xb7 Amazon Web Services \xb7 Atlassian",
-        description: "Completed agile project management training (SAFe Scrum Master), foundational AWS cloud services (AWS Technical Essentials), and Jira workflow configuration for Scrum teams."
-    },
-    {
-        date: "2024",
-        title: "Secure Development 3.0 \xb7 FreeCodeCamp Certifications",
-        institution: "Net4skills \xb7 FreeCodeCamp",
-        description: "Secure software development practices (Net4skills). FreeCodeCamp certifications in Legacy Responsive Web Design, Legacy Python for Everybody, and JavaScript Algorithms & Data Structures."
-    },
-    {
-        date: "2023",
-        title: "Google Cloud Computing Foundations \xb7 GenAI Skill Badge Pathways",
-        institution: "Google Cloud",
-        description: "Earned the Google Cloud Computing Foundations Certificate and the Beginner: Introduction to Generative AI Learning Path, covering cloud architecture, GCP services, neural networks, NLP, and image generation."
-    },
-    {
-        date: "2023",
-        title: "Microsoft Learn AI Skills Challenge (Azure)",
-        institution: "Microsoft",
-        description: "Obtained insights into Azure cloud services with a focus on Machine Learning, Cognitive Services, and the lifecycle of AI models."
-    },
-    {
-        date: "2022",
-        title: "Oracle Next Education",
-        institution: "Oracle \xb7 Alura LATAM",
-        description: "Acquired skills in programming logic, front-end and back-end development, and entrepreneurship through Oracle's sponsored training program."
-    }, 
-];
-const Education = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("section", {
-        id: "education",
-        className: "timeline-section alt-bg",
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-            className: "container",
-            children: [
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                    className: "section-label fade-in",
-                    children: "Academic Background"
-                }, void 0, false, {
-                    fileName: "src/Components/Education.jsx",
-                    lineNumber: 58,
-                    columnNumber: 7
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                    className: "section-title fade-in delay-1",
-                    children: "Education & Certifications"
-                }, void 0, false, {
-                    fileName: "src/Components/Education.jsx",
-                    lineNumber: 59,
-                    columnNumber: 7
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                    className: "section-subtitle fade-in delay-2",
-                    children: "A strong academic foundation at IPN paired with 10+ industry certifications spanning cloud, AI, agile, and secure development."
-                }, void 0, false, {
-                    fileName: "src/Components/Education.jsx",
-                    lineNumber: 60,
-                    columnNumber: 7
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "timeline",
-                    children: educationList.map((item, i)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            className: `timeline-item fade-in delay-${Math.min(i + 1, 5)}`,
-                            children: [
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                    className: "timeline-dot"
-                                }, void 0, false, {
-                                    fileName: "src/Components/Education.jsx",
-                                    lineNumber: 68,
-                                    columnNumber: 13
-                                }, undefined),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                    className: "timeline-date",
-                                    children: item.date
-                                }, void 0, false, {
-                                    fileName: "src/Components/Education.jsx",
-                                    lineNumber: 69,
-                                    columnNumber: 13
-                                }, undefined),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                    className: "timeline-card",
-                                    children: [
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                                            children: item.title
-                                        }, void 0, false, {
-                                            fileName: "src/Components/Education.jsx",
-                                            lineNumber: 71,
-                                            columnNumber: 15
-                                        }, undefined),
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                            className: "timeline-company",
-                                            children: item.institution
-                                        }, void 0, false, {
-                                            fileName: "src/Components/Education.jsx",
-                                            lineNumber: 72,
-                                            columnNumber: 15
-                                        }, undefined),
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                            children: item.description
-                                        }, void 0, false, {
-                                            fileName: "src/Components/Education.jsx",
-                                            lineNumber: 73,
-                                            columnNumber: 15
-                                        }, undefined)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "src/Components/Education.jsx",
-                                    lineNumber: 70,
-                                    columnNumber: 13
-                                }, undefined)
-                            ]
-                        }, item.title, true, {
-                            fileName: "src/Components/Education.jsx",
-                            lineNumber: 67,
-                            columnNumber: 11
-                        }, undefined))
-                }, void 0, false, {
-                    fileName: "src/Components/Education.jsx",
-                    lineNumber: 65,
-                    columnNumber: 7
-                }, undefined)
-            ]
-        }, void 0, true, {
-            fileName: "src/Components/Education.jsx",
-            lineNumber: 57,
-            columnNumber: 5
-        }, undefined)
-    }, void 0, false, {
-        fileName: "src/Components/Education.jsx",
-        lineNumber: 56,
-        columnNumber: 3
-    }, undefined);
-_c = Education;
-exports.default = Education;
-var _c;
-$RefreshReg$(_c, "Education");
-
-  $parcel$ReactRefreshHelpers$8bef.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"lW6qc":[function() {},{}],"3JLzT":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$4dcf = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$4dcf.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-const experienceList = [
-    {
-        date: "Jul 2025 – Present",
-        title: "Data Engineer",
-        company: "Bluetab (an IBM Company) \xb7 BBVA",
-        bullets: [
-            "Implement ETL pipelines — ingestion, transformation, and storage — integrating multiple data sources into the bank's core data infrastructure.",
-            "Manage datasets and tables in AWS S3, ensuring structured storage and efficient access for Spark-based processing and advanced analytics.",
-            "Maintain and optimize data pipelines in distributed cluster environments, guaranteeing reliability, quality, and high availability.",
-            "Collaborate on data integration strategies for analytical use cases and ML models within the structural risk division.", 
-        ]
-    },
-    {
-        date: "Feb – Jul 2025",
-        title: "Innovation & Development Intern",
-        company: "Grupo Salinas",
-        bullets: [
-            "Researched, developed, and deployed AI tools to optimize business workflows and validate models in innovation-driven environments.",
-            "Engineered AI agents, conversational chatbots, visual prototypes, and dynamic landing pages for internal business units.", 
-        ]
-    },
-    {
-        date: "Jun – Dec 2024",
-        title: "Full-Stack Intern",
-        company: "Banco de M\xe9xico",
-        bullets: [
-            "Boosted system performance by 30% by optimizing SQL queries and reducing algorithmic complexity in Java and JavaScript.",
-            "Streamlined an internal tool's UX through a more intuitive and responsive interface redesign.",
-            "Enforced database integrity and security via normalization, stored procedures, views, indexing, and role-based access control in Oracle SQL.", 
-        ]
-    }, 
-];
-const ProfessionalExperience = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("section", {
-        id: "experience",
-        className: "timeline-section",
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-            className: "container",
-            children: [
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                    className: "section-label fade-in",
-                    children: "Work History"
-                }, void 0, false, {
-                    fileName: "src/Components/ProfessionalExperience.jsx",
-                    lineNumber: 39,
-                    columnNumber: 7
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                    className: "section-title fade-in delay-1",
-                    children: "Professional Experience"
-                }, void 0, false, {
-                    fileName: "src/Components/ProfessionalExperience.jsx",
-                    lineNumber: 40,
-                    columnNumber: 7
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                    className: "section-subtitle fade-in delay-2",
-                    children: "Three industry roles delivering measurable impact across data engineering, AI product development, and full-stack systems."
-                }, void 0, false, {
-                    fileName: "src/Components/ProfessionalExperience.jsx",
-                    lineNumber: 41,
-                    columnNumber: 7
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "timeline",
-                    children: experienceList.map((job, i)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            className: `timeline-item fade-in delay-${Math.min(i + 1, 5)}`,
-                            children: [
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                    className: "timeline-dot"
-                                }, void 0, false, {
-                                    fileName: "src/Components/ProfessionalExperience.jsx",
-                                    lineNumber: 49,
-                                    columnNumber: 13
-                                }, undefined),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                    className: "timeline-date",
-                                    children: job.date
-                                }, void 0, false, {
-                                    fileName: "src/Components/ProfessionalExperience.jsx",
-                                    lineNumber: 50,
-                                    columnNumber: 13
-                                }, undefined),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                    className: "timeline-card",
-                                    children: [
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                                            children: job.title
-                                        }, void 0, false, {
-                                            fileName: "src/Components/ProfessionalExperience.jsx",
-                                            lineNumber: 52,
-                                            columnNumber: 15
-                                        }, undefined),
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                            className: "timeline-company",
-                                            children: job.company
-                                        }, void 0, false, {
-                                            fileName: "src/Components/ProfessionalExperience.jsx",
-                                            lineNumber: 53,
-                                            columnNumber: 15
-                                        }, undefined),
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
-                                            children: job.bullets.map((point)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                                                    children: point
-                                                }, point, false, {
-                                                    fileName: "src/Components/ProfessionalExperience.jsx",
-                                                    lineNumber: 56,
-                                                    columnNumber: 19
-                                                }, undefined))
-                                        }, void 0, false, {
-                                            fileName: "src/Components/ProfessionalExperience.jsx",
-                                            lineNumber: 54,
-                                            columnNumber: 15
-                                        }, undefined)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "src/Components/ProfessionalExperience.jsx",
-                                    lineNumber: 51,
-                                    columnNumber: 13
-                                }, undefined)
-                            ]
-                        }, `${job.company}-${i}`, true, {
-                            fileName: "src/Components/ProfessionalExperience.jsx",
-                            lineNumber: 48,
-                            columnNumber: 11
-                        }, undefined))
-                }, void 0, false, {
-                    fileName: "src/Components/ProfessionalExperience.jsx",
-                    lineNumber: 46,
-                    columnNumber: 7
-                }, undefined)
-            ]
-        }, void 0, true, {
-            fileName: "src/Components/ProfessionalExperience.jsx",
-            lineNumber: 38,
-            columnNumber: 5
-        }, undefined)
-    }, void 0, false, {
-        fileName: "src/Components/ProfessionalExperience.jsx",
-        lineNumber: 37,
-        columnNumber: 3
-    }, undefined);
-_c = ProfessionalExperience;
-exports.default = ProfessionalExperience;
-var _c;
-$RefreshReg$(_c, "ProfessionalExperience");
-
-  $parcel$ReactRefreshHelpers$4dcf.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"3ECXD":[function(require,module,exports) {
+},{}],"3ECXD":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$26ef = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -30009,6 +30363,1119 @@ $RefreshReg$(_c, "Contact");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","prop-types":"7wKI2","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../images/socials/envelope.svg":"92UhI","../images/socials/linkedin.svg":"5XSmz","../images/socials/github.svg":"vP2m6"}]},["1xC6H","ShInH","8lqZg"], "8lqZg", "parcelRequire6158")
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","prop-types":"7wKI2","../images/socials/envelope.svg":"92UhI","../images/socials/linkedin.svg":"5XSmz","../images/socials/github.svg":"vP2m6","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"92UhI":[function(require,module,exports) {
+module.exports = require("./helpers/bundle-url").getBundleURL("bLxZJ") + "envelope.5e5e1d9e.svg" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"lgJ39"}],"5XSmz":[function(require,module,exports) {
+module.exports = require("./helpers/bundle-url").getBundleURL("bLxZJ") + "linkedin.49c2dcdf.svg" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"lgJ39"}],"vP2m6":[function(require,module,exports) {
+module.exports = require("./helpers/bundle-url").getBundleURL("bLxZJ") + "github.51e0fbb2.svg" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"lgJ39"}],"7GWgX":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$8b43 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$8b43.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _propTypes = require("prop-types");
+var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
+var _envelopeSvg = require("../images/socials/envelope.svg");
+var _envelopeSvgDefault = parcelHelpers.interopDefault(_envelopeSvg);
+var _githubSvg = require("../images/socials/github.svg");
+var _githubSvgDefault = parcelHelpers.interopDefault(_githubSvg);
+var _instagramSvg = require("../images/socials/instagram.svg");
+var _instagramSvgDefault = parcelHelpers.interopDefault(_instagramSvg);
+var _linkedinSvg = require("../images/socials/linkedin.svg");
+var _linkedinSvgDefault = parcelHelpers.interopDefault(_linkedinSvg);
+const Footer = ({ name , email , gitHub , instagram , linkedIn  })=>{
+    const socials = [
+        {
+            show: email,
+            href: `mailto:${email}`,
+            icon: (0, _envelopeSvgDefault.default),
+            alt: "Email"
+        },
+        {
+            show: gitHub,
+            href: `https://github.com/${gitHub}`,
+            icon: (0, _githubSvgDefault.default),
+            alt: "GitHub"
+        },
+        {
+            show: linkedIn,
+            href: `https://www.linkedin.com/in/${linkedIn}`,
+            icon: (0, _linkedinSvgDefault.default),
+            alt: "LinkedIn"
+        }, 
+    ].filter((s)=>s.show);
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("footer", {
+        id: "footer",
+        className: "footer",
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            className: "footer-inner",
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "footer-brand",
+                    children: [
+                        name.split(" ")[0],
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                            style: {
+                                color: "var(--color-accent)"
+                            },
+                            children: "."
+                        }, void 0, false, {
+                            fileName: "src/Components/Footer.jsx",
+                            lineNumber: 20,
+                            columnNumber: 59
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/Components/Footer.jsx",
+                    lineNumber: 20,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                    className: "footer-tagline",
+                    children: "AI Engineer & Full Stack Developer"
+                }, void 0, false, {
+                    fileName: "src/Components/Footer.jsx",
+                    lineNumber: 21,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "footer-socials",
+                    children: socials.map((s)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                            href: s.href,
+                            target: s.href.startsWith("mailto") ? undefined : "_blank",
+                            rel: s.href.startsWith("mailto") ? undefined : "noopener noreferrer",
+                            className: "footer-social-link",
+                            "aria-label": s.alt,
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                src: s.icon,
+                                alt: s.alt
+                            }, void 0, false, {
+                                fileName: "src/Components/Footer.jsx",
+                                lineNumber: 33,
+                                columnNumber: 15
+                            }, undefined)
+                        }, s.alt, false, {
+                            fileName: "src/Components/Footer.jsx",
+                            lineNumber: 25,
+                            columnNumber: 13
+                        }, undefined))
+                }, void 0, false, {
+                    fileName: "src/Components/Footer.jsx",
+                    lineNumber: 23,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "footer-divider"
+                }, void 0, false, {
+                    fileName: "src/Components/Footer.jsx",
+                    lineNumber: 38,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                    className: "footer-copyright",
+                    children: [
+                        "\xa9 ",
+                        new Date().getFullYear(),
+                        " ",
+                        name,
+                        " — Built with React"
+                    ]
+                }, void 0, true, {
+                    fileName: "src/Components/Footer.jsx",
+                    lineNumber: 39,
+                    columnNumber: 9
+                }, undefined)
+            ]
+        }, void 0, true, {
+            fileName: "src/Components/Footer.jsx",
+            lineNumber: 19,
+            columnNumber: 7
+        }, undefined)
+    }, void 0, false, {
+        fileName: "src/Components/Footer.jsx",
+        lineNumber: 18,
+        columnNumber: 5
+    }, undefined);
+};
+_c = Footer;
+Footer.defaultProps = {
+    devDotTo: "",
+    medium: "",
+    twitter: "",
+    youTube: ""
+};
+Footer.propTypes = {
+    name: (0, _propTypesDefault.default).string.isRequired,
+    email: (0, _propTypesDefault.default).string,
+    gitHub: (0, _propTypesDefault.default).string,
+    instagram: (0, _propTypesDefault.default).string,
+    linkedIn: (0, _propTypesDefault.default).string
+};
+exports.default = Footer;
+var _c;
+$RefreshReg$(_c, "Footer");
+
+  $parcel$ReactRefreshHelpers$8b43.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","prop-types":"7wKI2","../images/socials/envelope.svg":"92UhI","../images/socials/github.svg":"vP2m6","../images/socials/instagram.svg":"jH0VA","../images/socials/linkedin.svg":"5XSmz","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"jH0VA":[function(require,module,exports) {
+module.exports = require("./helpers/bundle-url").getBundleURL("bLxZJ") + "instagram.84def2ad.svg" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"lgJ39"}],"9Dt2F":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$2a62 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$2a62.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _propTypes = require("prop-types");
+var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
+var _icons = require("./Icons");
+var _iconWebp = require("../images/icon.webp");
+var _iconWebpDefault = parcelHelpers.interopDefault(_iconWebp);
+var _s = $RefreshSig$();
+const navLinks = [
+    {
+        href: "#home",
+        label: "Home"
+    },
+    {
+        href: "#about",
+        label: "About"
+    },
+    {
+        href: "#education",
+        label: "Education"
+    },
+    {
+        href: "#experience",
+        label: "Experience"
+    },
+    {
+        href: "#portfolio",
+        label: "Projects"
+    },
+    {
+        href: "#contact",
+        label: "Contact"
+    }, 
+];
+const Header = ({ darkMode , onToggleDark  })=>{
+    _s();
+    const [scrolled, setScrolled] = (0, _react.useState)(false);
+    const [mobileOpen, setMobileOpen] = (0, _react.useState)(false);
+    (0, _react.useEffect)(()=>{
+        const onScroll = ()=>setScrolled(window.scrollY > 24);
+        window.addEventListener("scroll", onScroll, {
+            passive: true
+        });
+        return ()=>window.removeEventListener("scroll", onScroll);
+    }, []);
+    // Close mobile menu on resize to desktop
+    (0, _react.useEffect)(()=>{
+        const onResize = ()=>{
+            if (window.innerWidth > 768) setMobileOpen(false);
+        };
+        window.addEventListener("resize", onResize);
+        return ()=>window.removeEventListener("resize", onResize);
+    }, []);
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("header", {
+                className: `header${scrolled ? " scrolled" : ""}`,
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "header-inner",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                            href: "#home",
+                            className: "header-logo",
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                src: (0, _iconWebpDefault.default),
+                                alt: "icon",
+                                className: "header-logo-img"
+                            }, void 0, false, {
+                                fileName: "src/Components/Header.jsx",
+                                lineNumber: 37,
+                                columnNumber: 13
+                            }, undefined)
+                        }, void 0, false, {
+                            fileName: "src/Components/Header.jsx",
+                            lineNumber: 36,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("nav", {
+                            className: "nav-links",
+                            "aria-label": "Primary navigation",
+                            children: navLinks.map((link)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                    href: link.href,
+                                    children: link.label
+                                }, link.href, false, {
+                                    fileName: "src/Components/Header.jsx",
+                                    lineNumber: 42,
+                                    columnNumber: 15
+                                }, undefined))
+                        }, void 0, false, {
+                            fileName: "src/Components/Header.jsx",
+                            lineNumber: 40,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            className: "header-actions",
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                    className: "theme-toggle",
+                                    onClick: onToggleDark,
+                                    "aria-label": darkMode ? "Switch to light mode" : "Switch to dark mode",
+                                    title: darkMode ? "Light mode" : "Dark mode",
+                                    children: darkMode ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _icons.SunIcon), {
+                                        size: 17
+                                    }, void 0, false, {
+                                        fileName: "src/Components/Header.jsx",
+                                        lineNumber: 55,
+                                        columnNumber: 27
+                                    }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _icons.MoonIcon), {
+                                        size: 16
+                                    }, void 0, false, {
+                                        fileName: "src/Components/Header.jsx",
+                                        lineNumber: 55,
+                                        columnNumber: 51
+                                    }, undefined)
+                                }, void 0, false, {
+                                    fileName: "src/Components/Header.jsx",
+                                    lineNumber: 49,
+                                    columnNumber: 13
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                    className: "hamburger",
+                                    onClick: ()=>setMobileOpen((o)=>!o),
+                                    "aria-label": "Toggle mobile menu",
+                                    "aria-expanded": mobileOpen,
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {}, void 0, false, {
+                                            fileName: "src/Components/Header.jsx",
+                                            lineNumber: 64,
+                                            columnNumber: 15
+                                        }, undefined),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {}, void 0, false, {
+                                            fileName: "src/Components/Header.jsx",
+                                            lineNumber: 65,
+                                            columnNumber: 15
+                                        }, undefined),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {}, void 0, false, {
+                                            fileName: "src/Components/Header.jsx",
+                                            lineNumber: 66,
+                                            columnNumber: 15
+                                        }, undefined)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "src/Components/Header.jsx",
+                                    lineNumber: 58,
+                                    columnNumber: 13
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/Components/Header.jsx",
+                            lineNumber: 48,
+                            columnNumber: 11
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/Components/Header.jsx",
+                    lineNumber: 35,
+                    columnNumber: 9
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/Components/Header.jsx",
+                lineNumber: 34,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("nav", {
+                className: `mobile-nav${mobileOpen ? " open" : ""}`,
+                "aria-label": "Mobile navigation",
+                children: navLinks.map((link)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                        href: link.href,
+                        onClick: ()=>setMobileOpen(false),
+                        children: link.label
+                    }, link.href, false, {
+                        fileName: "src/Components/Header.jsx",
+                        lineNumber: 77,
+                        columnNumber: 11
+                    }, undefined))
+            }, void 0, false, {
+                fileName: "src/Components/Header.jsx",
+                lineNumber: 72,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true);
+};
+_s(Header, "839OcP8REwPV78hIif0NcwyILZs=");
+_c = Header;
+Header.propTypes = {
+    darkMode: (0, _propTypesDefault.default).bool.isRequired,
+    onToggleDark: (0, _propTypesDefault.default).func.isRequired
+};
+exports.default = Header;
+var _c;
+$RefreshReg$(_c, "Header");
+
+  $parcel$ReactRefreshHelpers$2a62.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","prop-types":"7wKI2","./Icons":"kp6YJ","../images/icon.webp":"kIQA1","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"kIQA1":[function(require,module,exports) {
+module.exports = require("./helpers/bundle-url").getBundleURL("bLxZJ") + "icon.e36cbfda.webp" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"lgJ39"}],"jIEVO":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$0d4d = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$0d4d.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _propTypes = require("prop-types");
+var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
+var _resumePdf = require("url:../../public/resume.pdf");
+var _resumePdfDefault = parcelHelpers.interopDefault(_resumePdf);
+var _cvPdf = require("url:../../public/cv.pdf");
+var _cvPdfDefault = parcelHelpers.interopDefault(_cvPdf);
+var _s = $RefreshSig$();
+const resume = (0, _resumePdfDefault.default);
+const cv = (0, _cvPdfDefault.default);
+const typingPhrases = [
+    "Artificial Intelligence Engineer",
+    "Data Engineer",
+    "Full Stack Developer",
+    "Machine Learning Practitioner",
+    "Problem Solver", 
+];
+const Home = ({ name  })=>{
+    _s();
+    const typedRef = (0, _react.useRef)(null);
+    (0, _react.useEffect)(()=>{
+        let phraseIdx = 0;
+        let charIdx = 0;
+        let deleting = false;
+        const TYPING_SPEED = 75;
+        const DELETING_SPEED = 40;
+        const PAUSE_AFTER_TYPED = 2200;
+        const PAUSE_AFTER_DELETED = 300;
+        let timeoutId;
+        const tick = ()=>{
+            const phrase = typingPhrases[phraseIdx];
+            if (!typedRef.current) return;
+            if (!deleting) {
+                charIdx++;
+                typedRef.current.textContent = phrase.slice(0, charIdx);
+                if (charIdx === phrase.length) {
+                    deleting = true;
+                    timeoutId = setTimeout(tick, PAUSE_AFTER_TYPED);
+                    return;
+                }
+                timeoutId = setTimeout(tick, TYPING_SPEED);
+            } else {
+                charIdx--;
+                typedRef.current.textContent = phrase.slice(0, charIdx);
+                if (charIdx === 0) {
+                    deleting = false;
+                    phraseIdx = (phraseIdx + 1) % typingPhrases.length;
+                    timeoutId = setTimeout(tick, PAUSE_AFTER_DELETED);
+                    return;
+                }
+                timeoutId = setTimeout(tick, DELETING_SPEED);
+            }
+        };
+        timeoutId = setTimeout(tick, 800);
+        return ()=>clearTimeout(timeoutId);
+    }, []);
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("section", {
+        id: "home",
+        className: "hero",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "hero-bg",
+                "aria-hidden": "true"
+            }, void 0, false, {
+                fileName: "src/Components/Home.jsx",
+                lineNumber: 65,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "hero-content",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "hero-tag fade-in",
+                        children: "Available for opportunities"
+                    }, void 0, false, {
+                        fileName: "src/Components/Home.jsx",
+                        lineNumber: 68,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                        className: "fade-in delay-1",
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                            className: "hero-name",
+                            children: name
+                        }, void 0, false, {
+                            fileName: "src/Components/Home.jsx",
+                            lineNumber: 71,
+                            columnNumber: 11
+                        }, undefined)
+                    }, void 0, false, {
+                        fileName: "src/Components/Home.jsx",
+                        lineNumber: 70,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                        className: "hero-title fade-in delay-2",
+                        "aria-live": "polite",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                ref: typedRef
+                            }, void 0, false, {
+                                fileName: "src/Components/Home.jsx",
+                                lineNumber: 75,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                className: "typed-cursor",
+                                "aria-hidden": "true",
+                                children: "|"
+                            }, void 0, false, {
+                                fileName: "src/Components/Home.jsx",
+                                lineNumber: 76,
+                                columnNumber: 11
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/Components/Home.jsx",
+                        lineNumber: 74,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                        className: "hero-description fade-in delay-3",
+                        children: "AI Engineer and ESCOM–IPN graduate passionate about building intelligent systems. From machine learning pipelines to full-stack applications — I turn ideas into working software."
+                    }, void 0, false, {
+                        fileName: "src/Components/Home.jsx",
+                        lineNumber: 81,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "hero-actions fade-in delay-4",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                href: resume,
+                                target: "_blank",
+                                rel: "noopener noreferrer",
+                                className: "btn btn-primary",
+                                children: "↓ Curriculum"
+                            }, void 0, false, {
+                                fileName: "src/Components/Home.jsx",
+                                lineNumber: 88,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                href: cv,
+                                target: "_blank",
+                                rel: "noopener noreferrer",
+                                className: "btn btn-outline",
+                                children: "↓ Resume"
+                            }, void 0, false, {
+                                fileName: "src/Components/Home.jsx",
+                                lineNumber: 91,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                href: "#contact",
+                                className: "btn btn-ghost",
+                                children: "Get in touch →"
+                            }, void 0, false, {
+                                fileName: "src/Components/Home.jsx",
+                                lineNumber: 94,
+                                columnNumber: 11
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/Components/Home.jsx",
+                        lineNumber: 87,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/Components/Home.jsx",
+                lineNumber: 67,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                href: "#about",
+                className: "scroll-cue",
+                "aria-label": "Scroll to About",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "scroll-line"
+                    }, void 0, false, {
+                        fileName: "src/Components/Home.jsx",
+                        lineNumber: 101,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                        children: "Scroll"
+                    }, void 0, false, {
+                        fileName: "src/Components/Home.jsx",
+                        lineNumber: 102,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/Components/Home.jsx",
+                lineNumber: 100,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/Components/Home.jsx",
+        lineNumber: 64,
+        columnNumber: 5
+    }, undefined);
+};
+_s(Home, "8FLAP0FbNVHgUQlmIlxg23gZZJ8=");
+_c = Home;
+Home.defaultProps = {
+    name: "Oscar Juarez"
+};
+Home.propTypes = {
+    name: (0, _propTypesDefault.default).string.isRequired
+};
+exports.default = Home;
+var _c;
+$RefreshReg$(_c, "Home");
+
+  $parcel$ReactRefreshHelpers$0d4d.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","prop-types":"7wKI2","url:../../public/resume.pdf":"9mxsn","url:../../public/cv.pdf":"bHVCR","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"9mxsn":[function(require,module,exports) {
+module.exports = require("./helpers/bundle-url").getBundleURL("bLxZJ") + "resume.71b1a44c.pdf" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"lgJ39"}],"bHVCR":[function(require,module,exports) {
+module.exports = require("./helpers/bundle-url").getBundleURL("bLxZJ") + "cv.293751be.pdf" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"lgJ39"}],"lCaEt":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$ed0d = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$ed0d.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _portfolioSearchMjs = require("../portfolio-search.mjs");
+var _icons = require("./Icons");
+var _s = $RefreshSig$();
+const QUICK_FILTERS = [
+    "Python",
+    "React",
+    "Computer Vision",
+    "RAG",
+    "Deep Learning",
+    "SQL",
+    "MATLAB",
+    "C++"
+];
+const Portfolio = ()=>{
+    _s();
+    const [query, setQuery] = (0, _react.useState)("");
+    const visibleTitles = new Set((0, _portfolioSearchMjs.projectList).filter((project)=>(0, _portfolioSearchMjs.projectMatches)(project, query)).map((project)=>project.title));
+    const searching = query.trim().length > 0;
+    const matchCount = visibleTitles.size;
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("section", {
+        id: "portfolio",
+        className: "portfolio-section",
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            className: "container",
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                    className: "section-label fade-in",
+                    children: "My Work"
+                }, void 0, false, {
+                    fileName: "src/Components/Portfolio.jsx",
+                    lineNumber: 19,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                    className: "section-title fade-in delay-1",
+                    children: "Featured Projects"
+                }, void 0, false, {
+                    fileName: "src/Components/Portfolio.jsx",
+                    lineNumber: 20,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                    className: "section-subtitle fade-in delay-2",
+                    children: "AI, ML, and full-stack projects spanning NeRF-based 3D reconstruction, RAG systems, bio-inspired algorithms, and more."
+                }, void 0, false, {
+                    fileName: "src/Components/Portfolio.jsx",
+                    lineNumber: 21,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "project-search-wrap fade-in delay-3",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                            className: "project-search-icon",
+                            "aria-hidden": "true",
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _icons.SearchIcon), {
+                                size: 15
+                            }, void 0, false, {
+                                fileName: "src/Components/Portfolio.jsx",
+                                lineNumber: 28,
+                                columnNumber: 13
+                            }, undefined)
+                        }, void 0, false, {
+                            fileName: "src/Components/Portfolio.jsx",
+                            lineNumber: 27,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                            className: "project-search",
+                            type: "text",
+                            placeholder: "Search by skill, technology, or keyword…",
+                            value: query,
+                            onChange: (e)=>setQuery(e.target.value),
+                            "aria-label": "Filter projects"
+                        }, void 0, false, {
+                            fileName: "src/Components/Portfolio.jsx",
+                            lineNumber: 30,
+                            columnNumber: 11
+                        }, undefined),
+                        query && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                            className: "project-search-clear",
+                            onClick: ()=>setQuery(""),
+                            "aria-label": "Clear search",
+                            children: "✕"
+                        }, void 0, false, {
+                            fileName: "src/Components/Portfolio.jsx",
+                            lineNumber: 39,
+                            columnNumber: 13
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/Components/Portfolio.jsx",
+                    lineNumber: 26,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "project-quick-filters fade-in delay-3",
+                    children: QUICK_FILTERS.map((tag)=>{
+                        const active = query.toLowerCase() === tag.toLowerCase();
+                        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                            className: `project-chip${active ? " active" : ""}`,
+                            onClick: ()=>setQuery(active ? "" : tag),
+                            "aria-pressed": active,
+                            children: tag
+                        }, tag, false, {
+                            fileName: "src/Components/Portfolio.jsx",
+                            lineNumber: 49,
+                            columnNumber: 15
+                        }, undefined);
+                    })
+                }, void 0, false, {
+                    fileName: "src/Components/Portfolio.jsx",
+                    lineNumber: 45,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                    className: "project-search-count",
+                    "aria-live": "polite",
+                    children: !searching ? "\xa0" : matchCount === 0 ? `No projects match “${query}” — try another keyword or a tag above.` : `Showing ${matchCount} of ${(0, _portfolioSearchMjs.projectList).length} projects`
+                }, void 0, false, {
+                    fileName: "src/Components/Portfolio.jsx",
+                    lineNumber: 61,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "projects-grid",
+                    children: (0, _portfolioSearchMjs.projectList).map((project, i)=>{
+                        const visible = visibleTitles.has(project.title);
+                        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("article", {
+                            className: `project-card fade-in${visible ? "" : " project-hidden"}`,
+                            style: {
+                                transitionDelay: `${i % 3 * 0.1}s`
+                            },
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                    className: "project-num",
+                                    children: [
+                                        "Project ",
+                                        String(i + 1).padStart(2, "0")
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "src/Components/Portfolio.jsx",
+                                    lineNumber: 78,
+                                    columnNumber: 17
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                                    children: project.title
+                                }, void 0, false, {
+                                    fileName: "src/Components/Portfolio.jsx",
+                                    lineNumber: 79,
+                                    columnNumber: 17
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                    children: project.description
+                                }, void 0, false, {
+                                    fileName: "src/Components/Portfolio.jsx",
+                                    lineNumber: 80,
+                                    columnNumber: 17
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                    className: "project-tags",
+                                    children: project.tags.map((tag)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                            className: "project-tag",
+                                            children: tag
+                                        }, tag, false, {
+                                            fileName: "src/Components/Portfolio.jsx",
+                                            lineNumber: 83,
+                                            columnNumber: 21
+                                        }, undefined))
+                                }, void 0, false, {
+                                    fileName: "src/Components/Portfolio.jsx",
+                                    lineNumber: 81,
+                                    columnNumber: 17
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                    href: project.url,
+                                    target: "_blank",
+                                    rel: "noopener noreferrer",
+                                    className: "project-link",
+                                    "aria-label": `View ${project.title} on GitHub`,
+                                    children: "View on GitHub →"
+                                }, void 0, false, {
+                                    fileName: "src/Components/Portfolio.jsx",
+                                    lineNumber: 86,
+                                    columnNumber: 17
+                                }, undefined)
+                            ]
+                        }, project.title, true, {
+                            fileName: "src/Components/Portfolio.jsx",
+                            lineNumber: 73,
+                            columnNumber: 15
+                        }, undefined);
+                    })
+                }, void 0, false, {
+                    fileName: "src/Components/Portfolio.jsx",
+                    lineNumber: 69,
+                    columnNumber: 9
+                }, undefined)
+            ]
+        }, void 0, true, {
+            fileName: "src/Components/Portfolio.jsx",
+            lineNumber: 18,
+            columnNumber: 7
+        }, undefined)
+    }, void 0, false, {
+        fileName: "src/Components/Portfolio.jsx",
+        lineNumber: 17,
+        columnNumber: 5
+    }, undefined);
+};
+_s(Portfolio, "HYX2QbDDdTtlu7GfoQbAPZOIM6k=");
+_c = Portfolio;
+exports.default = Portfolio;
+var _c;
+$RefreshReg$(_c, "Portfolio");
+
+  $parcel$ReactRefreshHelpers$ed0d.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../portfolio-search.mjs":"hjSiB","./Icons":"kp6YJ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"6QZcy":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$8bef = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$8bef.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _siteDataMjs = require("../site-data.mjs");
+const Education = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("section", {
+        id: "education",
+        className: "timeline-section alt-bg",
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            className: "container",
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                    className: "section-label fade-in",
+                    children: "Academic Background"
+                }, void 0, false, {
+                    fileName: "src/Components/Education.jsx",
+                    lineNumber: 7,
+                    columnNumber: 7
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                    className: "section-title fade-in delay-1",
+                    children: "Education & Certifications"
+                }, void 0, false, {
+                    fileName: "src/Components/Education.jsx",
+                    lineNumber: 8,
+                    columnNumber: 7
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                    className: "section-subtitle fade-in delay-2",
+                    children: "A strong academic foundation at IPN paired with 10+ industry certifications spanning cloud, AI, agile, and secure development."
+                }, void 0, false, {
+                    fileName: "src/Components/Education.jsx",
+                    lineNumber: 9,
+                    columnNumber: 7
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "timeline",
+                    children: (0, _siteDataMjs.educationList).map((item, i)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            className: `timeline-item fade-in delay-${Math.min(i + 1, 5)}`,
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                    className: "timeline-dot"
+                                }, void 0, false, {
+                                    fileName: "src/Components/Education.jsx",
+                                    lineNumber: 17,
+                                    columnNumber: 13
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                    className: "timeline-date",
+                                    children: item.date
+                                }, void 0, false, {
+                                    fileName: "src/Components/Education.jsx",
+                                    lineNumber: 18,
+                                    columnNumber: 13
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                    className: "timeline-card",
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                                            children: item.title
+                                        }, void 0, false, {
+                                            fileName: "src/Components/Education.jsx",
+                                            lineNumber: 20,
+                                            columnNumber: 15
+                                        }, undefined),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                            className: "timeline-company",
+                                            children: item.institution
+                                        }, void 0, false, {
+                                            fileName: "src/Components/Education.jsx",
+                                            lineNumber: 21,
+                                            columnNumber: 15
+                                        }, undefined),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                            children: item.description
+                                        }, void 0, false, {
+                                            fileName: "src/Components/Education.jsx",
+                                            lineNumber: 22,
+                                            columnNumber: 15
+                                        }, undefined)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "src/Components/Education.jsx",
+                                    lineNumber: 19,
+                                    columnNumber: 13
+                                }, undefined)
+                            ]
+                        }, item.title, true, {
+                            fileName: "src/Components/Education.jsx",
+                            lineNumber: 16,
+                            columnNumber: 11
+                        }, undefined))
+                }, void 0, false, {
+                    fileName: "src/Components/Education.jsx",
+                    lineNumber: 14,
+                    columnNumber: 7
+                }, undefined)
+            ]
+        }, void 0, true, {
+            fileName: "src/Components/Education.jsx",
+            lineNumber: 6,
+            columnNumber: 5
+        }, undefined)
+    }, void 0, false, {
+        fileName: "src/Components/Education.jsx",
+        lineNumber: 5,
+        columnNumber: 3
+    }, undefined);
+_c = Education;
+exports.default = Education;
+var _c;
+$RefreshReg$(_c, "Education");
+
+  $parcel$ReactRefreshHelpers$8bef.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../site-data.mjs":"iovxP","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"3JLzT":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$4dcf = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$4dcf.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _siteDataMjs = require("../site-data.mjs");
+const ProfessionalExperience = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("section", {
+        id: "experience",
+        className: "timeline-section",
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            className: "container",
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                    className: "section-label fade-in",
+                    children: "Work History"
+                }, void 0, false, {
+                    fileName: "src/Components/ProfessionalExperience.jsx",
+                    lineNumber: 7,
+                    columnNumber: 7
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                    className: "section-title fade-in delay-1",
+                    children: "Professional Experience"
+                }, void 0, false, {
+                    fileName: "src/Components/ProfessionalExperience.jsx",
+                    lineNumber: 8,
+                    columnNumber: 7
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                    className: "section-subtitle fade-in delay-2",
+                    children: "Three industry roles delivering measurable impact across data engineering, AI product development, and full-stack systems."
+                }, void 0, false, {
+                    fileName: "src/Components/ProfessionalExperience.jsx",
+                    lineNumber: 9,
+                    columnNumber: 7
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "timeline",
+                    children: (0, _siteDataMjs.experienceList).map((job, i)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            className: `timeline-item fade-in delay-${Math.min(i + 1, 5)}`,
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                    className: "timeline-dot"
+                                }, void 0, false, {
+                                    fileName: "src/Components/ProfessionalExperience.jsx",
+                                    lineNumber: 17,
+                                    columnNumber: 13
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                    className: "timeline-date",
+                                    children: job.date
+                                }, void 0, false, {
+                                    fileName: "src/Components/ProfessionalExperience.jsx",
+                                    lineNumber: 18,
+                                    columnNumber: 13
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                    className: "timeline-card",
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                                            children: job.title
+                                        }, void 0, false, {
+                                            fileName: "src/Components/ProfessionalExperience.jsx",
+                                            lineNumber: 20,
+                                            columnNumber: 15
+                                        }, undefined),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                            className: "timeline-company",
+                                            children: job.company
+                                        }, void 0, false, {
+                                            fileName: "src/Components/ProfessionalExperience.jsx",
+                                            lineNumber: 21,
+                                            columnNumber: 15
+                                        }, undefined),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+                                            children: job.bullets.map((point)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                                    children: point
+                                                }, point, false, {
+                                                    fileName: "src/Components/ProfessionalExperience.jsx",
+                                                    lineNumber: 24,
+                                                    columnNumber: 19
+                                                }, undefined))
+                                        }, void 0, false, {
+                                            fileName: "src/Components/ProfessionalExperience.jsx",
+                                            lineNumber: 22,
+                                            columnNumber: 15
+                                        }, undefined)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "src/Components/ProfessionalExperience.jsx",
+                                    lineNumber: 19,
+                                    columnNumber: 13
+                                }, undefined)
+                            ]
+                        }, `${job.company}-${i}`, true, {
+                            fileName: "src/Components/ProfessionalExperience.jsx",
+                            lineNumber: 16,
+                            columnNumber: 11
+                        }, undefined))
+                }, void 0, false, {
+                    fileName: "src/Components/ProfessionalExperience.jsx",
+                    lineNumber: 14,
+                    columnNumber: 7
+                }, undefined)
+            ]
+        }, void 0, true, {
+            fileName: "src/Components/ProfessionalExperience.jsx",
+            lineNumber: 6,
+            columnNumber: 5
+        }, undefined)
+    }, void 0, false, {
+        fileName: "src/Components/ProfessionalExperience.jsx",
+        lineNumber: 5,
+        columnNumber: 3
+    }, undefined);
+_c = ProfessionalExperience;
+exports.default = ProfessionalExperience;
+var _c;
+$RefreshReg$(_c, "ProfessionalExperience");
+
+  $parcel$ReactRefreshHelpers$4dcf.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../site-data.mjs":"iovxP","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"lW6qc":[function() {},{}]},["1xC6H","ShInH","8lqZg"], "8lqZg", "parcelRequire6158")
 
 //# sourceMappingURL=index.975ef6c8.js.map
