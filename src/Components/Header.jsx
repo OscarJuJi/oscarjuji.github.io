@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
+import { SunIcon, MoonIcon } from "./Icons";
+import logo from "../images/icon.webp";
 
 const navLinks = [
   { href: "#home", label: "Home" },
@@ -32,7 +34,7 @@ const Header = ({ darkMode, onToggleDark }) => {
       <header className={`header${scrolled ? " scrolled" : ""}`}>
         <div className="header-inner">
           <a href="#home" className="header-logo">
-            Oscar<span>.</span>
+            <img src={logo} alt="icon" className="header-logo-img" />
           </a>
 
           <nav className="nav-links" aria-label="Primary navigation">
@@ -50,7 +52,7 @@ const Header = ({ darkMode, onToggleDark }) => {
               aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
               title={darkMode ? "Light mode" : "Dark mode"}
             >
-              {darkMode ? "☀️" : "🌙"}
+              {darkMode ? <SunIcon size={17} /> : <MoonIcon size={16} />}
             </button>
 
             <button

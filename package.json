@@ -6,10 +6,14 @@
   "homepage": "http://OscarJuJi.github.io",
   "scripts": {
     "start": "parcel",
-    "build": "parcel build",
-    "build-gh": "parcel build --public-url 'https://OscarJuJi.github.io'",
+    "build": "parcel build && npm run copy-static",
+    "build-gh": "parcel build --public-url 'https://OscarJuJi.github.io' && npm run copy-static",
+    "copy-static": "cp public/robots.txt public/sitemap.xml dist/",
     "predeploy": "npm run build-gh",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "test:filter": "node scripts/test-filter.mjs",
+    "test:chat": "node scripts/test-chat.mjs",
+    "test": "npm run test:filter && npm run test:chat"
   },
   "repository": {
     "type": "git",
@@ -21,12 +25,15 @@
     "url": "https://github.com/microsoft/codespaces-teaching-template-js/issues"
   },
   "dependencies": {
+    "@xenova/transformers": "^2.17.2",
     "bootstrap": "^5.3.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-pdf": "^9.2.1"
   },
   "devDependencies": {
+    "@parcel/packager-raw-url": "^2.7.0",
+    "@parcel/transformer-jsonld": "^2.7.0",
     "eslint": "^8.23.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-jsx-a11y": "^6.6.1",

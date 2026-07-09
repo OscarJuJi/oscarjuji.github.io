@@ -60,13 +60,6 @@ const Home = ({ name }) => {
     return () => clearTimeout(timeoutId);
   }, []);
 
-  const stats = [
-    { number: "6+", label: "Projects Built" },
-    { number: "6mo", label: "Industry Experience" },
-    { number: "28+", label: "Technologies" },
-    { number: "4+", label: "Certifications" },
-  ];
-
   return (
     <section id="home" className="hero">
       <div className="hero-bg" aria-hidden="true" />
@@ -86,7 +79,7 @@ const Home = ({ name }) => {
         </p>
 
         <p className="hero-description fade-in delay-3">
-          AI Engineering student at ESCOM–IPN passionate about building intelligent systems. From
+          AI Engineer and ESCOM–IPN graduate passionate about building intelligent systems. From
           machine learning pipelines to full-stack applications — I turn ideas into working
           software.
         </p>
@@ -101,15 +94,6 @@ const Home = ({ name }) => {
           <a href="#contact" className="btn btn-ghost">
             Get in touch →
           </a>
-        </div>
-
-        <div className="hero-stats fade-in delay-4">
-          {stats.map((s) => (
-            <div key={s.label}>
-              <span className="hero-stat-number">{s.number}</span>
-              <span className="hero-stat-label">{s.label}</span>
-            </div>
-          ))}
         </div>
       </div>
 

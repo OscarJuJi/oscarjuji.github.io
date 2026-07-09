@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import About from "./Components/About";
+import AIChat from "./Components/AIChat";
 import Contact from "./Components/Contact";
 import Footer from "./Components/Footer";
 import Header from "./Components/Header";
@@ -8,15 +9,16 @@ import Home from "./Components/Home";
 import Portfolio from "./Components/Portfolio";
 import Education from "./Components/Education";
 import ProfessionalExperience from "./Components/ProfessionalExperience";
+import { profile } from "./site-data.mjs";
 import "./styles.css";
 
 const siteProps = {
-  name: "Oscar Antonio Juarez",
-  title: "Full Stack Developer & Artificial Intelligence Engineer",
-  email: "oscar.a.juarez.j@gmail.com",
-  gitHub: "OscarJuJi",
+  name: profile.name,
+  title: profile.title,
+  email: profile.email,
+  gitHub: profile.gitHub,
   instagram: "Oscar_JuJi",
-  linkedIn: "oscar-antonio-juarez-jimenez-7979a6287",
+  linkedIn: profile.linkedIn,
   medium: "",
   twitter: "",
   youTube: "",
@@ -71,6 +73,7 @@ const App = () => {
       <Portfolio />
       <Contact email={siteProps.email} />
       <Footer {...siteProps} />
+      <AIChat />
     </div>
   );
 };
