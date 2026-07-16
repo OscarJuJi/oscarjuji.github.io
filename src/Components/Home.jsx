@@ -85,10 +85,10 @@ const Home = ({ name }) => {
         </p>
 
         <div className="hero-actions fade-in delay-4">
-          <a href={resume} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+          <a href={cv} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
             ↓ Curriculum
           </a>
-          <a href={cv} target="_blank" rel="noopener noreferrer" className="btn btn-outline">
+          <a href={resume} target="_blank" rel="noopener noreferrer" className="btn btn-outline">
             ↓ Resume
           </a>
           <a href="#contact" className="btn btn-ghost">
