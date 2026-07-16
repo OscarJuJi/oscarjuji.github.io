@@ -16,6 +16,22 @@
 
 export const projectList = [
   {
+    title: "Autonomous LLM Paper-Trading Agent",
+    description:
+      "Autonomous trading agent that pulls live market data, technical indicators, and fresh news, reasons over them with Claude (Opus 4.8), and executes decisions against a simulated paper portfolio behind hard-coded risk guardrails — learning from its own past trades.",
+    url: "https://github.com/OscarJuJi/llm-paper-trading-agent",
+    tags: ["Python", "LLM", "AI Agents", "Claude API", "Quantitative Finance"],
+    year: 2026,
+  },
+  {
+    title: "RAG from Scratch (NumPy)",
+    description:
+      "A Retrieval-Augmented Generation system built entirely from scratch in NumPy — perceptron, GRU, and transformer with hand-derived backpropagation verified by numeric gradient checking — combining BM25, word2vec embeddings, and RRF fusion, with an optional PyTorch GPU mirror.",
+    url: "https://github.com/OscarJuJi/rag-from-scratch",
+    tags: ["Python", "RAG", "NumPy", "Transformers", "Deep Learning", "NLP"],
+    year: 2026,
+  },
+  {
     title: "Object Segmentation for Indoor 3D Model Editing Using NeRF",
     description:
       "AI-based object segmentation system for editing 3D models in interior environments. Boosted classification accuracy by 30% by integrating ML algorithms into a U-Net base. Achieved photorealistic editing by combining NeRF spatial reconstruction with Stable Diffusion texture synthesis.",
@@ -32,6 +48,22 @@ export const projectList = [
     year: 2024,
   },
   {
+    title: "AI-Powered Portfolio Website",
+    description:
+      "This site — a React portfolio with an in-browser AI chatbot that answers questions about Oscar using DistilBERT running fully client-side with Transformers.js (no backend), plus a smart project search filter, all verified by automated test suites.",
+    url: "https://github.com/OscarJuJi/oscarjuji.github.io",
+    tags: ["React", "Transformers.js", "AI", "JavaScript"],
+    year: 2026,
+  },
+  {
+    title: "Image-to-SVG Vectorizer",
+    description:
+      "Desktop application (Python + Tkinter) that converts any raster image into a scalable SVG using computer-vision techniques implemented from scratch with NumPy — no third-party vectorization engine — with an optional PyTorch GPU refinement mode.",
+    url: "https://github.com/OscarJuJi/Image-to-SVG-Vectorizer-",
+    tags: ["Python", "Computer Vision", "NumPy", "Tkinter", "PyTorch"],
+    year: 2026,
+  },
+  {
     title: "Genetic Algorithm Sudoku Solver",
     description:
       "Solves hard-level Sudoku puzzles 20% faster than baseline approaches using evolutionary strategies — selection, crossover, and mutation — to efficiently explore the solution space.",
@@ -40,19 +72,11 @@ export const projectList = [
     year: 2025,
   },
   {
-    title: "Grupo Salinas Event App (SG_event)",
+    title: "Spotify to YouTube Music Migrator",
     description:
-      "React application built for a corporate event at Grupo Salinas during Oscar's Innovation & Development internship, delivering a responsive and dynamic event experience.",
-    url: "https://github.com/OscarJuJi/SG_event",
-    tags: ["React", "JavaScript", "Frontend"],
-    year: 2025,
-  },
-  {
-    title: "AI-Powered Portfolio Website",
-    description:
-      "This site — a React portfolio with an in-browser AI chatbot that answers questions about Oscar using DistilBERT running fully client-side with Transformers.js (no backend), plus a smart project search filter, all verified by automated test suites.",
-    url: "https://github.com/OscarJuJi/oscarjuji.github.io",
-    tags: ["React", "Transformers.js", "AI", "JavaScript"],
+      "Python automation tool that transfers music libraries — Liked Songs and playlists — from Spotify to YouTube Music. Handles 5,000+ song migrations with custom OAuth, exponential backoff for rate limits, schema-adaptive matching, and continuous state-saving to prevent data loss.",
+    url: "https://github.com/OscarJuJi/Sptify2YTmusic",
+    tags: ["Python", "API Integration", "OAuth", "Automation"],
     year: 2026,
   },
   {
@@ -88,11 +112,27 @@ export const projectList = [
     year: 2025,
   },
   {
+    title: "Genetic Algorithm Problem Solver",
+    description:
+      "A from-scratch genetic-algorithm framework for combinatorial optimization — implementing selection, crossover, and mutation without external libraries — applied to solving hard Sudoku puzzles and other search problems.",
+    url: "https://github.com/OscarJuJi/genetics-master-sudoku",
+    tags: ["Python", "Genetic Algorithms", "Optimization", "Bio-Inspired AI"],
+    year: 2026,
+  },
+  {
     title: "Computer Vision & Image Processing Labs",
     description:
       "MATLAB lab work for the Digital Image Processing and Computer Vision courses — hands-on practice with image transformations and vision techniques.",
     url: "https://github.com/OscarJuJi/Computer-Vision",
     tags: ["MATLAB", "Computer Vision", "Image Processing"],
+    year: 2025,
+  },
+  {
+    title: "Data Structures & Algorithms in C",
+    description:
+      "A collection of data structures and algorithms implemented in C from the ESCOM coursework — emphasizing low-level memory management and fundamental algorithmic techniques.",
+    url: "https://github.com/OscarJuJi/Algoritmos_y_estructuras_de_datos",
+    tags: ["C", "Data Structures", "Algorithms"],
     year: 2025,
   },
   {

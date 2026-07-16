@@ -17,7 +17,7 @@ const Footer = ({ name, email, gitHub, instagram, linkedIn }) => {
   return (
     <footer id="footer" className="footer">
       <div className="footer-inner">
-        <div className="footer-brand">{name.split(" ")[0]}<span style={{ color: "var(--color-accent)" }}>.</span></div>
+        <div className="footer-brand">{name.split(" ")[0]}<span style={{ color: "var(--color-accent)" }}></span></div>
         <p className="footer-tagline">AI Engineer &amp; Full Stack Developer</p>
 
         <div className="footer-socials">

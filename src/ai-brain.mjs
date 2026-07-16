@@ -123,26 +123,40 @@ const buildChunks = () => {
       id: "ai-projects",
       hints: [
         "project", "projects", "built", "build", "builds", "building", "portfolio", "made",
-        "created", "nerf", "rag", "chatbot", "sudoku", "genetic", "segmentation", "diffusion",
-        "langchain", "pinecone", "solver", "gazette", "dof", "3d", "recent", "latest",
-        "newest", "last", "new",
+        "created", "recent", "latest", "newest", "last", "new",
+        "trading", "trade", "agent", "market", "stock", "finance", "financial", "claude",
+        "rag", "numpy", "scratch", "transformer", "perceptron", "nerf", "segmentation",
+        "diffusion", "chatbot", "langchain", "pinecone", "gazette", "dof", "3d", "llm",
       ],
       text:
         `Oscar's most recent and latest project is the ${byRecency[0].title} (${byRecency[0].year}). ` +
         `Other recent projects include ${byRecency[1].title} and ${byRecency[2].title}. ` +
         `In total, Oscar has built ${projectList.length} featured projects: ${projectList.map((p) => p.title).join("; ")}. ` +
-        projectList.slice(0, 3).map((p) => `${p.title}: ${p.description}`).join(" "),
+        projectList.slice(0, 4).map((p) => `${p.title}: ${p.description}`).join(" "),
+    },
+    {
+      id: "applied-projects",
+      hints: [
+        "project", "projects", "built", "build", "portfolio", "website", "site", "react",
+        "image", "svg", "vectorizer", "vector", "raster", "tkinter", "desktop",
+        "sudoku", "genetic", "solver", "spotify", "youtube", "music", "migration",
+        "migrator", "playlist", "automation", "oauth", "api",
+      ],
+      text:
+        `More of Oscar's projects. ` +
+        projectList.slice(4, 8).map((p) => `${p.title}: ${p.description}`).join(" "),
     },
     {
       id: "software-projects",
       hints: [
         "project", "projects", "built", "build", "portfolio", "student", "management",
         "matlab", "contour", "classifier", "escom", "repository", "node", "ajax",
-        "bootstrap", "web", "event", "salinas", "website", "site", "matrix", "react", "labs",
+        "bootstrap", "web", "matrix", "labs", "bio", "inspired", "evolutionary",
+        "data", "structures", "algorithm", "algorithms", "c++", "cpp",
       ],
       text:
         `More of Oscar's projects. ` +
-        projectList.slice(3).map((p) => `${p.title}: ${p.description}`).join(" "),
+        projectList.slice(8).map((p) => `${p.title}: ${p.description}`).join(" "),
     },
   ];
 };

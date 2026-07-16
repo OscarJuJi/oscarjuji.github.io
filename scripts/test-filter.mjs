@@ -16,24 +16,32 @@ const ALL = projectList.map((_, i) => i + 1);
 const CASES = [
   { query: "", expect: ALL, why: "empty query shows all projects" },
   { query: "   ", expect: ALL, why: "whitespace-only query shows all projects" },
-  { query: "python", expect: [1, 2, 3, 11], why: "matches the Python tag" },
-  { query: "PYTHON", expect: [1, 2, 3, 11], why: "case-insensitive" },
-  { query: "pyt", expect: [1, 2, 3, 11], why: "prefix match while typing" },
-  { query: "matlab", expect: [7, 10], why: "contour GUI + CV labs" },
-  { query: "sql", expect: [6], why: "tag + description match" },
-  { query: "node", expect: [6], why: "part of the Node.js tag" },
-  { query: "nodejs", expect: [6], why: "squashed form of Node.js" },
-  { query: "u-net", expect: [1], why: "punctuated tag kept intact" },
-  { query: "unet", expect: [1], why: "squashed form of U-Net" },
-  { query: "net", expect: [1, 11], why: "U-Net / neural networks — NOT 'geNETic' (old bug)" },
-  { query: "rag", expect: [2], why: "word start only — NOT 'stoRAGe' (old bug)" },
-  { query: "ai", expect: [1, 3, 5, 9, 11], why: "word start only — no mid-word 'ai' hits" },
-  { query: "react", expect: [4, 5], why: "SG_event + portfolio website" },
-  { query: "c++", expect: [8], why: "'+' preserved in tokens" },
-  { query: "python sudoku", expect: [3], why: "multi-word = AND (old bug: showed every Python project)" },
-  { query: "computer vision", expect: [1, 7, 10, 11], why: "phrase found across tags, titles, descriptions" },
-  { query: "deep learning", expect: [11], why: "two-word tag" },
-  { query: "stable diffusion", expect: [1], why: "two-word tag" },
+  { query: "python", expect: [1, 2, 3, 4, 6, 7, 8, 13, 16], why: "matches the Python tag" },
+  { query: "PYTHON", expect: [1, 2, 3, 4, 6, 7, 8, 13, 16], why: "case-insensitive" },
+  { query: "pyt", expect: [1, 2, 3, 4, 6, 7, 8, 13, 16], why: "prefix match while typing" },
+  { query: "matlab", expect: [10, 14], why: "contour GUI + CV labs" },
+  { query: "sql", expect: [9], why: "tag + description match" },
+  { query: "node", expect: [9], why: "part of the Node.js tag" },
+  { query: "nodejs", expect: [9], why: "squashed form of Node.js" },
+  { query: "u-net", expect: [3], why: "punctuated tag kept intact" },
+  { query: "unet", expect: [3], why: "squashed form of U-Net" },
+  { query: "net", expect: [3, 16], why: "U-Net / neural networks — NOT 'geNETic' (old bug)" },
+  { query: "rag", expect: [2, 4], why: "RAG from scratch + RAG ChatBot — word start only" },
+  { query: "ai", expect: [1, 3, 5, 7, 12, 13, 16], why: "word start only — no mid-word 'ai' hits" },
+  { query: "react", expect: [5], why: "only the portfolio website tags React" },
+  { query: "c++", expect: [11], why: "'+' preserved in tokens" },
+  { query: "numpy", expect: [2, 6], why: "new from-scratch NumPy projects" },
+  { query: "trading", expect: [1], why: "new LLM paper-trading agent" },
+  { query: "svg", expect: [6], why: "new Image-to-SVG vectorizer" },
+  { query: "spotify", expect: [8], why: "new Spotify->YT Music migrator" },
+  { query: "oauth", expect: [8], why: "migrator's OAuth tag" },
+  { query: "llm", expect: [1, 4], why: "LLM agent + RAG ChatBot LLM tag" },
+  { query: "transformers", expect: [2, 5], why: "RAG-from-scratch tag + Transformers.js" },
+  { query: "data structures", expect: [15, 16], why: "new C repo + ESCOM repository" },
+  { query: "python sudoku", expect: [7, 13], why: "both genetic sudoku projects (AND semantics)" },
+  { query: "computer vision", expect: [3, 6, 10, 14, 16], why: "phrase across tags/titles/descriptions" },
+  { query: "deep learning", expect: [2, 16], why: "RAG-from-scratch + ESCOM repo" },
+  { query: "stable diffusion", expect: [3], why: "two-word tag" },
   { query: "blockchain", expect: [], why: "no match -> empty-state message" },
 ];
 
@@ -50,7 +58,7 @@ for (const { query, expect, why } of CASES) {
   if (!pass) failed++;
   const label = query.trim() === "" ? (query === "" ? "(empty)" : "(spaces)") : `"${query}"`;
   const result = pass ? "" : ` [expected ${fmt(expect)}]`;
-  console.log(`${pass ? "PASS" : "FAIL"}  ${label.padEnd(20)} -> ${fmt(got).padEnd(22)}${result}  ${why}`);
+  console.log(`${pass ? "PASS" : "FAIL"}  ${label.padEnd(18)} -> ${fmt(got).padEnd(30)}${result}  ${why}`);
 }
 
 console.log("");

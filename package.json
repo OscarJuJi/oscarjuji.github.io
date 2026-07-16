@@ -6,11 +6,12 @@
   "homepage": "http://OscarJuJi.github.io",
   "scripts": {
     "start": "parcel",
-    "build": "parcel build && npm run copy-static",
-    "build-gh": "parcel build --public-url 'https://OscarJuJi.github.io' && npm run copy-static",
-    "copy-static": "cp public/robots.txt public/sitemap.xml dist/",
+    "clean": "rm -rf dist .parcel-cache",
+    "build": "npm run clean && parcel build && npm run copy-static",
+    "build-gh": "npm run clean && parcel build --public-url 'https://OscarJuJi.github.io' && npm run copy-static",
+    "copy-static": "cp public/robots.txt public/sitemap.xml dist/ && touch dist/.nojekyll",
     "predeploy": "npm run build-gh",
-    "deploy": "gh-pages -d dist",
+    "deploy": "gh-pages -d dist -t",
     "test:filter": "node scripts/test-filter.mjs",
     "test:chat": "node scripts/test-chat.mjs",
     "test": "npm run test:filter && npm run test:chat"
