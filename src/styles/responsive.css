@@ -1,0 +1,42 @@
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media (max-width: 1024px) {
+  .projects-grid { grid-template-columns: repeat(2, 1fr); }
+  .about-grid { gap: 3rem; }
+  .contact-grid { gap: 3rem; }
+}
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+
+  .about-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .projects-grid { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+
+  .hero-stats { gap: 1.5rem; }
+  .hero-actions { flex-direction: column; align-items: flex-start; }
+
+  .timeline::before { display: none; }
+  .timeline { padding-left: 0; }
+  .timeline-item { padding-left: 0; }
+  .timeline-dot { display: none; }
+
+  .skills-grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); }
+
+  h1 { font-size: clamp(2.8rem, 11vw, 4.5rem); }
+}
+
+@media (max-width: 480px) {
+  .container { padding: 0 1.25rem; }
+  .about-section,
+  .skills-section,
+  .timeline-section,
+  .portfolio-section,
+  .contact-section { padding: 5rem 0; }
+  .contact-form-card { padding: 1.5rem; }
+  .stat-cards { grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+}
+

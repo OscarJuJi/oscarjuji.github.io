@@ -1,0 +1,178 @@
+/* ===========================
+   ABOUT ME PAGE (/about.html)
+=========================== */
+.aboutme-hero {
+  padding: calc(var(--nav-height) + 5rem) 0 5rem;
+  background:
+    radial-gradient(1200px 400px at 80% -10%, var(--color-accent-glow), transparent 60%),
+    var(--bg-primary);
+}
+.aboutme-hero-inner {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+.aboutme-photo-wrap {
+  position: relative;
+  justify-self: center;
+}
+.aboutme-photo {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-card);
+  box-shadow: var(--shadow-lg);
+}
+.aboutme-photo-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 14px -14px -14px 14px;
+  border: 2px solid var(--color-accent);
+  border-radius: var(--radius-lg);
+  z-index: -1;
+  opacity: 0.5;
+}
+.aboutme-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  line-height: 1.05;
+  color: var(--text-primary);
+  margin: 0.6rem 0 1rem;
+}
+.aboutme-tagline {
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  max-width: 42ch;
+}
+.aboutme-facts {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+.aboutme-facts li {
+  position: relative;
+  padding-left: 1.4rem;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+.aboutme-facts li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-accent);
+}
+.aboutme-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.aboutme-section {
+  padding: 5.5rem 0;
+}
+.aboutme-section.alt-bg {
+  background: var(--bg-secondary);
+}
+.aboutme-prose p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  max-width: 68ch;
+  margin-top: 1.1rem;
+}
+.aboutme-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.5rem, 3.2vw, 2rem);
+  line-height: 1.4;
+  color: var(--text-primary);
+  border-left: 3px solid var(--color-accent);
+  padding-left: 1.4rem;
+  margin: 1.5rem 0 2.5rem;
+  max-width: 60ch;
+}
+
+.aboutme-values {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+.aboutme-value-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-md);
+  padding: 1.6rem;
+  transition: var(--transition);
+}
+.aboutme-value-card:hover {
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+.aboutme-value-card h3 {
+  color: var(--text-primary);
+  margin-bottom: 0.6rem;
+  font-size: 1.1rem;
+}
+.aboutme-value-card p {
+  color: var(--text-secondary);
+  font-size: 0.93rem;
+  line-height: 1.7;
+}
+
+.aboutme-interests {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+.aboutme-interest-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  transition: var(--transition);
+}
+.aboutme-interest-card:hover {
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+.aboutme-interest-card h3 {
+  color: var(--text-primary);
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+.aboutme-interest-card p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+@media (max-width: 1024px) {
+  .aboutme-values { grid-template-columns: 1fr 1fr; }
+  .aboutme-interests { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .aboutme-hero-inner { grid-template-columns: 1fr; gap: 2.5rem; text-align: center; }
+  .aboutme-photo-wrap::after { display: none; }
+  .aboutme-tagline, .aboutme-facts { margin-left: auto; margin-right: auto; }
+  .aboutme-facts li { text-align: left; }
+  .aboutme-cta { justify-content: center; }
+  .aboutme-section { padding: 4rem 0; }
+}
+@media (max-width: 480px) {
+  .aboutme-values,
+  .aboutme-interests { grid-template-columns: 1fr; }
+  .aboutme-photo,
+  .aboutme-photo-wrap { width: 220px; height: 220px; }
+}

@@ -3,18 +3,26 @@ import PropTypes from "prop-types";
 import { SunIcon, MoonIcon } from "./Icons";
 import logo from "../images/icon.webp";
 
-const navLinks = [
-  { href: "#home", label: "Home" },
-  { href: "#about", label: "About" },
-  { href: "#education", label: "Education" },
-  { href: "#experience", label: "Experience" },
-  { href: "#portfolio", label: "Projects" },
-  { href: "#contact", label: "Contact" },
+// Portfolio sections live on the index page. `linkBase` lets the same nav
+// work from another page: "" keeps in-page hash links (#about); "/" turns
+// them into cross-page links (/#about) that jump back to the portfolio.
+const sectionLinks = [
+  { id: "home", label: "Home" },
+  { id: "about", label: "About" },
+  { id: "education", label: "Education" },
+  { id: "experience", label: "Experience" },
+  { id: "portfolio", label: "Projects" },
+  { id: "contact", label: "Contact" },
 ];
 
-const Header = ({ darkMode, onToggleDark }) => {
+const Header = ({ darkMode, onToggleDark, linkBase }) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  const navLinks = [
+    ...sectionLinks.map((l) => ({ href: `${linkBase}#${l.id}`, label: l.label })),
+    { href: `${linkBase}about.html`, label: "About Me" },
+  ];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -33,7 +41,7 @@ const Header = ({ darkMode, onToggleDark }) => {
     <>
       <header className={`header${scrolled ? " scrolled" : ""}`}>
         <div className="header-inner">
-          <a href="#home" className="header-logo">
+          <a href={`${linkBase}#home`} className="header-logo">
             <img src={logo} alt="icon" className="header-logo-img" />
           </a>
 
@@ -87,9 +95,14 @@ const Header = ({ darkMode, onToggleDark }) => {
   );
 };
 
+Header.defaultProps = {
+  linkBase: "",
+};
+
 Header.propTypes = {
   darkMode: PropTypes.bool.isRequired,
   onToggleDark: PropTypes.func.isRequired,
+  linkBase: PropTypes.string,
 };
 
 export default Header;

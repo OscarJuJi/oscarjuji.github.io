@@ -19,6 +19,20 @@ export const profile = {
   website: "oscarjuji.github.io",
 };
 
+// Props consumed by <Footer> (and passed around the app). Derived from
+// `profile` so contact handles never drift out of sync between pages.
+export const siteProps = {
+  name: profile.name,
+  title: profile.title,
+  email: profile.email,
+  gitHub: profile.gitHub,
+  instagram: "Oscar_JuJi",
+  linkedIn: profile.linkedIn,
+  medium: "",
+  twitter: "",
+  youTube: "",
+};
+
 export const aboutDescription =
   "I am an Artificial Intelligence Engineer who approaches problems from both ends of the pipeline: building the data engineering foundations that make intelligent systems possible, and designing the machine learning models that run on top of them. I have hands-on experience across data engineering, machine learning, and applied AI, with a particular interest in computer vision, natural language processing, and generative AI. What drives me is turning ambitious, research-grade ideas into dependable systems that create real value.";
 

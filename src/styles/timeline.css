@@ -1,0 +1,113 @@
+/* ===========================
+   TIMELINE (Education & Experience)
+=========================== */
+.timeline-section {
+  padding: 7rem 0;
+}
+.timeline-section.alt-bg {
+  background: var(--bg-secondary);
+}
+
+.timeline {
+  position: relative;
+  max-width: 780px;
+  margin: 0 auto;
+  padding-left: 1.5rem;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0.275rem; /* aligns line center with .timeline-dot center */
+  top: 8px;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--color-accent) 0%, var(--color-primary) 60%, transparent 100%);
+  border-radius: 2px;
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 2.5rem;
+}
+.timeline-item:last-child { margin-bottom: 0; }
+
+.timeline-dot {
+  position: absolute;
+  left: -1.6rem;
+  top: 5px;
+  width: 14px;
+  height: 14px;
+  background: var(--color-accent);
+  border: 3px solid var(--bg-primary);
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px var(--color-accent);
+  transition: var(--transition);
+}
+.timeline-item:hover .timeline-dot {
+  transform: scale(1.3);
+  box-shadow: 0 0 0 3px var(--color-accent-glow);
+}
+.timeline-section.alt-bg .timeline-dot {
+  border-color: var(--bg-secondary);
+}
+
+.timeline-date {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-accent-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-md);
+  padding: 1.4rem 1.6rem;
+  transition: var(--transition);
+}
+.timeline-card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-accent);
+  transform: translateX(5px);
+}
+.timeline-card h3 {
+  color: var(--text-primary);
+  margin-bottom: 0.2rem;
+}
+.timeline-company {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: 0.85rem;
+}
+[data-theme="dark"] .timeline-company {
+  color: var(--color-accent);
+}
+.timeline-card p,
+.timeline-card li {
+  font-size: 0.93rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+.timeline-card ul {
+  margin-top: 0.7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.timeline-card li {
+  padding-left: 1.2rem;
+  position: relative;
+}
+.timeline-card li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+  font-size: 0.8rem;
+  top: 1px;
+}
+

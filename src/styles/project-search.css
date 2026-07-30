@@ -1,0 +1,84 @@
+/* ===========================
+   PROJECT SEARCH / FILTER
+=========================== */
+.project-search-wrap {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.project-search {
+  width: 100%;
+  padding: 0.8rem 2.8rem 0.8rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  background: var(--bg-card);
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  outline: none;
+  transition: var(--transition);
+}
+.project-search:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px var(--color-accent-glow);
+}
+.project-search::placeholder { color: var(--text-muted); }
+
+.project-search-clear {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 0.85rem;
+  padding: 0.2rem 0.4rem;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+}
+.project-search-clear:hover { color: var(--text-primary); background: var(--color-primary-light); }
+
+.project-quick-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+.project-chip {
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-color);
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  cursor: pointer;
+  letter-spacing: 0.02em;
+  transition: var(--transition);
+}
+.project-chip:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent-dark);
+}
+.project-chip.active {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #1A1A2E;
+}
+[data-theme="dark"] .project-chip:hover { color: var(--color-accent); }
+
+.project-search-count {
+  font-size: 0.83rem;
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+  min-height: 1.3em;
+}
+
+/* Non-matching cards leave the layout entirely so the grid
+   reflows instead of showing empty gaps between matches. */
+.project-hidden {
+  display: none !important;
+}
+
