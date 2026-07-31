@@ -22,7 +22,7 @@
   font-size: 1.15rem;
   letter-spacing: 0.02em;
   outline: none;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: border-color 0.12s ease, box-shadow 0.12s ease;
 }
 .project-search:focus {
   border-color: var(--color-accent-dark);
@@ -73,8 +73,8 @@
   color: var(--text-secondary);
   cursor: pointer;
   box-shadow: 3px 3px 0 var(--shadow-pixel-color);
-  transition: var(--transition-px), background-color 0.2s ease, color 0.2s ease,
-    border-color 0.2s ease;
+  transition: var(--transition-px), background-color 0.12s ease, color 0.12s ease,
+    border-color 0.12s ease;
 }
 .project-chip:hover {
   border-color: var(--color-accent-dark);

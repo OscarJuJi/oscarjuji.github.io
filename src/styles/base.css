@@ -81,12 +81,12 @@
   );
 
   /* Type */
-  --font-display: 'Pixelify Sans', 'Courier New', monospace;
+  --font-display: 'Jersey 25', 'Courier New', monospace;
   --font-mono: 'VT323', 'Courier New', monospace;
   --font-body: 'Inter', system-ui, sans-serif;
 
-  --transition: all 0.22s cubic-bezier(0.2, 0, 0, 1);
-  --transition-px: transform 0.12s steps(2, end), filter 0.12s steps(2, end);
+  --transition: all 0.14s cubic-bezier(0.2, 0, 0, 1);
+  --transition-px: transform 0.07s steps(2, end), filter 0.07s steps(2, end);
 }
 
 [data-theme="dark"] {
@@ -176,7 +176,7 @@ h1, h2, h3, h4 {
    8-bit silhouette back. */
 h1 {
   font-size: clamp(1.6rem, 4.6vw, 3.1rem);
-  font-weight: 700;
+  font-weight: 400;
   letter-spacing: 0.02em;
   line-height: 1.2;
   text-transform: uppercase;
@@ -184,7 +184,7 @@ h1 {
 
 h2 {
   font-size: clamp(1.15rem, 2.4vw, 1.6rem);
-  font-weight: 700;
+  font-weight: 400;
   letter-spacing: 0.02em;
   line-height: 1.4;
   text-transform: uppercase;
@@ -192,7 +192,7 @@ h2 {
 
 h3 {
   font-size: 0.95rem;
-  font-weight: 600;
+  font-weight: 400;
   line-height: 1.5;
   letter-spacing: 0.01em;
 }
@@ -359,8 +359,8 @@ img {
   text-decoration: none;
   white-space: nowrap;
   box-shadow: 4px 4px 0 var(--shadow-pixel-color);
-  transition: var(--transition-px), background-color 0.2s ease, color 0.2s ease,
-    border-color 0.2s ease;
+  transition: var(--transition-px), background-color 0.12s ease, color 0.12s ease,
+    border-color 0.12s ease;
 }
 .btn:hover {
   transform: translate(-1px, -1px);

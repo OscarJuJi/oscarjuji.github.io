@@ -28,7 +28,7 @@
 .footer-brand {
   font-family: var(--font-display);
   font-size: 1.15rem;
-  font-weight: 700;
+  font-weight: 400;
   color: var(--color-accent);
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -57,8 +57,8 @@
   justify-content: center;
   background: rgba(223, 234, 216, 0.08);
   border: 2px solid rgba(223, 234, 216, 0.18);
-  transition: var(--transition-px), background-color 0.2s ease,
-    border-color 0.2s ease;
+  transition: var(--transition-px), background-color 0.12s ease,
+    border-color 0.12s ease;
 }
 [data-theme="dark"] .footer-social-link {
   background: var(--color-primary-light);

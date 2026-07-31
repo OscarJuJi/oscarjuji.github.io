@@ -22,7 +22,7 @@
   z-index: 900;
   --c: 6px;
   clip-path: var(--clip-pixel);
-  transition: var(--transition-px), background-color 0.2s ease;
+  transition: var(--transition-px), background-color 0.12s ease;
   animation: aiPulse 2.4s steps(2, end) infinite;
 }
 .ai-chat-trigger:hover,
@@ -283,7 +283,7 @@
   font-size: 1.1rem;
   letter-spacing: 0.02em;
   outline: none;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: border-color 0.12s ease, box-shadow 0.12s ease;
 }
 .ai-chat-input::placeholder { color: var(--text-muted); }
 .ai-chat-input:focus {
@@ -306,7 +306,7 @@
   justify-content: center;
   flex-shrink: 0;
   box-shadow: 3px 3px 0 var(--shadow-pixel-color);
-  transition: var(--transition-px), background-color 0.2s ease;
+  transition: var(--transition-px), background-color 0.12s ease;
 }
 .ai-chat-send:hover:not(:disabled) {
   background: var(--color-accent-dark);

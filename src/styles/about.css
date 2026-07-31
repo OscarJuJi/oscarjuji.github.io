@@ -49,7 +49,7 @@
   padding: 1.6rem 1.25rem;
   text-align: center;
   box-shadow: var(--glass-highlight), var(--shadow-md);
-  transition: var(--transition-px), border-color 0.2s ease;
+  transition: var(--transition-px), border-color 0.12s ease;
 }
 .stat-card:hover {
   border-color: var(--color-accent-dark);

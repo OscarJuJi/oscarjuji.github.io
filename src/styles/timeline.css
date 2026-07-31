@@ -54,7 +54,7 @@
   background: var(--color-accent-dark);
   border-radius: 0;
   outline: 4px solid var(--bg-primary);
-  transition: var(--transition-px), background-color 0.2s ease;
+  transition: var(--transition-px), background-color 0.12s ease;
 }
 [data-theme="dark"] .timeline-dot {
   background: var(--color-accent);
@@ -85,7 +85,7 @@
   border: 1px solid var(--glass-border);
   padding: 1.4rem 1.6rem;
   box-shadow: var(--glass-highlight), var(--shadow-md);
-  transition: var(--transition-px), border-color 0.2s ease;
+  transition: var(--transition-px), border-color 0.12s ease;
 }
 .timeline-card:hover {
   border-color: var(--color-accent-dark);

@@ -34,7 +34,7 @@
   background: var(--bg-card);
   border: 1px solid var(--glass-border);
   box-shadow: var(--glass-highlight), var(--shadow-sm);
-  transition: var(--transition-px), border-color 0.2s ease, color 0.2s ease;
+  transition: var(--transition-px), border-color 0.12s ease, color 0.12s ease;
 }
 .contact-link-item:hover {
   color: var(--text-primary);
@@ -52,7 +52,7 @@
   flex-shrink: 0;
   --c: 4px;
   clip-path: var(--clip-pixel);
-  transition: background-color 0.2s ease;
+  transition: background-color 0.12s ease;
 }
 
 .contact-link-icon img {
@@ -60,7 +60,7 @@
   height: 22px;
   object-fit: contain;
   filter: var(--icon-filter, none);
-  transition: transform 0.14s steps(2, end);
+  transition: transform 0.09s steps(2, end);
 }
 
 /* white icons on the coloured background square */
@@ -114,7 +114,7 @@
   font-family: var(--font-mono);
   font-size: 1.15rem;
   letter-spacing: 0.02em;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: border-color 0.12s ease, box-shadow 0.12s ease;
   outline: none;
   resize: none;
 }

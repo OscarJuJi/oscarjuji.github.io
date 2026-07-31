@@ -1,8 +1,8 @@
 /* ===========================
    PORTFOLIO / PROJECTS
 
-   Each card is a glass cartridge. The ridged band that appears along the top
-   edge on hover is the grip you'd push a cartridge in by.
+   Each card is a glass cartridge that lifts off the page on hover. The tags
+   are live filters — clicking one drives the search field above the grid.
 =========================== */
 .portfolio-section {
   background: var(--bg-secondary);
@@ -27,30 +27,12 @@
   position: relative;
   overflow: hidden;
   box-shadow: var(--glass-highlight), var(--shadow-md);
-  transition: var(--transition-px), border-color 0.2s ease;
-}
-.project-card::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 6px;
-  background: repeating-linear-gradient(
-    to right,
-    var(--color-accent-dark) 0 4px,
-    transparent 4px 8px
-  );
-  opacity: 0;
-  transition: opacity 0.18s steps(2, end);
+  transition: var(--transition-px), border-color 0.12s ease;
 }
 .project-card:hover {
   transform: translate(-3px, -3px);
   box-shadow: var(--glass-highlight), var(--shadow-hover);
   border-color: var(--color-accent-dark);
-}
-.project-card:hover::after {
-  opacity: 1;
 }
 
 .project-num {
@@ -79,6 +61,8 @@
   flex-wrap: wrap;
   gap: 0.4rem;
 }
+/* Tags are filter buttons: clicking one loads it into the search field, and
+   clicking the active one clears it again. */
 .project-tag {
   font-family: var(--font-mono);
   font-size: 0.95rem;
@@ -88,10 +72,30 @@
   background: var(--color-primary-light);
   color: var(--color-primary);
   letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: background-color 0.12s ease, color 0.12s ease,
+    border-color 0.12s ease;
+}
+.project-tag:hover {
+  background: var(--color-accent);
+  border-color: var(--color-accent-dark);
+  color: #14200F;
+}
+.project-tag.active {
+  background: var(--color-accent-dark);
+  border-color: var(--color-accent-dark);
+  color: #EFF3E4;
 }
 [data-theme="dark"] .project-tag {
   color: var(--color-accent);
   background: rgba(165, 232, 139, 0.10);
+}
+[data-theme="dark"] .project-tag:hover,
+[data-theme="dark"] .project-tag.active {
+  color: #0C1210;
+}
+[data-theme="dark"] .project-tag.active {
+  background: var(--color-accent);
 }
 .project-link {
   display: inline-flex;
@@ -103,7 +107,7 @@
   text-transform: uppercase;
   color: var(--color-accent-dark);
   margin-top: auto;
-  transition: gap 0.16s steps(2, end), color 0.2s ease;
+  transition: gap 0.09s steps(2, end), color 0.12s ease;
 }
 .project-link:hover {
   gap: 0.75rem;

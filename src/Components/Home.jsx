@@ -88,7 +88,7 @@ const Home = ({ name }) => {
           <a href={cv} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
             ↓ Curriculum
           </a>
-          <a href={resume} target="_blank" rel="noopener noreferrer" className="btn btn-outline">
+          <a href={resume} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
             ↓ Resume
           </a>
           <a href="#contact" className="btn btn-ghost">

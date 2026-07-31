@@ -56,6 +56,14 @@ export const projectList = [
     year: 2026,
   },
   {
+    title: "Code Pets — Activity-Driven Digital Pet",
+    description:
+      "A digital pet that grows with your real programming activity: it earns XP automatically from the work you ship and loses XP when you disappear. Python backend with a browser front end, six growth stages, and AI-generated pixel-art sprite animations.",
+    url: "https://github.com/OscarJuJi/code-pets",
+    tags: ["Python", "JavaScript", "Full Stack", "Gamification", "Pixel Art"],
+    year: 2026,
+  },
+  {
     title: "Image-to-SVG Vectorizer",
     description:
       "Desktop application (Python + Tkinter) that converts any raster image into a scalable SVG using computer-vision techniques implemented from scratch with NumPy — no third-party vectorization engine — with an optional PyTorch GPU refinement mode.",

@@ -1,8 +1,9 @@
 /* ===========================
    SKILLS SECTION
 
-   Twenty-odd tiles in one grid, so these stay cheap: a translucent tint and a
-   crisp border, no per-tile blur. The blur budget goes to the larger panels.
+   Same glass-cartridge build as the project and stat cards, just at tile
+   scale. Blur already drops to 0 below 480px (responsive.css), which is what
+   keeps a grid this dense affordable on phones.
 =========================== */
 .skills-section {
   padding: 7rem 0;
@@ -19,24 +20,26 @@
   flex-direction: column;
   align-items: center;
   gap: 0.6rem;
-  padding: 1.2rem 0.75rem;
+  padding: 1.4rem 0.75rem;
   background: var(--bg-card);
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
   border: 1px solid var(--glass-border);
   text-align: center;
   cursor: default;
-  box-shadow: var(--glass-highlight), var(--shadow-sm);
-  transition: var(--transition-px), border-color 0.2s ease;
+  box-shadow: var(--glass-highlight), var(--shadow-md);
+  transition: var(--transition-px), border-color 0.12s ease;
 }
 .skill-card:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: var(--glass-highlight), var(--shadow-md);
+  transform: translate(-3px, -3px);
+  box-shadow: var(--glass-highlight), var(--shadow-hover);
   border-color: var(--color-accent-dark);
 }
 .skill-card img {
   width: 38px;
   height: 38px;
   object-fit: contain;
-  transition: transform 0.14s steps(2, end);
+  transition: transform 0.09s steps(2, end);
 }
 .skill-card:hover img {
   transform: scale(1.12);

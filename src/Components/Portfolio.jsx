@@ -79,9 +79,21 @@ const Portfolio = () => {
                 <h3>{project.title}</h3>
                 <p>{project.description}</p>
                 <div className="project-tags">
-                  {project.tags.map((tag) => (
-                    <span key={tag} className="project-tag">{tag}</span>
-                  ))}
+                  {project.tags.map((tag) => {
+                    const active = query.toLowerCase() === tag.toLowerCase();
+                    return (
+                      <button
+                        key={tag}
+                        type="button"
+                        className={`project-tag${active ? " active" : ""}`}
+                        onClick={() => setQuery(active ? "" : tag)}
+                        aria-pressed={active}
+                        aria-label={`Filter projects by ${tag}`}
+                      >
+                        {tag}
+                      </button>
+                    );
+                  })}
                 </div>
                 <a
                   href={project.url}
