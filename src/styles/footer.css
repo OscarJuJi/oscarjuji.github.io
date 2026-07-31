@@ -1,13 +1,18 @@
 /* ===========================
-   FOOTER
+   FOOTER — the console's bottom shell
+
+   Deep, opaque and edge-lit, so the page ends on something solid instead of
+   another sheet of glass.
 =========================== */
 .footer {
-  background: var(--color-primary);
+  position: relative;
+  background: #1F2A1C;
+  border-top: 3px solid var(--color-accent-dark);
   padding: 3.5rem 0 2rem;
 }
 [data-theme="dark"] .footer {
-  background: var(--bg-secondary);
-  border-top: 1px solid var(--border-color);
+  background: var(--bg-secondary-solid);
+  border-top-color: var(--color-accent);
 }
 
 .footer-inner {
@@ -21,16 +26,19 @@
   text-align: center;
 }
 .footer-brand {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.8rem;
-  font-weight: 600;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
   color: var(--color-accent);
-  letter-spacing: -0.01em;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 .footer-tagline {
-  font-size: 0.875rem;
-  color: rgba(255,255,255,0.6);
-  margin-top: -0.8rem;
+  font-family: var(--font-mono);
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
+  color: rgba(223, 234, 216, 0.62);
+  margin-top: -1rem;
 }
 [data-theme="dark"] .footer-tagline { color: var(--text-muted); }
 
@@ -43,13 +51,14 @@
 .footer-social-link {
   width: 42px;
   height: 42px;
-  border-radius: 50%;
+  border-radius: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255,255,255,0.12);
-  transition: var(--transition);
-  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(223, 234, 216, 0.08);
+  border: 2px solid rgba(223, 234, 216, 0.18);
+  transition: var(--transition-px), background-color 0.2s ease,
+    border-color 0.2s ease;
 }
 [data-theme="dark"] .footer-social-link {
   background: var(--color-primary-light);
@@ -58,25 +67,45 @@
 .footer-social-link:hover {
   background: var(--color-accent);
   border-color: var(--color-accent);
-  transform: translateY(-3px);
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.5);
+}
+.footer-social-link:active {
+  transform: translate(2px, 2px);
+  box-shadow: none;
 }
 .footer-social-link img {
   width: 20px;
   height: 20px;
   filter: brightness(0) invert(1);
 }
-[data-theme="dark"] .footer-social-link img { filter: none; }
+.footer-social-link:hover img {
+  filter: brightness(0);
+}
 
+/* A dashed rule instead of a hairline — the same pixel cadence as the
+   timeline spine. */
 .footer-divider {
   width: 100%;
-  height: 1px;
-  background: rgba(255,255,255,0.12);
+  height: 3px;
+  background: repeating-linear-gradient(
+    to right,
+    rgba(223, 234, 216, 0.22) 0 6px,
+    transparent 6px 12px
+  );
 }
-[data-theme="dark"] .footer-divider { background: var(--border-color); }
+[data-theme="dark"] .footer-divider {
+  background: repeating-linear-gradient(
+    to right,
+    var(--border-color) 0 6px,
+    transparent 6px 12px
+  );
+}
 
 .footer-copyright {
-  font-size: 0.78rem;
-  color: rgba(255,255,255,0.5);
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  color: rgba(223, 234, 216, 0.5);
 }
 [data-theme="dark"] .footer-copyright { color: var(--text-muted); }
-

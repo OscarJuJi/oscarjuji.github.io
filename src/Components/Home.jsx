@@ -74,7 +74,7 @@ const Home = ({ name }) => {
         <p className="hero-title fade-in delay-2" aria-live="polite">
           <span ref={typedRef} />
           <span className="typed-cursor" aria-hidden="true">
-            |
+            ▌
           </span>
         </p>
 

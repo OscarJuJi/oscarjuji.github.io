@@ -1,58 +1,129 @@
 
 /* ===========================
-   CSS CUSTOM PROPERTIES
+   DESIGN TOKENS — "Game Boy Glass"
+
+   A pixel/liquid-glass system: translucent frosted surfaces layered over a
+   soft ambient wash, with 8-bit typography, hard offset shadows and square
+   corners. The token NAMES are unchanged from the previous pastel theme, so
+   every partial keeps working; only their values changed.
+
+   Two values are deliberately translucent — `--bg-card` and `--bg-secondary`.
+   Anything already painted with them becomes frosted glass automatically, and
+   the ambient wash behind the page shows through.
 =========================== */
 :root {
-  --bg-primary: #F8F9FF;
-  --bg-secondary: #EEF1FB;
-  --bg-card: #FFFFFF;
-  --bg-nav: rgba(248, 249, 255, 0.88);
+  /* Surfaces — light theme, "LCD day" */
+  --bg-primary: #EFF3E4;
+  --bg-secondary: rgba(196, 214, 163, 0.45);   /* section veil (translucent) */
+  --bg-secondary-solid: #E1E9CD;               /* same tone, opaque */
+  --bg-card: rgba(255, 255, 255, 0.72);        /* glass fill (translucent) */
+  --bg-card-solid: #FBFCF5;
+  --bg-nav: rgba(243, 245, 236, 0.72);
 
-  --text-primary: #1A1A2E;
-  --text-secondary: #4A4A6A;
-  --text-muted: #7A7A9A;
+  --text-primary: #1F2A1C;
+  --text-secondary: #47523F;
+  --text-muted: #75816A;
 
-  --color-accent: #91CD91;
-  --color-accent-dark: #6AAF6A;
-  --color-accent-glow: rgba(145, 205, 145, 0.22);
+  --color-accent: #91CD91;                     /* the sage that carried over */
+  --color-accent-dark: #3A733A;                /* GB ink — 5.1:1 on --bg-primary */
+  --color-accent-glow: rgba(145, 205, 145, 0.26);
   --color-primary: #4E567E;
   --color-primary-light: rgba(78, 86, 126, 0.10);
 
-  --border-color: #E4E8F5;
-  --border-card: #E0E4F0;
+  --border-color: #D3DBC2;
+  --border-card: rgba(31, 42, 28, 0.14);
 
-  --shadow-sm: 0 2px 8px rgba(78, 86, 126, 0.07);
-  --shadow-md: 0 8px 28px rgba(78, 86, 126, 0.11);
-  --shadow-lg: 0 20px 60px rgba(78, 86, 126, 0.16);
-  --shadow-hover: 0 24px 64px rgba(78, 86, 126, 0.24);
+  /* Glass */
+  --glass-bg: rgba(255, 255, 255, 0.70);
+  --glass-bg-strong: rgba(255, 255, 255, 0.86);
+  --glass-border: rgba(31, 42, 28, 0.14);
+  --glass-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  --glass-blur: 16px;
+  --glass-blur-sm: 8px;
+  --glass-saturate: 1.4;
+  --scanline-color: rgba(31, 42, 28, 0.055);
 
+  /* Ambient wash the glass refracts (see body::before) */
+  --ambient-1: rgba(145, 205, 145, 0.38);
+  --ambient-2: rgba(78, 86, 126, 0.16);
+
+  /* Shadows are hard 8-bit offsets, never soft blurs */
+  --shadow-sm: 2px 2px 0 rgba(31, 42, 28, 0.10);
+  --shadow-md: 4px 4px 0 rgba(31, 42, 28, 0.14);
+  --shadow-lg: 6px 6px 0 rgba(31, 42, 28, 0.18);
+  --shadow-hover: 6px 6px 0 rgba(58, 115, 58, 0.30);
+  --shadow-pixel-color: rgba(31, 42, 28, 0.38);
+
+  /* Pixel geometry */
+  --px: 4px;              /* one "pixel" of the grid everything snaps to */
+  --c: 6px;               /* stepped-corner bite; override locally to scale */
   --nav-height: 70px;
-  --radius-sm: 8px;
-  --radius-md: 16px;
-  --radius-lg: 24px;
-  --radius-pill: 100px;
-  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --radius-sm: 0;
+  --radius-md: 0;
+  --radius-lg: 0;
+  --radius-pill: 0;
+
+  /* Reusable stepped ("pixel-rounded") corner. Scale it per element by
+     setting --c on that element. */
+  --clip-pixel: polygon(
+    var(--c) 0,
+    calc(100% - var(--c)) 0,
+    calc(100% - var(--c)) var(--c),
+    100% var(--c),
+    100% calc(100% - var(--c)),
+    calc(100% - var(--c)) calc(100% - var(--c)),
+    calc(100% - var(--c)) 100%,
+    var(--c) 100%,
+    var(--c) calc(100% - var(--c)),
+    0 calc(100% - var(--c)),
+    0 var(--c),
+    var(--c) var(--c)
+  );
+
+  /* Type */
+  --font-display: 'Pixelify Sans', 'Courier New', monospace;
+  --font-mono: 'VT323', 'Courier New', monospace;
+  --font-body: 'Inter', system-ui, sans-serif;
+
+  --transition: all 0.22s cubic-bezier(0.2, 0, 0, 1);
+  --transition-px: transform 0.12s steps(2, end), filter 0.12s steps(2, end);
 }
 
 [data-theme="dark"] {
-  --bg-primary: #0D1117;
-  --bg-secondary: #161B22;
-  --bg-card: #1C2128;
-  --bg-nav: rgba(13, 17, 23, 0.92);
+  /* "GB night" — the previous GitHub-dark greys, pulled toward green */
+  --bg-primary: #0C1210;
+  --bg-secondary: rgba(24, 40, 31, 0.45);
+  --bg-secondary-solid: #121A16;
+  --bg-card: rgba(24, 33, 28, 0.58);
+  --bg-card-solid: #18211C;
+  --bg-nav: rgba(12, 18, 16, 0.74);
 
-  --text-primary: #E6EDF3;
-  --text-secondary: #A0AAB8;
-  --text-muted: #6E7681;
+  --text-primary: #DFEAD8;
+  --text-secondary: #A2B29A;
+  --text-muted: #6E7D69;
 
-  --border-color: #21262D;
-  --border-card: #2D333B;
+  --color-accent: #A5E88B;                     /* sage → phosphor lime */
+  --color-accent-dark: #7DC96A;
+  --color-accent-glow: rgba(165, 232, 139, 0.22);
+  --color-primary-light: rgba(125, 201, 106, 0.12);
 
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.28);
-  --shadow-md: 0 8px 28px rgba(0, 0, 0, 0.38);
-  --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.52);
-  --shadow-hover: 0 24px 64px rgba(145, 205, 145, 0.13);
+  --border-color: #22302A;
+  --border-card: rgba(165, 232, 139, 0.16);
 
-  --color-primary-light: rgba(78, 86, 126, 0.28);
+  --glass-bg: rgba(24, 33, 28, 0.58);
+  --glass-bg-strong: rgba(20, 28, 24, 0.82);
+  --glass-border: rgba(165, 232, 139, 0.16);
+  --glass-highlight: inset 0 1px 0 rgba(165, 232, 139, 0.12);
+  --scanline-color: rgba(0, 0, 0, 0.30);
+
+  --ambient-1: rgba(165, 232, 139, 0.10);
+  --ambient-2: rgba(78, 86, 126, 0.20);
+
+  --shadow-sm: 2px 2px 0 rgba(0, 0, 0, 0.50);
+  --shadow-md: 4px 4px 0 rgba(0, 0, 0, 0.55);
+  --shadow-lg: 6px 6px 0 rgba(0, 0, 0, 0.60);
+  --shadow-hover: 6px 6px 0 rgba(165, 232, 139, 0.28);
+  --shadow-pixel-color: rgba(0, 0, 0, 0.72);
 }
 
 /* ===========================
@@ -70,7 +141,7 @@ html {
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body);
   background-color: var(--bg-primary);
   color: var(--text-primary);
   overflow-x: hidden;
@@ -78,27 +149,52 @@ body {
   line-height: 1.6;
 }
 
+/* The ambient wash. Fixed behind the content so every frosted surface has
+   something to blur and the page reads as lit from within. */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(900px 620px at 12% -6%, var(--ambient-1), transparent 62%),
+    radial-gradient(760px 520px at 88% 14%, var(--ambient-2), transparent 64%),
+    radial-gradient(700px 700px at 46% 106%, var(--ambient-1), transparent 60%);
+}
+
 h1, h2, h3, h4 {
   line-height: 1.2;
   color: var(--text-primary);
+  font-family: var(--font-display);
+  font-weight: 400;
 }
 
+/* Pixel faces read larger than their point size, so the scale is tuned down
+   from the previous serif/Inter sizes. Headings are set uppercase: this face
+   has a tall lowercase that softens the bitmap read, and caps bring the blocky
+   8-bit silhouette back. */
 h1 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(3.5rem, 8vw, 7rem);
-  font-weight: 600;
-  letter-spacing: -0.02em;
+  font-size: clamp(1.6rem, 4.6vw, 3.1rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  text-transform: uppercase;
 }
 
 h2 {
-  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  font-size: clamp(1.15rem, 2.4vw, 1.6rem);
   font-weight: 700;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.02em;
+  line-height: 1.4;
+  text-transform: uppercase;
 }
 
 h3 {
-  font-size: 1.15rem;
+  font-size: 0.95rem;
   font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
 }
 
 p {
@@ -132,19 +228,21 @@ img {
 
 .section-label {
   display: inline-block;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.15em;
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--color-accent-dark);
   background: var(--color-accent-glow);
-  padding: 0.35rem 0.9rem;
-  border-radius: var(--radius-pill);
-  margin-bottom: 0.9rem;
+  padding: 0.5rem 0.8rem;
+  margin-bottom: 1rem;
+  --c: 4px;
+  clip-path: var(--clip-pixel);
 }
 
 .section-title {
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.8rem;
 }
 
 .section-subtitle {
@@ -153,6 +251,51 @@ img {
   max-width: 560px;
   margin-bottom: 3rem;
   line-height: 1.7;
+}
+
+/* ===========================
+   GLASS & PIXEL PRIMITIVES
+
+   Recipes the partials reuse. `.glass` needs the ambient wash behind it to
+   have anything to refract; `.glass--screen` adds the CRT scanlines, which by
+   design only ever appear inside a glass surface, never on the page itself.
+=========================== */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-highlight), var(--shadow-md);
+}
+
+.glass--screen {
+  position: relative;
+  overflow: hidden;
+}
+.glass--screen::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    var(--scanline-color) 0 1px,
+    transparent 1px 3px
+  );
+}
+
+/* Stepped corners.
+
+   House rule: an element gets EITHER a notch OR an offset shadow, never both.
+   clip-path clips box-shadow away, and `filter: drop-shadow` traces the alpha
+   channel — so on a translucent surface it ghosts the text instead of casting
+   a shadow. Notches therefore mark inset things (screens, labels, chips) and
+   hard shadows mark raised things (keys, cards). */
+.px-corners {
+  border-radius: 0;
+  clip-path: var(--clip-pixel);
+  box-shadow: none;
 }
 
 /* ===========================
@@ -195,56 +338,114 @@ img {
 .delay-5 { transition-delay: 0.50s !important; }
 
 /* ===========================
-   BUTTONS
+   BUTTONS — physical 8-bit keys
+
+   The hard offset shadow is the "height" of the key; pressing it moves the
+   face down into the shadow, so :active looks like the key bottoming out.
 =========================== */
 .btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
-  padding: 0.75rem 1.75rem;
-  border-radius: var(--radius-sm);
-  font-family: 'Inter', sans-serif;
-  font-size: 0.9rem;
-  font-weight: 600;
+  gap: 0.5rem;
+  padding: 0.85rem 1.35rem;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   cursor: pointer;
-  transition: var(--transition);
   border: 2px solid transparent;
+  border-radius: 0;
   text-decoration: none;
   white-space: nowrap;
+  box-shadow: 4px 4px 0 var(--shadow-pixel-color);
+  transition: var(--transition-px), background-color 0.2s ease, color 0.2s ease,
+    border-color 0.2s ease;
+}
+.btn:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 5px 5px 0 var(--shadow-pixel-color);
+}
+.btn:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0 0 0 var(--shadow-pixel-color);
 }
 
 .btn-primary {
   background: var(--color-accent);
-  color: #1A1A2E;
-  border-color: var(--color-accent);
+  color: #14200F;
+  border-color: var(--color-accent-dark);
 }
 .btn-primary:hover {
   background: var(--color-accent-dark);
   border-color: var(--color-accent-dark);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px var(--color-accent-glow);
-  color: #1A1A2E;
+  color: #F3F5EC;
+}
+[data-theme="dark"] .btn-primary:hover {
+  color: #0C1210;
 }
 
 .btn-outline {
-  background: transparent;
-  color: var(--color-accent);
-  border-color: var(--color-accent);
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur-sm));
+  -webkit-backdrop-filter: blur(var(--glass-blur-sm));
+  color: var(--color-accent-dark);
+  border-color: var(--color-accent-dark);
 }
 .btn-outline:hover {
   background: var(--color-accent);
-  color: #1A1A2E;
-  transform: translateY(-2px);
+  color: #14200F;
+  border-color: var(--color-accent-dark);
 }
 
 .btn-ghost {
-  background: var(--color-primary-light);
-  color: var(--text-primary);
-  border-color: transparent;
+  background: transparent;
+  color: var(--text-secondary);
+  border-color: var(--border-color);
 }
 .btn-ghost:hover {
   background: var(--color-primary);
-  color: white;
-  transform: translateY(-2px);
+  border-color: var(--color-primary);
+  color: #F3F5EC;
 }
 
+/* ===========================
+   FOCUS VISIBILITY
+=========================== */
+:where(a, button, input, textarea, [tabindex]):focus-visible {
+  outline: 3px solid var(--color-accent-dark);
+  outline-offset: 2px;
+}
+[data-theme="dark"] :where(a, button, input, textarea, [tabindex]):focus-visible {
+  outline-color: var(--color-accent);
+}
+
+/* Clipped elements swallow the outline, so ring them from the inside. */
+.px-corners:focus-visible {
+  outline: none;
+  box-shadow: inset 0 0 0 3px var(--color-accent-dark);
+}
+[data-theme="dark"] .px-corners:focus-visible {
+  box-shadow: inset 0 0 0 3px var(--color-accent);
+}
+
+/* ===========================
+   REDUCED MOTION
+=========================== */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  /* Revealed up front instead of on scroll. */
+  .fade-in,
+  .fade-in-left,
+  .fade-in-right {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

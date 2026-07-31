@@ -1,5 +1,8 @@
 /* ===========================
    PROJECT SEARCH / FILTER
+
+   The search field is a terminal input: monospace, phosphor caret, and filter
+   chips that behave like small keys.
 =========================== */
 .project-search-wrap {
   position: relative;
@@ -9,71 +12,94 @@
 .project-search {
   width: 100%;
   padding: 0.8rem 2.8rem 0.8rem 1rem;
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-sm);
-  background: var(--bg-card);
+  border: 2px solid var(--border-color);
+  background: var(--glass-bg-strong);
+  backdrop-filter: blur(var(--glass-blur-sm));
+  -webkit-backdrop-filter: blur(var(--glass-blur-sm));
   color: var(--text-primary);
-  font-family: 'Inter', sans-serif;
-  font-size: 0.95rem;
+  caret-color: var(--color-accent-dark);
+  font-family: var(--font-mono);
+  font-size: 1.15rem;
+  letter-spacing: 0.02em;
   outline: none;
-  transition: var(--transition);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 .project-search:focus {
-  border-color: var(--color-accent);
-  box-shadow: 0 0 0 3px var(--color-accent-glow);
+  border-color: var(--color-accent-dark);
+  box-shadow: inset 0 0 0 1px var(--color-accent-dark);
 }
-.project-search::placeholder { color: var(--text-muted); }
+.project-search::placeholder {
+  color: var(--text-muted);
+}
 
 .project-search-clear {
   position: absolute;
-  right: 0.75rem;
+  right: 0.6rem;
   top: 50%;
   transform: translateY(-50%);
   background: none;
-  border: none;
+  border: 2px solid transparent;
   color: var(--text-muted);
   cursor: pointer;
-  font-size: 0.85rem;
-  padding: 0.2rem 0.4rem;
-  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  line-height: 1;
+  padding: 0.3rem 0.4rem;
   transition: var(--transition);
 }
-.project-search-clear:hover { color: var(--text-primary); background: var(--color-primary-light); }
+.project-search-clear:hover {
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
 
 .project-quick-filters {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.85rem;
 }
+
+/* Chips are small keys: pixel type, hard shadow, and they bottom out into the
+   pressed state while the filter is active. */
 .project-chip {
-  font-size: 0.78rem;
-  font-weight: 600;
-  padding: 0.35rem 0.85rem;
-  border-radius: var(--radius-pill);
-  border: 1px solid var(--border-color);
-  background: var(--bg-card);
+  font-family: var(--font-display);
+  font-size: 0.66rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.5rem 0.75rem;
+  border: 2px solid var(--border-color);
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur-sm));
+  -webkit-backdrop-filter: blur(var(--glass-blur-sm));
   color: var(--text-secondary);
   cursor: pointer;
-  letter-spacing: 0.02em;
-  transition: var(--transition);
+  box-shadow: 3px 3px 0 var(--shadow-pixel-color);
+  transition: var(--transition-px), background-color 0.2s ease, color 0.2s ease,
+    border-color 0.2s ease;
 }
 .project-chip:hover {
-  border-color: var(--color-accent);
+  border-color: var(--color-accent-dark);
   color: var(--color-accent-dark);
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0 var(--shadow-pixel-color);
 }
 .project-chip.active {
   background: var(--color-accent);
-  border-color: var(--color-accent);
-  color: #1A1A2E;
+  border-color: var(--color-accent-dark);
+  color: #14200F;
+  transform: translate(3px, 3px);
+  box-shadow: 0 0 0 var(--shadow-pixel-color);
 }
-[data-theme="dark"] .project-chip:hover { color: var(--color-accent); }
+[data-theme="dark"] .project-chip:hover {
+  color: var(--color-accent);
+}
 
 .project-search-count {
-  font-size: 0.83rem;
+  font-family: var(--font-mono);
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
   color: var(--text-muted);
   margin-bottom: 1.25rem;
-  min-height: 1.3em;
+  min-height: 1.6em;
 }
 
 /* Non-matching cards leave the layout entirely so the grid
@@ -81,4 +107,3 @@
 .project-hidden {
   display: none !important;
 }
-

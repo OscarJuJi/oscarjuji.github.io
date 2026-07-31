@@ -3,9 +3,6 @@
 =========================== */
 .aboutme-hero {
   padding: calc(var(--nav-height) + 5rem) 0 5rem;
-  background:
-    radial-gradient(1200px 400px at 80% -10%, var(--color-accent-glow), transparent 60%),
-    var(--bg-primary);
 }
 .aboutme-hero-inner {
   display: grid;
@@ -17,29 +14,35 @@
   position: relative;
   justify-self: center;
 }
+/* The portrait sits in a notched shell with an offset pixel frame behind it —
+   the same silhouette as the chat console. */
 .aboutme-photo {
+  display: block;
   width: 300px;
   height: 300px;
   object-fit: cover;
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--border-card);
-  box-shadow: var(--shadow-lg);
+  border: 2px solid var(--color-accent-dark);
+  background: var(--glass-bg-strong);
+  --c: 10px;
+  clip-path: var(--clip-pixel);
 }
 .aboutme-photo-wrap::after {
   content: "";
   position: absolute;
   inset: 14px -14px -14px 14px;
-  border: 2px solid var(--color-accent);
-  border-radius: var(--radius-lg);
+  border: 3px solid var(--color-accent);
   z-index: -1;
-  opacity: 0.5;
 }
 .aboutme-name {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(2.5rem, 6vw, 4rem);
-  line-height: 1.05;
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 4vw, 2.6rem);
+  line-height: 1.2;
   color: var(--text-primary);
-  margin: 0.6rem 0 1rem;
+  margin: 0.8rem 0 1rem;
+  text-shadow: 3px 3px 0 rgba(145, 205, 145, 0.75);
+}
+[data-theme="dark"] .aboutme-name {
+  text-shadow: 3px 3px 0 rgba(125, 201, 106, 0.28);
 }
 .aboutme-tagline {
   font-size: 1.15rem;
@@ -53,22 +56,26 @@
   margin: 1.5rem 0 2rem;
   display: flex;
   flex-direction: column;
-  gap: 0.45rem;
+  gap: 0.5rem;
 }
 .aboutme-facts li {
   position: relative;
-  padding-left: 1.4rem;
+  padding-left: 1.5rem;
   color: var(--text-secondary);
-  font-size: 0.95rem;
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  letter-spacing: 0.02em;
 }
 .aboutme-facts li::before {
   content: "";
   position: absolute;
   left: 0;
-  top: 0.55em;
+  top: 0.6em;
   width: 7px;
   height: 7px;
-  border-radius: 50%;
+  background: var(--color-accent-dark);
+}
+[data-theme="dark"] .aboutme-facts li::before {
   background: var(--color-accent);
 }
 .aboutme-cta {
@@ -91,14 +98,18 @@
   margin-top: 1.1rem;
 }
 .aboutme-quote {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(1.5rem, 3.2vw, 2rem);
-  line-height: 1.4;
+  font-family: var(--font-mono);
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  line-height: 1.45;
+  letter-spacing: 0.02em;
   color: var(--text-primary);
-  border-left: 3px solid var(--color-accent);
-  padding-left: 1.4rem;
+  border-left: 5px solid var(--color-accent-dark);
+  padding: 0.4rem 0 0.4rem 1.4rem;
   margin: 1.5rem 0 2.5rem;
   max-width: 60ch;
+}
+[data-theme="dark"] .aboutme-quote {
+  border-left-color: var(--color-accent);
 }
 
 .aboutme-values {
@@ -106,22 +117,29 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 1.25rem;
 }
-.aboutme-value-card {
+.aboutme-value-card,
+.aboutme-interest-card {
   background: var(--bg-card);
-  border: 1px solid var(--border-card);
-  border-radius: var(--radius-md);
-  padding: 1.6rem;
-  transition: var(--transition);
+  backdrop-filter: blur(var(--glass-blur-sm)) saturate(var(--glass-saturate));
+  -webkit-backdrop-filter: blur(var(--glass-blur-sm)) saturate(var(--glass-saturate));
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-highlight), var(--shadow-md);
+  transition: var(--transition-px), border-color 0.2s ease;
 }
-.aboutme-value-card:hover {
-  border-color: var(--color-accent);
-  box-shadow: var(--shadow-md);
-  transform: translateY(-4px);
+.aboutme-value-card:hover,
+.aboutme-interest-card:hover {
+  border-color: var(--color-accent-dark);
+  transform: translate(-3px, -3px);
+  box-shadow: var(--glass-highlight), var(--shadow-hover);
+}
+.aboutme-value-card {
+  padding: 1.6rem;
 }
 .aboutme-value-card h3 {
   color: var(--text-primary);
-  margin-bottom: 0.6rem;
-  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+  line-height: 1.7;
 }
 .aboutme-value-card p {
   color: var(--text-secondary);
@@ -136,21 +154,13 @@
   margin-top: 2rem;
 }
 .aboutme-interest-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-card);
-  border-radius: var(--radius-md);
   padding: 1.5rem;
-  transition: var(--transition);
-}
-.aboutme-interest-card:hover {
-  border-color: var(--color-accent);
-  box-shadow: var(--shadow-md);
-  transform: translateY(-4px);
 }
 .aboutme-interest-card h3 {
   color: var(--text-primary);
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 0.7rem;
 }
 .aboutme-interest-card p {
   color: var(--text-secondary);
