@@ -47,7 +47,9 @@
 
 .timeline-dot {
   position: absolute;
-  left: -1.625rem;
+  /* -1.5rem cancels .timeline's 1.5rem padding, so the 11px node starts at the
+     same origin as the 3px run and the two share a centre. */
+  left: -1.5rem;
   top: 6px;
   width: 11px;
   height: 11px;
