@@ -94,9 +94,8 @@
 }
 
 .project-search-count {
-  font-family: var(--font-mono);
-  font-size: 1.05rem;
-  letter-spacing: 0.02em;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
   color: var(--text-muted);
   margin-bottom: 1.25rem;
   min-height: 1.6em;

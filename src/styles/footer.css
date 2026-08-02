@@ -34,9 +34,8 @@
   text-transform: uppercase;
 }
 .footer-tagline {
-  font-family: var(--font-mono);
-  font-size: 1.05rem;
-  letter-spacing: 0.02em;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
   color: rgba(223, 234, 216, 0.62);
   margin-top: -1rem;
 }

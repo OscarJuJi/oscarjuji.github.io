@@ -122,10 +122,10 @@
   border-bottom: 1px solid var(--glass-border);
 }
 .ai-chat-loading-label {
-  font-family: var(--font-display);
-  font-size: 0.66rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
   color: var(--text-secondary);
   margin-bottom: 0.6rem;
 }
@@ -156,8 +156,8 @@
   background: var(--color-accent);
 }
 .ai-chat-loading-hint {
-  font-family: var(--font-mono);
-  font-size: 0.95rem;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
   color: var(--text-muted);
 }
 
