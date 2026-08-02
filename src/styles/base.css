@@ -66,6 +66,20 @@
   --grid-color: rgba(16, 20, 28, 0.045);
   --grid-size: 44px;
 
+  /* Horizon + skyline. In daylight the city is a pale haze on the edge of
+     the frame, so it never fights the copy above it. */
+  --horizon-1: rgba(224, 0, 77, 0.10);
+  --horizon-2: rgba(0, 168, 192, 0.12);
+  --skyline-height: 190px;
+  --skyline-opacity: 0.16;
+  --skyline-near: #10141C;
+  --skyline-far: #38415A;
+  --window-color: rgba(58, 115, 58, 0.55);
+
+  /* Nineteen rectangles and two antennas on a 120x24 grid, crisp-edged so the
+     silhouette stays pixel-square at any width. Used as a mask, never drawn. */
+  --skyline-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 24' preserveAspectRatio='none' shape-rendering='crispEdges'%3E%3Cg fill='%23000'%3E%3Crect x='0' y='15' width='8' height='9'/%3E%3Crect x='8' y='11' width='5' height='13'/%3E%3Crect x='13' y='17' width='7' height='7'/%3E%3Crect x='20' y='8' width='4' height='16'/%3E%3Crect x='24' y='13' width='9' height='11'/%3E%3Crect x='33' y='5' width='6' height='19'/%3E%3Crect x='39' y='16' width='5' height='8'/%3E%3Crect x='44' y='11' width='10' height='13'/%3E%3Crect x='54' y='2' width='4' height='22'/%3E%3Crect x='55' y='0' width='1' height='2'/%3E%3Crect x='58' y='14' width='7' height='10'/%3E%3Crect x='65' y='9' width='5' height='15'/%3E%3Crect x='70' y='16' width='9' height='8'/%3E%3Crect x='79' y='7' width='6' height='17'/%3E%3Crect x='85' y='13' width='4' height='11'/%3E%3Crect x='89' y='10' width='8' height='14'/%3E%3Crect x='97' y='15' width='5' height='9'/%3E%3Crect x='102' y='6' width='7' height='18'/%3E%3Crect x='104' y='4' width='1' height='2'/%3E%3Crect x='109' y='12' width='4' height='12'/%3E%3Crect x='113' y='15' width='7' height='9'/%3E%3C/g%3E%3C/svg%3E");
+
   /* Shadows are hard 16-bit offsets, never soft blurs */
   --shadow-sm: 2px 2px 0 rgba(16, 20, 28, 0.12);
   --shadow-md: 4px 4px 0 rgba(16, 20, 28, 0.16);
@@ -148,6 +162,14 @@
   --ambient-3: rgba(255, 42, 109, 0.11);
   --grid-color: rgba(165, 232, 139, 0.05);
 
+  /* Night: the horizon burns and the city reads properly. */
+  --horizon-1: rgba(255, 42, 109, 0.20);
+  --horizon-2: rgba(0, 229, 255, 0.16);
+  --skyline-opacity: 0.62;
+  --skyline-near: #04050C;
+  --skyline-far: #141A30;
+  --window-color: rgba(165, 232, 139, 0.60);
+
   --shadow-sm: 2px 2px 0 rgba(0, 0, 0, 0.55);
   --shadow-md: 4px 4px 0 rgba(0, 0, 0, 0.60);
   --shadow-lg: 6px 6px 0 rgba(0, 0, 0, 0.66);
@@ -177,9 +199,9 @@ body {
   line-height: 1.6;
 }
 
-/* Neon pools. Fixed behind the content so every frosted surface has something
-   to refract and the page reads as lit from off-screen sources. Green leads,
-   with cyan and magenta holding the far corners. */
+/* The sky: neon pools over a horizon that warms toward the bottom of the
+   viewport, plus the HUD grid. Fixed, so it behaves like a wallpaper the
+   content scrolls over and every frosted surface refracts. */
 body::before {
   content: '';
   position: fixed;
@@ -187,22 +209,7 @@ body::before {
   z-index: -2;
   pointer-events: none;
   background:
-    radial-gradient(880px 620px at 10% -8%, var(--ambient-1), transparent 62%),
-    radial-gradient(760px 540px at 92% 10%, var(--ambient-2), transparent 64%),
-    radial-gradient(620px 620px at 78% 82%, var(--ambient-3), transparent 60%),
-    radial-gradient(700px 700px at 34% 108%, var(--ambient-1), transparent 60%);
-}
-
-/* The HUD grid. One pixel wide on a fixed pitch, low enough to read as
-   texture rather than pattern — it is what keeps the neon from floating in
-   nothing, and it snaps the page to the same grid the shadows offset along. */
-body::after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background:
+    /* grid first so the glows sit on top of it */
     repeating-linear-gradient(
       to right,
       var(--grid-color) 0 1px,
@@ -212,10 +219,42 @@ body::after {
       to bottom,
       var(--grid-color) 0 1px,
       transparent 1px var(--grid-size)
-    );
-  /* Fades out downward so body copy sits on quiet ground. */
-  -webkit-mask-image: linear-gradient(to bottom, #000 0%, transparent 78%);
-  mask-image: linear-gradient(to bottom, #000 0%, transparent 78%);
+    ),
+    radial-gradient(880px 620px at 10% -8%, var(--ambient-1), transparent 62%),
+    radial-gradient(760px 540px at 92% 8%, var(--ambient-2), transparent 64%),
+    /* the horizon burn behind the skyline */
+    radial-gradient(1400px 340px at 50% 100%, var(--horizon-1), transparent 70%),
+    radial-gradient(700px 260px at 18% 100%, var(--horizon-2), transparent 72%);
+}
+
+/* The skyline. A pixel-art silhouette tiling along the bottom edge: the SVG
+   is only a mask, so the buildings take their colour from the theme, and the
+   dot grid painted underneath shows through as lit windows. Inspired by pixel
+   cyberpunk city wallpaper, drawn from scratch in nineteen rectangles. */
+body::after {
+  content: '';
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: var(--skyline-height);
+  z-index: -1;
+  pointer-events: none;
+  opacity: var(--skyline-opacity);
+  background:
+    /* windows — a pixel grid of lit dots */
+    radial-gradient(circle at center, var(--window-color) 0 1.5px, transparent 2px)
+      0 0 / 14px 18px,
+    /* the building mass, darker at street level */
+    linear-gradient(to top, var(--skyline-near), var(--skyline-far));
+  -webkit-mask-image: var(--skyline-mask);
+  mask-image: var(--skyline-mask);
+  -webkit-mask-size: 1180px 100%;
+  mask-size: 1180px 100%;
+  -webkit-mask-repeat: repeat-x;
+  mask-repeat: repeat-x;
+  -webkit-mask-position: bottom left;
+  mask-position: bottom left;
 }
 
 h1, h2, h3, h4 {
@@ -459,6 +498,64 @@ img {
   background: var(--color-primary);
   border-color: var(--color-primary);
   color: var(--on-accent-dark);
+}
+
+/* ===========================
+   THE GLITCH
+
+   Hover doesn't ease — it drops frames. steps(1, end) holds each keyframe
+   flat so the surface jumps between positions instead of sliding, and the
+   cyan/magenta pair whips across sides before settling into the resting
+   split. Runs once per hover; a loop would turn the page into a strobe.
+
+   Keyframe animations outrank normal declarations, so this overrides the
+   per-component :hover transforms without touching a single partial.
+=========================== */
+@keyframes glitchHover {
+  0% {
+    transform: translate(0, 0);
+    box-shadow: 3px -4px 0 var(--glitch-cyan), -3px 4px 0 var(--glitch-magenta);
+  }
+  25% {
+    transform: translate(4px, -1px);
+    box-shadow: -7px 2px 0 var(--glitch-magenta), 7px -2px 0 var(--glitch-cyan);
+  }
+  50% {
+    transform: translate(-5px, -4px);
+    box-shadow: 6px 6px 0 var(--glitch-cyan), -6px -6px 0 var(--glitch-magenta);
+  }
+  75% {
+    transform: translate(-1px, -2px);
+    box-shadow: -4px 5px 0 var(--glitch-cyan), 4px -5px 0 var(--glitch-magenta);
+  }
+  100% {
+    transform: translate(-3px, -3px);
+    box-shadow: var(--shadow-hover);
+  }
+}
+
+.stat-card:hover,
+.skill-card:hover,
+.project-card:hover,
+.timeline-card:hover,
+.aboutme-value-card:hover,
+.aboutme-interest-card:hover,
+.contact-link-item:hover,
+.project-chip:hover,
+.btn:hover,
+.theme-toggle:hover,
+.ai-chat-send:hover:not(:disabled),
+.footer-social-link:hover {
+  animation: glitchHover 0.2s steps(1, end) 1 both;
+}
+
+/* Pressing something should land it, not keep shaking. */
+.btn:active,
+.project-chip:active,
+.theme-toggle:active,
+.ai-chat-send:active:not(:disabled),
+.footer-social-link:active {
+  animation: none;
 }
 
 /* ===========================
