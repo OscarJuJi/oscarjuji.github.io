@@ -158,7 +158,7 @@ const AboutMePage = () => {
             <ul className="aboutme-facts">
               <li>Based in {profile.location}</li>
               <li>🇲🇽 Spanish (Native) · 🇺🇸 English (Professional)</li>
-              <li>Python · Scala · Spark · AWS · Machine Learning</li>
+              <li>Codes primarily in Python</li>
             </ul>
 
             <div className="aboutme-cta">

@@ -89,6 +89,16 @@
   transform: translate(3px, 3px);
   box-shadow: 0 0 0 var(--shadow-pixel-color);
 }
+/* An active chip is already filled with the accent, so the hover ink would
+   paint the label green on green and swallow it. Keep the pressed ink — and
+   stay pressed, because the key is down. */
+.project-chip.active:hover,
+[data-theme="dark"] .project-chip.active:hover {
+  color: var(--on-accent);
+  border-color: var(--color-accent-dark);
+  transform: translate(3px, 3px);
+  box-shadow: 0 0 0 var(--shadow-pixel-color);
+}
 [data-theme="dark"] .project-chip:hover {
   color: var(--color-accent);
 }
