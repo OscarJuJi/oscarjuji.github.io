@@ -87,9 +87,6 @@
 .aboutme-section {
   padding: 5.5rem 0;
 }
-.aboutme-section.alt-bg {
-  background: var(--bg-secondary);
-}
 .aboutme-prose p {
   font-size: 1.05rem;
   line-height: 1.8;

@@ -34,11 +34,6 @@ const Footer = ({ name, email, gitHub, instagram, linkedIn }) => {
             </a>
           ))}
         </div>
-
-        <div className="footer-divider" />
-        <p className="footer-copyright">
-          &copy; {new Date().getFullYear()} {name} &mdash; Built with React
-        </p>
       </div>
     </footer>
   );

@@ -7,9 +7,6 @@
 .timeline-section {
   padding: 7rem 0;
 }
-.timeline-section.alt-bg {
-  background: var(--bg-secondary);
-}
 
 .timeline {
   position: relative;
@@ -63,9 +60,6 @@
 }
 .timeline-item:hover .timeline-dot {
   transform: scale(1.35);
-}
-.timeline-section.alt-bg .timeline-dot {
-  outline-color: var(--bg-secondary-solid);
 }
 
 .timeline-date {

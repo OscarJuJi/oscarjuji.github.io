@@ -5,7 +5,6 @@
    are live filters — clicking one drives the search field above the grid.
 =========================== */
 .portfolio-section {
-  background: var(--bg-secondary);
   padding: 7rem 0;
 }
 
