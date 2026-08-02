@@ -130,7 +130,7 @@
 .theme-toggle:hover {
   background: var(--color-accent);
   border-color: var(--color-accent-dark);
-  color: #14200F;
+  color: var(--on-accent);
   transform: translate(-1px, -1px);
   box-shadow: 4px 4px 0 var(--shadow-pixel-color);
 }

@@ -34,7 +34,7 @@
   position: absolute;
   width: 520px;
   height: 520px;
-  background: radial-gradient(circle, rgba(78, 86, 126, 0.14) 0%, transparent 68%);
+  background: radial-gradient(circle, var(--ambient-2) 0%, transparent 68%);
   bottom: -120px;
   left: -120px;
   animation: float2 11s ease-in-out infinite;
@@ -111,10 +111,10 @@
   color: var(--text-primary);
   margin-bottom: 0.9rem;
   line-height: 1.1;
-  text-shadow: 4px 4px 0 rgba(145, 205, 145, 0.75);
+  text-shadow: 4px 4px 0 rgba(145, 205, 145, 0.85);
 }
 [data-theme="dark"] .hero-name {
-  text-shadow: 4px 4px 0 rgba(125, 201, 106, 0.28);
+  text-shadow: 4px 4px 0 rgba(165, 232, 139, 0.30);
 }
 
 /* The terminal line. The prompt is drawn in CSS so the typed text stays

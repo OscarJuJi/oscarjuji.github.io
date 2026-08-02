@@ -78,12 +78,12 @@
 .project-tag:hover {
   background: var(--color-accent);
   border-color: var(--color-accent-dark);
-  color: #14200F;
+  color: var(--on-accent);
 }
 .project-tag.active {
   background: var(--color-accent-dark);
   border-color: var(--color-accent-dark);
-  color: #EFF3E4;
+  color: var(--on-accent-dark);
 }
 [data-theme="dark"] .project-tag {
   color: var(--color-accent);
@@ -91,7 +91,7 @@
 }
 [data-theme="dark"] .project-tag:hover,
 [data-theme="dark"] .project-tag.active {
-  color: #0C1210;
+  color: var(--on-accent);
 }
 [data-theme="dark"] .project-tag.active {
   background: var(--color-accent);

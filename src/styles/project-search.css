@@ -85,7 +85,7 @@
 .project-chip.active {
   background: var(--color-accent);
   border-color: var(--color-accent-dark);
-  color: #14200F;
+  color: var(--on-accent);
   transform: translate(3px, 3px);
   box-shadow: 0 0 0 var(--shadow-pixel-color);
 }
