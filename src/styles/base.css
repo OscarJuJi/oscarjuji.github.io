@@ -71,6 +71,11 @@
   --horizon-1: rgba(224, 0, 77, 0.10);
   --horizon-2: rgba(0, 168, 192, 0.12);
   /* Ground plane + corner falloff (see html::after and body::before) */
+  --dither: 5px;
+  --moon: rgba(58, 115, 58, 0.16);
+  --moon-halo: rgba(58, 115, 58, 0.07);
+  --cloud: rgba(78, 96, 130, 0.10);
+  --sky-tint: rgba(120, 132, 178, 0.10);
   --floor-line: rgba(58, 115, 58, 0.16);
   --floor-opacity: 0.45;
   --vignette: rgba(16, 20, 28, 0.10);
@@ -179,6 +184,10 @@
   /* Night: the horizon burns and the city reads properly. */
   --horizon-1: rgba(255, 42, 109, 0.20);
   --horizon-2: rgba(0, 229, 255, 0.16);
+  --moon: rgba(120, 200, 120, 0.42);
+  --moon-halo: rgba(120, 200, 120, 0.13);
+  --cloud: rgba(74, 82, 150, 0.30);
+  --sky-tint: rgba(40, 40, 92, 0.42);
   --floor-line: rgba(165, 232, 139, 0.22);
   --floor-opacity: 0.85;
   --vignette: rgba(0, 0, 0, 0.55);
@@ -228,6 +237,7 @@ body::before {
   background:
     /* corner falloff, listed first so it sits over everything in this layer */
     radial-gradient(130% 95% at 50% 38%, transparent 52%, var(--vignette) 100%),
+    radial-gradient(150% 85% at 50% 0%, var(--sky-tint), transparent 68%),
     /* grid next so the glows sit on top of it */
     repeating-linear-gradient(
       to right,
@@ -259,12 +269,15 @@ body::before {
    layer is shorter, paler and slower; the near one carries the detail —
    setbacks, roof boxes and antenna masts — and flickers.
 =========================== */
+/* Each layer is exactly the viewport plus one mask tile wide, and travels
+   exactly one tile. That is what keeps it covering the screen for the whole
+   loop: at the end of the travel the element's right edge lands precisely on
+   the viewport's right edge, never short of it. */
 html::before,
 body::after {
   content: '';
   position: fixed;
-  left: -50%;
-  width: 200%;
+  left: 0;
   bottom: 0;
   pointer-events: none;
   -webkit-mask-repeat: repeat-x;
@@ -275,10 +288,12 @@ body::after {
 
 /* Far layer — the back of the district. */
 html::before {
+  width: calc(100% + 900px);   /* viewport + one 900px tile */
   height: var(--skyline-height-far);
   z-index: -3;
   opacity: var(--skyline-opacity-far);
   background:
+    /* 900 / 12 = 75 windows per tile, so the pattern survives the loop */
     radial-gradient(circle at center, var(--window-color) 0 1px, transparent 1.5px)
       0 0 / 12px 15px,
     linear-gradient(to top, var(--skyline-near-far), var(--skyline-far-far));
@@ -291,14 +306,17 @@ html::before {
 
 /* Near layer — the street we are standing on. */
 body::after {
+  width: calc(100% + 1200px);  /* viewport + one 1200px tile */
   height: var(--skyline-height);
   z-index: -1;
   opacity: var(--skyline-opacity);
   background:
+    /* Both grids divide 1200 exactly (25 and 80 per tile), so windows land in
+       the same place on the same buildings every time the loop restarts. */
     radial-gradient(circle at center, var(--window-color-2) 0 1.5px, transparent 2px)
-      7px 9px / 44px 54px,
+      7px 9px / 48px 54px,
     radial-gradient(circle at center, var(--window-color) 0 1.5px, transparent 2px)
-      0 0 / 14px 18px,
+      0 0 / 15px 18px,
     linear-gradient(to top, var(--skyline-near), var(--skyline-far));
   -webkit-mask-image: var(--skyline-mask);
   mask-image: var(--skyline-mask);
@@ -306,6 +324,64 @@ body::after {
   mask-size: 1200px 100%;
   animation: cityDriftNear 170s linear infinite,
     cityFlicker 7s steps(1, end) infinite;
+}
+
+/* The moon and the clouds, after lekzd's "8 bit moon".
+
+   Both are solid shapes punched through a checkerboard, which is how you
+   shade with a two-colour palette: no gradient, just dots. The moon holds
+   still because it is far away; the clouds drift, slower than the city under
+   them. One mask each, so the dither pitch stays honest at any size. */
+#main::before,
+#main::after {
+  content: '';
+  position: fixed;
+  pointer-events: none;
+  -webkit-mask-image: repeating-conic-gradient(#000 0% 25%, transparent 0% 50%);
+  mask-image: repeating-conic-gradient(#000 0% 25%, transparent 0% 50%);
+  -webkit-mask-size: var(--dither) var(--dither);
+  mask-size: var(--dither) var(--dither);
+}
+
+/* Moon: a bright disc over a wider halo, both dithered. */
+#main::before {
+  top: 8vh;
+  right: 6vw;
+  width: 340px;
+  height: 340px;
+  z-index: -4;
+  background:
+    radial-gradient(circle at 50% 50%, var(--moon) 0 33%, transparent 34%),
+    radial-gradient(circle at 50% 50%, var(--moon-halo) 0 50%, transparent 51%);
+}
+
+/* Clouds: three flattened blobs on one layer, drifting as a unit. */
+/* Kept in the upper band of the sky so a clump never drifts behind the
+   headline and turns into texture under the type. */
+#main::after {
+  top: 4vh;
+  left: 0;
+  width: calc(100% + 620px);
+  height: 210px;
+  z-index: -4;
+  /* Each cloud is a clump of overlapping circles rather than one smooth
+     ellipse — a single ellipse reads as a lens flare, a clump reads as a
+     cloud drawn on a grid. */
+  background:
+    radial-gradient(circle 38px at 9% 34%, var(--cloud) 0 100%, transparent 101%),
+    radial-gradient(circle 52px at 14% 30%, var(--cloud) 0 100%, transparent 101%),
+    radial-gradient(circle 34px at 19% 36%, var(--cloud) 0 100%, transparent 101%),
+    radial-gradient(circle 44px at 43% 64%, var(--cloud) 0 100%, transparent 101%),
+    radial-gradient(circle 62px at 49% 60%, var(--cloud) 0 100%, transparent 101%),
+    radial-gradient(circle 40px at 55% 66%, var(--cloud) 0 100%, transparent 101%),
+    radial-gradient(circle 30px at 76% 24%, var(--cloud) 0 100%, transparent 101%),
+    radial-gradient(circle 42px at 81% 20%, var(--cloud) 0 100%, transparent 101%);
+  animation: cloudDrift 240s linear infinite;
+}
+
+@keyframes cloudDrift {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(-620px, 0, 0); }
 }
 
 /* The ground plane. A flat grid tipped away from the viewer, so it reads as
