@@ -114,8 +114,7 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 1.25rem;
 }
-.aboutme-value-card,
-.aboutme-interest-card {
+.aboutme-value-card {
   background: var(--bg-card);
   backdrop-filter: blur(var(--glass-blur-sm)) saturate(var(--glass-saturate));
   -webkit-backdrop-filter: blur(var(--glass-blur-sm)) saturate(var(--glass-saturate));
@@ -123,8 +122,7 @@
   box-shadow: var(--glass-highlight), var(--shadow-md);
   transition: var(--transition-px), border-color 0.12s ease;
 }
-.aboutme-value-card:hover,
-.aboutme-interest-card:hover {
+.aboutme-value-card:hover {
   border-color: var(--color-accent-dark);
   transform: translate(-3px, -3px);
   box-shadow: var(--glass-highlight), var(--shadow-hover);
@@ -144,30 +142,36 @@
   line-height: 1.7;
 }
 
-.aboutme-interests {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.25rem;
-  margin-top: 2rem;
+/* "Currently exploring" — topics are labels, not panels, so they get the
+   display face and a hard edge instead of a whole card. */
+.aboutme-topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 0.5rem;
 }
-.aboutme-interest-card {
-  padding: 1.5rem;
-}
-.aboutme-interest-card h3 {
-  color: var(--text-primary);
-  font-size: 0.95rem;
-  line-height: 1.7;
-  margin-bottom: 0.7rem;
-}
-.aboutme-interest-card p {
+.aboutme-topic {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.55rem 0.8rem;
   color: var(--text-secondary);
-  font-size: 0.9rem;
-  line-height: 1.65;
+  background: var(--bg-card);
+  border: 2px solid var(--border-color);
+  box-shadow: 3px 3px 0 var(--shadow-pixel-color);
+  transition: var(--transition-px), color 0.12s ease, border-color 0.12s ease;
+}
+.aboutme-topic:hover {
+  color: var(--color-accent-dark);
+  border-color: var(--color-accent-dark);
+}
+[data-theme="dark"] .aboutme-topic:hover {
+  color: var(--color-accent);
 }
 
 @media (max-width: 1024px) {
   .aboutme-values { grid-template-columns: 1fr 1fr; }
-  .aboutme-interests { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 768px) {
   .aboutme-hero-inner { grid-template-columns: 1fr; gap: 2.5rem; text-align: center; }
@@ -178,8 +182,7 @@
   .aboutme-section { padding: 4rem 0; }
 }
 @media (max-width: 480px) {
-  .aboutme-values,
-  .aboutme-interests { grid-template-columns: 1fr; }
+  .aboutme-values { grid-template-columns: 1fr; }
   .aboutme-photo,
   .aboutme-photo-wrap { width: 220px; height: 220px; }
 }
