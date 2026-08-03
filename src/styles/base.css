@@ -70,6 +70,10 @@
      the frame, so it never fights the copy above it. */
   --horizon-1: rgba(224, 0, 77, 0.10);
   --horizon-2: rgba(0, 168, 192, 0.12);
+  /* Ground plane + corner falloff (see html::after and body::before) */
+  --floor-line: rgba(58, 115, 58, 0.16);
+  --floor-opacity: 0.45;
+  --vignette: rgba(16, 20, 28, 0.10);
   --skyline-height: 210px;
   --skyline-height-far: 150px;
   --skyline-opacity: 0.16;
@@ -175,6 +179,9 @@
   /* Night: the horizon burns and the city reads properly. */
   --horizon-1: rgba(255, 42, 109, 0.20);
   --horizon-2: rgba(0, 229, 255, 0.16);
+  --floor-line: rgba(165, 232, 139, 0.22);
+  --floor-opacity: 0.85;
+  --vignette: rgba(0, 0, 0, 0.55);
   --skyline-opacity: 0.62;
   --skyline-near: #04050C;
   --skyline-far: #141A30;
@@ -219,7 +226,9 @@ body::before {
   z-index: -2;
   pointer-events: none;
   background:
-    /* grid first so the glows sit on top of it */
+    /* corner falloff, listed first so it sits over everything in this layer */
+    radial-gradient(130% 95% at 50% 38%, transparent 52%, var(--vignette) 100%),
+    /* grid next so the glows sit on top of it */
     repeating-linear-gradient(
       to right,
       var(--grid-color) 0 1px,
@@ -297,6 +306,37 @@ body::after {
   mask-size: 1200px 100%;
   animation: cityDriftNear 170s linear infinite,
     cityFlicker 7s steps(1, end) infinite;
+}
+
+/* The ground plane. A flat grid tipped away from the viewer, so it reads as
+   the street the city stands on and gives the page a horizon to sit above.
+   Rides on html::after — the last box in the root, which puts it in front of
+   both city layers without any z-index argument. It runs toward you in steps
+   rather than gliding, same vocabulary as everything else here. */
+html::after {
+  content: '';
+  position: fixed;
+  left: -50%;
+  bottom: 0;
+  width: 200%;
+  height: 34vh;
+  z-index: -1;
+  pointer-events: none;
+  opacity: var(--floor-opacity);
+  transform: perspective(520px) rotateX(74deg);
+  transform-origin: bottom center;
+  background-image:
+    repeating-linear-gradient(to right, var(--floor-line) 0 2px, transparent 2px 64px),
+    repeating-linear-gradient(to bottom, var(--floor-line) 0 2px, transparent 2px 64px);
+  /* Fades out toward the horizon so the grid never meets the skyline hard. */
+  -webkit-mask-image: linear-gradient(to top, #000 2%, transparent 84%);
+  mask-image: linear-gradient(to top, #000 2%, transparent 84%);
+  animation: floorRun 3.4s steps(8, end) infinite;
+}
+
+@keyframes floorRun {
+  from { background-position: 0 0, 0 0; }
+  to   { background-position: 0 0, 0 64px; }
 }
 
 @keyframes cityDriftFar {
