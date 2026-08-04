@@ -66,38 +66,23 @@
   --grid-color: rgba(16, 20, 28, 0.045);
   --grid-size: 44px;
 
-  /* Horizon + skyline. In daylight the city is a pale haze on the edge of
-     the frame, so it never fights the copy above it. */
+  /* Horizon + skyline. FALLBACK ONLY — the live background is the shader in
+     src/background/. These paint the page when WebGL is unavailable. */
   --horizon-1: rgba(224, 0, 77, 0.10);
   --horizon-2: rgba(0, 168, 192, 0.12);
-  /* Ground plane + corner falloff (see html::after and body::before) */
-  --dither: 5px;
-  --moon: rgba(58, 115, 58, 0.16);
-  --moon-halo: rgba(58, 115, 58, 0.07);
-  --cloud: rgba(78, 96, 130, 0.10);
   --sky-tint: rgba(120, 132, 178, 0.10);
-  --floor-line: rgba(58, 115, 58, 0.16);
-  --floor-opacity: 0.45;
   --vignette: rgba(16, 20, 28, 0.10);
   --skyline-height: 210px;
-  --skyline-height-far: 150px;
   --skyline-opacity: 0.16;
-  --skyline-opacity-far: 0.10;
   --skyline-near: #10141C;
   --skyline-far: #38415A;
-  --skyline-near-far: #2A3147;
-  --skyline-far-far: #4A5470;
   --window-color: rgba(190, 120, 20, 0.45);      /* amber, the lit rooms */
-  --window-color-2: rgba(0, 105, 125, 0.40);     /* a few cold ones */
 
   /* Near skyline: twenty-three buildings on a 200x34 grid, modelled rather
      than stacked — setbacks step in as they rise, roof boxes and antenna
      masts break the tops. crispEdges keeps every edge pixel-square. Used as
      a mask, never drawn, so the theme colours it. */
   --skyline-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 34' preserveAspectRatio='none' shape-rendering='crispEdges'%3E%3Cg fill='%23000'%3E%3Crect x='0' y='20' width='12' height='14'/%3E%3Crect x='2' y='16' width='8' height='4'/%3E%3Crect x='5' y='14' width='3' height='2'/%3E%3Crect x='12' y='12' width='7' height='22'/%3E%3Crect x='15' y='8' width='1' height='4'/%3E%3Crect x='19' y='24' width='10' height='10'/%3E%3Crect x='29' y='17' width='6' height='17'/%3E%3Crect x='31' y='15' width='2' height='2'/%3E%3Crect x='35' y='21' width='14' height='13'/%3E%3Crect x='38' y='18' width='8' height='3'/%3E%3Crect x='49' y='10' width='5' height='24'/%3E%3Crect x='51' y='5' width='1' height='5'/%3E%3Crect x='54' y='26' width='9' height='8'/%3E%3Crect x='63' y='19' width='11' height='15'/%3E%3Crect x='66' y='17' width='5' height='2'/%3E%3Crect x='68' y='13' width='1' height='4'/%3E%3Crect x='74' y='14' width='6' height='20'/%3E%3Crect x='80' y='23' width='13' height='11'/%3E%3Crect x='84' y='20' width='6' height='3'/%3E%3Crect x='93' y='6' width='4' height='28'/%3E%3Crect x='94' y='1' width='1' height='5'/%3E%3Crect x='97' y='18' width='8' height='16'/%3E%3Crect x='105' y='25' width='10' height='9'/%3E%3Crect x='115' y='15' width='7' height='19'/%3E%3Crect x='117' y='13' width='3' height='2'/%3E%3Crect x='122' y='22' width='12' height='12'/%3E%3Crect x='125' y='19' width='6' height='3'/%3E%3Crect x='134' y='11' width='5' height='23'/%3E%3Crect x='136' y='7' width='1' height='4'/%3E%3Crect x='139' y='24' width='9' height='10'/%3E%3Crect x='148' y='17' width='11' height='17'/%3E%3Crect x='151' y='15' width='4' height='2'/%3E%3Crect x='159' y='13' width='6' height='21'/%3E%3Crect x='165' y='23' width='14' height='11'/%3E%3Crect x='169' y='20' width='7' height='3'/%3E%3Crect x='179' y='9' width='5' height='25'/%3E%3Crect x='181' y='5' width='1' height='4'/%3E%3Crect x='184' y='20' width='9' height='14'/%3E%3Crect x='193' y='25' width='7' height='9'/%3E%3C/g%3E%3C/svg%3E");
-
-  /* Far skyline: plain blocks on a 160x16 grid. Distance eats detail. */
-  --skyline-mask-far: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 16' preserveAspectRatio='none' shape-rendering='crispEdges'%3E%3Cg fill='%23000'%3E%3Crect x='0' y='10' width='9' height='6'/%3E%3Crect x='9' y='7' width='7' height='9'/%3E%3Crect x='16' y='5' width='12' height='11'/%3E%3Crect x='28' y='8' width='6' height='8'/%3E%3Crect x='34' y='4' width='9' height='12'/%3E%3Crect x='43' y='9' width='11' height='7'/%3E%3Crect x='54' y='3' width='5' height='13'/%3E%3Crect x='59' y='7' width='13' height='9'/%3E%3Crect x='72' y='5' width='8' height='11'/%3E%3Crect x='80' y='9' width='7' height='7'/%3E%3Crect x='87' y='6' width='10' height='10'/%3E%3Crect x='97' y='2' width='6' height='14'/%3E%3Crect x='103' y='8' width='12' height='8'/%3E%3Crect x='115' y='5' width='8' height='11'/%3E%3Crect x='123' y='7' width='9' height='9'/%3E%3Crect x='132' y='4' width='7' height='12'/%3E%3Crect x='139' y='8' width='11' height='8'/%3E%3Crect x='150' y='6' width='10' height='10'/%3E%3C/g%3E%3C/svg%3E");
 
   /* Shadows are hard 16-bit offsets, never soft blurs */
   --shadow-sm: 2px 2px 0 rgba(16, 20, 28, 0.12);
@@ -181,15 +166,10 @@
   --ambient-3: rgba(255, 42, 109, 0.11);
   --grid-color: rgba(165, 232, 139, 0.05);
 
-  /* Night: the horizon burns and the city reads properly. */
+  /* Night: the horizon burns and the city reads properly. Fallback only. */
   --horizon-1: rgba(255, 42, 109, 0.20);
   --horizon-2: rgba(0, 229, 255, 0.16);
-  --moon: rgba(120, 200, 120, 0.42);
-  --moon-halo: rgba(120, 200, 120, 0.13);
-  --cloud: rgba(74, 82, 150, 0.30);
   --sky-tint: rgba(40, 40, 92, 0.42);
-  --floor-line: rgba(165, 232, 139, 0.22);
-  --floor-opacity: 0.85;
   --vignette: rgba(0, 0, 0, 0.55);
   --skyline-opacity: 0.62;
   --skyline-near: #04050C;
@@ -225,10 +205,48 @@ body {
   line-height: 1.6;
 }
 
-/* The sky: neon pools over a horizon that warms toward the bottom of the
-   viewport, plus the HUD grid. Fixed, so it behaves like a wallpaper the
-   content scrolls over and every frosted surface refracts. */
-body::before {
+/* ===========================
+   THE BACKGROUND
+
+   The live background is a WebGL shader: src/background/pixel-city.mjs mounts
+   a fixed canvas and runs it. Everything below is the fallback that paints the
+   page when that does not happen — no WebGL, a driver that rejects the shader,
+   a context lost for good.
+
+   The runtime puts .webgl-bg on <html> only after its first frame actually
+   lands, and takes it off again if the canvas gives up. So the fallback is
+   what you see until the shader proves itself, and what you get back if it
+   stops. One class flips both, which makes the handover atomic.
+
+   The fallback is deliberately quieter than what it replaces: a banded sky,
+   one still skyline, the HUD grid. No moon, no clouds, no ground plane, no
+   parallax. A held frame reads as a choice; a worse imitation of the shader
+   would just read as broken.
+=========================== */
+
+#pixel-city {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -5;
+  display: block;
+  pointer-events: none;
+  /* The framebuffer is a quarter of the viewport in each axis, so this upscale
+     is what makes the pixels. Smoothing it would undo the whole thing. */
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  /* The context is opaque, so an undrawn canvas is a black rectangle. Keep it
+     off screen until the first frame has landed. */
+  visibility: hidden;
+}
+
+html.webgl-bg #pixel-city {
+  visibility: visible;
+}
+
+/* Sky, HUD grid and horizon burn. */
+html:not(.webgl-bg) body::before {
   content: '';
   position: fixed;
   inset: 0;
@@ -256,181 +274,35 @@ body::before {
     radial-gradient(700px 260px at 18% 100%, var(--horizon-2), transparent 72%);
 }
 
-/* The city, in two parallax layers.
+/* One skyline, held still.
 
-   Each layer is a pixel silhouette drawn as an SVG mask, so the buildings
-   take their colour from the theme and the dot grids painted underneath show
-   through as lit windows — amber mostly, with a sparser cyan grid offset over
-   it so a few rooms read cold.
-
-   Both layers are twice the viewport wide and drift by exactly one mask tile,
-   which loops seamlessly. They move by transform rather than mask-position so
-   the browser composites them instead of repainting every frame. The far
-   layer is shorter, paler and slower; the near one carries the detail —
-   setbacks, roof boxes and antenna masts — and flickers.
-=========================== */
-/* Each layer is exactly the viewport plus one mask tile wide, and travels
-   exactly one tile. That is what keeps it covering the screen for the whole
-   loop: at the end of the travel the element's right edge lands precisely on
-   the viewport's right edge, never short of it. */
-html::before,
-body::after {
+   The pixel silhouette is an SVG mask, so the buildings take their colour from
+   the theme and the dot grid painted underneath shows through as lit windows.
+   The mask tiles horizontally, which is all that is needed now that nothing
+   drifts — the old two-layer parallax and its loop arithmetic went with the
+   shader that replaced it. */
+html:not(.webgl-bg) body::after {
   content: '';
   position: fixed;
   left: 0;
   bottom: 0;
-  pointer-events: none;
-  -webkit-mask-repeat: repeat-x;
-  mask-repeat: repeat-x;
-  -webkit-mask-position: bottom left;
-  mask-position: bottom left;
-}
-
-/* Far layer — the back of the district. */
-html::before {
-  width: calc(100% + 900px);   /* viewport + one 900px tile */
-  height: var(--skyline-height-far);
-  z-index: -3;
-  opacity: var(--skyline-opacity-far);
-  background:
-    /* 900 / 12 = 75 windows per tile, so the pattern survives the loop */
-    radial-gradient(circle at center, var(--window-color) 0 1px, transparent 1.5px)
-      0 0 / 12px 15px,
-    linear-gradient(to top, var(--skyline-near-far), var(--skyline-far-far));
-  -webkit-mask-image: var(--skyline-mask-far);
-  mask-image: var(--skyline-mask-far);
-  -webkit-mask-size: 900px 100%;
-  mask-size: 900px 100%;
-  animation: cityDriftFar 320s linear infinite;
-}
-
-/* Near layer — the street we are standing on. */
-body::after {
-  width: calc(100% + 1200px);  /* viewport + one 1200px tile */
+  width: 100%;
   height: var(--skyline-height);
   z-index: -1;
+  pointer-events: none;
   opacity: var(--skyline-opacity);
   background:
-    /* Both grids divide 1200 exactly (25 and 80 per tile), so windows land in
-       the same place on the same buildings every time the loop restarts. */
-    radial-gradient(circle at center, var(--window-color-2) 0 1.5px, transparent 2px)
-      7px 9px / 48px 54px,
     radial-gradient(circle at center, var(--window-color) 0 1.5px, transparent 2px)
       0 0 / 15px 18px,
     linear-gradient(to top, var(--skyline-near), var(--skyline-far));
   -webkit-mask-image: var(--skyline-mask);
   mask-image: var(--skyline-mask);
+  -webkit-mask-repeat: repeat-x;
+  mask-repeat: repeat-x;
+  -webkit-mask-position: bottom left;
+  mask-position: bottom left;
   -webkit-mask-size: 1200px 100%;
   mask-size: 1200px 100%;
-  animation: cityDriftNear 170s linear infinite,
-    cityFlicker 7s steps(1, end) infinite;
-}
-
-/* The moon and the clouds, after lekzd's "8 bit moon".
-
-   Both are solid shapes punched through a checkerboard, which is how you
-   shade with a two-colour palette: no gradient, just dots. The moon holds
-   still because it is far away; the clouds drift, slower than the city under
-   them. One mask each, so the dither pitch stays honest at any size. */
-#main::before,
-#main::after {
-  content: '';
-  position: fixed;
-  pointer-events: none;
-  -webkit-mask-image: repeating-conic-gradient(#000 0% 25%, transparent 0% 50%);
-  mask-image: repeating-conic-gradient(#000 0% 25%, transparent 0% 50%);
-  -webkit-mask-size: var(--dither) var(--dither);
-  mask-size: var(--dither) var(--dither);
-}
-
-/* Moon: a bright disc over a wider halo, both dithered. */
-#main::before {
-  top: 8vh;
-  right: 6vw;
-  width: 340px;
-  height: 340px;
-  z-index: -4;
-  background:
-    radial-gradient(circle at 50% 50%, var(--moon) 0 33%, transparent 34%),
-    radial-gradient(circle at 50% 50%, var(--moon-halo) 0 50%, transparent 51%);
-}
-
-/* Clouds: three flattened blobs on one layer, drifting as a unit. */
-/* Kept in the upper band of the sky so a clump never drifts behind the
-   headline and turns into texture under the type. */
-#main::after {
-  top: 4vh;
-  left: 0;
-  width: calc(100% + 620px);
-  height: 210px;
-  z-index: -4;
-  /* Each cloud is a clump of overlapping circles rather than one smooth
-     ellipse — a single ellipse reads as a lens flare, a clump reads as a
-     cloud drawn on a grid. */
-  background:
-    radial-gradient(circle 38px at 9% 34%, var(--cloud) 0 100%, transparent 101%),
-    radial-gradient(circle 52px at 14% 30%, var(--cloud) 0 100%, transparent 101%),
-    radial-gradient(circle 34px at 19% 36%, var(--cloud) 0 100%, transparent 101%),
-    radial-gradient(circle 44px at 43% 64%, var(--cloud) 0 100%, transparent 101%),
-    radial-gradient(circle 62px at 49% 60%, var(--cloud) 0 100%, transparent 101%),
-    radial-gradient(circle 40px at 55% 66%, var(--cloud) 0 100%, transparent 101%),
-    radial-gradient(circle 30px at 76% 24%, var(--cloud) 0 100%, transparent 101%),
-    radial-gradient(circle 42px at 81% 20%, var(--cloud) 0 100%, transparent 101%);
-  animation: cloudDrift 240s linear infinite;
-}
-
-@keyframes cloudDrift {
-  from { transform: translate3d(0, 0, 0); }
-  to   { transform: translate3d(-620px, 0, 0); }
-}
-
-/* The ground plane. A flat grid tipped away from the viewer, so it reads as
-   the street the city stands on and gives the page a horizon to sit above.
-   Rides on html::after — the last box in the root, which puts it in front of
-   both city layers without any z-index argument. It runs toward you in steps
-   rather than gliding, same vocabulary as everything else here. */
-html::after {
-  content: '';
-  position: fixed;
-  left: -50%;
-  bottom: 0;
-  width: 200%;
-  height: 34vh;
-  z-index: -1;
-  pointer-events: none;
-  opacity: var(--floor-opacity);
-  transform: perspective(520px) rotateX(74deg);
-  transform-origin: bottom center;
-  background-image:
-    repeating-linear-gradient(to right, var(--floor-line) 0 2px, transparent 2px 64px),
-    repeating-linear-gradient(to bottom, var(--floor-line) 0 2px, transparent 2px 64px);
-  /* Fades out toward the horizon so the grid never meets the skyline hard. */
-  -webkit-mask-image: linear-gradient(to top, #000 2%, transparent 84%);
-  mask-image: linear-gradient(to top, #000 2%, transparent 84%);
-  animation: floorRun 3.4s steps(8, end) infinite;
-}
-
-@keyframes floorRun {
-  from { background-position: 0 0, 0 0; }
-  to   { background-position: 0 0, 0 64px; }
-}
-
-@keyframes cityDriftFar {
-  from { transform: translate3d(0, 0, 0); }
-  to   { transform: translate3d(-900px, 0, 0); }
-}
-@keyframes cityDriftNear {
-  from { transform: translate3d(0, 0, 0); }
-  to   { transform: translate3d(-1200px, 0, 0); }
-}
-
-/* Neon never holds steady. Long calm, then a couple of dropped frames. */
-@keyframes cityFlicker {
-  0%, 84%, 100% { filter: brightness(1); }
-  86% { filter: brightness(1.32); }
-  88% { filter: brightness(0.82); }
-  91% { filter: brightness(1.18); }
-  93% { filter: brightness(0.92); }
 }
 
 h1, h2, h3, h4 {
