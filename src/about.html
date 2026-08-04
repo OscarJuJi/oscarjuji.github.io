@@ -34,9 +34,11 @@
     <link rel="icon" href="images/icon.webp" type="image/webp">
     <script>
       (function () {
+        // Dark by default; a stored choice wins. Must agree with useDarkMode
+        // in hooks.js — if the two disagree the page paints one theme and then
+        // swaps, which is the exact flash this script exists to prevent.
         var saved = localStorage.getItem('theme');
-        var preferred = (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : saved;
-        document.documentElement.setAttribute('data-theme', preferred || 'light');
+        document.documentElement.setAttribute('data-theme', saved || 'dark');
       })();
     </script>
   </head>

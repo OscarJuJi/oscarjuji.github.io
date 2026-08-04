@@ -11,7 +11,9 @@ export const useDarkMode = () => {
   const [darkMode, setDarkMode] = useState(() => {
     const saved = localStorage.getItem("theme");
     if (saved) return saved === "dark";
-    return window.matchMedia("(prefers-color-scheme: dark)").matches;
+    // Dark is the default. The site is a night city; daylight is the variant.
+    // A visitor's own choice still wins — this only decides the first load.
+    return true;
   });
 
   useEffect(() => {
@@ -42,7 +44,9 @@ export const useScrollReveal = () => {
 
     const scan = () => {
       document
-        .querySelectorAll(".fade-in:not(.visible), .fade-in-left:not(.visible), .fade-in-right:not(.visible)")
+        .querySelectorAll(
+          ".fade-in:not(.visible), .fade-in-left:not(.visible), .fade-in-right:not(.visible)"
+        )
         .forEach((el) => observer.observe(el));
     };
 
