@@ -146,7 +146,7 @@ const AboutMePage = () => {
           </div>
 
           <div className="aboutme-intro fade-in-right">
-            <span className="section-label">About Me</span>
+            <span className="section-label">Who I Am</span>
             <h1 className="aboutme-name">
               Hi, I&apos;m Oscar<span style={{ color: "var(--color-accent)" }}>.</span>
             </h1>
@@ -214,21 +214,7 @@ const AboutMePage = () => {
         <CardGrid items={workingStyle} />
       </Section>
 
-      <Section label="Currently Exploring" title="What has my attention">
-        <p className="section-subtitle fade-in delay-2">
-          Areas I am actively reading about and building in, rather than a list of things I have
-          heard of.
-        </p>
-        <div className="aboutme-topics fade-in delay-3">
-          {technologies.map((item) => (
-            <span key={item} className="aboutme-topic">
-              {item}
-            </span>
-          ))}
-        </div>
-      </Section>
-
-      <Section label="Beyond Engineering" title="Curiosity doesn’t stop at work">
+      <Section label="Beyond Engineering" title="What I like to do in my freetime">
         <CardGrid items={interests} />
       </Section>
 

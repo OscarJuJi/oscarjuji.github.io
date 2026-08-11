@@ -20,7 +20,7 @@ const About = () => (
       <div className="container">
         <div className="about-grid">
           <div className="about-text">
-            <span className="section-label fade-in">About Me</span>
+            <span className="section-label fade-in">Who I Am</span>
             <h2 className="section-title fade-in delay-1">Who I Am</h2>
             <p className="fade-in delay-2">{description}</p>
             <blockquote className="about-quote fade-in delay-3">{quote}</blockquote>

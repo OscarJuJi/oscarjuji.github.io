@@ -21,7 +21,7 @@ const Header = ({ darkMode, onToggleDark, linkBase }) => {
 
   const navLinks = [
     ...sectionLinks.map((l) => ({ href: `${linkBase}#${l.id}`, label: l.label })),
-    { href: `${linkBase}about.html`, label: "About Me" },
+    { href: `${linkBase}about.html`, label: "Who I Am" },
   ];
 
   useEffect(() => {
