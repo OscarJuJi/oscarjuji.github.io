@@ -82,6 +82,38 @@
   filter: brightness(0);
 }
 
+/* The blog link. Reads as a key, like the buttons elsewhere — square, hard
+   offset shadow, and it bottoms out into that shadow when pressed. Borrowing
+   .btn wholesale would drag in the glitch-hover rule, which is too loud for a
+   footer. */
+.footer-blog-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 1.4rem;
+  padding: 0.6rem 1.1rem;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  background: transparent;
+  border: 2px solid var(--color-accent);
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.5);
+  transition: var(--transition-px), background-color 0.12s ease,
+    color 0.12s ease;
+}
+.footer-blog-link:hover {
+  background: var(--color-accent);
+  color: var(--on-accent);
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.5);
+}
+.footer-blog-link:active {
+  transform: translate(3px, 3px);
+  box-shadow: none;
+}
+
 /* A dashed rule instead of a hairline — the same pixel cadence as the
    timeline spine. */
 .footer-divider {

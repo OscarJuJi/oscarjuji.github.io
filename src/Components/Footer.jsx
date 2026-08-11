@@ -41,6 +41,17 @@ const Footer = ({ name, email, gitHub, instagram, linkedIn }) => {
             </a>
           ))}
         </div>
+
+        {/* The socials are icon-only, and the blog has no mark that would read
+            at that size. It gets a labelled link of its own instead. */}
+        <a
+          className="footer-blog-link"
+          href="https://oscarjuji.github.io/IT-blog"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          IT Blog <span aria-hidden="true">→</span>
+        </a>
       </div>
     </footer>
   );
