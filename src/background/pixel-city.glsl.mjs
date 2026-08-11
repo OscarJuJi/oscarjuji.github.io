@@ -92,6 +92,24 @@ float dmask(float v, float d) { return step(d + 0.03125, v); }
 
 float checker(vec2 p) { return mod(floor(p.x) + floor(p.y), 2.0); }
 
+/* One tapered bar lying along +x, for a coordinate already folded into a
+   single octant. Folding first is what makes the sun's rays identical: they
+   are all this same bar seen through a different reflection, so none of them
+   can come out a pixel wider than its neighbour. */
+float sunRay(vec2 f, float inner, float outer) {
+  float t = clamp((f.x - inner) / max(outer - inner, 0.001), 0.0, 1.0);
+  float halfW = mix(0.115, 0.025, t);
+  return step(inner, f.x) * step(f.x, outer) * step(f.y, halfW);
+}
+
+/* Fold a coordinate into the 0-45 degree octant: mirror into the first
+   quadrant, then mirror across the diagonal. One shape drawn here comes back
+   out as four, in exact symmetry. */
+vec2 foldOctant(vec2 v) {
+  v = abs(v);
+  return (v.y > v.x) ? v.yx : v;
+}
+
 /* ------------------------------------------------- moon (iq's sdMoon) --- */
 
 float sdMoon(vec2 p, float d, float ra, float rb) {
@@ -392,12 +410,25 @@ void main() {
        resolution, and a checker laid over that reads as scratches rather than
        as rays. Dither is for shading a large area, not for drawing a shape
        eight pixels across. */
-    float rot = floor(uTime * 0.5) / 24.0;
-    float a = atan(q.y, q.x) / 6.28318530718 + rot;
-    float spoke = step(0.74, abs(fract(a * 8.0) * 2.0 - 1.0));
-    /* Rays start at the disc, not beyond the corona. Attached is the whole
-       difference between a sun and eight loose chunks. */
-    float ray = spoke * step(r, 1.05) * step(0.40, r);
+    /* Rays as folded bars, not angular sectors.
+       A sector cut from atan aliases badly here: the angle is sampled unevenly
+       across a quarter-resolution grid, so the eight wedges came out visibly
+       different thicknesses. Folding into an octant makes them identical by
+       construction — four land on the axes, where a pixel grid has no stairs
+       at all, and four on the diagonals, where a 45-degree stair is the
+       crispest a diagonal can be.
+
+       That symmetry costs the continuous rotation: rays only stay clean on
+       those eight headings, and turning between them is exactly what was
+       tearing them up. So instead of turning, the two sets trade length on a
+       two-beat — which is how an 8-bit sun twinkled anyway. */
+    float beat = mod(floor(uTime * 1.2), 2.0);
+    vec2 diag = vec2(q.x + q.y, q.y - q.x) * 0.70710678;
+
+    float ray = max(
+      sunRay(foldOctant(q),    0.40, mix(1.12, 0.86, beat)),
+      sunRay(foldOctant(diag), 0.40, mix(0.86, 1.12, beat))
+    );
     col = mix(col, G_MID, ray);
   }
 
