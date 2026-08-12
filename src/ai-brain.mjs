@@ -142,8 +142,13 @@ const buildChunks = () => {
         "sudoku", "genetic", "solver", "spotify", "youtube", "music", "migration",
         "migrator", "playlist", "automation", "oauth", "api",
       ],
+      /* The lead sentence names its projects rather than saying "more of
+         Oscar's projects" and nothing else. Both project chunks routinely
+         reach the extractive model together, and when it picked a span out of
+         a contentless opener the visitor got a sentence that answered nothing.
+         A lead that carries names cannot fail that way. */
       text:
-        `More of Oscar's projects. ` +
+        `More of Oscar's projects: ${projectList.slice(4, 8).map((p) => p.title).join("; ")}. ` +
         projectList.slice(4, 8).map((p) => `${p.title}: ${p.description}`).join(" "),
     },
     {
@@ -155,7 +160,7 @@ const buildChunks = () => {
         "data", "structures", "algorithm", "algorithms", "c++", "cpp",
       ],
       text:
-        `More of Oscar's projects. ` +
+        `More of Oscar's projects: ${projectList.slice(8).map((p) => p.title).join("; ")}. ` +
         projectList.slice(8).map((p) => `${p.title}: ${p.description}`).join(" "),
     },
   ];

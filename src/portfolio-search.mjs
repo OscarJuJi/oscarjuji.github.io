@@ -16,6 +16,14 @@
 
 export const projectList = [
   {
+    title: "IT Blog — Static Site Generator & News Agent",
+    description:
+      "A personal blog with two authors. The static site generator is written from scratch — front matter parsing, templating, RSS, sitemap, tag pages — with mistune as its only dependency; the agent is built over urllib and xml.etree, ranks technology feeds and publishes a digest twice a week. Includes a browser CMS that commits posts straight to GitHub, and pytest integration tests over both the build and the digest.",
+    url: "https://github.com/OscarJuJi/it-blog",
+    tags: ["Python", "AI Agents", "LLM", "Static Site Generator", "Automation"],
+    year: 2026,
+  },
+  {
     title: "Autonomous LLM Paper-Trading Agent",
     description:
       "Autonomous trading agent that pulls live market data, technical indicators, and fresh news, reasons over them with Claude (Opus 4.8), and executes decisions against a simulated paper portfolio behind hard-coded risk guardrails — learning from its own past trades.",
