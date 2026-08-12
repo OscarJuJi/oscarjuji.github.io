@@ -12,7 +12,7 @@ const typingPhrases = [
   "Data Engineer",
   "Full Stack Developer",
   "Machine Learning Practitioner",
-  "Problem Solver",
+  "Software Developer",
 ];
 
 const Home = ({ name }) => {
@@ -79,9 +79,7 @@ const Home = ({ name }) => {
         </p>
 
         <p className="hero-description fade-in delay-3">
-          AI Engineer and ESCOM–IPN graduate passionate about building intelligent systems. From
-          machine learning pipelines to full-stack applications — I turn ideas into working
-          software.
+          Artificial Intelligence Engineering graduate passionate about developing intelligent systems. I enjoy turning ideas into functional software.
         </p>
 
         <div className="hero-actions fade-in delay-4">

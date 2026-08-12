@@ -151,9 +151,13 @@ const AboutMePage = () => {
               Hi, I&apos;m Oscar<span style={{ color: "var(--color-accent)" }}>.</span>
             </h1>
             <p className="aboutme-tagline">
-              I build machine learning systems and the data infrastructure they stand on. Most of
-              what I understand came from rebuilding things that already worked, until I could
-              explain why they did.
+              I&apos;ve been curious for as long as I can remember. When I was a teenager I was
+              already drawn to engineering, and I followed that interest into two technical degrees:
+              one in electricity and another in automated machinery. The academic side is what
+              really drives me — I love learning for its own sake. One field in particular has
+              always pulled at me is health and psychology. Outside of that, my hobbies have been the
+              same since I was a kid, the music, both listening and playing, and video games. I&apos;ve
+              lived in Iztapalapa my whole life, and now I want to explore the world.
             </p>
             <ul className="aboutme-facts">
               <li>Based in {profile.location}</li>

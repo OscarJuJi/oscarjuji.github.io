@@ -32,7 +32,9 @@ const Header = ({ darkMode, onToggleDark, linkBase }) => {
 
   // Close mobile menu on resize to desktop
   useEffect(() => {
-    const onResize = () => { if (window.innerWidth > 768) setMobileOpen(false); };
+    const onResize = () => {
+      if (window.innerWidth > 768) setMobileOpen(false);
+    };
     window.addEventListener("resize", onResize);
     return () => window.removeEventListener("resize", onResize);
   }, []);
@@ -77,16 +79,9 @@ const Header = ({ darkMode, onToggleDark, linkBase }) => {
         </div>
       </header>
 
-      <nav
-        className={`mobile-nav${mobileOpen ? " open" : ""}`}
-        aria-label="Mobile navigation"
-      >
+      <nav className={`mobile-nav${mobileOpen ? " open" : ""}`} aria-label="Mobile navigation">
         {navLinks.map((link) => (
-          <a
-            key={link.href}
-            href={link.href}
-            onClick={() => setMobileOpen(false)}
-          >
+          <a key={link.href} href={link.href} onClick={() => setMobileOpen(false)}>
             {link.label}
           </a>
         ))}
