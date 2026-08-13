@@ -32,25 +32,7 @@ const principles = [
   },
 ];
 
-// How the principles actually show up in a working week.
-const workingStyle = [
-  {
-    title: "Ask why before how",
-    text: "A fix I cannot explain is a fix I do not trust. Understanding the cause takes longer than patching the symptom and saves the week I would otherwise spend meeting it again.",
-  },
-  {
-    title: "Let the tests carry the argument",
-    text: "A claim about behaviour is worth what its test is worth. Mine assert the false positives too: the search on this site fails if the query “net” ever starts matching “genetic” again, because once it did.",
-  },
-  {
-    title: "Prototype to learn, not to impress",
-    text: "The fastest way to settle a disagreement about a design is to build the smallest version that could disprove it. Several of my side projects began as an argument I wanted to end.",
-  },
-  {
-    title: "Treat review as measurement",
-    text: "Someone finding a hole in my reasoning is cheaper than production finding it. I would rather be corrected early than be right late.",
-  },
-];
+
 
 // The part of me that is not an engineer, and keeps the engineer working.
 const interests = [
@@ -214,9 +196,6 @@ const AboutMePage = () => {
         <CardGrid items={principles} />
       </Section>
 
-      <Section label="Working Style" title="How I approach engineering">
-        <CardGrid items={workingStyle} />
-      </Section>
 
       <Section label="Beyond Engineering" title="What I like to do in my freetime">
         <CardGrid items={interests} />

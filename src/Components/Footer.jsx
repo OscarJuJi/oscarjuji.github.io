@@ -46,7 +46,7 @@ const Footer = ({ name, email, gitHub, instagram, linkedIn }) => {
             at that size. It gets a labelled link of its own instead. */}
         <a
           className="footer-blog-link"
-          href="https://oscarjuji.github.io/IT-blog"
+          href="https://oscarjuji.github.io/it-blog"
           target="_blank"
           rel="noopener noreferrer"
         >
