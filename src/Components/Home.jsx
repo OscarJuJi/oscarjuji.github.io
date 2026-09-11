@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 
-import resumePdf from "url:../../public/resume.pdf";
-import cvPdf from "url:../../public/cv.pdf";
+import resumePdf from "url:../../public/resume_en.pdf";
+import cvPdf from "url:../../public/cv_es.pdf";
 
 const resume = resumePdf;
 const cv = cvPdf;

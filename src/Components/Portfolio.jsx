@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { projectList, projectMatches } from "../portfolio-search.mjs";
 import { SearchIcon } from "./Icons";
 
-const QUICK_FILTERS = ["Python", "React", "Computer Vision", "RAG", "Deep Learning", "SQL", "MATLAB", "C++"];
+const QUICK_FILTERS = ["Python", "Machine Learning", "Data Science", "React", "Computer Vision", "RAG", "Deep Learning", "MATLAB", "C++"];
 
 const Portfolio = () => {
   const [query, setQuery] = useState("");
