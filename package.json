@@ -2,7 +2,7 @@
   "name": "educator-js-codespace-template",
   "version": "1.0.0",
   "description": "A digital Portfolio",
-  "source": "src/index.html",
+  "source": ["src/index.html", "src/about.html"],
   "homepage": "http://OscarJuJi.github.io",
   "scripts": {
     "start": "parcel",
@@ -14,6 +14,7 @@
     "deploy": "gh-pages -d dist -t",
     "test:filter": "node scripts/test-filter.mjs",
     "test:chat": "node scripts/test-chat.mjs",
+    "test:background": "node scripts/test-background.mjs",
     "test": "npm run test:filter && npm run test:chat"
   },
   "repository": {

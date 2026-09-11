@@ -16,6 +16,30 @@
 
 export const projectList = [
   {
+    title: "Conservation Watch — Forest-Loss Segmentation on Sentinel-2",
+    description:
+      "Forest-loss segmentation on Sentinel-2 imagery: a hand-written PyTorch U-Net reads paired annual dry-season composites and predicts, per pixel, where tree cover was lost. Trained on Michoacán's avocado belt, then applied to Mexico City's Suelo de Conservación, where labelled loss is far too scarce to train on. Beats the dNBR baseline in every evaluation cell — IoU 0.359 against 0.206 — nearly doubling recall while precision rises as well.",
+    url: "https://github.com/OscarJuJi/conservation-watch",
+    tags: ["Python", "Data Science", "Machine Learning", "Deep Learning", "U-Net", "Remote Sensing"],
+    year: 2026,
+  },
+  {
+    title: "Metro Flow — Demand Forecasting & Incident Detection",
+    description:
+      "Demand forecasting and operational incident detection for the Mexico City Metro, built on sixteen years of open ridership data. One global LightGBM model serves all 195 stations, cutting 14-day forecast error 32% below the seasonal-naive baseline, while a one-sided CUSUM detector flags 88% of genuine service interruptions within three days at roughly six alerts a day.",
+    url: "https://github.com/OscarJuJi/metro-flow",
+    tags: ["Python", "Data Science", "Machine Learning", "Time Series", "LightGBM", "Anomaly Detection"],
+    year: 2026,
+  },
+  {
+    title: "IT Blog — Static Site Generator & News Agent",
+    description:
+      "A personal blog with two authors. The static site generator is written from scratch — front matter parsing, templating, RSS, sitemap, tag pages — with mistune as its only dependency; the agent is built over urllib and xml.etree, ranks technology feeds and publishes a digest twice a week. Includes a browser CMS that commits posts straight to GitHub, and pytest integration tests over both the build and the digest.",
+    url: "https://github.com/OscarJuJi/it-blog",
+    tags: ["Python", "AI Agents", "LLM", "Static Site Generator", "Automation"],
+    year: 2026,
+  },
+  {
     title: "Autonomous LLM Paper-Trading Agent",
     description:
       "Autonomous trading agent that pulls live market data, technical indicators, and fresh news, reasons over them with Claude (Opus 4.8), and executes decisions against a simulated paper portfolio behind hard-coded risk guardrails — learning from its own past trades.",
@@ -28,7 +52,7 @@ export const projectList = [
     description:
       "A Retrieval-Augmented Generation system built entirely from scratch in NumPy — perceptron, GRU, and transformer with hand-derived backpropagation verified by numeric gradient checking — combining BM25, word2vec embeddings, and RRF fusion, with an optional PyTorch GPU mirror.",
     url: "https://github.com/OscarJuJi/rag-from-scratch",
-    tags: ["Python", "RAG", "NumPy", "Transformers", "Deep Learning", "NLP"],
+    tags: ["Python", "Machine Learning", "RAG", "NumPy", "Transformers", "Deep Learning", "NLP"],
     year: 2026,
   },
   {
@@ -36,15 +60,15 @@ export const projectList = [
     description:
       "AI-based object segmentation system for editing 3D models in interior environments. Boosted classification accuracy by 30% by integrating ML algorithms into a U-Net base. Achieved photorealistic editing by combining NeRF spatial reconstruction with Stable Diffusion texture synthesis.",
     url: "https://github.com/OscarJuJi/Homecraft",
-    tags: ["Python", "NeRF", "U-Net", "Stable Diffusion", "PyTorch", "Computer Vision"],
+    tags: ["Python", "Machine Learning", "NeRF", "U-Net", "Stable Diffusion", "PyTorch", "Computer Vision"],
     year: 2025,
   },
   {
     title: "RAG ChatBot for Mexico's Official Gazette (DOF)",
     description:
-      "Retrieval-Augmented Generation system over an LLM to generate summaries and answer natural-language queries about Mexico's Diario Oficial de la Federación. Built with LangChain + LangServe for retrieval orchestration and Pinecone for vector storage.",
-    url: "https://github.com/JoseLuisMonroy/ISSI-Backend",
-    tags: ["Python", "LangChain", "RAG", "Pinecone", "LLM", "FastAPI"],
+      "Retrieval-Augmented Generation system over Mexico's Diario Oficial de la Federación — generating summaries and answering natural-language queries about the gazette. A Vue 3 front end (CapiDOFChat) sits over a Dockerized FastAPI service exposing query, summary, specific-search and notification endpoints, with LangChain orchestration, sentence-transformers embeddings and Pinecone vector storage.",
+    url: "https://github.com/OscarJuJi/DOF-RAG",
+    tags: ["Python", "Vue", "Machine Learning", "RAG", "LangChain", "Pinecone", "LLM"],
     year: 2024,
   },
   {
@@ -53,6 +77,14 @@ export const projectList = [
       "This site — a React portfolio with an in-browser AI chatbot that answers questions about Oscar using DistilBERT running fully client-side with Transformers.js (no backend), plus a smart project search filter, all verified by automated test suites.",
     url: "https://github.com/OscarJuJi/oscarjuji.github.io",
     tags: ["React", "Transformers.js", "AI", "JavaScript"],
+    year: 2026,
+  },
+  {
+    title: "Code Pets — Activity-Driven Digital Pet",
+    description:
+      "A digital pet that grows with your real programming activity: it earns XP automatically from the work you ship and loses XP when you disappear. Python backend with a browser front end, six growth stages, and AI-generated pixel-art sprite animations.",
+    url: "https://github.com/OscarJuJi/code-pets",
+    tags: ["Python", "JavaScript", "Full Stack", "Gamification", "Pixel Art"],
     year: 2026,
   },
   {
@@ -140,7 +172,7 @@ export const projectList = [
     description:
       "A curated collection of coursework spanning data structures, software engineering, computer vision, neural networks, and deep learning — covering the full Artificial Intelligence Engineering program.",
     url: "https://github.com/OscarJuJi",
-    tags: ["Python", "Deep Learning", "Various"],
+    tags: ["Python", "Machine Learning", "Deep Learning", "Various"],
     year: 2025,
   },
 ];

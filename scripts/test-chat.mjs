@@ -29,7 +29,7 @@ const RETRIEVAL = [
   ["What cloud platforms does he know?", ["skills"]],
   ["What is Oscar's email?", ["profile"]],
   ["What projects has Oscar built?", ["ai-projects", "applied-projects", "software-projects"]],
-  ["How much faster is the Sudoku solver?", ["applied-projects"]],
+  ["How much faster is the Sudoku solver?", ["software-projects"]],
   ["What is the LLM trading agent built with?", ["ai-projects"]],
   ["Is Oscar open to new opportunities?", ["profile"]],
   ["What is Oscar's most recent project?", ["ai-projects"]],
@@ -58,8 +58,10 @@ const E2E = [
   ["How much faster is the Sudoku solver?", /20%/],
   ["What certifications does Oscar have?", /certification|aws|scrum|google|oracle/i],
   ["Is Oscar open to new opportunities?", /open|opportunit/i],
-  ["What is Oscar's most recent project?", /paper-trading|trading agent|llm/i],
-  ["What are his latest projects?", /trading|rag|portfolio|scratch/i],
+  // `year` is the only recency signal in the data, so among the 2026 projects
+  // the tiebreak is list order — first in projectList is "most recent".
+  ["What is Oscar's most recent project?", /conservation|forest|sentinel/i],
+  ["What are his latest projects?", /conservation|forest|metro|blog|trading|rag/i],
   ["How many years of experience does Oscar have?", /\d+ years/],
   ["What is Oscar's favorite food?", /couldn't find/i],
 ];

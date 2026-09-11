@@ -19,6 +19,20 @@ export const profile = {
   website: "oscarjuji.github.io",
 };
 
+// Props consumed by <Footer> (and passed around the app). Derived from
+// `profile` so contact handles never drift out of sync between pages.
+export const siteProps = {
+  name: profile.name,
+  title: profile.title,
+  email: profile.email,
+  gitHub: profile.gitHub,
+  instagram: "Oscar_JuJi",
+  linkedIn: profile.linkedIn,
+  medium: "",
+  twitter: "",
+  youTube: "",
+};
+
 export const aboutDescription =
   "I am an Artificial Intelligence Engineer who approaches problems from both ends of the pipeline: building the data engineering foundations that make intelligent systems possible, and designing the machine learning models that run on top of them. I have hands-on experience across data engineering, machine learning, and applied AI, with a particular interest in computer vision, natural language processing, and generative AI. What drives me is turning ambitious, research-grade ideas into dependable systems that create real value.";
 
@@ -41,6 +55,7 @@ export const skillsList = [
   { name: "Computer Vision", icon: "https://img.icons8.com/?size=100&id=bpip0gGiBLT1&format=png&color=000000" },
   { name: "Data Science", icon: "https://img.icons8.com/?size=100&id=xSkewUSqtErH&format=png&color=000000" },
   { name: "PyTorch", icon: "https://img.icons8.com/?size=100&id=jH4BpkMnRrU5&format=png&color=000000" },
+  { name: "NumPy", icon: "https://img.icons8.com/color/100/numpy.png" },
   { name: "OpenAI API", icon: "https://img.icons8.com/?size=100&id=ka3InxFU3QZa&format=png&color=000000" },
   // Cloud & Infra
   { name: "Google Cloud", icon: "https://img.icons8.com/color/100/google-cloud.png" },
@@ -56,17 +71,21 @@ export const skillsList = [
   { name: "Java", icon: "https://img.icons8.com/color/100/java-coffee-cup-logo--v1.png" },
   { name: "C++", icon: "https://img.icons8.com/color/100/c-plus-plus-logo.png" },
   { name: "C#", icon: "https://img.icons8.com/color/100/c-sharp-logo.png" },
+  { name: "C", icon: "https://img.icons8.com/color/100/c-programming.png" },
   // Frontend
   { name: "React", icon: "https://img.icons8.com/color/100/react-native.png" },
   { name: "Node.js", icon: "https://img.icons8.com/color/100/nodejs.png" },
   { name: "TypeScript", icon: "https://img.icons8.com/color/100/typescript.png" },
   { name: "HTML/CSS/JS", icon: "https://img.icons8.com/color/100/html-5--v1.png" },
+  { name: "Bootstrap", icon: "https://img.icons8.com/color/100/bootstrap.png" },
   // Data & Analytics
+  { name: "Apache Spark", icon: "https://img.icons8.com/color/100/apache-spark.png" },
   { name: "Oracle SQL", icon: "https://img.icons8.com/color/100/oracle-logo.png" },
   { name: "Power BI", icon: "https://img.icons8.com/color/100/power-bi.png" },
   { name: "Tableau", icon: "https://img.icons8.com/color/100/tableau-software.png" },
   // Tools
   { name: "Git", icon: "https://img.icons8.com/color/100/git.png" },
+  { name: "Jira", icon: "https://img.icons8.com/color/100/jira.png" },
   { name: "GitHub", icon: "https://img.icons8.com/fluency/100/github.png" },
   { name: "REST APIs", icon: "https://img.icons8.com/color/100/api.png" },
   { name: "MATLAB", icon: "https://img.icons8.com/?size=100&id=r5Y16PcDkoWI&format=png&color=000000" },

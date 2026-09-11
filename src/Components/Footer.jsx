@@ -10,14 +10,21 @@ const Footer = ({ name, email, gitHub, instagram, linkedIn }) => {
   const socials = [
     { show: email, href: `mailto:${email}`, icon: envelopeIcon, alt: "Email" },
     { show: gitHub, href: `https://github.com/${gitHub}`, icon: gitHubIcon, alt: "GitHub" },
-    { show: linkedIn, href: `https://www.linkedin.com/in/${linkedIn}`, icon: linkedInIcon, alt: "LinkedIn" },
-    
+    {
+      show: linkedIn,
+      href: `https://www.linkedin.com/in/${linkedIn}`,
+      icon: linkedInIcon,
+      alt: "LinkedIn",
+    },
   ].filter((s) => s.show);
 
   return (
     <footer id="footer" className="footer">
       <div className="footer-inner">
-        <div className="footer-brand">{name.split(" ")[0]}<span style={{ color: "var(--color-accent)" }}></span></div>
+        <div className="footer-brand">
+          {name.split(" ")[0]}
+          <span style={{ color: "var(--color-accent)" }}></span>
+        </div>
         <p className="footer-tagline">AI Engineer &amp; Full Stack Developer</p>
 
         <div className="footer-socials">
@@ -35,10 +42,16 @@ const Footer = ({ name, email, gitHub, instagram, linkedIn }) => {
           ))}
         </div>
 
-        <div className="footer-divider" />
-        <p className="footer-copyright">
-          &copy; {new Date().getFullYear()} {name} &mdash; Built with React
-        </p>
+        {/* The socials are icon-only, and the blog has no mark that would read
+            at that size. It gets a labelled link of its own instead. */}
+        <a
+          className="footer-blog-link"
+          href="https://oscarjuji.github.io/it-blog"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          IT Blog <span aria-hidden="true">→</span>
+        </a>
       </div>
     </footer>
   );

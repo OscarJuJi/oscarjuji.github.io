@@ -1,0 +1,118 @@
+/* ===========================
+   PROJECT SEARCH / FILTER
+
+   The search field is a terminal input: monospace, phosphor caret, and filter
+   chips that behave like small keys.
+=========================== */
+.project-search-wrap {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.project-search {
+  width: 100%;
+  padding: 0.8rem 2.8rem 0.8rem 1rem;
+  border: 2px solid var(--border-color);
+  background: var(--glass-bg-strong);
+  backdrop-filter: blur(var(--glass-blur-sm));
+  -webkit-backdrop-filter: blur(var(--glass-blur-sm));
+  color: var(--text-primary);
+  caret-color: var(--color-accent-dark);
+  font-family: var(--font-mono);
+  font-size: 1.15rem;
+  letter-spacing: 0.02em;
+  outline: none;
+  transition: border-color 0.12s ease, box-shadow 0.12s ease;
+}
+.project-search:focus {
+  border-color: var(--color-accent-dark);
+  box-shadow: inset 0 0 0 1px var(--color-accent-dark);
+}
+.project-search::placeholder {
+  color: var(--text-muted);
+}
+
+.project-search-clear {
+  position: absolute;
+  right: 0.6rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: 2px solid transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 0.8rem;
+  line-height: 1;
+  padding: 0.3rem 0.4rem;
+  transition: var(--transition);
+}
+.project-search-clear:hover {
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+.project-quick-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.85rem;
+}
+
+/* Chips are small keys: pixel type, hard shadow, and they bottom out into the
+   pressed state while the filter is active. */
+.project-chip {
+  font-family: var(--font-display);
+  font-size: 0.66rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.5rem 0.75rem;
+  border: 2px solid var(--border-color);
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur-sm));
+  -webkit-backdrop-filter: blur(var(--glass-blur-sm));
+  color: var(--text-secondary);
+  cursor: pointer;
+  box-shadow: 3px 3px 0 var(--shadow-pixel-color);
+  transition: var(--transition-px), background-color 0.12s ease, color 0.12s ease,
+    border-color 0.12s ease;
+}
+.project-chip:hover {
+  border-color: var(--color-accent-dark);
+  color: var(--color-accent-dark);
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0 var(--shadow-pixel-color);
+}
+.project-chip.active {
+  background: var(--color-accent);
+  border-color: var(--color-accent-dark);
+  color: var(--on-accent);
+  transform: translate(3px, 3px);
+  box-shadow: 0 0 0 var(--shadow-pixel-color);
+}
+/* An active chip is already filled with the accent, so the hover ink would
+   paint the label green on green and swallow it. Keep the pressed ink — and
+   stay pressed, because the key is down. */
+.project-chip.active:hover,
+[data-theme="dark"] .project-chip.active:hover {
+  color: var(--on-accent);
+  border-color: var(--color-accent-dark);
+  transform: translate(3px, 3px);
+  box-shadow: 0 0 0 var(--shadow-pixel-color);
+}
+[data-theme="dark"] .project-chip:hover {
+  color: var(--color-accent);
+}
+
+.project-search-count {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+  min-height: 1.6em;
+}
+
+/* Non-matching cards leave the layout entirely so the grid
+   reflows instead of showing empty gaps between matches. */
+.project-hidden {
+  display: none !important;
+}

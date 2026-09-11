@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 
-import resumePdf from "url:../../public/resume.pdf";
-import cvPdf from "url:../../public/cv.pdf";
+import resumePdf from "url:../../public/resume_en.pdf";
+import cvPdf from "url:../../public/cv_es.pdf";
 
 const resume = resumePdf;
 const cv = cvPdf;
@@ -12,7 +12,7 @@ const typingPhrases = [
   "Data Engineer",
   "Full Stack Developer",
   "Machine Learning Practitioner",
-  "Problem Solver",
+  "Software Developer",
 ];
 
 const Home = ({ name }) => {
@@ -74,21 +74,19 @@ const Home = ({ name }) => {
         <p className="hero-title fade-in delay-2" aria-live="polite">
           <span ref={typedRef} />
           <span className="typed-cursor" aria-hidden="true">
-            |
+            ▌
           </span>
         </p>
 
         <p className="hero-description fade-in delay-3">
-          AI Engineer and ESCOM–IPN graduate passionate about building intelligent systems. From
-          machine learning pipelines to full-stack applications — I turn ideas into working
-          software.
+          Artificial Intelligence Engineering graduate passionate about developing intelligent systems. I enjoy turning ideas into functional software.
         </p>
 
         <div className="hero-actions fade-in delay-4">
           <a href={cv} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
             ↓ Curriculum
           </a>
-          <a href={resume} target="_blank" rel="noopener noreferrer" className="btn btn-outline">
+          <a href={resume} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
             ↓ Resume
           </a>
           <a href="#contact" className="btn btn-ghost">

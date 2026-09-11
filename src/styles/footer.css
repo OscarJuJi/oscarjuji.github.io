@@ -1,0 +1,142 @@
+/* ===========================
+   FOOTER — the console's bottom shell
+
+   Deep, opaque and edge-lit, so the page ends on something solid instead of
+   another sheet of glass.
+=========================== */
+.footer {
+  position: relative;
+  background: #0C0E18;
+  border-top: 3px solid var(--color-accent-dark);
+  padding: 3.5rem 0 2rem;
+}
+[data-theme="dark"] .footer {
+  background: var(--bg-secondary-solid);
+  border-top-color: var(--color-accent);
+}
+
+.footer-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.75rem;
+  text-align: center;
+}
+.footer-brand {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--color-accent);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.footer-tagline {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: rgba(230, 237, 246, 0.62);
+  margin-top: -1rem;
+}
+[data-theme="dark"] .footer-tagline { color: var(--text-muted); }
+
+.footer-socials {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.footer-social-link {
+  width: 42px;
+  height: 42px;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(230, 237, 246, 0.08);
+  border: 2px solid rgba(230, 237, 246, 0.18);
+  transition: var(--transition-px), background-color 0.12s ease,
+    border-color 0.12s ease;
+}
+[data-theme="dark"] .footer-social-link {
+  background: var(--color-primary-light);
+  border-color: var(--border-color);
+}
+.footer-social-link:hover {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.5);
+}
+.footer-social-link:active {
+  transform: translate(2px, 2px);
+  box-shadow: none;
+}
+.footer-social-link img {
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) invert(1);
+}
+.footer-social-link:hover img {
+  filter: brightness(0);
+}
+
+/* The blog link. Reads as a key, like the buttons elsewhere — square, hard
+   offset shadow, and it bottoms out into that shadow when pressed. Borrowing
+   .btn wholesale would drag in the glitch-hover rule, which is too loud for a
+   footer. */
+.footer-blog-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 1.4rem;
+  padding: 0.6rem 1.1rem;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  background: transparent;
+  border: 2px solid var(--color-accent);
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.5);
+  transition: var(--transition-px), background-color 0.12s ease,
+    color 0.12s ease;
+}
+.footer-blog-link:hover {
+  background: var(--color-accent);
+  color: var(--on-accent);
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.5);
+}
+.footer-blog-link:active {
+  transform: translate(3px, 3px);
+  box-shadow: none;
+}
+
+/* A dashed rule instead of a hairline — the same pixel cadence as the
+   timeline spine. */
+.footer-divider {
+  width: 100%;
+  height: 3px;
+  background: repeating-linear-gradient(
+    to right,
+    rgba(230, 237, 246, 0.22) 0 6px,
+    transparent 6px 12px
+  );
+}
+[data-theme="dark"] .footer-divider {
+  background: repeating-linear-gradient(
+    to right,
+    var(--border-color) 0 6px,
+    transparent 6px 12px
+  );
+}
+
+.footer-copyright {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  color: rgba(230, 237, 246, 0.5);
+}
+[data-theme="dark"] .footer-copyright { color: var(--text-muted); }

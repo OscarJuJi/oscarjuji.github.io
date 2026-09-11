@@ -1,0 +1,135 @@
+/* ===========================
+   TIMELINE (Education & Experience)
+
+   The spine is a dashed pixel run and each entry is pinned to it with a square
+   node — closer to a progress track than to a decorative line.
+=========================== */
+.timeline-section {
+  padding: 7rem 0;
+}
+
+.timeline {
+  position: relative;
+  max-width: 780px;
+  margin: 0 auto;
+  padding-left: 1.5rem;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0.25rem; /* aligns the run with the centre of .timeline-dot */
+  top: 8px;
+  bottom: 0;
+  width: 3px;
+  background: repeating-linear-gradient(
+    to bottom,
+    var(--color-accent-dark) 0 5px,
+    transparent 5px 10px
+  );
+}
+[data-theme="dark"] .timeline::before {
+  background: repeating-linear-gradient(
+    to bottom,
+    var(--color-accent) 0 5px,
+    transparent 5px 10px
+  );
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 2.5rem;
+}
+.timeline-item:last-child { margin-bottom: 0; }
+
+.timeline-dot {
+  position: absolute;
+  /* -1.5rem cancels .timeline's 1.5rem padding, so the 11px node starts at the
+     same origin as the 3px run and the two share a centre. */
+  left: -1.5rem;
+  top: 6px;
+  width: 11px;
+  height: 11px;
+  background: var(--color-accent-dark);
+  border-radius: 0;
+  outline: 4px solid var(--bg-primary);
+  transition: var(--transition-px), background-color 0.12s ease;
+}
+[data-theme="dark"] .timeline-dot {
+  background: var(--color-accent);
+}
+.timeline-item:hover .timeline-dot {
+  transform: scale(1.35);
+}
+
+.timeline-date {
+  font-family: var(--font-mono);
+  font-size: 1.05rem;
+  color: var(--color-accent-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+}
+[data-theme="dark"] .timeline-date {
+  color: var(--color-accent);
+}
+
+.timeline-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(var(--glass-blur-sm)) saturate(var(--glass-saturate));
+  -webkit-backdrop-filter: blur(var(--glass-blur-sm)) saturate(var(--glass-saturate));
+  border: 1px solid var(--glass-border);
+  padding: 1.4rem 1.6rem;
+  box-shadow: var(--glass-highlight), var(--shadow-md);
+  transition: var(--transition-px), border-color 0.12s ease;
+}
+.timeline-card:hover {
+  border-color: var(--color-accent-dark);
+  transform: translate(-3px, -3px);
+  box-shadow: var(--glass-highlight), var(--shadow-hover);
+}
+.timeline-card h3 {
+  color: var(--text-primary);
+  margin-bottom: 0.4rem;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+.timeline-company {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  letter-spacing: 0.03em;
+  color: var(--color-primary);
+  margin-bottom: 0.85rem;
+}
+[data-theme="dark"] .timeline-company {
+  color: var(--color-accent);
+}
+.timeline-card p,
+.timeline-card li {
+  font-size: 0.93rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+.timeline-card ul {
+  margin-top: 0.7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.timeline-card li {
+  padding-left: 1.3rem;
+  position: relative;
+}
+/* Square bullet — the same pixel vocabulary as the nodes on the spine. */
+.timeline-card li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 6px;
+  height: 6px;
+  background: var(--color-accent-dark);
+}
+[data-theme="dark"] .timeline-card li::before {
+  background: var(--color-accent);
+}

@@ -1,0 +1,648 @@
+
+/* ===========================
+   DESIGN TOKENS — "Night City 16-bit"
+
+   The sage green stays the brand: accents, keys, links and headings are all
+   still green. Cyberpunk 2077 supplies the two things around it — the
+   environment and the motion.
+
+   Environment: a night-city ground (deep blue-black in dark, cold chrome in
+   light) lit by neon pools of green, cyan and magenta, over a faint HUD grid.
+
+   Motion: at rest a surface casts a single hard shadow; on hover it splits
+   into a cyan/magenta pair pulling opposite ways — the fringing of a
+   badly-tuned screen. That split lives in --shadow-hover, so every card, chip
+   and key inherits it at once.
+
+   Still 16-bit underneath: zero-blur offsets, square corners, stepped clips
+   and stepped easing. Token NAMES are unchanged, so every partial keeps
+   working. --bg-card and --bg-secondary stay deliberately translucent, which
+   is what turns any surface painted with them into glass over the wash.
+=========================== */
+:root {
+  /* Surfaces — light theme, "Corpo Chrome" */
+  --bg-primary: #EAEEF2;
+  --bg-secondary: rgba(196, 208, 222, 0.45);   /* section veil (translucent) */
+  --bg-secondary-solid: #D8E0E9;               /* same tone, opaque */
+  --bg-card: rgba(255, 255, 255, 0.74);        /* glass fill (translucent) */
+  --bg-card-solid: #FBFCFE;
+  --bg-nav: rgba(234, 238, 242, 0.74);
+
+  --text-primary: #10141C;
+  --text-secondary: #3D4557;
+  --text-muted: #5F687C;                       /* 4.8:1 on --bg-primary */
+
+  --color-accent: #91CD91;                     /* the brand green — unchanged */
+  --color-accent-dark: #3A733A;                /* green ink — 4.9:1 on --bg-primary */
+  --color-accent-glow: rgba(145, 205, 145, 0.30);
+  --color-primary: #00697D;                    /* CP cyan, secondary — 5.5:1 */
+  --color-primary-light: rgba(0, 105, 125, 0.10);
+
+  --border-color: #C6CDDA;
+  --border-card: rgba(16, 20, 28, 0.14);
+
+  /* Text that sits ON a filled accent, so both pairs stay legible */
+  --on-accent: #0C1710;
+  --on-accent-dark: #EAEEF2;
+
+  /* The aberration pair — only ever used for the hover split and neon pools */
+  --glitch-cyan: #00A8C0;
+  --glitch-magenta: #E0004D;
+
+  /* Glass */
+  --glass-bg: rgba(255, 255, 255, 0.70);
+  --glass-bg-strong: rgba(255, 255, 255, 0.88);
+  --glass-border: rgba(16, 20, 28, 0.14);
+  --glass-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.95);
+  --glass-blur: 16px;
+  --glass-blur-sm: 8px;
+  --glass-saturate: 1.4;
+  --scanline-color: rgba(16, 20, 28, 0.055);
+
+  /* Neon pools + HUD grid the glass refracts (see body::before / ::after) */
+  --ambient-1: rgba(145, 205, 145, 0.32);      /* green leads */
+  --ambient-2: rgba(0, 168, 192, 0.18);
+  --ambient-3: rgba(224, 0, 77, 0.10);
+  --grid-color: rgba(16, 20, 28, 0.045);
+  --grid-size: 44px;
+
+  /* Horizon + skyline. FALLBACK ONLY — the live background is the shader in
+     src/background/. These paint the page when WebGL is unavailable. */
+  --horizon-1: rgba(224, 0, 77, 0.10);
+  --horizon-2: rgba(0, 168, 192, 0.12);
+  --sky-tint: rgba(120, 132, 178, 0.10);
+  --vignette: rgba(16, 20, 28, 0.10);
+  --skyline-height: 210px;
+  --skyline-opacity: 0.16;
+  --skyline-near: #10141C;
+  --skyline-far: #38415A;
+  --window-color: rgba(190, 120, 20, 0.45);      /* amber, the lit rooms */
+
+  /* Near skyline: twenty-three buildings on a 200x34 grid, modelled rather
+     than stacked — setbacks step in as they rise, roof boxes and antenna
+     masts break the tops. crispEdges keeps every edge pixel-square. Used as
+     a mask, never drawn, so the theme colours it. */
+  --skyline-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 34' preserveAspectRatio='none' shape-rendering='crispEdges'%3E%3Cg fill='%23000'%3E%3Crect x='0' y='20' width='12' height='14'/%3E%3Crect x='2' y='16' width='8' height='4'/%3E%3Crect x='5' y='14' width='3' height='2'/%3E%3Crect x='12' y='12' width='7' height='22'/%3E%3Crect x='15' y='8' width='1' height='4'/%3E%3Crect x='19' y='24' width='10' height='10'/%3E%3Crect x='29' y='17' width='6' height='17'/%3E%3Crect x='31' y='15' width='2' height='2'/%3E%3Crect x='35' y='21' width='14' height='13'/%3E%3Crect x='38' y='18' width='8' height='3'/%3E%3Crect x='49' y='10' width='5' height='24'/%3E%3Crect x='51' y='5' width='1' height='5'/%3E%3Crect x='54' y='26' width='9' height='8'/%3E%3Crect x='63' y='19' width='11' height='15'/%3E%3Crect x='66' y='17' width='5' height='2'/%3E%3Crect x='68' y='13' width='1' height='4'/%3E%3Crect x='74' y='14' width='6' height='20'/%3E%3Crect x='80' y='23' width='13' height='11'/%3E%3Crect x='84' y='20' width='6' height='3'/%3E%3Crect x='93' y='6' width='4' height='28'/%3E%3Crect x='94' y='1' width='1' height='5'/%3E%3Crect x='97' y='18' width='8' height='16'/%3E%3Crect x='105' y='25' width='10' height='9'/%3E%3Crect x='115' y='15' width='7' height='19'/%3E%3Crect x='117' y='13' width='3' height='2'/%3E%3Crect x='122' y='22' width='12' height='12'/%3E%3Crect x='125' y='19' width='6' height='3'/%3E%3Crect x='134' y='11' width='5' height='23'/%3E%3Crect x='136' y='7' width='1' height='4'/%3E%3Crect x='139' y='24' width='9' height='10'/%3E%3Crect x='148' y='17' width='11' height='17'/%3E%3Crect x='151' y='15' width='4' height='2'/%3E%3Crect x='159' y='13' width='6' height='21'/%3E%3Crect x='165' y='23' width='14' height='11'/%3E%3Crect x='169' y='20' width='7' height='3'/%3E%3Crect x='179' y='9' width='5' height='25'/%3E%3Crect x='181' y='5' width='1' height='4'/%3E%3Crect x='184' y='20' width='9' height='14'/%3E%3Crect x='193' y='25' width='7' height='9'/%3E%3C/g%3E%3C/svg%3E");
+
+  /* Shadows are hard 16-bit offsets, never soft blurs */
+  --shadow-sm: 2px 2px 0 rgba(16, 20, 28, 0.12);
+  --shadow-md: 4px 4px 0 rgba(16, 20, 28, 0.16);
+  --shadow-lg: 6px 6px 0 rgba(16, 20, 28, 0.20);
+  /* Hover = the channels separating. Two hard layers, no blur. */
+  --shadow-hover: 5px 5px 0 var(--glitch-magenta), -5px -5px 0 var(--glitch-cyan);
+  --shadow-pixel-color: rgba(16, 20, 28, 0.40);
+
+  /* Pixel geometry */
+  --px: 4px;              /* one "pixel" of the grid everything snaps to */
+  --c: 6px;               /* stepped-corner bite; override locally to scale */
+  --nav-height: 70px;
+  --radius-sm: 0;
+  --radius-md: 0;
+  --radius-lg: 0;
+  --radius-pill: 0;
+
+  /* Reusable stepped ("pixel-rounded") corner. Scale it per element by
+     setting --c on that element. */
+  --clip-pixel: polygon(
+    var(--c) 0,
+    calc(100% - var(--c)) 0,
+    calc(100% - var(--c)) var(--c),
+    100% var(--c),
+    100% calc(100% - var(--c)),
+    calc(100% - var(--c)) calc(100% - var(--c)),
+    calc(100% - var(--c)) 100%,
+    var(--c) 100%,
+    var(--c) calc(100% - var(--c)),
+    0 calc(100% - var(--c)),
+    0 var(--c),
+    var(--c) var(--c)
+  );
+
+  /* Type */
+  --font-display: 'Jersey 25', 'Courier New', monospace;
+  --font-mono: 'VT323', 'Courier New', monospace;
+  --font-body: 'Inter', system-ui, sans-serif;
+
+  --transition: all 0.14s cubic-bezier(0.2, 0, 0, 1);
+  --transition-px: transform 0.07s steps(2, end), filter 0.07s steps(2, end);
+}
+
+[data-theme="dark"] {
+  /* "Night City" — blue-black street level, lit by the same green */
+  --bg-primary: #08080F;
+  --bg-secondary: rgba(26, 24, 46, 0.45);
+  --bg-secondary-solid: #11101C;
+  --bg-card: rgba(18, 20, 34, 0.62);
+  --bg-card-solid: #121422;
+  --bg-nav: rgba(8, 8, 15, 0.78);
+
+  --text-primary: #E6EDF6;
+  --text-secondary: #A5AFC4;
+  --text-muted: #737E96;                       /* 4.8:1 on --bg-primary */
+
+  --color-accent: #A5E88B;                     /* the brand green — unchanged */
+  --color-accent-dark: #7DC96A;
+  --color-accent-glow: rgba(165, 232, 139, 0.22);
+  --color-primary: #0E7C90;
+  --color-primary-light: rgba(165, 232, 139, 0.12);
+
+  --border-color: #202436;
+  --border-card: rgba(165, 232, 139, 0.18);
+
+  --on-accent: #08080F;
+  --on-accent-dark: #08080F;
+
+  --glitch-cyan: #00E5FF;
+  --glitch-magenta: #FF2A6D;
+
+  --glass-bg: rgba(18, 20, 34, 0.62);
+  --glass-bg-strong: rgba(12, 14, 24, 0.85);
+  --glass-border: rgba(165, 232, 139, 0.18);
+  --glass-highlight: inset 0 1px 0 rgba(165, 232, 139, 0.14);
+  --scanline-color: rgba(0, 0, 0, 0.32);
+
+  --ambient-1: rgba(165, 232, 139, 0.11);
+  --ambient-2: rgba(0, 229, 255, 0.13);
+  --ambient-3: rgba(255, 42, 109, 0.11);
+  --grid-color: rgba(165, 232, 139, 0.05);
+
+  /* Night: the horizon burns and the city reads properly. Fallback only. */
+  --horizon-1: rgba(255, 42, 109, 0.20);
+  --horizon-2: rgba(0, 229, 255, 0.16);
+  --sky-tint: rgba(40, 40, 92, 0.42);
+  --vignette: rgba(0, 0, 0, 0.55);
+  --skyline-opacity: 0.62;
+  --skyline-near: #04050C;
+  --skyline-far: #141A30;
+  --window-color: rgba(165, 232, 139, 0.60);
+
+  --shadow-sm: 2px 2px 0 rgba(0, 0, 0, 0.55);
+  --shadow-md: 4px 4px 0 rgba(0, 0, 0, 0.60);
+  --shadow-lg: 6px 6px 0 rgba(0, 0, 0, 0.66);
+  --shadow-pixel-color: rgba(0, 0, 0, 0.78);
+}
+
+/* ===========================
+   RESET & BASE
+=========================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  line-height: 1.6;
+}
+
+/* ===========================
+   THE BACKGROUND
+
+   The live background is a WebGL shader: src/background/pixel-city.mjs mounts
+   a fixed canvas and runs it. Everything below is the fallback that paints the
+   page when that does not happen — no WebGL, a driver that rejects the shader,
+   a context lost for good.
+
+   The runtime puts .webgl-bg on <html> only after its first frame actually
+   lands, and takes it off again if the canvas gives up. So the fallback is
+   what you see until the shader proves itself, and what you get back if it
+   stops. One class flips both, which makes the handover atomic.
+
+   The fallback is deliberately quieter than what it replaces: a banded sky,
+   one still skyline, the HUD grid. No moon, no clouds, no ground plane, no
+   parallax. A held frame reads as a choice; a worse imitation of the shader
+   would just read as broken.
+=========================== */
+
+#pixel-city {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -5;
+  display: block;
+  pointer-events: none;
+  /* The framebuffer is a quarter of the viewport in each axis, so this upscale
+     is what makes the pixels. Smoothing it would undo the whole thing. */
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  /* The context is opaque, so an undrawn canvas is a black rectangle. Keep it
+     off screen until the first frame has landed. */
+  visibility: hidden;
+}
+
+html.webgl-bg #pixel-city {
+  visibility: visible;
+}
+
+/* Sky, HUD grid and horizon burn. */
+html:not(.webgl-bg) body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background:
+    /* corner falloff, listed first so it sits over everything in this layer */
+    radial-gradient(130% 95% at 50% 38%, transparent 52%, var(--vignette) 100%),
+    radial-gradient(150% 85% at 50% 0%, var(--sky-tint), transparent 68%),
+    /* grid next so the glows sit on top of it */
+    repeating-linear-gradient(
+      to right,
+      var(--grid-color) 0 1px,
+      transparent 1px var(--grid-size)
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      var(--grid-color) 0 1px,
+      transparent 1px var(--grid-size)
+    ),
+    radial-gradient(880px 620px at 10% -8%, var(--ambient-1), transparent 62%),
+    radial-gradient(760px 540px at 92% 8%, var(--ambient-2), transparent 64%),
+    /* the horizon burn behind the skyline */
+    radial-gradient(1400px 340px at 50% 100%, var(--horizon-1), transparent 70%),
+    radial-gradient(700px 260px at 18% 100%, var(--horizon-2), transparent 72%);
+}
+
+/* One skyline, held still.
+
+   The pixel silhouette is an SVG mask, so the buildings take their colour from
+   the theme and the dot grid painted underneath shows through as lit windows.
+   The mask tiles horizontally, which is all that is needed now that nothing
+   drifts — the old two-layer parallax and its loop arithmetic went with the
+   shader that replaced it. */
+html:not(.webgl-bg) body::after {
+  content: '';
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: var(--skyline-height);
+  z-index: -1;
+  pointer-events: none;
+  opacity: var(--skyline-opacity);
+  background:
+    radial-gradient(circle at center, var(--window-color) 0 1.5px, transparent 2px)
+      0 0 / 15px 18px,
+    linear-gradient(to top, var(--skyline-near), var(--skyline-far));
+  -webkit-mask-image: var(--skyline-mask);
+  mask-image: var(--skyline-mask);
+  -webkit-mask-repeat: repeat-x;
+  mask-repeat: repeat-x;
+  -webkit-mask-position: bottom left;
+  mask-position: bottom left;
+  -webkit-mask-size: 1200px 100%;
+  mask-size: 1200px 100%;
+}
+
+h1, h2, h3, h4 {
+  line-height: 1.2;
+  color: var(--text-primary);
+  font-family: var(--font-display);
+  font-weight: 400;
+}
+
+/* Pixel faces read larger than their point size, so the scale is tuned down
+   from the previous serif/Inter sizes. Headings are set uppercase: this face
+   has a tall lowercase that softens the bitmap read, and caps bring the blocky
+   8-bit silhouette back. */
+h1 {
+  font-size: clamp(1.6rem, 4.6vw, 3.1rem);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: clamp(1.15rem, 2.4vw, 1.6rem);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 0.95rem;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+}
+
+p {
+  color: var(--text-secondary);
+  line-height: 1.75;
+  font-size: 1rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* ===========================
+   LAYOUT UTILITIES
+=========================== */
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section-label {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-accent-dark);
+  background: var(--color-accent-glow);
+  padding: 0.5rem 0.8rem;
+  margin-bottom: 1rem;
+  --c: 4px;
+  clip-path: var(--clip-pixel);
+}
+
+.section-title {
+  margin-bottom: 0.8rem;
+}
+
+.section-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  max-width: 560px;
+  margin-bottom: 3rem;
+  line-height: 1.7;
+}
+
+/* ===========================
+   GLASS & PIXEL PRIMITIVES
+
+   Recipes the partials reuse. `.glass` needs the ambient wash behind it to
+   have anything to refract; `.glass--screen` adds the CRT scanlines, which by
+   design only ever appear inside a glass surface, never on the page itself.
+=========================== */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-highlight), var(--shadow-md);
+}
+
+.glass--screen {
+  position: relative;
+  overflow: hidden;
+}
+.glass--screen::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    var(--scanline-color) 0 1px,
+    transparent 1px 3px
+  );
+}
+
+/* Stepped corners.
+
+   House rule: an element gets EITHER a notch OR an offset shadow, never both.
+   clip-path clips box-shadow away, and `filter: drop-shadow` traces the alpha
+   channel — so on a translucent surface it ghosts the text instead of casting
+   a shadow. Notches therefore mark inset things (screens, labels, chips) and
+   hard shadows mark raised things (keys, cards). */
+.px-corners {
+  border-radius: 0;
+  clip-path: var(--clip-pixel);
+  box-shadow: none;
+}
+
+/* ===========================
+   SCROLL ANIMATIONS
+=========================== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in-left {
+  opacity: 0;
+  transform: translateX(-28px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.fade-in-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fade-in-right {
+  opacity: 0;
+  transform: translateX(28px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.fade-in-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.delay-1 { transition-delay: 0.10s !important; }
+.delay-2 { transition-delay: 0.20s !important; }
+.delay-3 { transition-delay: 0.30s !important; }
+.delay-4 { transition-delay: 0.40s !important; }
+.delay-5 { transition-delay: 0.50s !important; }
+
+/* ===========================
+   BUTTONS — physical 8-bit keys
+
+   The hard offset shadow is the "height" of the key; pressing it moves the
+   face down into the shadow, so :active looks like the key bottoming out.
+=========================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.35rem;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 0;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: 4px 4px 0 var(--shadow-pixel-color);
+  transition: var(--transition-px), background-color 0.12s ease, color 0.12s ease,
+    border-color 0.12s ease;
+}
+.btn:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 5px 5px 0 var(--shadow-pixel-color);
+}
+.btn:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0 0 0 var(--shadow-pixel-color);
+}
+
+.btn-primary {
+  background: var(--color-accent);
+  color: var(--on-accent);
+  border-color: var(--color-accent-dark);
+}
+.btn-primary:hover {
+  background: var(--color-accent-dark);
+  border-color: var(--color-accent-dark);
+  color: var(--on-accent-dark);
+}
+
+.btn-outline {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur-sm));
+  -webkit-backdrop-filter: blur(var(--glass-blur-sm));
+  color: var(--color-accent-dark);
+  border-color: var(--color-accent-dark);
+}
+.btn-outline:hover {
+  background: var(--color-accent);
+  color: var(--on-accent);
+  border-color: var(--color-accent-dark);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text-secondary);
+  border-color: var(--border-color);
+}
+.btn-ghost:hover {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--on-accent-dark);
+}
+
+/* ===========================
+   THE GLITCH
+
+   Hover doesn't ease — it drops frames. steps(1, end) holds each keyframe
+   flat so the surface jumps between positions instead of sliding, and the
+   cyan/magenta pair whips across sides before settling into the resting
+   split. Runs once per hover; a loop would turn the page into a strobe.
+
+   Keyframe animations outrank normal declarations, so this overrides the
+   per-component :hover transforms without touching a single partial.
+=========================== */
+@keyframes glitchHover {
+  0% {
+    transform: translate(0, 0);
+    box-shadow: 3px -4px 0 var(--glitch-cyan), -3px 4px 0 var(--glitch-magenta);
+  }
+  25% {
+    transform: translate(4px, -1px);
+    box-shadow: -7px 2px 0 var(--glitch-magenta), 7px -2px 0 var(--glitch-cyan);
+  }
+  50% {
+    transform: translate(-5px, -4px);
+    box-shadow: 6px 6px 0 var(--glitch-cyan), -6px -6px 0 var(--glitch-magenta);
+  }
+  75% {
+    transform: translate(-1px, -2px);
+    box-shadow: -4px 5px 0 var(--glitch-cyan), 4px -5px 0 var(--glitch-magenta);
+  }
+  100% {
+    transform: translate(-3px, -3px);
+    box-shadow: var(--shadow-hover);
+  }
+}
+
+.stat-card:hover,
+.skill-card:hover,
+.project-card:hover,
+.timeline-card:hover,
+.aboutme-value-card:hover,
+.aboutme-interest-card:hover,
+.contact-link-item:hover,
+.project-chip:not(.active):hover,
+.btn:hover,
+.theme-toggle:hover,
+.ai-chat-send:hover:not(:disabled),
+.footer-social-link:hover {
+  animation: glitchHover 0.2s steps(1, end) 1 both;
+}
+
+/* Pressing something should land it, not keep shaking. */
+.btn:active,
+.project-chip:active,
+.theme-toggle:active,
+.ai-chat-send:active:not(:disabled),
+.footer-social-link:active {
+  animation: none;
+}
+
+/* ===========================
+   FOCUS VISIBILITY
+=========================== */
+:where(a, button, input, textarea, [tabindex]):focus-visible {
+  outline: 3px solid var(--color-accent-dark);
+  outline-offset: 2px;
+}
+[data-theme="dark"] :where(a, button, input, textarea, [tabindex]):focus-visible {
+  outline-color: var(--color-accent);
+}
+
+/* Clipped elements swallow the outline, so ring them from the inside. */
+.px-corners:focus-visible {
+  outline: none;
+  box-shadow: inset 0 0 0 3px var(--color-accent-dark);
+}
+[data-theme="dark"] .px-corners:focus-visible {
+  box-shadow: inset 0 0 0 3px var(--color-accent);
+}
+
+/* ===========================
+   REDUCED MOTION
+=========================== */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  /* Revealed up front instead of on scroll. */
+  .fade-in,
+  .fade-in-left,
+  .fade-in-right {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

@@ -1,0 +1,80 @@
+/* ===========================
+   ABOUT SECTION
+=========================== */
+.about-section {
+  padding: 7rem 0;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+.about-text p {
+  margin-bottom: 1.1rem;
+  font-size: 1.04rem;
+}
+
+/* Quoted text sits behind glass with a thick phosphor gutter. */
+.about-quote {
+  margin-top: 1.75rem;
+  padding: 1.2rem 1.4rem;
+  border-left: 5px solid var(--color-accent-dark);
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur-sm)) saturate(var(--glass-saturate));
+  -webkit-backdrop-filter: blur(var(--glass-blur-sm)) saturate(var(--glass-saturate));
+  font-family: var(--font-mono);
+  font-size: 1.2rem;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: var(--text-primary);
+  box-shadow: var(--glass-highlight), var(--shadow-sm);
+}
+
+.stat-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+/* Raised glass cards: hard shadow, no notch (house rule in base.css). */
+.stat-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  border: 1px solid var(--glass-border);
+  padding: 1.6rem 1.25rem;
+  text-align: center;
+  box-shadow: var(--glass-highlight), var(--shadow-md);
+  transition: var(--transition-px), border-color 0.12s ease;
+}
+.stat-card:hover {
+  border-color: var(--color-accent-dark);
+  transform: translate(-2px, -2px);
+  box-shadow: var(--glass-highlight), var(--shadow-hover);
+}
+.stat-card-emoji {
+  margin-bottom: 0.5rem;
+  display: block;
+}
+.stat-card-number {
+  font-size: 2.4rem;
+  font-weight: 400;
+  font-family: var(--font-mono);
+  color: var(--text-primary);
+  display: block;
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+.stat-card-label {
+  font-family: var(--font-display);
+  font-size: 0.66rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-top: 0.55rem;
+  display: block;
+  line-height: 1.5;
+}
