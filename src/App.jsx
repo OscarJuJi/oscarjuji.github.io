@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 import About from "./Components/About";
 import AIChat from "./Components/AIChat";
@@ -9,63 +9,17 @@ import Home from "./Components/Home";
 import Portfolio from "./Components/Portfolio";
 import Education from "./Components/Education";
 import ProfessionalExperience from "./Components/ProfessionalExperience";
-import { profile } from "./site-data.mjs";
+import { siteProps } from "./site-data.mjs";
+import { useDarkMode, useScrollReveal } from "./hooks";
 import "./styles.css";
 
-const siteProps = {
-  name: profile.name,
-  title: profile.title,
-  email: profile.email,
-  gitHub: profile.gitHub,
-  instagram: "Oscar_JuJi",
-  linkedIn: profile.linkedIn,
-  medium: "",
-  twitter: "",
-  youTube: "",
-};
-
 const App = () => {
-  const [darkMode, setDarkMode] = useState(() => {
-    const saved = localStorage.getItem("theme");
-    if (saved) return saved === "dark";
-    return window.matchMedia("(prefers-color-scheme: dark)").matches;
-  });
-
-  useEffect(() => {
-    document.documentElement.setAttribute("data-theme", darkMode ? "dark" : "light");
-    localStorage.setItem("theme", darkMode ? "dark" : "light");
-  }, [darkMode]);
-
-  // Global scroll-reveal: observe all .fade-in* elements once mounted
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-          }
-        });
-      },
-      { threshold: 0.08, rootMargin: "0px 0px -40px 0px" }
-    );
-
-    const scan = () => {
-      document
-        .querySelectorAll(".fade-in:not(.visible), .fade-in-left:not(.visible), .fade-in-right:not(.visible)")
-        .forEach((el) => observer.observe(el));
-    };
-
-    // Initial scan after mount
-    const t = setTimeout(scan, 80);
-    return () => {
-      clearTimeout(t);
-      observer.disconnect();
-    };
-  }, []);
+  const [darkMode, toggleDark] = useDarkMode();
+  useScrollReveal();
 
   return (
     <div id="main">
-      <Header darkMode={darkMode} onToggleDark={() => setDarkMode((d) => !d)} />
+      <Header darkMode={darkMode} onToggleDark={toggleDark} />
       <Home name={siteProps.name} title={siteProps.title} />
       <About />
       <Education />

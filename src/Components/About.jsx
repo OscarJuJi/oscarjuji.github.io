@@ -20,8 +20,8 @@ const About = () => (
       <div className="container">
         <div className="about-grid">
           <div className="about-text">
-            <span className="section-label fade-in">About Me</span>
-            <h2 className="section-title fade-in delay-1">Who I Am</h2>
+            <span className="section-label fade-in">About</span>
+            <h2 className="section-title fade-in delay-1">About me</h2>
             <p className="fade-in delay-2">{description}</p>
             <blockquote className="about-quote fade-in delay-3">{quote}</blockquote>
           </div>
@@ -47,7 +47,8 @@ const About = () => (
         <span className="section-label fade-in">Technical Skills</span>
         <h2 className="section-title fade-in delay-1">Tools &amp; Technologies</h2>
         <p className="section-subtitle fade-in delay-2">
-          A broad toolkit spanning AI/ML research, cloud data engineering, and full-stack development.
+          A broad toolkit spanning AI/ML research, cloud data engineering, and full-stack
+          development.
         </p>
         <div className="skills-grid">
           {skillsList.map((skill, i) => (

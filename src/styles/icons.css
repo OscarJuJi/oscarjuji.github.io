@@ -1,0 +1,37 @@
+/* ===========================
+   SVG ICONS (replacing emojis)
+=========================== */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stat-card-emoji {
+  color: var(--color-accent-dark);
+}
+[data-theme="dark"] .stat-card-emoji {
+  color: var(--color-accent);
+}
+
+.ai-chat-trigger-icon,
+.ai-chat-avatar {
+  display: inline-flex;
+  align-items: center;
+}
+.ai-chat-avatar { color: var(--color-accent-dark); }
+[data-theme="dark"] .ai-chat-avatar { color: var(--color-accent); }
+
+.project-search-icon {
+  position: absolute;
+  left: 0.95rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  display: inline-flex;
+  pointer-events: none;
+}
+.project-search {
+  padding-left: 2.6rem;
+}
+

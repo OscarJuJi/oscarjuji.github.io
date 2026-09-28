@@ -22,3 +22,7 @@ node_modules/
 .parcel-cache
 
 .DS_Store
+
+.claude
+.aidesigner/*
+!.aidesigner/.gitkeep

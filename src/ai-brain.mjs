@@ -124,27 +124,40 @@ const buildChunks = () => {
       hints: [
         "project", "projects", "built", "build", "builds", "building", "portfolio", "made",
         "created", "recent", "latest", "newest", "last", "new",
-        "trading", "trade", "agent", "market", "stock", "finance", "financial", "claude",
-        "rag", "numpy", "scratch", "transformer", "perceptron", "nerf", "segmentation",
-        "diffusion", "chatbot", "langchain", "pinecone", "gazette", "dof", "3d", "llm",
+        "forest", "deforestation", "satellite", "sentinel", "conservation", "unet", "remote",
+        "metro", "ridership", "forecast", "forecasting", "lightgbm", "anomaly", "detection",
+        "blog", "static", "generator", "news", "digest", "rss",
+        "trading", "trade", "agent", "agents", "market", "stock", "finance", "financial",
+        "claude", "llm", "machine", "learning", "data", "science",
       ],
       text:
         `Oscar's most recent and latest project is the ${byRecency[0].title} (${byRecency[0].year}). ` +
         `Other recent projects include ${byRecency[1].title} and ${byRecency[2].title}. ` +
-        `In total, Oscar has built ${projectList.length} featured projects: ${projectList.map((p) => p.title).join("; ")}. ` +
+        `In total, Oscar has built ${projectList.length} featured projects. ` +
+        /* Only this chunk's own projects are named here. Listing every title
+           made the chunk grow with the portfolio and blow the 350-word budget
+           once it reached twenty; the other two chunks already name theirs. */
+        `His newest work: ${projectList.slice(0, 4).map((p) => p.title).join("; ")}. ` +
         projectList.slice(0, 4).map((p) => `${p.title}: ${p.description}`).join(" "),
     },
     {
       id: "applied-projects",
       hints: [
         "project", "projects", "built", "build", "portfolio", "website", "site", "react",
-        "image", "svg", "vectorizer", "vector", "raster", "tkinter", "desktop",
-        "sudoku", "genetic", "solver", "spotify", "youtube", "music", "migration",
-        "migrator", "playlist", "automation", "oauth", "api",
+        "rag", "numpy", "scratch", "transformer", "transformers", "perceptron", "gru",
+        "embeddings", "nlp", "retrieval", "nerf", "segmentation", "diffusion", "3d",
+        "langchain", "pinecone", "gazette", "dof", "vue", "fastapi", "chatbot", "distilbert",
+        "pets", "pet", "gamification", "image", "svg", "vectorizer", "vector", "raster",
+        "tkinter", "desktop",
       ],
+      /* The lead sentence names its projects rather than saying "more of
+         Oscar's projects" and nothing else. Both project chunks routinely
+         reach the extractive model together, and when it picked a span out of
+         a contentless opener the visitor got a sentence that answered nothing.
+         A lead that carries names cannot fail that way. */
       text:
-        `More of Oscar's projects. ` +
-        projectList.slice(4, 8).map((p) => `${p.title}: ${p.description}`).join(" "),
+        `More of Oscar's projects: ${projectList.slice(4, 10).map((p) => p.title).join("; ")}. ` +
+        projectList.slice(4, 10).map((p) => `${p.title}: ${p.description}`).join(" "),
     },
     {
       id: "software-projects",
@@ -153,10 +166,12 @@ const buildChunks = () => {
         "matlab", "contour", "classifier", "escom", "repository", "node", "ajax",
         "bootstrap", "web", "matrix", "labs", "bio", "inspired", "evolutionary",
         "data", "structures", "algorithm", "algorithms", "c++", "cpp",
+        "sudoku", "genetic", "solver", "spotify", "youtube", "music", "migration",
+        "migrator", "playlist", "automation", "oauth", "api",
       ],
       text:
-        `More of Oscar's projects. ` +
-        projectList.slice(8).map((p) => `${p.title}: ${p.description}`).join(" "),
+        `More of Oscar's projects: ${projectList.slice(10).map((p) => p.title).join("; ")}. ` +
+        projectList.slice(10).map((p) => `${p.title}: ${p.description}`).join(" "),
     },
   ];
 };
